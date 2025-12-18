@@ -1,5 +1,5 @@
-<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapter-intro">
-  <title>Week 1</title>
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapter-3-intro">
+  <title>Week 3</title>
   <introduction>
     <p>
       At the end of this week you should be able to...
@@ -14,5 +14,4 @@
       </ul>
     </objectives>
   </introduction>
-  <xi:include  href="welcome.ptx"/>
 </chapter>

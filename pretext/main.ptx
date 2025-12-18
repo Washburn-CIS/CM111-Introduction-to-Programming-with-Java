@@ -97,23 +97,22 @@ update this book if it is used in future semesters with any warranted changes.
 </tabular>
 </preface> 
 </frontmatter>
-    <xi:include href="./chptr0Intro/chapter-intro.ptx"/>
-    <xi:include href="./chptr1Java/ch_intro2.ptx"/>
-    <xi:include href="./chptr2Objects/chapter-objects.ptx"/>
-    <xi:include href="./chptr3Methods/chapter-methods.ptx"/>
-    <xi:include href="./chptr4io/chapter-io.ptx"/>
-    <xi:include href="./chptr5Data/chapter-data.ptx"/>
-    <xi:include href="./chptr6Loops/chapter-loops.ptx"/>    
-    <xi:include href="./chptr7Strings/chapter-strings.ptx"/> 
-    <xi:include href="./chptr8Inheritance/chapter-inheritance.ptx"/>
-    <xi:include href="./chptr9Arrays/chapter-arrays.ptx"/>   
-    <xi:include href="./chptr10Exceptions/chapter-exceptions.ptx"/>
-    <xi:include href="./chptr11Files/chapter-files.ptx"/>
-    <xi:include href="./chptr12Recursion/chapter-recursion.ptx"/>
-    <xi:include href="./chptr13GUIs/chapter-guis.ptx"/>
-    <xi:include href="./chptr14Threads/chapter-threads.ptx"/>
-    <xi:include href="./chptr15sockets/chapter-sockets.ptx"/>
-    <xi:include href="./chptr16DataStructures/chapter-datastructures.ptx"/>
+    <xi:include href="./ch1/chapter-1-intro.ptx"/>
+    <xi:include href="./ch2/chapter-2-intro.ptx"/>
+    <xi:include href="./ch3/chapter-3-intro.ptx"/>
+    <xi:include href="./ch4/chapter-4-intro.ptx"/>
+    <xi:include href="./ch5/chapter-5-intro.ptx"/>
+    <xi:include href="./ch6/chapter-6-intro.ptx"/>
+    <xi:include href="./ch7/chapter-7-intro.ptx"/>
+    <xi:include href="./ch8/chapter-8-intro.ptx"/>
+    <xi:include href="./ch9/chapter-9-intro.ptx"/>
+    <xi:include href="./ch10/chapter-10-intro.ptx"/>
+    <xi:include href="./ch11/chapter-11-intro.ptx"/>
+    <xi:include href="./ch12/chapter-12-intro.ptx"/>
+    <xi:include href="./ch13/chapter-13-intro.ptx"/>
+    <xi:include href="./ch14/chapter-14-intro.ptx"/>
+    <xi:include href="./ch15/chapter-15-intro.ptx"/>
+    <xi:include href="./ch16/chapter-16-intro.ptx"/>
     <backmatter>
       <xi:include href="./appndx-codestyle/appendix-codestyle.ptx"/>
       <xi:include href="./appndx-jdk/appendix-jdk.ptx"/>
