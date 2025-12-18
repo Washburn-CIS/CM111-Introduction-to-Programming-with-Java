@@ -6,10 +6,9 @@
 *.html
 *.json
 *generated-assets
-build/html/generated/
+build
 published/
 pretext/generated/
-build/html
 output/
 
 # don't track assets generated from source
