@@ -15,4 +15,7 @@
     </objectives>
   </introduction>
   <xi:include  href="welcome.ptx"/>
+  <xi:include  href="ch1-language-elements.ptx"/>
+  <xi:include  href="ch1-compiling.ptx"/>
+  <xi:include  href="ch1-system-print.ptx"/>  
 </chapter>
