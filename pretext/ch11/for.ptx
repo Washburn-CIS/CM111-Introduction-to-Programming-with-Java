@@ -1,0 +1,67 @@
+<subsection xml:id="for-loops">
+    
+        <title>For Loops</title>
+    
+
+<p>When writing loops, three components are very commonly included:
+    <ul>
+        <li>
+            <p>Some local variable is declared and initialized, for instance a variable named <c>counter</c> could be initialized to <c>1</c>. </p>
+        </li>
+        <li>
+            <p>That variable is tested as part of the while condition, for instance looping while <c>counter</c> is less than <c>10</c>.
+            </p>
+        </li>
+        <li>
+            <p>At the end of each iteration of the loop, the variable is altered in some way, for instance <c>counter</c> could be incremented at the end of each iteration of the loop. </p>
+        </li>
+    </ul>
+
+Since nearly every while loop that we write contains these three components, and also because they play an important role in determining how the loop executes, Java provides a special syntax called a <c>for</c> loop that simply re-organizes these components to all reside at the front of the loop.
+</p>
+
+    <figure>
+        <title>for-loop</title>
+        <caption>Anatomy of a For Loop</caption>
+        <image width="60%" source="figures/for-loop.png"/>
+    </figure>
+
+<p><term>for loops</term> start with the <c>for</c> keyword and a pair of parentheses, just like a while loop, but inside the parentheses is first an expression (ending in a semicolon) that is executed before the loop starts, secondly a boolean expression (the same as the looping condition for the while loop), also ending in a semicolon, and finally a statement that is executed at the end of each loop (typically incrementing a variable). The last statement doesn't have a semicolon following it, but all three should be within the parentheses. The rest is identical to a while loop. </p>
+
+<example><title>Totaling Numbers with a For Loop</title>
+<p>Consider the following while loop which adds the numbers between 1 and 10:
+</p>
+
+<program language="java"><input>
+int total = 0;
+int count = 1;
+while(count &lt;= 10) {
+  total = total + count;
+  count = count + 1;
+}
+</input></program>
+
+    <p>Here is identical code written as a for loop:</p>
+
+<program language="java"><input>
+int total = 0;
+for(int count = 1; count &lt;= 10; count = count + 1) {
+  total = total + count;
+}
+</input></program></example>
+
+    <p>Because code written with while loops and for loops perform the exact same task, we call for loops <term>syntactic sugar</term>, in that it is meant only to help with the look of your code, not the function of your code. Essentially, it is used to improve your coding style.</p>
+
+<example><title>Iterate Through a String</title>
+    <p>The following code will print each character of the string <c>message</c>, one character per line:
+    </p>
+<program language="java"><input>
+String message = "hello";
+for(int i=0; i &lt; message.length(); i = i + 1) {
+  System.out.println(message.charAt(i));
+}
+</input></program>
+</example>
+
+</subsection>
+

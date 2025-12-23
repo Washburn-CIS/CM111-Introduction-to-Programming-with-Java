@@ -1,0 +1,272 @@
+<section xml:id="variables">
+
+        <title>Statements and Variables</title>
+<introduction>Statements are another common syntatic element of computer programs that have a more robust role than expressions. Just as basic types and expressions went hand-in-hand, so do the introduction of statements and variables. This section will distinguish statements from expressions and identify several types of statements. In particular, this section will introduce the new concept of variables (a way to add memory to your program) and the statements that deal with them. 
+</introduction>
+
+
+<subsection>
+        <title>Statements</title>
+    <p>
+            A <term>statement</term> is essentially a single instruction.
+        This is a fairly abstract definition, but statements serve many purposes in imperative programming languages like Java and can embody simple or complex instructions. The main difference between a statement and what we've seen with expressions is that statements don't evaluate to some value. Instead, they <em>do something</em> to the state of the computing environment. For instance, they may alter the contents of the computer's memory or print something to the screen. These actions are referred to as <term>side effects</term> and are the heart of imperative programming.
+    </p>
+    <p>
+        Syntactically, statements will vary, but for the most part end with a semicolon (similar to the period at the end of a sentence in English).  A very simple statement consists of an expression followed by semicolon. For example, the hello world example we started with mostly fits this pattern:
+        <program language="java"><input>System.out.println("Hello World!");</input></program>
+        This is essentially a method call expression (though it involves a few other concepts we'll explore soon) with a semicolon at the end. Note that the argument is not a character literal -- the double quotes indicate that it is a String, which is a sequence of several characters (strings are covered in much more depth in another section). </p>
+      <p>When we call this method, we're not concerned with what value it returns, but rather what it <em>does</em>. In this case, the statement prints the welcome message to the screen (an example of a side effect).</p>
+</subsection>
+
+
+<subsection>
+
+        <title>Method Call Statements</title>
+
+
+
+    <p>Not every method will need to return a value. Some methods simply perform some side effects (that is, they alter the global state of the program in some way), and exit, yielding no return value. These methods are called <term>void methods</term> in that their return value is void (that is, there is no value at all). </p>
+
+    <p>Method call statements are very similar to method call expressions. The only difference is that they are the entire statement and end in a semicolon. For more information about how to make a method call, refer to the method call expression section</p>
+
+    <example>
+      <title>Printing a Message to the Screen</title>
+      <p>Thus far, we've received messages back from the REPL each time we evaluate an expression, but perhaps we would like a message to be delivered somewhere during the execution of our program. Many <em>text-based applications</em> interact with their users solely through messages printed to a console (such as the REPL itself). In the case of jshell, standard output is simply the jshell screen, so any messages you print while using jshell will show up there.</p>
+
+      <p>The method we will use to print to standard output is unfortunately (and infamously) somewhat complicated looking, but JShell does allow to access it in a more simple way. If you start up JShell with the <c>-startup PRINTING</c> argument, the print method will be available to you to call to print a message to the screen. Below is an example of how you could start JShell from a system command prompt with this option and use the print method to send a greeting:</p>
+<console>
+bash-3.2$ jshell -startup PRINTING
+|  Welcome to JShell -- Version 10.0.1
+|  For an introduction type: /help intro
+
+<prompt>jshell> </prompt><input>print("Hello World!")</input>
+Hello World!
+</console>
+    </example>
+</subsection>
+
+
+
+<subsection>
+    <title>Variables</title>
+    
+    <p>Notice that when you type an expression in to the JShell REPL, more than just the resulting value is printed to the screen. For example, when you type the literal expression 5 in to the REPL, this is what you see:</p>
+    
+<console>
+<prompt>jshell> </prompt><input> 5</input>
+<output>$1 ==> 5</output>
+</console>
+    
+    <p>The <output>$1</output> that you see indicates the name of an automatically generated variable. A <term>variable</term> is a named portion of computer memory that holds a single value.
+        In this case, the value <c>5</c> is stored in computer memory at a location accessible with the variable name <c>$1</c>. 
+        </p>
+    
+    <p>Variables in programming are similar to the idea of a variable you've seen in algebra. In algebra, the variable  represents an unknown quantity. Likewise, when you write a program, you may not know what value a variable you're using will eventually hold. However, at the time when your program is running (known as <term>run time</term>), the variable's value will be known to the computer, just as the        value of a variable in algebra is known when you solve an equation. </p>
+    
+    <p>When you type an expression in to the REPL, another variable will be automatically generated to hold the value. For instance:</p>
+<console>
+<prompt>jshell> </prompt><input>5</input>
+<output>$1 ==> 5</output>
+
+<prompt>jshell> </prompt><input>9</input>
+<output>$2 ==> 9 </output>
+</console>
+
+<p>
+    Variables aren't just used for storing values but can also be used to retrieve values. A <term>variable expression</term> is simply the name of a variable and evaluates to the value held by the variable. For example:
+<console>
+<prompt>jshell> </prompt><input>5</input>
+<output>$1 ==> 5</output>
+<prompt>jshell> </prompt><input>9</input>
+<output>$2 ==> 9</output>
+
+<prompt>jshell> </prompt><input>$1</input>
+<output>$1 ==> 5</output>
+
+<prompt>jshell> </prompt><input>$2</input>
+<output>$2 ==> 9</output>
+    
+</console>
+    Note that when a variable expression is evaluated by itself, another new variable is not automatically generated by the REPL to hold the value (that would be redundant). 
+</p>
+    
+<p>
+Variable expressions can also be part of more complex expressions by combining them with operators. For instance:
+<console>
+<prompt>jshell> </prompt><input>5</input>
+<output>$1 ==> 5</output>
+
+<prompt>jshell> </prompt><input>9</input>
+<output>$2 ==> 9</output>
+
+<prompt>jshell> </prompt><input>$1 + $2</input>
+<output>$3 ==> 14</output>
+</console>
+</p>
+</subsection>
+
+
+<subsection>
+
+        <title>Declaration Statements</title>
+
+    
+    <p>Declaration statements are used to define new variables. In contrast to the automatically generated variables we saw when evaluating expressions with the REPL, declaration statements allow us to create variables with any legal name we wish. Variable names must be legal <term>Java identifiers</term>. 
+    </p>
+    <p>There are several places you'll see identifiers in Java. Identifiers can simply be thought of as the names of things in a Java program. There are some rules about which names are legal, since some names might be interpreted as instructions or other parts of the program if they're not written properly. Here are the Java identifier rules:</p>
+
+    <ul>
+        <li><p>Every Java identifier must begin with either a letter, a dollar sign, or an underscore.</p></li>
+        <li><p>Java identifiers cannot contain white space (spaces, new lines, tabs), but can contain any other characters.</p> </li>
+        <li><p>Java identifiers cannot be a reserved word (you can find a list of these online or in the textbook)</p>.</li>
+    </ul>
+
+        <p>If you deviate from those rules, you end up with an error. For example, Identifiers can contain digits, but they cannot begin with one. Thus <c>x5</c> is a legal variable name, <c>5x</c> is not. </p>
+
+        <p>Note that the variable <c>reallylongvariablename</c> is legal, but is also somewhat difficult to read. The same identifier might appear dozens of times in a program and a long one such as this will become tedious for the programmer to read and type! For this reason, there are <term>conventions</term> in Java that dictate the proper way to name variables. <c>reallylongvariablename</c> is not an error, but it does break a variable naming convention in Java known as called <term>camel case</term>. In camel case, you don't include spaces between words, but you capitalize each successive word. We must do this for identifiers consisting of multiple words since spaces are not allowed in identifiers. Furthermore, for variable names in Java, by convention the first word is not capitalized. Considering these conventions, a proper identifier we could use as a variable name would be <c>reallyLongVariableName</c>. Notice that this is a bit easier to read?
+</p>
+     <p>All conscientious programmers also try to use identifiers that are meaningful and help explain the purpose of a definition. For example, if you want to average the values of three exam scores, you might call each of the variables holding the exam scores <c>exam1</c>, <c>exam2</c>, and <c>exam3</c> instead of <c>x</c>, <c>y</c>, and <c>z</c>, and you might call the variable holding the average <c>averageExamScore</c> or perhaps simply <c>average</c>.
+        </p>
+
+    <p>
+      In order to use a variable in Java, you must declare that it exists using a <term>declaration statement</term>. 
+        
+        <figure>
+            <title>declaration-statement</title>
+            <caption>Anatomy of a Declaration Statement</caption>
+            <image width="40%" source="figures/declaration-statement.png"/>
+        </figure>
+  
+      Java is known as a statically typed language, which means that when we declare variables, we must also declare what type of value they hold. The first element of a declaration statement is the type of data the variable will hold, and the second is the identifier (variable name). 
+    </p>
+    <!-- TODO: bring in examples 
+    <xi:include href="../../examples/declaration-default-value.xml"/>
+  /-->
+</subsection>
+
+
+<subsection>
+        <title>Assignment Statements</title>
+
+    
+    <p>The main difference between variables in programming and variables you've used in math classes is that, rather than trying to determine what value the variable represents, you get to dictate what that value is yourself. In Java, this is done using an assignment statement. The automatically generated variables from JShell ($1, $2, etc) aren't intended to be changed, but the variables we declare ourselves are!
+    </p>
+    
+    <p>
+        Below is a syntax diagram for a typical assignment statement:
+   
+        <figure>
+            <title>assignment-statement</title>
+            <caption>Anatomy of an Assignment Statement</caption>
+            <image width="40%" source="figures/assignment-statement.png"/>
+        </figure>
+   
+        There are two distinct parts to an assignment statement: on the left is an identifier for the variable you want to make an assignment to, and on the right is an expression which yields the value you want to assign to the variable. 
+    </p>
+    <p>This syntax may be a little confusing since it uses the equals operator despite the fact that this is not an equation! This is one situation where the semantics (meaning) of Java syntax diverges from what you might be accustomed to from algebra. Rather than trying to determine what the <c>x</c>'s value should be, this statement makes <c>x</c> equal to <c>5</c>.
+    </p>
+    
+    
+    <!-- TODO: integrate example
+    <xi:include href="../../examples/assignment-simple.xml"/>
+    /-->
+    <p> 
+            When a variable is assigned its first (initial) value, we say that the variable has been <term>initialized</term>.
+        Variables must be initialized before they can be used in another part of a program, and variables must be declared before they can be initialized. In the previous example, two statements were used for these two tasks, respectively. However variables can be declared and initialized in a single statement, which saves the programmer some typing. These combination statements take the following form:
+        
+        <figure>
+            <title>initialization-statement</title>
+            <caption>Anatomy of an Initialization Statement</caption>
+            <image width="40%" source="figures/initialization-statement.png"/>
+        </figure>
+        </p>
+        <p>It's also not always necessary to provide a type in an initialization statement. Since Java 10 was released, Java will infer the proper type of the variable from the type of the expression used to initialize it. In this case, you can simply use the keyword <c>var</c> rather than a type when declaring and initializing a variable:
+        
+            <figure>
+                <title>initialization-statement-type-inference</title>
+                <caption>Anatomy of an Initialization Statement with Type Inference</caption>
+                <image width="40%" source="figures/initialization-statement-type-inference.png"/>
+            </figure>
+        
+        Note that the only difference between this diagram and the previous one is the <c>var</c> keyword in place of the variable type. This is one of several ways that the Java maintainers have recently integrated <term>type inference</term>. When the term type inference is used, it means that the programmer won't need to explicitly name a type of a variable when the proper type is obvious from context. Note that the type is still static (that is, you can't later change the type of the variable). Though either form of these initialization statements are acceptable, type inference has made Java a little less wordy and a little easier on programmers, so as long as you're using a more recent version of Java (in this case, Java 10 or later), the latter syntax is preferred in most cases. 
+    </p>
+    
+    <!-- TODO: integrate example
+    <xi:include href="../../examples/assignment-and-declaration-statement.xml"/>
+    /-->
+</subsection>
+
+
+<subsection>
+
+        <title>Shortcuts for Common Assignment Statements</title>
+
+
+<p>
+You've now no doubt wrote a statement such as the following many times:
+</p>
+
+<program language="java"><input>
+i = i + 1;
+</input></program>
+
+<p>
+This happens so frequently in Java that there are several built-in shortcuts for such statements. For instance, if we simply want to add a value to a variable (rather than replace a value in a variable), we could do so using the <c>+=</c> operator. Thus, an equivalent version of the code above is the following:
+</p>
+
+<program language="java"><input>
+i += 1;
+</input></program>
+
+<p>
+We could also add <c>2</c> to the value of <c>i</c> the same way, or any other value we want to increment it by. Similarly, we could subtract that value from <c>i</c>  with the <c>-=</c> operator. Each of the other arithmetic operators has a similar shortcut.
+</p>
+<p>
+Beyond these shortcuts, it's also very common to simply add <c>1</c> to a variable, so there is a second shortcut that just adds <c>1</c>:
+</p>
+
+<program language="java"><input>
+i++;
+</input></program>
+
+<p>
+Note that this shortcut can be used to simplify the string iteration example considerably, since it uses a somewhat long variable name:
+</p>
+
+<program language="java"><input>
+String message = "hello";
+int i = 0;
+int occurancesOfL = 0;
+while (i &lt; message.length()) {
+  if(message.charAt(i) == 'l') {
+    occurancesOfL++;
+  }
+  i++;
+}
+</input></program>
+
+<p>
+If you've ever heard of the programming language C++ and wondered why it was named that way, now you know. Similarly, another shortcut exists for subtracting <c>1</c> from a variable.
+</p>
+
+<program language="java"><input>
+i--;
+</input></program>
+
+<p> Shortcuts exist also for the other arithmetic operators. For example, the following statement will double the value held by the variable <c>i</c>:
+<program language="java"><input>
+i *= 2;
+</input></program>
+</p>
+
+<p> This shortcut also for the concatenation operator. For example, the following statement will concatenate an exclamation mark on to the string held by the variable <c>str</c>:
+<program language="java"><input>
+str += "!";
+</input></program>
+</p>
+
+</subsection>
+
+
+</section>
+

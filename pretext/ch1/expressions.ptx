@@ -1,0 +1,172 @@
+<section xml:id="basic-expressions">
+        <title>Basic Types and Expressions</title>
+    <p>
+        <term>Expressions</term> are the most basic syntactic building blocks of a computer program. Think of an expression as a simple question that you're asking of the computer. The answer you get back from the computer is called a <term>value</term>, and the process of determining the value for an expression is called <term>evaluation</term>. </p>
+    
+    <p>You've worked with expressions before if you've ever used a calculator. For example, an expression you might feed in to a calculator is <c>2 + 3</c>. The answer the calculator would give you back is <c>5</c>. In this case, the calculator read the expression <c>2 + 3</c>, evaluated the expression by performing addition, and returned the resulting value <c>5</c> back to you. This is similar to how expressions are used in programming languages, with the difference being that there are many more types of expressions in Java than are likely supported by your calculator!
+    </p>
+    <subsection><title>Literal Expressions and Data Types</title>
+    <p>
+        Literal expressions are the most simple expressions in Java. A <term>literal expression</term> is one that directly represents the value it evaluates to. For example, the expression <c>5</c> evaluates to, wait for it...,  <c>5</c>.  Other examples of literal expressions are <c>21</c>, <c>90000</c> (note, no commas), or <c>0</c>.
+    </p>
+    
+    <p>
+      One catch is that there are more than one type of numeric value in Java! The type of a value is called a <term>data type</term> (frequently abbreviated to <term>type</term>). Types are simply a collection of possible values that a given value is restricted to. For example, <c>5</c> is an example of what is called an <c>integer</c> (shortened to <c>int</c> in Java). There are some constraints on the size of an integer (the minimum value is <c>−2147483648</c> or <m>-2^{31}</m> and the maximum value is <m>2^{31}-1</m> or <c>2147483647</c>). Considering this rule, the expression 2147483648 would be a syntax error, since it is too large to be an <c>int</c>. Note that integer values also have no fractional component. For example, 0.5 is not a legal integer value either.
+    </p>
+    <p>There are also other integer types with different ranges of values. For example, the type <c>long</c> has a range of <m>-2^{63}</m> to <m>-2^{63}</m>. This type of value is often used when a number is too large to be represented as an <c>int</c>. Note that you can specify you want to create a long value using a special syntax for the literal expression. For example, <c>46L</c> is a legal expression that evaluates to the <c>long</c> integer value 46 and <c>2147483648L</c> is also legal (where 2147483648 was not). 
+    </p>
+    </subsection>
+    <subsection><title>Floating Point Values</title>
+    <p>
+        <c>9.2</c> is an example of a floating point value. These are values with a decimal component. Like integer values, there is more than one floating point type in Java (single and double precision). The difference between these types is the precision (essentially the number of significant digits) to to which a value will approximate some real number. By default, the literal expressions you type in that contain a decimal point will be double precision (shortened to <c>double</c>).
+    </p>
+    
+    <p>
+        Internally, these values are stored in the same way you would use scientific notation. Each floating point value consists of two components: an exponent and a mantissa. The value is determined by multiplying the mantissa by 10 to the power of the exponent. In addition to writing out floating point literals with a decimal point, you can also format them by identifying these two components explicitly. Literal values that use the scientific notation format place a letter E between the mantissa and the exponent. For example, <c>5E3</c> is the same as <c>5000.0</c>.
+    </p>
+    </subsection>
+
+<subsection>
+        <title>Arithmetic Expressions</title>
+    
+    <p>
+        Expressions can be combined together to form a larger, more complex, compound expression. To combine two expressions, a <term>binary operator</term> is placed between them. The operator performs some function over the values that the two expressions evaluate to (these values are called <term>operands</term>). For example, + is a binary operator representing the addition operation. <c>5</c> is a numeric expression, and <c>5 + 5</c> is a more complex, compound expression using the addition operator that evaluates to the value <c>10</c>. 
+    </p>
+    
+    <p>
+    There are several binary arithmetic operators which work over numeric expressions in Java. Each is described below:
+        <dl>
+            <li>
+                <p><c>+</c> (the addition operator)</p>
+            </li>
+            <li>
+                <p><c>-</c> (the subtraction operator)</p>
+            </li>
+            <li>
+                <p><c>*</c> (the multiplication operator)</p>
+            </li>
+            <li>
+                <p><c>/</c> (the division operator)</p>
+            </li>
+            <li>
+                <p><c>%</c> (the modulus operator)</p>
+            </li>
+    </dl>
+
+Note that, when using the <c>/</c> operator with integers, you get back the integer quotient (rather than a floating point value). Modulus gives you the remainder when performing integer division. 
+    </p>
+    
+    <p>
+        There is also a unary operator in Java. This is an operator that works over only one operand rather than two. This is the negation operator, which, like subtraction, is represented with <c>-</c>. For example, <c>-5</c> is a compound expression that is the negation of 5. 
+    </p>
+    
+    <p>
+        Also similar to algebra, note that these operators follow the same order of precedence. Multiplication and division are evaluated before addition an subtraction. For example, <c>2 * 3 + 1</c> is equal to <c>7</c>, not <c>8</c>. 
+    </p>
+    <p>You can also use parentheses to force a certain order of evaluation for your expressions, just as you did in algebra. For example, the expression <c>2 * (3 + 1)</c> does, in fact, evaluate to <c>8</c>.
+    </p>
+    
+</subsection>
+    
+    
+    
+    
+<subsection>
+
+        <title>Variables</title>
+
+    
+    <p>Notice that when you type an expression in to the JShell REPL, more than just the resulting value is printed to the screen. For example, when you type the literal expression 5 in to the REPL, this is what you see:</p>
+    
+<console>
+<prompt>jshell> </prompt><input>5</input>
+<output>$1 ==> 5</output>
+</console>
+    
+    <p>The <c>$1</c> that you see indicates the name of an automatically generated variable. 
+        A <term>variable</term> is a named portion of computer memory that holds a single value. 
+        In this case, the value <c>5</c> is stored in computer memory at a location accessible with the variable name <c>$1</c>. 
+        </p>
+    
+    <p>Variables in programming are similar to the idea of a variable you've seen in algebra. In algebra, the variable  represents an unknown quantity. Likewise, when you write a program, you may not know what value a variable you're using will eventually hold. However, at the time when your program is running (known as <term>run time</term>), the variable's value will be known to the computer, just as the        value of a variable in algebra is known when you solve an equation. </p>
+    
+    <p>When you type an expression in to the REPL, another variable will be automatically generated to hold the value. For example:</p>
+<console>
+<prompt>jshell> </prompt><input>5</input>
+<output>$1 ==> 5</output>
+
+<prompt>jshell> </prompt><input>9</input>
+<output>$2 ==> 9</output>         
+</console>
+
+<p>
+    Variables aren't just used for storing values but can also be used to retrieve values. A <term>variable expression</term> is simply the name of a variable and evaluates to the value held by the variable. For example:
+<console>
+<prompt>jshell> </prompt><input>5</input>
+<output>$1 ==> 5</output>
+
+<prompt>jshell> </prompt><input>9</input>
+<output>$2 ==> 9</output>
+
+<prompt>jshell> </prompt><input>$1</input>
+<output>$1 ==> 5</output>
+
+<prompt>jshell> </prompt><input>$2</input>
+<output>$2 ==> 9</output>
+    
+</console>
+    Note that when a variable expression is evaluated by itself, another new variable is not automatically generated by the REPL to hold the value (that would be redundant). 
+</p>
+    
+<p>
+Variable expressions can also be part of more complex expressions by combining them with operators. For example:
+<console>
+<prompt>jshell> </prompt><input>5</input>
+<output>$1 ==> 5</output>
+
+<prompt>jshell> </prompt><input>9</input>
+<output>$2 ==> 9</output>
+
+<prompt>jshell> </prompt><input>$1 + $2</input>
+<output>$3 ==> 14</output>
+</console>
+</p>
+
+
+
+</subsection>
+    
+    
+    <subsection><title>Casting</title>
+    <p>Values can also be converted to new values with a different data type by using a <term>casting</term> expression. This can be important in situations when it is important to use the advantages or avoid the disadvantages of a particular data type. To cast a value to a new data type, type the name of the data type, surrounded by parentheses, immediately before the expression you want to convert. For example, <c>(double)8</c> evaluates to the value <c>8.0</c></p>
+    <p>Casting a value produces a value that is different from the one you started with, and it may be impossible to cast it back to the original value, depending on the types you're casting between. For example, if you cast an <c>int</c> to a <c>double</c>, such as we did in the last example, you're expanding the values that can be represented by introducing the fractional component. But if you cast a <c>double</c> to an int, such as in the following expression: <c>(int)5.8</c>, you're narrowing the possible values that can be used. In this case, when casting a <c>double</c> to an <c>int</c>, the fractional component is <term>truncated</term>, yielding the value <c>5</c>. Note that it is not rounded up to the nearest integer.
+    </p>
+    </subsection>
+    
+    
+    
+<subsection>
+        <title>Calling Methods</title>
+
+        <p>The arithmetic operators we've used thus far are simple. We can combine them together to create more complex operations, but that also makes our code more difficult to read. More complicated operations are often handled by <term>methods</term> which put a simple name to a potentially complex operation. This is an example of <term>abstraction</term> -- a very important concept in computer programming in which the complexities of operations are hidden to make programs easier to read, modify, and combine with other programs. Methods also allow Java to be <term>extensible</term>, in that you can create your own methods to perform custom tasks (we will see how to do this in future chapters). </p><p>We formed arithmetic expressions with arithmetic operators. Similarly, we can form <term>method call</term> expressions by providing arguments to a method (arguments, in this case, are values derived from other expressions -- similar to the operands we supplied to operators with arithmetic expressions). When the method call expression is evaluated, the method will calculate a value based on the arguments it was given. In this context, the term <term>function</term> is also applicable.</p>
+
+    <p>You can use a method call expression to cause a method to execute. Method call expressions will evaluate to the method's <term>return value</term>, which can be seen as the result of the operation the method is performing. </p>
+
+    <p>To call a method, first provide the name of the method you wish to call. Following the name should be a pair of parenthesis, within which is a comma-separated list of expressions for each argument. In the last example, there was only one argument, but a method could take more than one argument, or could even take zero arguments.</p>
+
+    <figure>
+    	<title>method-call</title>
+        <caption>Anatomy of a Method Call</caption>
+         <image width="35%" source="figures/method-call.png"/>
+    </figure>
+
+    <p>In the diagram above, a method named <c>pow</c> is being called. This method takes two arguments: the base and the power (both <c>double</c> values). The return value of this method is the result of raising the specified base to the specified power (that is to say, this expression evaluates to the value 100).</p>
+<!-- TODO: add examples
+    <xi:include href="../../examples/call-sqrt.xml"/>
+    <xi:include href="../../examples/call-round.xml"/>
+   
+/-->
+    </subsection>
+    
+</section>
+

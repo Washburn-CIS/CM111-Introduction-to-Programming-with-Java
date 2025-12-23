@@ -1,0 +1,196 @@
+
+<section xml:id="advanced-conditionals">
+            <title>More With Conditional Statements</title>
+  <subsection>
+            <title>Nested If Statements</title>
+
+        <p>Any statement can be included in the body of an if statement, which means you can include an if statement inside an if statement! This is called a nested if statement.
+        </p>
+        <example>
+            <title>Nested if Statements to Determine Best Temperature</title>
+            <p>
+                The following method will return <c>true</c> <em>if</em> the <c>tempaerature</c> (an integer type variable) is between <c>68</c> and <c>72</c>:</p>
+
+
+            <program language="java"><input>
+boolean justRight(int temperature) {
+  if(temperature &gt;= 68) {
+    if(temperature &lt;= 72) {
+      return true;
+    }
+  }
+  return false;
+}
+</input></program>
+            <p>One thing to note about this example is that there are no <c>else</c> statements. There could be, but they aren't necessary since in all cases they would return <c>false</c>, which is also what the last statement of the method does.
+            </p>
+            <p>
+                Also notice that the nested if block is indented further than the block it is nested in. This is an important style convention that you should follow whenever opening nested blocks of code, not just with nested if statements.
+            </p>
+        </example>
+    </subsection>
+
+
+
+
+  <subsection>
+        <title>if/else Chains</title>
+
+    <p>When a situation calls for one of two kinds of action, we could use a if statement with an else statement following it. However, if there are more than two actions we might take, we can nest a new if statement inside of each else statement, forming a chain of if / else statements (ending in an else statement with no nested if statement). This way, rather than just two choices in the conditional statement, this if/else structure allows us to have 3 or more choices.</p>
+        <p>One issue with this level of nesting is that the code can become very complex if we're following the indentation conventions. For instance, if there were 10 different choices in an if/else chain (not unheard of), the last else statement would be indented at least 20 spaces!
+        </p>
+
+        <p>
+            To avoid this complexity in the code, there are coding conventions that dictate when you should use curly braces and how much you should indent to avoid very wide lines in your code, summarized in the figure above. Rather than opening a brace for each else statement, instead, when an else statement is followed by another if, no brace is opened and the if immediately follows the else on the same line. Then a brace is opened for the if statement and also the final trailing else statement.
+        </p>
+        
+        
+ <example>
+     <title>Ice Cream Choices with if/else Chains</title>
+    <p>An application is being developed that can order an appropriate snack for you automatically. If the temperature outside is high, it will order an ice cream, and if the temperature is low, it will order a hot chocolate. Assume that there are two methods available that can order either of these foods. The code might look like this:
+    </p>
+<program language="java"><input>
+if ( temperature > 65 ) {
+  orderIceCream();
+} else {
+  orderHotChocolate();
+}
+</input></program>
+    <p>
+    Now consider that the application might also order popcorn if the temperature is more moderate. We would have to use a nested if statement to accomplish this:
+    </p>
+<program language="java"><input>
+if ( temperature > 80 ) {
+  orderIceCream();
+} else {
+  if (temperature > 50 ) {
+    orderPopcorn();
+  } else {
+    orderHotChocolate();
+  }
+}
+</input></program>
+    <p>
+    If we wanted to add, for example, 5 more snack options, this would become quite a mess, with many layers of nested if statements inside of else statements! Your code would be so far indented to the right, that it may begin to run over the length of the screen.
+    </p><p>
+    This is avoided by not opening a new curly brace for each if statement that immediately follows an else, and instead putting both on the same line. The body of the else then becomes the if statement that follows the else, and the following if statement is not indented further than the else that it follows. For example, we could re-write the code above this way:
+    </p>
+<program language="java"><input>
+if ( temperature > 80 ) {
+  orderIceCream();
+} else if (temperature > 50 ) {
+  orderPopcorn();
+} else {
+  orderHotChocolate();
+}
+   </input></program>
+   </example>
+  </subsection>
+    
+    
+
+<subsection>
+            <title>Switch Statements</title>
+
+        <p>If each of the <c>if</c> statements in an if/else chain are simply comparing some expression to one of several literal values, there is a special syntax in Java called a <term>switch</term> statement that can be used instead. In some of these cases, this will be a little easier to read and more efficient.
+        </p>
+
+
+        <p>
+            The syntax for switch statements is a little trickier than the other conditional statements we've seen. Following the <c>switch</c> keyword is an expression in parentheses, but it won't be a boolean expression. Instead, it can be any other type of primitive or String value. This value will be compared against a number of literal values inside of the switch statement body, which follows.</p><p>
+            The body is contained within a pair of curly braces and consists of a series of <term>case statements</term>. Each case statement begins with the <c>case</c> keyword, followed by the literal value that the resulting value from the original expression at the head of the switch statement will be compared to, and then a colon. Following that will be a series of statements. Curly braces are not necessary.
+        </p><p>
+            Note that after a case statement is complete, the next case statement will be executed! Unless this is intentional, you must explicitly end the switch statement using a <term>break statement</term>. This is simply the keyword <c>break</c> followed by a semicolon. Break statements are not needed if a return statement is used, since execution of the enclosing method will end at that point anyway.
+        </p><p>
+            One last important feature of the switch statement syntax is the <term>default case</term> which can handle the case where the value we get back from the initial expression doesn't match any of the literal values in the cases. A switch statement without a default case will simply do nothing. </p>
+        <p>There is a special syntax for defining the default case. Default cases look like the other case statements, but they use the keyword <c>default</c> instead of <c>case</c> and are immediately followed by a colon instead of some literal value to compare with.
+        </p>
+
+        <example>
+            <title>Switching Over Letter-Grade Characters</title>
+            <p>A grade book application needs to determine the minimum grade needed for each letter grade. Letter grades will be represented with capital letter characters. This functionality could be developed using an if/else chain:
+                </p>
+
+<program language="java"><input>
+int getMinimumGrade(char letterGrade) {
+  if ( letterGrade == 'A' ) {
+    return 90;
+  } else if ( letterGrade == 'B' ) {
+    return 80;
+  } else if ( letterGrade == 'C' ) {
+    return 70;
+  } else if ( letterGrade == 'D' ) {
+    return 60;
+  } else {
+    return 0;
+  }
+}
+</input></program>
+
+            <p> However, this is a good opportunity to use a switch statement. The switch statement below takes equivalent action, but will run a little more efficiently and may be a little easier to read and modify:
+            </p>
+
+<program language="java"><input>
+int getMinimumGrade(char letterGrade) {
+  switch(letterGrade) {
+    case 'A':
+      return 90;
+    case 'B':
+      return 80;
+    case 'C':
+      return 70;
+    case 'D':
+      return 60;
+    default:
+      return 0;
+  }
+}
+</input></program>
+<p>Note that no break statements are needed in this example since return statements are used in each case.</p>
+</example>
+    </subsection>
+
+    
+    
+<subsection>
+        <title>While Loops</title>
+  <p>
+While loops are a lot like if statements. In fact, they have a nearly identical syntax. </p>
+
+    <figure>
+        <title>while-loop</title>
+        <caption>Anatomy of a While Loop</caption>
+        <image width="40%" source="figures/while-loop.png"/>
+    </figure>
+    
+    
+    <p>While loops start with the <c>while</c> keyword, and then a boolean expression in parentheses, and then a block of code (a series of statements surrounded by curly braces) or a single statement. The only difference is that when this block of code or single statement completes, program control returns to the beginning of the while loop. Think of it as an if statement that repeats itself indefinitely.
+</p><p>
+    Now you may be concerned by the word <em>indefinitely</em>, and you should be -- it's a distinct possibility that a while loop can run <em>forever</em>. However, after each <term>iteration</term> of the loop (an iteration is complete after execution reaches the end of the code block), the boolean expression at the front of the while loop is evaluated again. If you wrote the loop correctly, that boolean expression should evaluate to <c>false</c> when you don't want the loop executing anymore. 
+</p>
+    
+    <example><title>Counting with a While Loop</title>
+    <p>
+The following code will add up the numbers 1 through 10:
+</p>
+<program language="java"><input>
+int count = 0;
+int total = 0;
+while(count &lt;= 10) {
+  count = count + 1;
+  total = total + count;
+}
+</input></program>
+<p>
+After the first iteration of the loop, count will increase by 1 and total will increase by 1. Thus, when the boolean expression is evaluated the second time, count will be 1 (and not 0). However, 1 is still less than 10, so the loop will run a second time. After the second iteration, count will increase to 2 and total will increase to 3. Now you might see where this is going. The loop will run 8 more times until count is equal to 11. At that point, count will be greater than 10, so the boolean expression will be false, and the statements inside the block will be skipped. 
+</p>    
+    </example>
+    
+</subsection>
+
+
+
+    
+    
+</section>
+    

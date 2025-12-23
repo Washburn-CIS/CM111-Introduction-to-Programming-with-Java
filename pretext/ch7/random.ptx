@@ -1,0 +1,52 @@
+
+<section xml:id="random-numbers">
+    
+        <title>Random Numbers</title>
+    
+<p>
+Programs that you write are, for the most part, deterministic. That is, if you run the program twice with the same inputs, you'll get the same outputs both times. However, if you wish for your programs to behave differently each time they are run, you will need to incorporate some element of randomness. </p>
+
+<p>Java provides a method you can call that will produce a random double between 0.0 and 1.0, not including 1.0. The method is <c>Math.random</c> and it has no parameters. Here is an example of its use:
+<console>
+<prompt>jshell> </prompt><input>Math.random()</input>
+<output>$1 ==> 0.9352703415432374</output>
+
+<prompt>jshell> </prompt><input>Math.random()</input>
+<output>$2 ==> 0.8213665111125805</output>
+
+<prompt>jshell> </prompt><input>Math.random()</input>
+<output>$3 ==> 0.11618950685880569</output>
+</console>
+
+</p>
+        
+<p>Each call to <c>Math.random()</c> produces a number that is uniformly random between 0.0 and 1.0, but what if you wanted a random integer? You could use a double to produce a random integer. Consider the double to be representing a percentage -- a magnitude of how far through the list of your random integers you want to travel. If you list starts at 0, multiplying by the the number of integers in your list (we'll call that number N) will produce a float between 0.0 and N. Here is an example with N=10:
+</p>
+<console>
+<prompt>jshell> </prompt><input>Math.random()*10</input>
+<output>$4 ==> 7.155033486584813</output>
+
+<prompt>jshell> </prompt><input>Math.random()*10</input>
+<output>$5 ==> 6.421007683139028</output>
+
+<prompt>jshell> </prompt><input>Math.random()*10</input>
+<output>$6 ==> 6.408241005461534</output>
+</console>
+<p>
+Now simply cast to int to truncate the decimal portion, but be careful about order of operations!
+</p>
+<console>
+<prompt>jshell> </prompt><input>(int)(Math.random()*10)</input>
+<output>$7 ==> 6</output>
+
+<prompt>jshell> </prompt><input>(int)(Math.random()*10)</input>
+<output>$8 ==> 8</output>
+
+<prompt>jshell> </prompt><input>(int)(Math.random()*10)</input>
+<output>$9 ==> 4</output>
+</console>
+        
+<p>
+There are other transformations you can apply to these random numbers to create different ranges of doubles or integers -- try some out in JShell!</p>
+    
+</section>

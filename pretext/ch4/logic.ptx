@@ -1,0 +1,30 @@
+<section xml:id="logic">
+        <title>Boolean Operators</title>
+
+        <p>
+            There are also operators that work strictly over boolean values, just as the arithmetic operators we used last week worked strictly over numeric values. These are called <term>boolean operators</term>. They operate over one or two boolean values and evaluate to another boolean value.  These operations are quite simple but form the basis for what is known as <term>boolean algebra</term>.
+        </p><p> The first operator we'll consider is the and operator: <c>&amp;&amp;</c>. This is a
+            boolean operator that evaluates to <c>true</c> only when both the left and
+            right operands also evaluate to <c>true</c>. For example:
+            <c>true &amp;&amp; false</c> evaluates to <c>false</c>, since the right-hand operand is false. However: <c>true &amp;&amp; true</c> evaluates to <c>true</c>, since both operands are true. </p>
+            <p>
+            The next operator we'll consider is the or operator: <c>||</c> It is similar to the and operator, but it evaluates to <c>true</c> when either of the operands are true. Put another way, this operator will only evaluate to <c>false</c> when both of its operands evaluate to <c>false</c>. For example, if you replaced <c>&amp;&amp;</c> with <c>||</c> in both of the last two expressions, they would both evaluate to <c>true</c>.
+        </p><p> The last boolean operator we'll consider is unique in that it's a unary operator. Recall that
+            this means it has only one operand. It is called the not operator: <c>!</c> This
+            operator simply reverses the boolean value of its operand. For example:
+            <c>!false</c> evaluates to <c>true</c>. Note that all of these operators can be combined and nested in sub expressions. For example,
+            the following expression evaluates to <c>true</c>: <c>!((false &amp;&amp; false) || false)</c> These operators also have an order of precedence: <c>!</c>, <c>&amp;&amp;</c>, <c>||</c>
+        </p>
+
+        <p>
+          Another feature of boolean operators that you should be mindful of is called <term>short circuiting</term>. The operands of <c>&amp;&amp;</c> and <c>||</c> are evaluated in order from left to right. If the left operand evaluates to <c>false</c> for  <c>&amp;&amp;</c>  or if the left operand evaluates to <c>true</c> for  <c>||</c>, the right operand is never evaluated. This is because it doesn't matter what value this operand evaluates to --  a <c>&amp;&amp;</c> expression would evaluate to <c>false</c> and a <c>||</c> expression would evaluate to <c>true</c> in these scenarios regardless of what value the right operand evalutes to.
+        </p>
+        <p>
+          For the most part, this just means that your programs will run a bit more efficiently, since only have of the work needs to be done to evaluate these expressions at times. However, if an error or a side effect occurs while evaluating the right operand, it is important for the programmer to know that it will not occur when the left operand is not evaluated due to short circuiting. The programmer can also take advantage of this. For example, consider a scenario where the variable <c>students</c> is the number of students in a class and the variable <c>cupcakes</c> is the number of cupcakes the instructor brought with them. If we want to determine whether there are enough cupcakes for each student to have at least 2, we could use the following boolean expression:
+          <c>cupcakes / students &gt;= 2</c>
+          However, if by some mistake we used this expression for a class with no students in it, we would get a division by zero error instead of <c>true</c>. The latter would be preferred if we simply wanted to know whether the enough cupcakes were baked. Thus, we could instead use the following expression:
+          <c>students > 0 &amp;&amp; cupcakes / students &gt;= 2</c>
+          In this case, if <c>students</c> is zero, the left operand to <c>&amp;&amp;</c> would evaluate to false, and the right operand would be ignored, avoiding the division by zero error.
+        </p>
+</section>
+

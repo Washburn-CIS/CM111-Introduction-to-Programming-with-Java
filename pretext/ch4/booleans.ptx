@@ -1,0 +1,59 @@
+<section xml:id="booleans">
+        <title>Booleans and Comparison Operators</title>
+
+    <p>
+        The boolean type is a primitive data type and actually the most simple type because it has only two possible values: <c>true</c> and <c>false</c>. Both <c>true</c> and <c>false</c> are also literal boolean values, and <c>boolean</c> is the name of the type. For example, you can declare and initialize a boolean variable as follows:
+
+<program language="java"><input>
+boolean mybool = true;
+</input></program>
+
+        or simply
+
+<program language="java"><input>
+var mybool = true;
+</input></program>
+
+    </p>
+
+        <p> The boolean type is useful for answering <em>yes</em> or
+                <em>no</em> questions, such as <em>is 2 equal to 1 + 1?</em>
+            We can ask these types of questions with comparison operators. </p><p>
+            The comparison operators are binary operators, just like the arithmetic operators from prior sections. However, they operate over values of any type (instead of numeric values), and the evaluate to a boolean value (instead of a numeric value). For example, <c>==</c> is the comparison operator. It determines whether two values are the same or not. So, to answer the question we posed in the last paragraph, we could use an expression like this:
+
+<program language="java"><input>
+(1 + 1) == 2
+</input></program>
+
+            If you type this in to the REPL, it will evaluate to <c>true</c>. Note that the parentheses are not necessary, either. <c>+</c> will be evaluated before any comparison operators will be. There are several other comparison operators that will be useful to us, summarized below:
+
+            <dl>
+                <li>
+                    <p><c>!=</c> Not equal to</p>
+                </li>
+                <li>
+                    <p><c>&gt;</c> greater than</p>
+                </li>
+                <li>
+                    <p><c>&lt;</c> less than</p>
+                </li>
+                <li>
+                    <p><c>&gt;=</c> greater than or equal to</p>
+                </li>
+                <li>
+                    <p><c>&lt;=</c> less than or equal to</p>
+                </li>
+            </dl>
+        </p>
+        <p> For example, the expression <program language="java"><input>4 &lt; 3 + 3</input></program> would
+            evaluate to <c>true</c>. </p>
+
+            <p>
+              Note that the <c>==</c> operator can not be used to compare the contents of two objects. The <c>==</c> operator will determine if two object references are equal (references are covered in more detail in another section). If you wish to compare the contents of two objects (such as to determine if two strings contain the same characters), use the <c>equals</c> instance method of one of the objects and pass the other in as an argument.
+            </p>
+            <p>
+              For example, to check if an object stored in the variable <c>message1</c> has the same content as the object stored in the variable <c>message2</c>, the following expression would work: <program language="java"><input>message1.equals(message2)</input></program> Reversing the order would also work (assuming that neither variable holds the <c>null</c> value).
+          </p>
+</section>
+
+

@@ -1,0 +1,252 @@
+
+<section xml:id="strings">
+    
+        <title>Text Data</title>
+    <introduction>There are two main types used to represent textual data in Java programs (and indeed, most programming languages): Strings and characters. The former is an object type composed of 0 or more of the latter, a primitive type, which we'll describe first. </introduction>
+    
+<subsection>
+        <title>The Character Primitive Data Type</title>
+    
+    <p>A character is essentially another type of numeric primitive, but with a special purpose. In order to work with textual data on a computer (such as the letters you're reading right now, which were printed off by a computer), each letter (and also other symbols such as punctuation, numbers, etc) are each given a special code number.</p>
+    <p>Characters are a primitive type in Java, and the name of the type is <c>char</c>. Thus, just like <c>int</c> and <c>double</c>, you can create a variable of type <c>char</c>:
+    </p>
+
+<program language="java"><input>
+char letterGrade;
+</input></program>
+
+  <p>There is also a special format for character literals. You can surround a character with single-quotes and Java will interpret that as a literal character value. For instance:</p>
+
+<program language="java"><input>
+letterGrade = 'A';
+</input></program>
+
+<p>Since Java was designed to work on any available computing platform, naturally it should also support any language as well. Thus, the standard used for the characters in Java include codes not only for the letters used in English, but also all other natural languages (including those with many characters, such as Japanese)! This system is called Unicode:
+    <uri>https://unicode.org/</uri></p>
+
+
+<p>The actual codes used for each character in Java can be looked up on the UTF-8 chart here: <uri>https://www.unicode.org/charts/</uri>  Note that you can convert between the character codes and character literals by casting them back and forth to other integer types. For example, the following expression: <program language="java"><input>(int)'a'</input></program> will evaluate to the integer value <c>97</c>, which was designated for this character in unicode. The rest of the lower-case characters in the basic latin alphabet are assigned to each of the following integers, so similarly evaluating the expression: <program language="java"><input>(int)'b'</input></program> will evaluate to <c>98</c></p>
+
+
+        <p>Just as with mathematical functions, there are also some <em>built in</em> methods for working with characters. You can make them available in the REPL by typing in the following statement:
+
+<program language="java"><input>
+import static java.lang.Character.*;
+</input></program>
+
+            A couple important ones are summarized below:
+
+        <dl>
+            <!-- these will need to be covered after booleans are
+            <li>
+                <p><c>boolean isDigit(char)</c> - Takes a character as input and returns a boolean indicating whether or not it is a digit (0-9). </p>
+            </li>
+            <li>
+                <p><c>boolean isLetter(char)</c> - Takes a character as input and returns a boolean indicating whether or not it is a letter (a-z or A-Z). </p>
+            </li>
+            <li>
+                <p><c>boolean isUpperCase(char)</c> - Takes a character as input and returns a boolean indicating whether or not it is a upper-case letter (A-Z). </p>
+            </li>
+            <li>
+                <p><c>boolean isLowerCase(char)</c> - Takes a character as input and returns a boolean indicating whether or not it is a lower-case letter (a-z)</p>
+            </li>
+            -->
+            <li>
+                <p><c>char toUpperCase(char)</c> - Takes a character as input and returns that character in upper-case (or leaves it alone if it was already upper-case)</p>
+            </li>
+            <li>
+                <p><c>char toLowerCase(char)</c> - Takes a character as input and returns that character in lower-case (or leaves it alone if it was already lower-case)</p>
+            </li>
+        </dl>
+    </p>
+        -        <p>Executing the following code:</p>
+-
+-    <program language="java"><input>
+-char c = 'A';
+-if(Character.isUpperCase(c)) {
+-  c = 'a';
+-}
+-    </input></program>
+-
+-    <p>would result in textit{c} holding the value 'a' at the end.  The following code would also produce the same result:
+-    </p>
+-
+-    <program language="java"><input>
+-char c = 'A';
+-c = Character.toLowerCase(c);
+-    </input></program>
+
+
+</subsection>
+    
+    
+    <p>A single character by itself doesn't convey much. The kind of data we more often want to
+        work with is a sequence of multiple characters, like a name or address field, or even
+        something longer and more complex like a news article or a computer program. Java has a
+        data type that fits this role: the <c>String</c>. While a character literal only holds
+        a single value, such as <c>'h'</c>, a string can hold 0 or more character
+        values. Thus, strings can represent more complex data like names, sentences, or even this
+        entire book! You can create a variable of type <c>String</c> as follows: </p>
+    <program language="java"><input>String name;</input></program>
+<p>
+    Note that the type in that variable declaration is capitalized. That's because, unlike <c>char</c>'s and <c>int</c>'s, the string type is an object type (not a primitive type). Thus, when we use the string type in Java code (such as the example above), it must be capitalized. However, unlike <c>Point</c>s and other objects we've played with, strings are a special object type in Java in that they see very heavy usage and also have some special syntax associated with them (described in the following sections).
+</p>
+<subsection>
+    <title>String Literals</title>
+
+    <p>String literals have a special syntax somewhat similar to character literals. Character literals are a single character surrounded by single quotes, such <c>'a'</c>. String literals are similar, but as noted, there may be more than one character in the string, and we use double quotes to surround them. For example, the following code initializes the name variable from the previous example with my name as a value: </p>
+    <program language="java"><input>name = "Joesph Kendall-Morwick";</input></program>
+
+    <p>Note that string literals can contain all sorts of characters, including spaces and dashes. Strings also distinguish between upper and lower case characters. Character literals work just the same way, but character literals hold exactly one character.
+    </p>
+
+    <p>String literals may also hold zero characters. For instance:</p>
+
+    <program language="java"><input>name = "";</input></program>
+
+    <p>is also legal. Note that the empty string (above) is still a string value! It doesn't mean there isn't a string held by the variable <c>name</c>. If <c>name</c> held no value, we would say it holds the <c>null</c> value, just as any other object-type variable that doesn't hold a value. Recall that <c>null</c> is a keyword representing this value:
+    </p>
+
+    <program language="java"><input>name = null;</input></program>
+
+    <p>Note that there are no quotes around <c>null</c>, since it is a keyword. </p>
+
+</subsection>
+
+
+    <subsection>
+        <title>String Concatenation</title>
+
+        <p>Two string values may be joined together with the concatenation operator.
+            Unfortunately, you've technically already seen the concatenation operator because it
+            uses the same symbol as the addition operator (+). However, they are considered distinct
+            operators since they take distinct actions on their operands. You will end up with
+            addition or concatenation depending on the data types of the operands. Allowing an
+            operator to take on multiple meanings depending on the types of the operands is more
+            generally referred to as <term>operator overloading</term>. </p>
+
+<example><title>Basic Concatenation</title>
+    <p>The following code:</p>
+<program language="java"><input>
+String fullName = "Joseph" + " " + "Kendall-Morwick";
+</input></program>
+    <p>
+        will store a single string value representing my full name in the variable <c>fullName</c>.</p>
+</example>
+
+<p>In fact, concatenation is performed when even just one of the operands is a string value. The other value will be coerced (transformed) in to a string value.
+</p>
+
+
+<example><title>Concatenating non-Strings</title>
+    <p>The following code:</p>
+<program language="java"><input>
+String message = "my favorite number is " + 5;
+</input></program>
+    <p>will store a single string value holding the message "my favorite number is 5" in the variable <c>message</c>.</p>
+</example>
+    </subsection>
+<subsection>
+    <title>String Instance Methods</title>
+
+    <p>The string class has many useful instance methods. We'll take a look at five of the most important ones.
+    </p>
+
+    <subsubsection><title>length</title>
+        <p>The <c>length</c> instance method has no parameters but returns the length of the string (as an integer).
+        </p>
+
+    <example>
+        <title>Finding the Length of a String</title>
+
+        <program language="java"><input>"hello".length() </input></program>
+
+        <p>evaluates to the value 5 whereas</p>
+
+        <program language="java"><input>"".length()</input></program>
+
+        <p>evaluates to the value 0</p>
+    </example>
+    </subsubsection>
+
+    <subsubsection><title>equals</title>
+
+        <p>The <c>equals</c> instance method takes another String as input and returns a boolean value (<c>true</c> or <c>false</c>) indicating whether the two strings (the argument and the string from which the method is being called) have the exact same contents or not. Boolean values are described in more detail in another  </p>
+        <example>
+            <title>Comparing two Strings</title>
+            <program language="java"><input>"hello".equals("hello") </input></program>
+            <p>evaluates to the value <c>true</c> whereas</p>
+            <program language="java"><input>"hello".charAt("Hello") </input></program>
+            <p>evaluates to the value <c>false</c></p>
+        </example>
+    </subsubsection>
+
+    <subsubsection><title>charAt</title>
+
+        <p>The <c>charAt</c> instance method takes the location (called the index or offset) of a character in the string and returns just that character (as a character-type value). The tricky part of working with string indexes is that the first index is zero (not one). </p>
+        <example>
+            <title>Pulling a character out of a String</title>
+            <program language="java"><input>"hello".charAt(0) </input></program>
+            <p>evaluates to the value <c>'h'</c> whereas</p>
+            <program language="java"><input>"hello".charAt(4) </input></program>
+            <p>evaluates to the value <c>'o'</c></p>
+        </example>
+    </subsubsection>
+
+    <subsubsection><title>char</title>
+
+        <p>The <c>indexOf</c> instance method takes a character you're searching for as input and returns the first index of where it's found in the string. If the character is not present in the string, <c>-1</c> is returned instead. </p>
+
+    </subsubsection>
+
+    <subsubsection><title>substring</title>
+
+        <p>        The <c>substring</c> instance method takes two integer values (indexes) as input and returns a substring of the original string starting at the first index and ending just before the last index. Be mindful of the fact that the first index given indicates where the substring starts (and the character at this index is included in the resulting substring), but the second index is expected to be one greater than the index of the last character included (so the character at the second index is not included). The second index is also optional -- if it is omitted, all characters following the first index are included in the resulting substring. This can be a little confusing, so make sure that the examples below make sense and try some others out in JShell.
+  </p>
+        <example>
+            <title>Pulling a substring out of a String</title>
+            <program language="java"><input>"hello".substring(1, 3) </input></program>
+            <p>evaluates to the value <c>"el"</c></p>
+        </example>
+        <example>
+            <title>Pulling a prefix out of a String</title>
+            <program language="java"><input>"hello".substring(1) </input></program>
+            <p>evaluates to the value <c>"ello"</c></p>
+        </example>
+    </subsubsection>
+
+    <p>The examples above show instance methods being called from String literals. Bear in mind that these methods can be called on any expression that results in an object value, not just literals! In fact, you will more often be calling instance methods from variable expressions. Instance method calls are also often composed with other instance method calls to form more complex expressions, just as we've done with static method calls and operators in previous examples. </p>
+    <example>
+        <title>Find the name that starts with a capital J</title>
+<program language="java"><input>var names = "Mary. Sam. Joey. Abigail.";
+var namesStartingAtJ = names.substring(names.indexOf('J'));
+var endOfName = namesStartingAtJ.indexOf('.');
+var nameStartingWithJ = namesStartingAtJ.substring(0, endOfName);
+</input></program>
+        <p>In a String listing several capitalized names ending in periods, this code locates and isolates the first name that begins with a J. After each of the four statements are executed, the variable <c>nameStartingWithJ</c> will contain the value <c>"Joey"</c>.</p>
+    </example>
+
+</subsection>
+
+
+    <subsection><title>String Escapes</title>
+        <p>There are also some special values that strings (and characters) can hold, such as new lines (a character representing that the cursor drops to the next line), tabs (a character represeting that the tab key was pressed), and so on. These are insterted in to string (and character) literals by including a backslash (called an escape) before a special code. These special characters are interpreted when we print out strings. For example, consider the following print statement:
+        </p>
+        <program language="java"><input>print("A tab is \n\ta quite simple way \n\t\tto advance");</input></program>
+
+        <p>...prints the following haiku to the console:</p>
+
+<pre>
+A tab is
+a quite simple way
+to advance
+</pre>
+        <p>It is important to note that because back slashes are interpreted as escapes, they can not be used as any other character would be in a string. However, you can include them by escaping them! For instance, the following code:
+        </p>
+
+        <program language="java"><input>print("here's a backslash: \\");</input></program>
+        <p>prints the following to the standard output:</p>
+        <console><output>here's a backslash: \</output></console>
+    </subsection>
+</section>
+

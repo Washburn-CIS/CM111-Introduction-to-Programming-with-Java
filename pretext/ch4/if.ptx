@@ -1,0 +1,68 @@
+
+<section xml:id="if-statements">
+    <title>If Statements</title>
+
+    <p>
+    An if statement is a new kind of statement that will only execute when a certain boolean expression evaluates to true.
+    </p>
+
+    <figure>
+        <title>simple-if-statement</title>
+        <caption>Anatomy of a Simple if Statement</caption>
+        <image width="40%" source="figures/simple-if-statement.png"/>
+    </figure>
+
+    <p> If statements start with the keyword <c>if</c>, then a boolean expression (surrounded in parentheses -- the parentheses are necessary), then the statement we want to conditionally execute. For instance, consider the following statements:
+    </p>
+
+<program language="java"><input>
+    int x = 10;
+    int y = 0;
+
+    if (y > x) x = 30;
+
+    if (x > y) y = 20;
+</input></program>
+
+    <p>
+        The first if statement does nothing. y is not greater than x at this point, so the assignment statement that follows it (<c>x = 30;</c>) does not execute. The second if statement will set the variable <c>y</c> to the value 20. Since <c>x</c> is greater than <c>y</c>, the statement (<c>y = 20;</c>) will be executed.
+    </p><p>
+        More than one statement can be conditionally executed in an if statement. In fact, you can include as many as you like by opening up a <term>block</term> of code using curly braces surrounding each of the conditionally executed statements.
+    </p>
+
+    <figure>
+        <title>if-statement</title>
+        <caption>Anatomy of an if Statement with a Block Body</caption>
+        <image width="40%" source="figures/if-statement.png"/>
+    </figure>
+
+<program language="java"><input>
+if (x > y) {
+    x = 30;
+    y = 40;
+    z = 50;
+}
+</input></program>
+    <p>
+        There are a couple important points to keep in mind about code blocks. First, notice that there is no semicolon at the end of the block of code following the closing curly brace. Even though we say there is an if <em>statement</em> here, the if portion doesn't actually have a semicolon on the end. Including a semicolon following the if portion of this code snippet is actually a common error that can be difficult to debug (the body of the if would always execute in this case and no error message would be given).
+    </p>
+    <p>
+        Another important consideration is style. Note that all of the statements inside of the block are indented. This is an important convention in Java that makes the code much easier to read. Soon you will be including blocks of code inside of blocks of code, and each should be further indented, helping the programmer to see how deeply <term>nested</term> the blocks of code are. Typically each nested statement is indented two spaces. Sometimes a tab or four spaces is used instead, but this can become a problem with larger programs. Whatever choice you make, the most important consideration is that you use consistent indentation throughout your program.
+    </p>
+    
+    
+        <p>Conditional expressions provided a value whether our boolean expression evaluated to <c>true</c> <em>or</em> <c>false</c>. We can similarly provide an alternative block of statements we want executed if the boolean expression used in our if statement evaluates to false by using an <c>else</c> statement.
+        </p>
+
+        <figure>
+            <title>if-else-statement</title>
+            <caption>Anatomy of an if / else Statement</caption>
+            <image width="40%" source="figures/if-else-statement.png"/>
+        </figure>
+
+        <p>
+            Else statements look exactly like if statements but must immediately follow the end of the if statement.
+        </p>
+
+</section>
+

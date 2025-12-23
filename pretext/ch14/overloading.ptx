@@ -1,0 +1,39 @@
+
+<subsection xml:id="overloading">
+    
+        <title>Overloading Method Parameters</title>
+    
+
+<p>What if the programmer wanted to develop a method that could take more than one type of argument? You may have noticed in the past that the <c>abs</c> method in the <c>Math</c> class works with either <c>int</c> values or <c>double</c> values. That is because there are two different implementations of this method, one for each of these parameter data types. This is called <term>overloading</term>.
+</p>
+    <p>
+Methods in Java are not identified by their name alone. If you were to call <c>Math.abs(5)</c>, the Java compiler will search for a method named <c>abs</c> that has exactly one parameter of type <c>int</c> to bind this call to. There may be another method named <c>abs</c> that has a parameter of type <c>double</c>, or more than one parameter, or no parameters, etc..
+    </p>
+
+    <example>
+
+        <p>Consider the following method definitions:</p>
+
+<program language="java"><input>
+int abs(int a) {
+  System.out.println("abs was called with an int");
+  return a > 0 ? a : -a;
+}
+
+double abs(double a) {
+  System.out.println("abs was called with an double");
+  return a > 0 ? a : -a;
+}
+</input></program>
+
+<p>The implementations of these methods look nearly identical, but if you enter them in to jshell and then evaluate the following statements:
+</p>
+<program language="java"><input>
+abs(-5);
+abs(-5.0);
+</input></program>
+
+<p>You will see that one returns an integer value and the other returns a double value, as well as each printing out a different message.
+</p>
+    </example>
+</subsection>

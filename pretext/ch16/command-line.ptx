@@ -1,0 +1,47 @@
+
+<section xml:id="command-line">
+    
+        <title>Command-Line Arguments</title>
+    
+    <p>
+Though you should understand what the type <c>String[]</c> means at this point (an array of string values), it may not be clear why a parameter with this type must be provided to the main method. The purpose of this parameter is to hold any <term>command-line arguments</term> that may be provided to your application when it is started at the command prompt. This would allow you to write an application similar to <em>javac</em> itself!
+    </p>
+    <p>
+Consider the following example program:
+    </p>
+<program language="java"><input>
+public class CommandLineDemo {
+  public static void main(String[] args) {
+    for(int i=0; i&lt;args.length; i++) {
+      System.out.println(args[i]);
+    }
+  }
+}
+</input></program>
+
+    <p>
+    This application prints out each of the command line arguments given to it when it is executed. These arguments are specified at the end of the <em>java</em> command that starts the JRE.
+    </p>
+
+    <p>
+    For example, if you were to compile and run this program with the following command:
+    </p>
+<console>
+    <input>
+    java CommandLineDemo here are some arguments
+  </input>
+</console>
+    <p>
+    ...the following would be printed to the screen:
+    </p>
+
+<console>
+<output>
+here
+are
+some
+arguments
+</output><!-- TODO: check to see if this renders correctly /-->
+</console>
+</section>
+

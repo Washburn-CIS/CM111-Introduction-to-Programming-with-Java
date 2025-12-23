@@ -1,0 +1,146 @@
+<section xml:id="objects">
+        <title>Object Types</title>
+    
+        <p>Thus far we've worked with very simple data in Java (integers, floating point numbers, etc). These data types represent single values with no structure to them and can represent such real-world data as test scores, temperatures, etc. However, how do we represent more complex real-world data? How would we be able to send data about a book, or a completed exam, or an immunization record? 
+        </p>
+        
+        <p>Some data doesn't consist of one simple value. More complex data may have multiple named <term>fields</term>. For example, an employee record may have a name, a hire date, a department, etc. Furthermore, operations on this data are also going to be more complicated. We can add and subtract integers, but we hire or fire employees, or put them to work on tasks. We also need new operations for more complex data.
+        </p>
+        
+        <p>Both of these problems are solved by a whole new category of data types: objects. Object types are fundamentally different from primitive types. Object data types can have multiple fields associated with them and also have <term>instance methods</term> that allow you to perform operations over the objects. 
+        </p>
+        
+        <p>Objects are a very important part of the Java programming language (and are the reason
+        Java is referred to as an <term>Object Oriented</term> programming language). In
+        Java, you are also able to create new object types if some of the standard ones that ship
+        with the JDK are not what you need or what you want -- however creating new object types is
+        a more advanced topic that will be covered in a future course. This section will show you
+        how to work with some of the object types available to you with a standard JDK. </p>
+    
+    <subsection>
+        
+            <title>Classes, Packages, and Import Statements</title>
+        
+        
+        <p>Objects are also called <term>instances</term> of a <term>class</term> in Java. A class is essentially a definition of an object type that determines what fields an object will have and what methods you can use to interact with the object. For example, there might be an <c>Employee</c> class, but you could potentially have many instances of that class (objects) that represent individual employees with their own names, hire dates, etc. The <c>Employee</c> class is merely a data type that ensures each of the objects that are instances of it have these features in common. </p>
+        
+        <p>Java provides literally thousands of classes with the JDK that you may use to create
+            programs. Because there are so many classes, there was a need to keep them organized
+            (it's possible two classes might even have the same name, such as a
+                <c>Deal</c> class that might refer to a business deal or the cards laid
+            down in a poker game). Java organizes classes by placing them in named
+                <term>packages</term>. For example, Java has a class called
+                <c>Point</c> that is used to represent a point in a 2 dimensional
+            Cartesian plane. However, to avoid possible name conflicts and to help keep things
+            organized, this class is placed in a package named <c>java.awt</c>, along
+            with several other classes that assist with computer graphics. Remember that each class
+            represents a data type, and data types have names (such as int). In this case, the name
+            of this data type, including its package name, is <c>java.awt.Point</c>. </p>
+        
+        <p>It can be cumbersome to have to type in all of that every time you want to refer to a
+            data type, so java provides <term>import statements</term> to allow you to
+            shorten it to just the class name (in this case, <c>Point</c>). In order to
+            use <c>Point</c> as the name of the data type rather than
+                <c>java.awt.Point</c>, enter this import statement in the REPL:
+            <programlisting>import java.awt.Point;</programlisting> You can also import all of the
+            classes in the <c>java.awt</c> package at the same time if you want to by
+            using a <term>wildcard</term> in your import statement in place of the class
+            name: <programlisting>import java.awt.*;</programlisting> This would allow you to use
+            the short name for <c>Point</c>, but also <c>Polygon</c>
+            (instead of <c>java.awt.Polygon</c> and many other classes in the
+                <c>java.awt</c> package). Generally the use of wild cards is discouraged
+            since you often will only need a handful of classes from a single package, and having
+            each of them listed explicitly in an import statement makes it clear what classes you're
+            using in your code. It also helps avoid the possibility of name conflicts. </p>
+        
+    </subsection>
+    
+    
+    <subsection>
+        
+            <title>Constructor Calls</title>
+        
+        
+        <p>Before you can use an object, you need to be able to create one. To create an object, you must call a special method called a <term>constructor</term>. There is a special syntax for calling constructors outlined in the diagram below:</p>
+        
+        
+        <figure>
+            <title>constructor-call</title>
+            <caption>Anatomy of a Constructor Method Call</caption>
+            <image width="40%" source="figures/constructor-call.png"/>
+        </figure>
+        
+        
+        <p>Assuming you've already imported the <c>Point</c> class, this is a method call expression that creates a new <c>Point</c> object with its <c>x</c> field set to <c>5</c> and its <c>y</c> set to <c>2</c>. Some constructors will require more or fewer arguments, and some will require none at all. In fact, if you provide no arguments to the constructor for the <c>Point</c> class, it will create a <c>Point</c> object with its <c>x</c> field set to 0 and its <c>y</c> field set to <c>0</c>:
+<programlisting>new Point()</programlisting>   </p>     
+        
+    </subsection>
+    
+          
+    <subsection>
+        
+            <title>Object Type Variables</title>
+        
+        
+        <p>If we want to store and manipulate the object values we create with constructor calls, we need to be able to put them in to variables. Object type variables work exactly the same as primitive type variables. You can simply use the <c>var</c> keyword and the proper data type will be assigned to the variable you create and initialize with a constructor call. The following example stores a point at x coordinate 4 and y coordinate 1 in a variable called <c>homeLocation</c>:
+        <programlisting>var homeLocation = new Point(4, 1);</programlisting>
+        Also, if you want to explicitly name the type rather than using the <c>var</c> keyword, you can simply use the class name as the name of the data type. The following example does the exact same thing as the previous example:
+        <programlisting>Point homeLocation = new Point(4, 1);</programlisting>
+        
+        Again, the <c>var</c> syntax is preferred wherever possible, but there will be some cases where you will need to name the type explicitly. 
+        </p>
+    </subsection>
+    
+    <subsection>
+        
+            <title>Instance Method Calls</title>
+        
+        
+        <p>Once you create an object and store it in to a variable, you can interact with that object by calling its instance methods. Calling an instance method looks a lot like calling a normal method with the difference that you start with an expression of an object type, follow it with a dot, and then follow that with the method call. Typically, you will just use a variable reference as the object type expression. Below is a diagram of an instance method call on the <c>Point</c> object stored in the <c>homeLocation</c> variable we declared in the last section:
+        
+        
+            <figure>
+                <title>instance-method-call</title>
+                <caption>Anatomy of an Instance Method Call</caption>
+                <image width="80%" source="figures/instance-method-call.png"/>
+            </figure>
+            
+        
+        This method call moves the <c>Point</c> object forward <c>2</c> in the <c>x</c> direction and backward <c>1</c> in the <c>y</c> direction, meaning that the <c>Point</c> object will now be at location 6, 0 on the coordinate plane. Note that <em>translation</em> is an operation frequently applied to points in computer graphics, so it was developed as an instance method for the <c>Point</c> class. This is an example of how objects provide useful abstractions in object-oriented programming, just as static methods do. </p>
+        
+        <p>The <c>Point</c> class has several other useful instance methods that can
+            be called. Some of them have return values and some of them don't. You can find them all
+            summarized here:ba
+                <uri>https://docs.oracle.com/javase/10/docs/api/java/awt/Point.html</uri>
+        </p>
+        
+    </subsection>
+    
+    
+    <subsection>
+        
+            <title>Object Fields</title>
+        
+        
+        <p>Some classes will allow you to access the object's fields directly and <c>Point</c> is one of them. You can access a field just as you would an instance method. For example, to directly access the <c>x</c> coordinate of the <c>Point</c> object stored in <c>homeLocation</c>, you could use the following expression:
+        <programlisting>homeLocation.x</programlisting>
+        </p>
+        
+        <p>Most classes will prevent you from accessing the object's fields in this way as it's
+            generally considered bad style to write classes that expose their fields (though it's
+            debatable whether it was a bad choice for the <c>Point</c> class,
+            specifically). There are two primary reasons for this: is that it is expected that the
+            designer of the class has already provided sufficiently powerful instance methods that
+            serve as the proper means for manipulating the object, and more importantly also because
+            it helps prevent errors that could occur when another programmer manipulates a field in
+            a way that the designer of the class didn't anticipate (such as setting the balance of a
+            bank account to a negative number). By only allowing objects to be manipulated through
+            carefully designed instance methods, objects serve as more accurate abstractions of some
+            real-world concept you're attempting to model in your program. </p>
+        
+    </subsection>
+    
+    
+</section>
+
+

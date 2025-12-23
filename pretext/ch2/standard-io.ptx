@@ -1,0 +1,119 @@
+<section xml:id="standard-io">
+        <title>Standard Input / Output</title>
+
+<p>The programs you write will need to be able to interact with a user and thus require some sort of <term>user interface</term>. A text-based user interface (or command-line interface) is a very simple and straight forward way to start interacting with the users of your programs by printing information to the screen for the user in text format and taking in data when the user types something at the keyboard. JShell is an excellent example of a program that uses a text-based user interface. This was a very popular style of application on older computer systems in the 90's and earlier but has remained relevant and has perhaps even gained popularity more recently.
+</p>
+    <p>Now that you've had experience with characters and strings, you can use these data types to send messages back and forth with the user.
+    </p>
+
+
+
+    <subsection>
+        <title>Printing to Standard Output</title>
+        <p>We've received messages back from the REPL each time we evaluate an expression, but perhaps we would like a message to be delivered somewhere during the execution of our program. Many ``text-based'' applications interact with their users solely through messages printed to a console (such as the REPL itself). Java has a special function for printing such messages to what is called \textit{standard output} or \textit{the console}. In the case of jshell, standard output is simply the jshell screen, so any messages you print while using jshell will show up there.
+        </p>
+        
+        <p>The method we will use to print to standard output is unfortunately (and infamously) somewhat complicated looking. Technically, it is an instance method that we call from a PrintWriter object. The PrintWriter object in question is a static variable in the \textbf{System} class called \textbf{out}, and the instance method we'll call from this object is called textbf{println}. So all together, we'll be calling this method by calling \textbf{System.out.println}. If the last sentence is all you remember from this paragraph, that's all you'll need for the rest of the semester. 
+            
+        </p>
+        
+        <p>This method will take one argument -- whatever we want printed to standard output. So, if we want to print the number 5 to our jshell screen, we can use the following method call:
+        </p>
+        
+        <program language="java"><input>
+System.out.println(5);
+        </input></program>
+        
+        <p>Note that this method doesn't return anything. It will take any type of expression we give it, however. So the following code:
+        </p>
+        
+        <program language="java"><input>
+System.out.println("Joseph Kendall-Morwick");            
+        </input></program>
+        
+        <p>prints my name to standard output, and the following code:</p>
+        
+        <program language="java"><input>System.out.println(1 + 1 == 2);</input></program>
+        
+        <p>
+            prints the value \textit{true} to standard output.  Note that if you don't want a newline printed, you can use System.out.print instead. This allows you to make multiple calls without continuing to the next line. For instance:
+        </p>
+        
+        
+<program language="java"><input>
+System.out.print("hi");
+System.out.print(" ");
+System.out.print("there");
+</input></program>
+        <p>would print:</p>
+        
+<console><output>hi there</output></console>
+    </subsection>
+
+
+    <subsection>
+        <title>Reading from Standard Input</title>
+        <p>
+            A text-based application writes to <term>standard output</term> to communicate something to the user. You've already seen how to do this in the "Hello World!" example. What you haven't seen yet is how to receive a response from the user while your program is running. This chapter will introduce <c>Scanner</c> objects which allow you to read messages from <term>standard input</term>.
+        </p>
+
+        <p>To create a scanner, you need to provide it with an <c>InputStream</c> object to read data in from. Java prepares an input stream that will read data from the standard input (usually the keyboard, though it's a bit more complicated than that) and stores it in <c>System.in</c>, so simply provide that as the argument to the constructor for the <c>Scanner</c> class. The example below creates a scanner object stored in a variable named <c>in</c>:
+
+<program language="java"><input>
+var in = new Scanner(System.in);
+</input></program>
+
+		Now we need to do something with the scanner! A line of input can be read in from the user by calling the <c>nextLine</c> instance method. Note that this is a method that <term>blocks</term>, meaning that execution of your program will halt at the point that this method is called and will not resume until the user hits the enter key. This method has a return value of type <c>String</c>. The string that it returns will be whatever the user typed in. For example, running the following program will ask the user to type something in, and then will simply repeat it back to them:
+<program language="java"><input>
+var in = new Scanner(System.in);
+print("Please enter a message: ");
+var message = in.nextLine();
+println("You typed: " + message);
+in.close();
+</input></program>
+</p>
+        <p>
+        Note that <c>print</c> is called first instead of <c>println</c>. These methods work the same way with the exception that the latter will jump to the next line of output when it's finished. By calling <c>print</c> instead, the user will type something on the same line that they're being prompted on (similar to how JShell itself works).
+
+        </p>
+        <p> Also note that a call is made to the <c>close</c> instance method for the scanner on the last line of the program. This essentially lets the system know that you're done using the standard input stream. You won't always run in to trouble if you neglect to close your scanner, but there are many times where this sort of cleanup code is important, so it's good form to always close scanners when you're finished with them.</p>
+    </subsection>
+
+        <subsection>
+        <title>Reading in Other Datatypes</title>
+        <p>
+            If you ask a user for a number and read it in with <c>nextLine</c>, you will have a string, not an int or double! That means that if you try to add something to it, you'll be concatenating, not adding. </p>
+
+            <p> Scanners have many instance methods you can use to read in data other than strings. For example, you can call the <c>nextInt</c> or <c>nextDouble</c> methods to read in numeric data as an <c>int</c> or <c>double</c>, respectively. However, there is a problem with using these methods: They don't necessarily read an entire line of input, they only read the next value stored in an input buffer for the scanner. What this means is that if the user types in two different numbers separated by a space in one line, such as
+<pre>
+23 54
+</pre>, calling <c>nextInt</c> once will return the value <c>23</c> and calling it a second time will return the value <c>54</c> without blocking and waiting for the user to enter another line of input. Sometimes this is exactly the behaviour you want from your scanner, but more often when writing text-based applications, this will create a confusing and error-prone experience for your users.
+        </p>
+
+        <p>In a text-based application, a better approach is to always use <c>nextLine</c> to read in an entire line of input. Once you've read this line in, if you want to perform arithmetic with it, you can convert it from a string in to an integer with the static method <c>parseInt</c>. It's available for use after entering the following import statement:
+<program language="java"><input>
+import static java.lang.Integer.parseInt;
+</input></program>
+        This method takes a <c>String</c> as input and returns an <c>int</c>. The following program uses the <c>parseInt</c> method to read two numbers in from the user and print out their sum:
+<program language="java"><input>
+import java.util.Scanner;
+import static java.lang.Integer.parseInt;
+
+var in = new Scanner(System.in);
+print("Enter a number: ");
+var firstNumber = parseInt(in.nextLine());
+print("Enter another number: ");
+var secondNumber = parseInt(in.nextLine());
+println("Their sum is: " + (firstNumber + secondNumber));
+</input></program>
+		</p>
+
+		<p>Note that if the string contains data that is not properly formatted as an integer (such as "23.43" or "ham sandwich"), an error will occur. That means that the user can cause this program to misbehave by typing in bad data! This will also happen with the <c>nextInt</c> instance method. We'll see some ways to defend against foolishness on the user's part in future chapters.</p>
+    </subsection>
+
+   
+    
+    
+</section>
+
+

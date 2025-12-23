@@ -1,0 +1,71 @@
+<section xml:id="code-organization">
+        <title>Code Organization</title>
+
+        <p>Programmers rarely write their programs from scratch. Nearly all programs are written to take advantage of some pre-existing code that handles common tasks. This way programmers don't need to repeat themselves whenever they need to sort a list of numbers or print something to the screen. In this section, we'll explore how this code is organized in to an <term>Application Programming Interface</term> (or API), and how Java specifically organizes their API. </p>
+
+
+    <subsection><title>The Java API</title>
+      <p>There was once a time when a programming language was formally specified, a compiler or interpreter was provided, and not much more was expected from those developing the programming language. This time has clearly passed, as programmers now (rightly) expect access to a collection of code and other tools that can handle most of the simple tasks that many programs will need to perform, such as drawing graphics to the screen or downloading a file from the internet. Expecting the programmer to repeatedly develop code for these simple tasks is essentially wasting the time of a well paid professional. </p>
+
+      <p>This collection of code and other tools is called an Application Programming Interface (API). Every popular modern language offers some form of standardized API for programmers. </p>
+
+      <p>Programmers learn the API as a skill similarly to learning the language as a skill. For example, employers who seek to hire a programmer familiar with Java will not only expect applicants to understand the syntax of the language, but also many of the common tricks and best practices related to the API. However, unlike the syntax of a language, it is never expected that any programmer will remember every part of the API. API's are typically very large and need to be well documented to be useful. Programmers often use two or three monitors in part for the purpose of having the API documentation on the screen at all times while programming. </p>
+
+      <p>It could be said that a large part of the success of Java as a programming language can be credited to the effort to develop an API that is substantial, well organized, and easy to navigate. Java was one of the first languages to make this development a major priority. You can navigate through documentation for all of the code in the Java API by looking up the most current API documentation on Oracle's web site (as of this writing, JDK 11: <link>https://docs.oracle.com/en/java/javase/11/docs/api/index.html</link>).
+      </p>
+      <p>Because Java's API is so large, several measures have been taken to help keep it organized. The most recent addition is modules, but packages and classes have also been around since the first versions of Java. These organizational structures are described in the following sections. </p>
+    </subsection>
+
+    <subsection><title>Modules</title>
+    <p>Modules were first introduced in Java 9 and are intended to help solve problems of software dependencies that many third party products (such as Maven) had been developed to solve for Java over the last decade. That is to say, perhaps you develop a very large collection of Java code, perhaps an API for interfacing with a new robot that you've invented, but your robot API also makes use of other API's, such as the code Oracle provides for many common mathematical operations (we'll see this code, specifically, in other sections). You would want to be able to communicate to other programmers that your API must be installed alongside a certain version of Oracle's API. You could accomplish this in Java by creating a module containing all of your robot API and configuring that module to be dependent on the <c>java.base</c> module from Oracle.</p>
+
+    <p>Since modules are intended to manage very large and complex software projects, we won't provide a focused look at them at this point. What is important for you to understand about modules is that they are the top level of organization of the Java API and that nearly all of the code that you'll be working with while you're learning the basics of Java will be available in the <c>java.base</c> module. All of the code in this module is available to you whenever you start up a JShell or write just about any Java program. Thus, if you're exploring the API documentation as you read this chapter (which is recommended), click on the <c>java.base</c> module before continuing. </p>
+    </subsection>
+
+    <subsection><title>Packages</title>
+      <p>Packages are intended to group together code that relates to a more specific purpose. For example, the <c>java.io</c> package provides code for communication between different programs (the io is short for Input / Output). Packages also serve the role of preventing name conflicts between their members. For example, You might see a class named <c>Date</c> in several different packages, all implemented in different ways. </p>
+
+      <p>Package names consist of several shorter names separated by periods. Package names are intended to be hierarchical -- that is to say, each name should relate to something more general than the names to its right. Typically the first name or two refer to the organization that developed the code. For example, many of the packages provided by Oracle begin with <c>java</c>. It is also a common convention for an organization to begin a package name with its internet domain name in reverse. For example, packages in the popular Guava API developed by Google begin with <c>com.google</c>.  Some packages that contain code also have subpackages with additional names attached. For example, there is a <c>java.util</c> package with a lot of commonly used code, but there is also a <c>java.util.zip</c> package with code that focuses specifically on file compression.</p>
+
+      <p>In Java API documentation, after selecting a module, you can select individual packages to find documentation on code you can use. In this book, we'll frequently look at classes in the <c>java.lang</c> package and also sometimes the <c>java.util</c> and <c>java.io</c> packages. If you're following along, go ahead and click on the <c>java.lang</c> package.</p>
+    </subsection>
+
+    <subsection><title>Classes</title>
+      <p>Inside of packages, you'll find a general description of the package and several additional organizational categories of code, including interfaces, classes, enumerations, exceptions, errors, and annotations. For now, we'll focus specifically on classes, in part because all of the other organizational categories are essentially more specialized forms of classes.</p>
+
+      <p>Classes serve two very important purposes in Java. They organize individual methods and other class members which can be called on to <em>actually do something</em>, but they also define object data types (such as the <c>String</c> type) which differ from the primitive data types we've mainly worked with. Other sections of this book will go in to more detail on object types and the purpose of classes as they relate to Java's support for Object-Oriented Programming (OOP), but for now we'll focus on their prior role and how we can directly get to some code we can use right away.</p>
+
+      <p>When you click on an individual class in the documentation, you will find a description of its purpose and descriptions of its individual members. For example, let's look at the <c>Math</c> class. Note that at the top of the page, it is identified as the Class <c>Math</c> but also as <c>java.lang.Math</c> below that. Technically, this longer name is the full-name of the class and can be referenced at any point in your program as the name of this class. It has two important kinds of members we'll look at: static fields and static methods. </p>
+
+      <p>A <term>static</term> field (or method) is one that can be referenced directly from the class. Other fields and methods (called instance fields and instance methods) that you'll see in other sections of this book need to be referenced in a more complicated way because they will be part of an object (again, objects are covered in much more detail in other sections of this book). Static fields and static methods sit outside of the Object-Oriented nature of Java, and more so resemble plain variables and functions that you might see in any other programming language. Until you reach the sections that focus more on objects and object-oriented programming, you'll only really need to look at the methods and fields of classes that have the <c>static</c>  keyword before their descriptions.</p>
+
+      <p>You can think of fields as a special kind of variable that is organized within a class.  Static fields are typically constants (that is, they cannot be changed). Note that there are two fields in the <c>Math</c> class: <c>E</c> and <c>PI</c>, which contain estimates of these two famous mathematical constants. Note that they are only estimates because both of these constants are infinite, non-repeating decimals. Variables in general are covered in more detail in another section of this book.</p>
+
+      <p>To access a static member of a class, you must give the full name of the class, followed by a period, followed by the name of the member you wish to access. For example, you could access the <c>PI</c> constant with the following expression in JShell:
+<programlisting>java.lang.Math.PI</programlisting>
+    </p>
+
+      <p>Methods resemble small portions of a program that you can repeatedly run. Static methods inside of classes will usually handle some very common task that would be tedious for a programmer to frequently write out all the code for. For example, in the <c>Math</c> class, there is a method for computing the maximum of two different numbers. This is a fairly simple operation you could handle with a single expression, but having it in a standard method with a salient name makes the code you write easier to read for other programmers and yourself! You can access static methods similarly to how you would access a static field. Methods in general are covered in more detail in another section of this book.</p>
+    </subsection>
+
+    <subsection><title>Import Statements</title>
+    	<p>Referring to static members of a class using their full name can be tedious. Often you will want to simply refer to them with their short name, like <c>PI</c> in the <c>Math</c> class rather than <c>java.lang.Math.</c><c>PI</c>. One of the main purposes of packages is to prevent name conflicts, but we can selectively bring in names of individual classes or individual members of classes by importing them. If we only import the classes or members of classes we need, we shouldn't have to worry about name conflicts. </p>
+
+      <p>To import a class, you will need to use an <term>import statement</term>. Import statements begin with the <c>import</c> keyword, followed by the full name of a class (that is, the short name of the class preceded by the name of the package it belongs to), and ending with a semicolon. Importing a class allows us to refer to that class using only its short name. For example, if we imported the <c>Math</c> class with the following import statement:
+<programlisting>import java.lang.Math;</programlisting>
+      We could simply refer to the constant <c>PI</c> with the following expression:
+<programlisting>Math.PI</programlisting>
+    </p>
+    <p>Note that, by default, all of the classes in the <c>java.lang</c> package are automatically imported. Thus, you didn't actually need the import statement in the previous example! However, this import statement will be needed for any other package when you're working with JShell. </p>
+
+      <p>We can also import individual static members of a class if we wish, making it even more simple to refer to the members we're interested in using. When we import <c>static</c> class members, we also need to follow the <c>import</c> keyword with the <em>static</em> keyword. What follows is the full name of a class and the name of the method or field we want to import, all separated by periods. For example, below is an import statement that allows us to use the <c>PI</c> constant without referring to the <c>Math</c> class:
+<programlisting>import static java.lang.Math.PI;</programlisting>
+      In this case, the package name is <c>java.lang</c>, the class name is <c>Math</c>, and the name of the class member to be imported is <c>PI</c>. Now we could reference the <c>PI</c> constant in JShell simply by using its name:
+<programlisting>PI</programlisting>
+      We could import all of the static members of the <c>Math</c> class at the same time if we wished by replacing the method name with a wildcard in the import statement:
+<programlisting>import static java.lang.Math.*;</programlisting>
+		This would allow us to use the complete collection of static methods and fields organized in to the <c>Math</c> class. Wildcards can also be used to import multiple classes at once from a package. 
+    	</p>
+    </subsection>
+
+</section>

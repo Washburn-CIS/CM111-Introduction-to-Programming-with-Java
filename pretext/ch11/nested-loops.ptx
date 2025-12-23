@@ -1,0 +1,161 @@
+<!-- NOTE: this section is integrated from JavaJavaJava section 6.3.5 version 0a3c7b2 /-->
+<subsection xml:id="nested-loops">
+    
+        <title>Nested Loops</title>
+    
+    <p>
+      A <term>nested loop</term> is a structure in which one loop is contained inside the body of another loop,
+      such as when a <c>for</c> loop body contains a <c>for</c> loop.
+      For example, suppose you are working for Giant Auto Industries,
+      and your boss wants you to print a table for buyers to figure the cost of buying multiple quantities of a certain part.
+      The cost of individual parts ranges from $1 to $9.
+      The cost of <em>N</em> items is simply the unit price times the quantity.
+      Thus, you'll want to print something like the following table of numbers,
+      where the prices per unit are listed in the top row,
+      and the prices for 2, 3 and 4 units are listed in subsequent rows:
+    </p>
+ <program language="java"><input>
+ 1  2  3  4  5  6  7  8  9
+ 2  4  6  8  10 12 14 16 18
+ 3  6  9  12 15 18 21 24 27
+ 4  8  12 16 20 24 28 32 36
+ </input></program>
+    <p>
+      To produce this multiplication table,
+      we could use the following nested <c>for</c> loops:
+    </p>
+    <p>
+      
+    </p>
+    <activity label="mult-table"><statement>
+      <p>Run the code below to see 4x9 multiplication table. Can you change it to be 5x10 multiplcation table?</p>
+    </statement>
+    <program language="java" interactive="activecode"><input>
+    public class MultTable
+    {             
+        public static void main(String[] args)
+        {
+            for (int row = 1; row &lt;= 4 ; row++) { // For each of 4 rows
+                for (int col = 1; col &lt;= 9; col++) // For each of 9 columns
+                     System.out.print(col * row + "\t" );      // Print number
+                System.out.println();              // Start a new row         
+            } // for row
+        }
+    }
+ </input></program>
+ </activity>
+    <p>
+      Note how indenting is used here to distinguish the levels of nesting and to make the code more readable.
+      In this example, the <em>outer loop</em>
+       controls the number of rows in the table, hence,
+      our choice of <c>row</c> as its loop counter.
+      The <c>println()</c> statement is executed after the
+      <em>inner loop</em> is done iterating,
+      which allows us to print a new row on each iteration of the outer loop.
+      The inner loop prints the nine values in each row by printing the expression
+      <em>col * row</em>.
+      Obviously, the value of this expression depends on both loop variables.
+    </p>
+    <p>
+      Let's dissect this example a bit.
+      How many times is the inner <c>for</c> statement executed?
+      The inner loop is executed once for each iteration of the outer loop.
+      Thus, it is executed four times.
+      How many times is the body of the inner loop executed?
+      The body of the inner loop is executed 36 times<mdash/>9 times for each execution of line 2.
+    </p>
+    <p>
+      Sometimes it is useful to use the loop variable of the outer loop as  the bound for the inner loop.
+      For example, consider the following pattern:
+    </p>
+ <program language="java"><input>
+ # # # # #
+ # # # #
+ # # #
+ # #
+ #
+ </input></program>
+    <p>
+      Note that the number of # symbols in each row varies inversely with the row number.
+      In row 1, we have five symbols;
+      in row 2 we have four;
+      and so on down to row 5, where we have one #.
+    </p>
+    <p>
+      To produce this kind of two-dimensional pattern, we need two counters:
+      one to count the row number,
+      and one to count the number of # symbols in each row.
+      Because we have to print each row's symbols before moving on to the next row,
+      the outer loop will count row numbers,
+      and the inner loop will count the symbols in each row.
+      But note that the inner loop's bound will depend on the row number.
+      Thus, in row 1 we want five symbols;
+      in row 2 we want four symbols; and so on.
+      If we let <c>row</c> be the row number,
+      then in each row we want to print 6 <m>-</m> <em>row</em> symbols.
+      The following table shows the relationship we want:
+    </p>
+    <table>
+      <tabular>
+        <row  bottom="minor">
+          <cell>Row</cell>
+          <cell>Bound (6-row)</cell>
+          <cell>Number of Symbols</cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell>6-1</cell>
+          <cell>5</cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell>6-2</cell>
+          <cell>4</cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell>6-3</cell>
+          <cell>3</cell>
+        </row>
+        <row>
+          <cell>4</cell>
+          <cell>6-4</cell>
+          <cell>2</cell>
+        </row>
+        <row>
+          <cell>5</cell>
+          <cell>6-5</cell>
+          <cell>1</cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      If we let <em>j</em> be the counter for the inner loop,
+      then <em>j</em> will be bound by the expression 6 <m>-</m> <em>row</em>.
+      This leads to the following nested loop structure:
+    </p>
+    <activity label="nested-pattern"><statement>
+      <p> Run the code below. Try changing the bounds of the loops to change the pattern.</p>
+    </statement>
+<program language="java" interactive="activecode"><input>
+public class Pattern
+{                   
+    public static void main(String[] args)
+    {
+        for (int row = 1; row &lt;= 5; row++) { // For each row
+          for (int j = 1; j &lt;= 6 - row; j++)// Print the row
+            System.out.print('#');
+          System.out.println();    // Start a new line
+        } // for row
+    }
+}
+ </input></program>
+ </activity>
+
+    <p>
+      Note that the bound of the inner loop varies according to the value of <em>row</em>,
+      the loop counter for the outer loop.
+    </p>
+   
+ 
+  </subsection>

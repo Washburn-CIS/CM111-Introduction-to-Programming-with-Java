@@ -1,0 +1,207 @@
+<!-- NOTE: this section is integrated from JavaJavaJava sections 11.1, 11.2, and 11.3 version 0b4e914 /-->
+<section xml:id="fileio">
+        <title>File Input and Output</title>
+    
+
+<subsection xml:id="introduction28"><!-- NOTE: this section is integrated from JavaJavaJava section 11.1 version 0b4e914 /-->
+  <title>Introduction</title>
+  <p>
+    We have been using input and output in our programs since the very first chapters of the book.
+    We will now take a closer look at Java's input and output elements.
+  </p>
+  <p>
+    <term>Input</term> refers to information or data read from some external source into a running program.
+    
+    <term>Output</term> refers to information or data written from the running program to some external destination.
+    Up to this point, whenever our programs have produced output,
+    it has been sent to the Java console.
+  </p>
+  <p>
+    A <term>file</term> is a collection of data that's stored on a disk or on some other relatively permanent storage medium.
+    A file's existence does not depend on a running program.
+    In this section,
+    we will learn how to create files and how to perform input and output operations on their data using the 
+    Java classes designed specifically for this purpose.
+    Methods from these classes allow us to write data to files and provide greater flexibility in the way we 
+    read data from files than the <c>Scanner</c> class offers.
+  </p>
+</subsection>
+
+<subsection xml:id="streamsand-files"><!-- NOTE: this section is integrated from JavaJavaJava section 11.2 version 0b4e914 /-->
+  <title>Streams and Files</title>
+    <p>
+      All input and output (I/O) in Java is accomplished through the use of input streams and output streams.
+      You are already familiar with input and output streams because we  have routinely used the <c>System.out</c> 
+      output stream and and the <c>System.in</c> input stream.
+      Recall that <c>System.out</c> usually connects your program (source) to the screen 
+      (destination) and <c>System.in</c> usually connects the keyboard (source) to the running program
+      (destination).
+      What you have learned about streams will also be a key for connecting files to a program.
+    </p>
+  
+  
+    <p>
+      Data, or information,
+      are the contents that flow through Java streams and are stored in files.
+      All data are comprised of binary digits or <em>bits</em>.
+      A bit is simply a 0 or a 1, the electronic states that correspond to these values.
+      A bit is the smallest unit of data.
+    </p>
+    <p>
+      However, it would be tedious if a program had to work with data in units as small as bits.
+      Therefore, most operations involve various-sized aggregates of data such as an 
+      8-bit <c>byte</c>, a 16-bit <c>short</c>, a 16-bit <c>char</c>, a 32-bit <c>int</c>, a 64-bit <c>long</c>, a 32-bit
+      <c>float</c>, or a 64-bit <c>double</c>. These are Java's primitive numeric types.
+      In addition to these aggregates,
+      we can group together a sequence of <c>char</c> to form a <c>String</c>.
+    </p>
+    <p>
+      There are two types of files in Java:
+      binary files and text files. 
+      Both kinds store data as a sequence of bits<mdash/>that is,
+      a sequence of 0's and 1's.
+      Thus, the difference between the two types of files lies in the way they are interpreted by the programs that read and write them.
+      A <em>binary file</em> is processed as a sequence of bytes,
+      whereas a <em>text file</em> is processed as a sequence of characters. We will focus only on text files for now. 
+    </p>
+    <p>
+      Text editors and other programs that process text files interpret the file's sequence of 
+      bits as a sequence of characters<mdash/>that is,
+      as a string.
+      Your Java source programs (<c>*.java</c>) are text files,
+      and so are the HTML files that populate the World Wide Web.
+      The big advantage of text files is their portability.
+      Because their data  are represented in the ASCII / unicode, they can be read 
+      and written by just about any text-processing program.
+      Thus, a text file created by a program on a Windows computer can be read by a Macintosh program.
+    </p>
+    <p>
+      Java has a wide variety of streams for performing I/O. They are defined in the <c>java.io</c> package,
+      which must be imported by any program that does I/O. 
+      We will cover only a small portion of them: specifically File, PrintWriter, and once again: Scanner.
+    </p>
+</subsection>
+    
+  <subsection>
+    <title>Text File Format</title>
+    <p>
+      A text file consists of a sequence of characters divided into zero or more lines and ending with a special
+      <term>end-of-file character</term>.
+          <idx><h>end-of-file character</h></idx>
+       When you open a new file in a text editor,
+      it contains zero lines and zero characters.
+      After typing a single character,
+      it would contain one character and one line.
+      The following would be an example of a file with four lines of text:
+    </p>
+ <program language="java"><input>
+one\ntwo\nthree\nfour\n\eof
+ </input></program>
+    <p>
+      Note the use of the end-of-line character,
+      <c>\n</c>, to mark the end of each line,
+      and the use of the end-of-file character,
+      <c>\eof</c>, to mark the end of the file.
+    </p>
+  </subsection>
+  
+  
+<subsection>
+  <title>File Objects</title>
+  Java has a class that can be used to represent individual files, called <c>File</c> in the <c>java.io</c> package. File 
+  objects represent individual files within the file system. You must supply the name of the file to the constructor 
+  of File in order to create an object. These files should reside in the working directory of the Java application
+  (whatever directory you've executed the java program from if you're using the command-line tools) or you can 
+  provide a path to a file in another directory. Following is an example of creating a File object:
+    
+
+ <program language="java"><input>                               
+File myFile = new File("poem.txt");
+ </input></program>    
+</subsection>
+
+
+<subsection>
+  <title>Reading from Files</title>
+<p>Scanners can be used to read data from files just as they are used to read data from standard input. Instead of 
+supplying <c>System.in</c> to the constructor for Scanner, if you want the Scanner to read from a file instead, you 
+can supply a <c>File</c> object to the constructor instead. Generally there isn't a need to close a Scanner when 
+you're reading from standard input with it, but when reading from a file, you should close the Scanner when you're
+finished by calling the <c>close()</c> method from it. </p>
+
+<p>Creating a Scanner with a file raises the potential of a Runtime Error occurring if the file doesn't actually
+exist on the system. The programmer has no control over what files reside on the filesystem over which the 
+application is being run. If the file doesn't exist, a <c>FileNotFoundException</c> is thrown. This is the first example
+of a checked exception that we've seen -- we are forced to deal with the potential of this exception occurring by
+either using a try/catch or declaring that the enclosing method might throw a <c>FileNotFoundException</c>. In order to 
+use either approach, we should also import the <c>FileNotFoundException</c> class from the <c>java.io</c> package. Below
+is an example of a complete program that reads three lines from the file <c>poem.txt</c> and prints them out.</p>
+
+
+<program language="java"><input>                               
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+public class ReadFileExample {
+  public static void main(String[] args) {
+    File f = new File("poem.txt");
+    try {
+        Scanner s = new Scanner(f);  // this can throw FileNotFoundException
+        System.out.println(s.nextLine());
+        System.out.println(s.nextLine());
+        System.out.println(s.nextLine());
+        s.close();
+    } catch(FileNotFoundException e) {
+        System.out.println("could not find poem.txt");
+    }
+  }
+}
+</input></program>  
+</subsection>
+
+
+<subsection><!-- NOTE: this section is integrated from JavaJavaJava section 11.3 version 0b4e914 /-->
+  <title>Writing to Files</title>
+
+    <p>The <c>PrintWriter</c> class has methods are designed to support platform independence 
+      and internationalized I/O<mdash/>that is, I/O that works in different languages and alphabets. 
+      It contains methods for outputting various primitive data<mdash/>integers,
+      floats, and so forth<mdash/>as text, similar to <c>System.out</c>, which has a similar type we won't delve in to here. 
+As you would expect,
+      there is both a <c>print()</c> and
+      <c>println()</c> method for each kind of data that the programmer wants to output.
+    </p>
+    <p>A <c>PrintWriter</c> can be used to write to a file if you pass a file object to its constructor when you create it. If the 
+    file you want to write to doesn't exist, it will be created. If it does exist, it will be overwritten. </p>
+    <p>You will again need to import the class from <c>java.io</c> and account for a <c>FileNotFoundException</c> when you create 
+    the <c>PrintWriter</c>. It is also very important that you close the <c>PrintWriter</c> when you're finished or 
+    its possible that not all of what you wrote to the <c>PrintWriter</c> will end up in the file when you're finished. </p>
+
+
+<program language="java"><input>                               
+import java.io.PrintWriter;
+import java.io.File;
+import java.io.FileNotFoundException;
+
+public class WriteFileExample {
+  public static void main(String[] args) {
+    File f = new File("note.txt");
+    try {
+        PrintWriter out = new PrintWriter(f);
+        out.println("my program works!");
+        out.close();
+    } catch(FileNotFoundException e) {
+        System.out.println("could not open note.txt for writing");
+    }
+  }
+}
+
+</input></program> 
+</subsection>
+
+
+ 
+
+  </section>
+

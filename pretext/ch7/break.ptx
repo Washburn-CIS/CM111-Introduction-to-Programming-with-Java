@@ -1,0 +1,36 @@
+
+<subsection xml:id="break-statements">
+    
+        <title>Break Statements</title>
+    
+
+    <p>Loops don't need to be terminated only when the loop condition becomes false. A loop can be terminated early by using a <term>break statement</term> inside of the loop. When a <c>break</c> statement is encountered, the enclosing loop will immediately terminate and execution will resume just after the closing brace of the
+      loop.
+    </p>
+
+    <p><c>break</c> statements are very simple. They consist of just a single keyword (<c>break</c>) followed by a semicolon:
+  </p>
+  <program language="java"><input>
+    break;
+  </input></program>
+    <p>You will use <c>break</c> statements within an <c>if</c> statement since you will only want to terminate the loop early because of some other condition that arises. You may want to use a break statement if an error occurs that must be processed. You can also intentionally begin an infinite loop (set the loop condition to <c>true</c>) and use break statements to end the loop. </p>
+
+
+  <example><title>Searching for Values in an Array</title>
+    <p>
+      The following code will search through an array <c>arr</c> for the number <c>13</c>:
+    </p>
+    <program language="java"><input>
+int i=0;
+for(; i&lt; arr.length; i++) {
+  if(arr[i] == 13) {
+    break;
+  }
+}
+    </input></program>
+      <p>When this snippet of code completes executing, <c>i</c> will be the index for <c>arr</c> where the value <c>13</c> is located (or it will be <c>arr.length</c> if <c>13</c> doesn't appear in <c>arr</c>).
+      </p>
+  </example>
+
+</subsection>
+

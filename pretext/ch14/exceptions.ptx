@@ -1,0 +1,196 @@
+<!-- NOTE: this section is integrated from JavaJavaJava sections 10.1 and 10.2 version 0b4e914 /-->
+<section xml:id="exceptions">
+    
+        <title>Exception Handling</title>
+    
+    <subsection xml:id="ch-10-intro"><!-- NOTE: this section is integrated from JavaJavaJava section 10.1 version 0b4e914 /-->
+  <title>Introduction</title>
+  <p>
+    Mistakes happen.
+    Making mistakes is the norm rather than the exception.
+    This is not to say that we make mistakes more often than we get it right.
+    It is to say that (almost) nothing we do or build is ever perfectly correct,
+    least of all computer software.
+    No matter how well-designed a program is,
+    there is always the chance that some kind of error will arise during its execution.
+  </p>
+  <p>
+    An <term>exception</term>
+        <idx><h>exception</h></idx>
+    is an erroneous or anomalous condition that arises  while a program is running. Exceptions, in Java,
+    are what we more generally call <idx><h>runtime errors</h></idx> in programs. 
+    Examples of such errors include attempting to divide by 0 (arithmetic exception),
+    reading a decimal value when an integer is expected
+    (number format exception),
+    and referring to a nonexistent character in a string
+    (index out of bounds exception).
+  </p>
+  <p>
+    A well-designed program should not only prevent runtime errors from occurring that would otherwise be 
+    the fault of the programmer, but also runtime errors that are the fault of the user, such as entering a
+    zero value that would eventually become a divisor in the code. Programs should 
+    include code to guard against errors and other exceptional conditions when they arise.
+    This code should be incorporated into the program from the very first stages of its development.
+    That way it can help identify problems during development.
+    In Java, the preferred way of handling such conditions is to use
+    <term>exception handling</term>,
+        <idx><h>exception handling</h></idx>
+    a  divide-and-conquer approach that separates a program's normal code from its error-handling code.
+  </p>
+</subsection>
+
+<!--********************************************************  PROGRESS LINE ********************************************************* /-->
+
+  <subsection>
+    <title>Syntax and Semantics of Try/Throw/Catch</title>
+    <p>
+      A <term>try block</term>
+          <idx><h>try block</h></idx>
+      begins with the keyword <c>try</c> followed by a block  of code enclosed within curly braces.
+      A <em>catch clause</em> or <em>catch block</em>
+          <idx><h>catch block</h></idx>
+      consists of the keyword <c>catch</c>, followed by a parameter declaration that identifies the type of <c>Exception</c> being caught,
+      followed by a collection of statements enclosed within curly braces.
+      These are the statements that  handle the exception by taking appropriate action.
+    </p>
+    <p>
+      Once an exception is thrown,
+      control is transferred out of the try block to the catch block.
+      Control does not return to the try block.
+    </p>
+    <p>
+      The basic syntax of the <c>try/catch</c> statement is summarized in <xref ref="fig-trystmt">Listing</xref>.
+ 
+    </p>
+    <listing xml:id="fig-trystmt">
+      <caption>Java's try/catch statement.</caption>
+ <program language="java"><input>
+try {
+      // Block of statements
+      // At least one of which may throw an exception
+      if ( /* Some condition obtains */ )
+          throw new ExceptionName();
+ } catch (ExceptionName ParameterName) {
+     // Block of statements to be executed
+     // If the ExceptionName exception is thrown in try
+ }  
+ </input></program>
+</listing>
+    <p>
+      The try block is meant to include a statement or statements that might throw an exception.
+      The catch blocks<mdash/>there can be one or more<mdash/>are meant to handle exceptions that are thrown in the try block.
+      A catch block will handle any exception that matches its parameter class.
+    </p>
+    <p>
+      The statements in the try block are part of the program's normal flow  of execution.
+      By encapsulating a group of statements within a try block,
+      you thereby indicate that an exception may be thrown by those statements,
+      and that you intend to catch it.
+      In effect, you are <em>trying</em>
+      a block of code with the possibility that something might go wrong.
+    </p>
+    <p>
+      If an exception is thrown within a try block, Java exits the block and  transfers control to the  <c>catch</c> block that matches the particular kind of exception that was thrown.
+      Exceptions are thrown by using the <c>throw</c> statement,
+      which takes the following general form:
+    </p>
+ <program language="java"><input>
+throw new ExceptionClassName(OptionalMessageString);
+ </input></program>
+    <p>
+      The keyword <c>throw</c> is followed by the instantiation of an object of the <c>ExceptionClassName</c> class.
+      This is done the same way we instantiate any object in Java:
+      by using the <c>new</c> operator and invoking one of the exception's constructor methods.
+      </p>
+    <p>
+      A <c>catch</c> block has the following general form:
+    </p>
+ <program language="java"><input>
+catch (ExceptionClassName ParameterName) {
+    // Exception handling statements
+  }
+ </input></program>
+    <p>
+      A <c>catch</c> block is very much like a method definition.
+      It contains a parameter,
+      which specifies the class of exception that is handled by that block.
+      The <em>ParameterName</em> can be any valid identifier,
+      but it is customary to use <c>e</c> as the <c>catch</c> block parameter.
+      The parameter's scope is limited to the catch block,
+      and it is used to refer to the caught exception.
+    </p>
+    <p>
+      The <em>ExceptionClassName</em>
+      must be an existing Exception type. 
+    </p>
+    <p>
+      To illustrate how to arrange catch clauses,
+      suppose an
+<c>ArithmeticException</c> is thrown in the following <c>try/catch</c> statement:
+    </p>
+ <program language="java"><input>
+try {
+     int x = 5 / 0;
+} catch (ArithmeticException e) {
+     System.out.println("ERROR: " + e.getMessage() );
+     e.printStackTrace();
+     System.exit(1);
+} 
+ </input></program>
+    <p>
+      In this case,
+      the exception would be handled by the <c>ArithmeticException</c> block.
+      On the other hand, if some other kind of exception is raised,
+      it will be caught by the second  catch clause.</p>
+      
+      
+    <p>An exception need not be explicitly thrown in this way in order to occur. Simply dividing an integer by 0 will result in an ArithmeticException. Other methods you call might
+    also throw an exception, such as the nextInt method of Scanner which throws InputMismatchException when a correctly formatted integer is not available in the Scanner's input stream. </p>
+  </subsection>
+  <subsection>
+    <title>Restrictions on the <c>try/catch</c>
+    Statement</title>
+    <p>
+      There are several important restrictions that apply to Java's exception-handling mechanism.
+      <ul>
+        <li>
+          <p>
+            A try block must be immediately followed by one or more catch clauses and a catch clause may only follow a try block.
+          </p>
+        </li>
+        <li>
+          <p>
+            A <c>throw</c> statement is used to throw both checked exceptions and unchecked exceptions,
+            where unchecked exceptions are those belonging to <c>RuntimeException</c> or its subclasses.
+            Unchecked exceptions need not be caught by the program. ArithmeticException and ArrayIndexOutOfBounds exceptions are examples of unchecked exceptions. 
+          </p>
+        </li>
+        <li>
+          <p>
+            A <c>throw</c> statement must be contained within the dynamic scope of a try block,
+            and the type of <c>Exception</c> thrown must match one of the try block's catch clauses.
+            Or the
+<c>throw</c> statement must be contained within a method or constructor that has a <c>throws</c> clause for the type of thrown <c>Exception</c>.
+          </p>
+        </li>
+        <li>
+          <p>
+            A try block must be followed immediately<mdash/>with no intervening code<mdash/>by one or more catch blocks.
+        A catch block can only be preceded by a try block or by another catch block.
+        You may not place intervening code between catch blocks.  </p>
+        </li>
+      </ul>
+    </p>
+  </subsection>
+  <subsection>
+    <title>Methods that Throw Exceptions</title>
+ 
+ <p>You can also write your own methods that throw exceptions. In this case, whether or not the exception you throw is a checked exception is important. 
+    If the exception you throw is checked, you must declare that your method is capable of throwing that exception in the method header using the <c>throws</c> keyword in a clause following the parameter list. An example is below. </p>
+ <program language="java"><input>
+public void someMethodName() throws SomeCheckedException {
+ </input></program>
+  </subsection>
+
+  </section>
+

@@ -1,0 +1,186 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <docinfo>
+    <macros>
+      \newcommand{\R}{\mathbb R}
+    </macros>
+    <latex-image-preamble>
+      \usepackage{tikz}
+    </latex-image-preamble>
+  </docinfo>
+
+  <book xml:id="cm111-intro-to-java">
+    <title>CM111 Introduction to Java</title>
+    <subtitle>A free textbook to accompany CM111 Introduction to Structured Programming at Washburn University</subtitle>
+
+    <frontmatter xml:id="frontmatter">
+      <titlepage>
+        <author>
+          <personname>Joseph Kendall-Morwick</personname>
+          <department>Computer and Information Sciences</department>
+          <institution>Washburn University</institution>
+        </author>
+        <date>
+          <today />
+        </date>
+      </titlepage>
+
+
+      <colophon>
+
+        
+        
+        <website>
+          <name>
+            <c>github.org</c>
+          </name>
+          <address>https://github.com/Washburn-CIS/CM111-Intro-to-Java</address>
+          
+
+        </website>
+        
+        
+
+        <copyright>
+          <year>2023<ndash />2023</year>
+          <holder>Joseph Kendall-Morwick</holder>
+          <shortlicense> 
+            This work is licensed under the Creative Commons Attribution 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
+          </shortlicense>
+        </copyright>
+        
+        
+      </colophon>
+      
+        <p>This textbook was developed by Joseph Kendall-Morwick for CM111 Introduction to Structured Programming at Washburn University. It was developed from multiple sources. Most content comes from "CS1 in Java" by the same author (Joseph Kendall-Morwick). Select chapters, exercises, and some other small sections of text (such as the next two paragraphs) were modified and integrated from the 2022 interactive edition of JavaJavaJava by Ralph Morelli, Ralph Walde, and Beryl Hoffman. Sections incorporating material from JavaJavaJava are noted in comments in the source code and comments on the commits in this github repository. All contributions to this book were released under the same open-source license as the book itself: Creative Commons Attribution 4.0 International (CC BY 4.0).</p>
+
+<!-- NOTE: the next two paragraphs are integrated from JavaJavaJava introduction version 0a3c7b2 /-->
+<p>Java, Java, Java first edition (2000) and second edition (2003) were published by Prentice-Hall, and the third edition (2006) by Pearson Education, Inc. In 2010 Pearson Education, Inc. reassigned the copyright to the authors, Ralph Morelli and Ralph Walde. The authors made the 4th edition book PDF available under an open source license in 2016. In 2017, David G. Cooper (West Chester University) contributed changes to replace applets with java.awt.Canvas code for graphics.</p>
+<p>In 2022, authors Ralph Morelli (Trinity College, emeritus), Ralph Walde (Trinity College, emeritus), joined by Beryl Hoffman (Elms College), created the 
+interactive e-book edition of Java, Java, Java on Runestone. Doug Lundin (Arapahoe Community College) helped review some of the book's graphical interfaces.</p>
+    </frontmatter>
+
+    <chapter xml:id="programming-basics">
+      <title>Unit 1: Programming Basics</title>
+
+      <xi:include href="./expressions.ptx"/>
+
+      <xi:include href="./statements.ptx"/>
+
+      <xi:include href="./code-organization.ptx"/>
+
+      <xi:include href="./objects.ptx"/>
+
+      <xi:include href="./standard-io.ptx"/>
+  <!--
+      <section xml:id="basic-errors">
+        <title>Programming Errors</title>
+        <p>TODO: write me</p>
+      </section>	
+/-->
+      <xi:include href="./booleans.ptx"/>
+
+      <xi:include href="./if.ptx"/>	
+
+      <xi:include href="./logic.ptx"/>	
+
+      <xi:include href="./advanced-conditionals.ptx"/>	
+
+      <xi:include href="./random.ptx"/>	
+   
+   
+    </chapter>
+
+
+    <chapter xml:id="modular-programming">
+      <title>Unit 2: Modular Programming</title>
+    <!--  <introduction>TODO: write me</introduction>  /-->
+
+      <xi:include href="./strings.ptx"/>
+
+      <section xml:id="advanced-loops">
+        <title>Advanced Loops</title>
+        <introduction>A <c>while</c> loop is versitile and all you need to write any Java program. However, there are often multiple statements involved with managing a while loop that could be easier to maintain with more complex but powerful syntax. This section introduces a few new types of loops that provide special-purpose loops to help make your code more manageable.</introduction>
+        
+        <xi:include href="./for.ptx"/>
+        
+        <xi:include href="./do-while.ptx"/>
+        
+        <xi:include href="./nested-loops.ptx"/>	
+        
+      </section>
+      
+      <xi:include href="./method-def.ptx"/>
+
+      <xi:include href="./arrays.ptx"/>
+<!--
+      <section xml:id="advanced-methods">
+        <title>More With Methods</title>
+        <introduction>You've seen the general syntax for defining methods earlier in this chapter but only for a particular type of method. This section will examine several new types of methods you can write as well as common algorithmic strategies for small tasks a method might be written to tackle. </introduction>
+        
+      
+      <xi:include href="./void.ptx"/>	
+
+      <subsection xml:id="static-methods">
+        <title>Static and Instance Methods</title>
+        <p>Coming Soon</p>
+      </subsection>
+
+      <subsection xml:id="method-patterns">
+        <title>Method Development Patterns</title>
+        <p>Coming Soon</p>
+      </subsection>	
+      </section>	
+    
+      /-->
+      <xi:include href="./void.ptx"/>	
+    </chapter>
+
+
+    <chapter xml:id="chapter-title">
+      <title>Unit 3: Basic Data Structures</title>
+     <!-- <introduction>TODO: write me</introduction>  /-->
+
+      <xi:include href="./class-def.ptx"/>	
+
+      <xi:include href="./references.ptx"/>	
+
+      <xi:include href="./exceptions.ptx"/>	
+
+      <xi:include href="./fileio.ptx"/>	
+      
+      
+      <section xml:id="syntactic-sugar">
+        <title>Syntactic Sugar</title>
+        
+      <xi:include href="./overloading.ptx"/>
+        
+      <xi:include href="./varargs.ptx"/>
+        
+      <xi:include href="./break.ptx"/>
+      	
+      <xi:include href="./continue.ptx"/>	
+      
+      <xi:include href="./conditional-expressions.ptx"/>
+        
+      </section>
+
+      <xi:include href="./command-line.ptx"/>	
+      	
+      <xi:include href="./recursion.ptx"/>	
+      
+    </chapter>
+
+    <backmatter xml:id="backmatter">
+      <title>Backmatter</title>
+
+      <colophon>
+        <p> This book was authored in <pretext />. </p>
+      </colophon>
+
+    </backmatter>
+
+  </book>
+</pretext>

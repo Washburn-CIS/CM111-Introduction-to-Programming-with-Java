@@ -1,0 +1,37 @@
+<subsection xml:id="conditional-expressions">
+        <title>Conditional Expressions</title>
+
+
+    <p>
+      Boolean expressions evaluate to one of two values: <c>true</c> or <c>false</c>. What if the programmer wanted an expression like this to evaluate to one of two other values? For example, what if the program was answering a question about whether it was hot outside and the user expected <c>"yes"</c> or <c>"no"</c> to be printed? A <term>conditional expression</term> builds on a boolean expression to provide this flexibility.
+    </p>
+
+    <figure>
+    	<title>conditional-expression</title>
+        <caption>Anatomy of a Conditional Expression</caption>
+        <image width="60%" source="figures/conditional-expression.png"/>
+    </figure>
+
+    <p> Conditional expressions use two operators in conjunction: a question mark (?) and a colon (:). These operators sit between three other expressions. These five parts of a conditional expression come in this order: a boolean expression, followed by a question mark, followed by an expression that will be evaluated if the initial boolean expression is true, followed by a colon, followed by an expression that will be evaluated if the initial boolean expression is false.
+    For example, consider the following conditional expression:
+    </p>
+<program language="java"><input>
+    5 > 10 ? 30 : 40
+</input></program>
+<p>
+    This expression evaluates to the value 40. Since the initial boolean expression evaluates
+    to false, the expression following the colon is evaluated. The middle expression is ignored
+    in this case. If we changed the comparison operator to &lt;
+    the whole conditional expression would have evaluated to 30 instead.
+</p>
+<p>
+    Here's another example that would evaluate to the maximum of two integer variables x and y:
+</p>
+
+<program language="java"><input>
+    x > y ? x : y
+</input></program>
+
+</subsection>
+
+

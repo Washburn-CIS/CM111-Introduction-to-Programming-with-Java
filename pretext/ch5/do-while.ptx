@@ -1,0 +1,32 @@
+<!-- NOTE: this section is integrated from JavaJavaJava section 6.6.2 version 0a3c7b2 /-->
+<subsection xml:id="do-while">
+    
+        <title>do-while Loops</title>
+    
+      <p>
+        The <term>do-while statement</term> is a loop statement in which the looping condition occurs after the loop body. 
+        The <c>do-while</c> loop is designed for solving problems in which at least one iteration must occur -- the looping condition 
+        is not evaluated until after the body of the loop is executed once. 
+      </p>
+      <p>
+      
+      A do-while loop begins with the <code>do</code> keyword followed by a block of code surrounded by curly braces. At the end of the curly braces is
+      the <code>while</code> keyword followed by a boolean expression (the looping condition) in parentheses. Unlike many other loops, a semicolon is required to terminate the statement.
+<!--      
+      TODO: Inject anatomy of do-while figure 
+    /-->  
+      </p>
+    <p>
+      The <c>do-while</c> structure takes the following form:
+    </p>
+<p>
+      A flowchart of the <c>do-while</c> structure is shown in <xref ref="fig-dowhileflow">Figure</xref>.
+    </p>
+    <figure xml:id="fig-dowhileflow">
+      <caption>Flowchart of the <c>do-while</c> statement
+      and <c>do-while</c> structure.</caption>
+      <image width="73%" source="javajavajava/6f4.png"/>
+    </figure>
+  
+   
+        </subsection>

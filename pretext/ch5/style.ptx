@@ -1,0 +1,66 @@
+
+<section xml:id="style">
+    
+        <title>Style</title>
+    
+
+<p>Now that we're developing more complex code, it's important to take a step back and consider what aspects of the code are easier to understand or more aesthetically pleasing. This is important for a very practical reason: it's hard to develop, edit, or correct code that is difficult to read and understand. Thus there are common style conventions that should be followed while developing Java code.
+</p>
+    <subsection>
+        <title>Block Indentation</title>
+
+        <p>You've now seen two examples of a <em>block</em> in Java. <c>if</c> statements and method definitions both involved curly braces being opened around a series of statements. Every time you open a new block (that is, you open a curly brace), you should indent all statements within that block. Typically only 2 spaces are used rather than a full tab, since that block may contain another <em>nested</em> block, and so on, and using tabs can quickly lead to long lines and horizontal scrolling. Indenting helps you visually recognize what blocks each statement belong to. Thus, while reading a Java program, you can quickly skip over a block of code if you're not particularly interested in it.
+        </p>
+        <p>
+            It's a fairly standard rule that you have no more than one statement on a line and always use a full line for a closing curly brace of a block, but there is some debate over whether you should open a curly brace for a block on the same line as an if statement or a method header, or whether you should open it on its own line. For instance:
+        </p>
+<program language="java"><input>
+int addStuff(int x, int y) {
+  return x + y;
+}
+</input></program>
+
+        <p>and also</p>
+
+<program language="java"><input>
+int addStuff(int x, int y)
+{
+  return x + y;
+}
+</input></program>
+
+        <p>are both considered good style by many. Mostly it's important that you're consistent with your choice on where to place the opening brace. In this book, we'll consistently use the style of the first example because that's the way the author was raised (and by extension, also now you).
+        </p>
+    </subsection>
+
+
+    <subsection>
+        <title>Block Comments</title>
+
+    <p>At times a portion of your code will require a more significant explanation spanning multiple lines. Rather than beginning each of these lines with a double slash for an end-of-line comment, it may be preferable to designate a larger portion of your code for comments.</p>
+
+<p>    Block comments are often used for these larger, more descriptive comments. To begin a block comment, type /* and all of the code, including newlines, will be considered a comment up to the closing */.</p>
+
+<p>Another use of block comments is to temporarily <term>comment out</term> a portion of your code if you don't want it to run while you test your code but you also don't want to permenantly delete it. This can be helpful when debugging your more complicated programs. </p>
+    </section>
+
+    <section>
+        <title>Javadoc Comments</title>
+    <p>A special type of block comment is a <term>javadoc comment</term>. These comments come before each method definition and describe in detail what the method does, including the roles of its parameters and a description of the method's return value (if any). Javadoc comments begin with a <c>/**</c> instead of a <c>/*</c>
+    </p>
+        <p>
+    Javadoc comments also have a special syntax for describing the parameters and return values. Within the Javadoc comment, a line beginning with <c>@return</c> will describe the return value and a line beginning with <c>@param</c> followed by the name of the parameter will describe one of the parameters. If you document your parameters in this way, you can also refer to your parameters in the rest of the comment with the following: <c>@code parameterName</c> where <c>parameterName</c> is the name of your parameter.
+        </p>
+        <p>
+    If you use the Javadoc comment format, HTML documentation for your code can be automatically generated. In fact, the API documentation pages we've used previously were all automatically generated from javadoc comments in the API source code!
+        </p>
+
+        <example>
+            The following method definition has an appropriate Javadoc comment preceding it:
+        <program language="java"><input>
+<xi:include href="../../examples/code/javadoc-method-basic.jsh" parse="text"/>
+        </input></program>
+        </example>
+
+  </subsection>
+</section>
