@@ -15,3 +15,4 @@
     </objectives>
   </introduction>
 </chapter>
+<!-- topics: basic I/O, imports, variables, constants, errors, calling instance methods, formatted output basics*, tracing, CLI’s /-->

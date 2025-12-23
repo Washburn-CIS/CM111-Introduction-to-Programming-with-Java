@@ -19,3 +19,4 @@
   <xi:include  href="ch1-compiling.ptx"/>
   <xi:include  href="ch1-system-print.ptx"/>  
 </chapter>
+<!-- topics: programs, basic types, literals, expressions, calling static methods, operators /-->
