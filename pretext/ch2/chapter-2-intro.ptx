@@ -14,5 +14,10 @@
       </ul>
     </objectives>
   </introduction>
+  <xi:include  href="working-with-variables.ptx"/>
+  <xi:include  href="working-with-objects.ptx"/>
+  <xi:include  href="command-line-interfaces.ptx"/>
+  <xi:include  href="incremental-development-basics.ptx"/>
 </chapter>
-<!-- topics: basic I/O, imports, variables, constants, errors, calling instance methods, formatted output basics*, tracing, CLI’s /-->
+<!-- topics: variables, constants, imports, calling instance methods,  basic I/O, formatted output basics*, CLI’s, errors, tracing/-->
+<!-- TODO: edit /-->
