@@ -17,7 +17,7 @@
     <title>CM111: Introduction to Programming with Java</title>
    
     <frontmatter>
-      <titlepage>    
+      <titlepage> 
         <author>
         <personname>Joseph Kendall-Morwick</personname> 
         <institution>Washburn University</institution>
@@ -98,6 +98,7 @@ update this book if it is used in future semesters with any warranted changes.
 </preface> 
 </frontmatter>
     <xi:include href="./ch1/chapter-1-intro.ptx"/>
+<!--
     <xi:include href="./ch2/chapter-2-intro.ptx"/>
     <xi:include href="./ch3/chapter-3-intro.ptx"/>
     <xi:include href="./ch4/chapter-4-intro.ptx"/>
@@ -113,22 +114,25 @@ update this book if it is used in future semesters with any warranted changes.
     <xi:include href="./ch14/chapter-14-intro.ptx"/>
     <xi:include href="./ch15/chapter-15-intro.ptx"/>
     <xi:include href="./ch16/chapter-16-intro.ptx"/>
+    /-->
     <backmatter>
       <xi:include href="./appndx-codestyle/appendix-codestyle.ptx"/>
       <xi:include href="./appndx-jdk/appendix-jdk.ptx"/>
+    <!--
       <xi:include href="./appendix-charsets.ptx"/>
       <xi:include href="./appendix-keywords.ptx"/>
       <xi:include href="./appendix-operators.ptx"/>
-<!--
+
       <xi:include href="./appndx-innerclass/appendix-innerclass.ptx"/>
       <xi:include href="./appndx-autobox/appendix-autobox.ptx"/>
       <xi:include href="./appndx-resources/appendix-resources.ptx"/>
--->
       <xi:include href="./bibliography.ptx"/>
+
       <index>
         <title>Index</title>
         <index-list/>
       </index>
+      -->
     </backmatter>
   </book>
 </pretext>
