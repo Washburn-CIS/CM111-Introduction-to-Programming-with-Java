@@ -1,0 +1,197 @@
+
+<subsection>
+<title>Java Library Packages</title>
+<p>
+      Recall that the <c>HelloWorld</c> program used two pre-defined classes,
+      the <c>String</c> and the <c>System</c> classes.
+      Both of these classes are basic language classes in Java.
+      The <c>HelloWorldCanvas</c> program also uses pre-defined classes,
+      such as <c>JFrame</c> and <c>Graphics</c>. However,
+      these two classes are not part of Java's basic language classes.
+      To understand the difference between these classes,
+      it will be necessary to talk briefly about how the Java class library is organized.
+</p>
+<p>
+      A <term>package</term> is a collection a inter-related classes in the Java class library.
+      For example,
+      the <c>java.lang</c> package contains classes,
+      such as <c>Object</c>,<c>String</c>, and <c>System</c>, that are central to the Java language.
+      Just about all Java programs use classes in this package.
+      The <c>java.awt</c> package provides classes,
+      such as <c>Button</c>,<c>TextField</c>, and <c>Graphics</c>, that are used in graphical user interfaces (GUIs).
+      The <c>java.net</c> package provides classes used for networking tasks,
+      and the <c>java.io</c> package provides classes used for input and output operations.
+</p>
+<p>
+      All Java classes belong to some package,
+      including those that are programmer defined.
+      To assign a class to a package,
+      you would provide a <c>package</c> statement as the first statement in the file that contains the class definition.
+      For example,
+      the files containing the definitions of the classes in the <c>java.lang</c> package all begin with the following statement.
+</p>
+ <program language="java"><input>
+package java.lang;
+ </input></program>
+<p>
+      If you omit <c>package</c> statement,
+      as we do for the programs in this book, Java places such classes into an unnamed default package.
+</p>
+<p>
+      Thus, for any Java class,
+      its full name includes the name of the package that contains it.
+      For example,
+      the full name for the <c>System</c> class is <c>java.lang.System</c> and the full name for the <c>String</c> class 
+      is <c>java.lang.String</c>. Similarly,
+      the full name for the <c>Graphics</c> class is <c>java.awt.Graphics</c>. In short,
+      the full name for a Java class takes the following form:
+</p>
+ <program language="java"><input>
+package.class
+ </input></program>
+
+<p>
+      In other words,
+      the full name of any class has its package name as a prefix.
+</p>
+<p>
+      Of all the packages in the Java library,
+      only the classes in the <c>java.lang</c> package can be refererced  by their shorthand names.
+      This means that when a program uses a class from the <c>java.lang</c> package,
+      it can refer to it simply by its class name.
+      For example,
+      in the <c>HelloWorld</c> program we referred directly to the <c>String</c> class rather than to <c>java.lang.String</c>.
+</p>
+</subsection>
+<subsection>
+<title>The <c>import</c> Statement</title>
+<p>
+      The <c>import</c> statement makes Java classes available to programs under their abbreviated names.
+      Any public class in the Java class library is available to a program by its fully qualified name.
+      Thus, if a program was using the <c>Graphics</c> class,
+      it could always refer to it as <c>java.awt.Graphics</c>. However,
+      being able to refer to<c>Graphics</c> by its shorthand name,
+      makes the program a bit shorter and more readable.
+</p>
+<p>
+      The <c>import</c> statement doesn't actually load classes into the program.
+      It just makes their abbreviated names available.
+</p>
+<p>
+      The <c>import</c> statement takes two possible forms:
+ <program language="java"><input>
+        import package.class
+ </input></program>
+ <program language="java"><input>
+        import package.*
+ </input></program>
+</p>
+<p>
+      The first form allows a specific class to be known by its abbreviated name.
+      The second form,
+      which uses the asterisk as a wildcard character ('*'), 
+      allows all the classes in the specified package to be known by their short names.
+      The <c>import</c> statements in <c>HelloWorldCanvas</c> are examples of the first form.
+      The following example,
+</p>
+ <program language="java"><input>
+import java.lang.*;
+ </input></program>
+<p>
+      allows all classes in the <c>java.lang</c> package to be referred to by their class names alone.
+      In fact, this particular
+<c>import</c> statement is implicit in every Java program.
+</p>
+
+
+<principal>
+<title>Qualified Names in Java</title>
+<p>
+      In the previous subsections we have seen several examples of names in Java programs that used <em>dot notation</em>.
+      A <term>qualified name</term> is a name that is separated into parts using Java's dot notation.
+      Examples include package names,
+      such as <c>java.awt</c>, class names,
+      such as <c>javax.swing.JFrame</c>, and even method names,
+      such as <c>helloworld.greet()</c>.
+</p>
+<p>
+      Just as in our natural language,
+      the meaning of a name within a Java program depends on the context.
+      For example,
+      the expression <c>helloworld.greet()</c> refers to the <c>greet()</c> method,
+      which belongs to the <c>HelloWorld</c> class.
+      If we were using this expression from within that class,
+      you wouldn't need to qualify the name in this way.
+      You could just refer to <c>greet()</c> and it would be clear from the context which method you meant.
+</p>
+<p>
+      This is no different than using someone's first name (
+<q>Kim</q>
+      ) when there's only one Kim around, but using a full name (
+<q>Kim Smith</q>
+      ) when the first name alone would be too vague or ambiguous.
+</p>
+<!--
+    <p>
+      One thing that complicates the use of qualified names is that they are used to refer to different kinds of things within a Java program.
+      But this is no different,
+      really, than in our natural language, where names (
+      <q>George Washington</q>
+      ) can refer to people, bridges, universities, and so on.
+      Here again, just as in our natural language, Java uses the context to understand the meaning of the name.
+      For example,
+      the expression <c>java.lang.System</c> refers to the <c>System</c> class in the <c>java.lang</c> package,
+      whereas the expression
+<c>System.out.print()</c> refers to a method in the <c>System.out</c> object.
+    </p>
+    <p>
+      How can you tell these apart?
+      Java can tell them apart because the first one occurs as part of an <c>import</c> statement,
+      so it must be referring to something that belongs to a package.
+      The second expression would only be valid in a context where a method invocation is allowed.
+      You will have to learn a bit more about the Java language before you'll be able to completely understand these names,
+      but the following provide some naming rules to get you started.
+    </p>
+-->
+</principle>
+<principle>
+<title>Library Class Names</title>
+<p>
+        By convention,
+        class names in Java begin with an uppercase letter.
+        When referenced as part of a package,
+        the class name is the last part of the name.
+        For example, <c>java.lang.System</c> refers to the <c>System</c> class in the <c>java.lang</c> package.
+</p>
+</principle>
+<principle>
+<title>Dot Notation</title>
+<p>
+        Names expressed in Java's <term>dot notation</term>
+        depend for their meaning on the context in which they are used.
+        In qualified names<mdash/>
+that is,
+        names of the form X.Y.Z<mdash/>
+the last item in the name (Z) is the
+<term>referent</term>
+<mdash/>
+that is,
+        the element being referred to.
+        The items that precede it (X.Y.) are used to qualify or clarify the referent.
+</p>
+</principle>
+<p>
+      The fact that names are context dependent in this way certainly complicates the task of learning what's what in a Java program.
+      Part of learning to use Java's built-in classes is learning where a particular object or method is defined.
+      It is a syntax error if the Java compiler can't find the object or method that you are referencing.
+</p>
+<principle>
+<title>DEBUGGING TIP: Not Found Error</title>
+<p>
+        If Java cannot find the item you are referring to, it will report an
+<q>X not found</q>
+        error, where X is the class, method,
+        variable, or package being referred to.
+</p>
+</principle>
+</subsection>

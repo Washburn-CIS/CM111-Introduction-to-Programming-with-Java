@@ -1,0 +1,258 @@
+
+<subsection xml:id="subsec_identifiers">
+  <title>Keywords and Identifiers</title>
+  <p>
+	The Java language contains 50 predefined <term>keywords</term>
+	(    <xref ref="tab_keywords">Table</xref>).
+	These are words that have special meaning in the language and whose use is reserved for special purposes.
+  </p>
+  <table xml:id="tab_keywords">
+    <title>Java keywords. Those with * are not used.</title>
+  <tabular>
+     <row>
+  <cell>
+        <c>abstract</c>
+  </cell>
+  <cell>
+        <c>continue</c>
+  </cell>
+  <cell>
+         <c>for</c>   
+  </cell>
+  <cell>
+        <c>new</c>    
+  </cell>
+  <cell>
+         <c>switch</c>   
+  </cell>
+  </row>
+      <row>
+  <cell>
+        <c>assert</c>
+  </cell>
+  <cell>
+        <c>default</c>
+  </cell>
+  <cell>
+         <c>goto*</c>   
+  </cell>
+  <cell>
+        <c>package</c>    
+  </cell>
+  <cell>
+         <c>synchronized</c>   
+  </cell>
+  </row>
+     <row>
+  <cell>
+        <c>boolean</c>
+  </cell>
+  <cell>
+        <c>do</c>
+  </cell>
+  <cell>
+         <c>if</c>   
+  </cell>
+  <cell>
+        <c>private</c>    
+  </cell>
+  <cell>
+         <c>this</c>   
+  </cell>
+  </row>
+     <row>
+  <cell>
+        <c>break</c>
+  </cell>
+  <cell>
+        <c>double</c>
+  </cell>
+  <cell>
+         <c>implements</c>   
+  </cell>
+  <cell>
+        <c>protected</c>    
+  </cell>
+  <cell>
+         <c>throw</c>   
+  </cell>
+  </row>
+     <row>
+  <cell>
+        <c>byte</c>
+  </cell>
+  <cell>
+        <c>else</c>
+  </cell>
+  <cell>
+         <c>import</c>   
+  </cell>
+  <cell>
+        <c>public</c>    
+  </cell>
+  <cell>
+         <c>throws</c>   
+  </cell>
+  </row>
+     <row>
+  <cell>
+        <c>case</c>
+  </cell>
+  <cell>
+        <c>enum</c>
+  </cell>
+  <cell>
+         <c>instanceof</c>   
+  </cell>
+  <cell>
+        <c>return</c>    
+  </cell>
+  <cell>
+         <c>transient</c>   
+  </cell>
+  </row>
+     <row>
+  <cell>
+        <c>catch</c>
+  </cell>
+  <cell>
+        <c>extends</c>
+  </cell>
+  <cell>
+         <c>int</c>   
+  </cell>
+  <cell>
+        <c>short</c>    
+  </cell>
+  <cell>
+         <c>try</c>   
+  </cell>
+  </row>
+     <row>
+  <cell>
+        <c>char</c>
+  </cell>
+  <cell>
+        <c>final</c>
+  </cell>
+  <cell>
+         <c>interface</c>   
+  </cell>
+  <cell>
+        <c>static</c>    
+  </cell>
+  <cell>
+         <c>void</c>   
+  </cell>
+  </row>
+     <row>
+  <cell>
+        <c>class</c>
+  </cell>
+  <cell>
+        <c>finally</c>
+  </cell>
+  <cell>
+         <c>long</c>   
+  </cell>
+  <cell>
+        <c>strictfp</c>    
+  </cell>
+  <cell>
+         <c>volatile</c>   
+  </cell>
+  </row>
+     <row>
+  <cell>
+        <c>onst*</c>
+  </cell>
+  <cell>
+        <c>float</c>
+  </cell>
+  <cell>
+         <c>native</c>   
+  </cell>
+  <cell>
+        <c>super</c>    
+  </cell>
+  <cell>
+         <c>while</c>   
+  </cell>
+  </row>
+ </tabular>
+</table>
+  <p>
+     The keywords used in the HelloWorld program (<xref ref="lstng_helloworld"></xref>) are: 
+    <c>class</c>,    <c>extends</c>,    <c>private</c>,    <c>public</c>,    <c>static</c>, and
+    <c>void</c>.
+  </p>
+  <p>
+      Keywords cannot be used as the names of methods, variables,
+      or classes.
+      However, the programmer can make up their own names for the classes, methods,
+      and variables that occur in the program,
+      provided that certain rules and conventions are followed.
+  </p>
+  <p>
+      The names for classes, methods,
+      and variables are called identifiers, 
+     which follow certain syntax rules:
+  </p>
+  <principle>
+    <title>Identifier</title>
+    <p>
+        An <term>identifier</term> must begin with a capital or lowercase letter and may be followed by any number of letters, digits,
+        underscores (_), or dollar signs ($).
+        An identifier may not be identical to a Java keyword.
+    </p>
+  </principle>
+  <p>
+      Names in Java are <em>case sensitive</em>,
+      which means that two different identifiers may contain the same letters in the same order.
+      For example, <c>thisVar</c> and <c>ThisVar</c> are two different identifiers.
+  </p>
+  <p>
+      In addition to the syntax rule that governs identifiers, Java 
+      programmers follow two <term>style conventions</term> when naming classes,
+      variables,
+      and methods.
+  </p>
+  <ol>
+    <li>
+      <p>
+       Class names in Java begin with a capital letter and use capital letters to distinguish the individual
+        in the name<mdash/>
+for example, <c>HelloWorld</c> and <c>TextField</c>.
+    </p>
+  </li>
+  <li>
+    <p>
+      Variable and method names begin with a lowercase letter but also use capital letters to distinguish the words in the 
+      name<mdash/>
+for example, <c>main()</c>,    <c>greeting</c>,    <c>greet()</c>,    <c>getQuestion()</c>, and <c>getAnswer()</c>. 
+  </p>
+</li>
+</ol>
+<p>
+      These conventions make it is easier to distinguish the different elements in a program<mdash/>
+classes, methods,
+      variables<mdash/>
+just by how they are written. (For more on Java style conventions,
+      see Appendix A.).
+</p>
+<p>
+      Another important style convention followed by Java programmers is to choose descriptive identifiers when naming classes,
+      variables,
+      and methods.
+      This helps to make the program more readable.
+</p>
+<principle>
+<title>PROGRAMMING TIP: Choice of Identifiers</title>
+<p>
+      To make your program more readable,
+      choose names that describe the purpose of the class, variable,
+      or method.
+</p>
+</principle>
+</subsection>
+

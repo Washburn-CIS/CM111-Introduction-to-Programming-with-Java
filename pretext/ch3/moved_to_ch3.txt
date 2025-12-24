@@ -1,0 +1,105 @@
+
+<subsection xml:id="subsec_vardecl">
+<title>Declaring an Instance Variable</title>
+<p>
+	  There are generally two kinds of elements declared and defined in the class body:
+	  variables and methods.
+	  An <term>instance variable</term> is a variable that belongs to each object,
+	  or instance, of the class.
+	  That is, each instance of a class has its own copies of the class's instance variables.
+	  The <c>HelloWorld</c> class has a single instance variable, (<c>greeting</c>), which is declared as follows:
+</p>
+<program language="java"><input>
+    private String greeting = "Hello, World!";
+</input></program>
+<p>
+      In general, an instance variable declaration has the following syntax,
+      some parts of which are optional:
+</p>
+<c>
+        [Modifiers] Type VariableName [InitializerExpression]
+</c>
+<p>
+      In declaring the <c>greeting</c> variable,
+      we use the optional access modifier, <c>private</c>, to declare that <c>greeting</c> can only be
+      accessed in the <c>HelloWorld</c> class; it cannot be directly accessed by other objects.
+</p>
+<p>
+      The next part of the declaration is the variable's type (<c>String</c>), which means that it can store a string object.
+      The type is followed by the name of the variable (<c>greeting</c>), which can be used 
+      throughout the <c>HelloWorld</c> class. For example, notice that <c>greeting</c> is used on line 11 
+      in a <c>println()</c> statement.
+</p>
+<p>
+      The last part of the declaration is an optional initializer expression.
+      In this example, we use it to assign an initial value,
+<q>Hello, World!,</q>
+      to the <c>greeting</c> variable.
+</p>
+</subsection>
+<subsection>
+<title>Defining an Instance Method</title>
+<p>
+      Recall that a <term>method</term> is a named section of code that can be called or invoked to carry out an action or operation.
+      In a Java class,
+      the methods correspond to the object's behaviors or actions.
+      The <c>HelloWorld</c> program has two method definitions:
+      the <c>greet()</c> method and the <c>main()</c> method.
+</p>
+<p>
+      A method definition consists of two parts:
+      the method header and the method body.
+      In general, a method header takes the following form,
+      including some parts which are optional:
+</p>
+<c>
+        [Modifiers] ReturnType MethodName ([ParameterList])
+</c>
+<p>
+      As with a variable declaration,
+      a method definition begins with optional modifiers.
+      For example,
+      the definition of the <c>greet()</c> method on line 9 uses the access modifier, <c>public</c>, to 
+      declare that this method can be accessed or referred to by other classes.
+</p>
+<p>
+      The next part of the method header is the method's return type.
+      This is the type of value, if any, that the method returns.
+      Both of the methods in <c>HelloWorld</c> have a return type of <c>void</c>. This means that they don't return anything.
+      Void methods just execute the sequence of statements given in their bodies. We'll see examples of methods that return
+      values in the next chapter.
+<!--
+      For an example of a method that does return a value,
+      take a look again at the declaration of the <c>getQuestion()</c> method in the <c>Riddle</c> class,
+      which returns a <c>String</c>(
+      <xref ref="fig_riddleclass"></xref>).
+-->
+</p>
+<p>
+      The method's name follows the method's return type.
+      This is the name that is used when the method is called.
+      For example,
+      the <c>greet()</c> method is called on line 17.
+</p>
+<p>
+      Following the method's name is the method's parameter list.
+      A <em>parameter</em> is a variable that temporarily stores data values that are being passed to the method when the method is called.
+      Some methods,
+      such as the <c>greet()</c> method,
+      do not have parameters, because they are not passed any information.
+</p>
+<p>
+      The last part of method definition is its body,
+      which contains a sequence of executable statements.
+      An <term>executable statement</term>
+      is a Java statement that takes some kind of action when the program is run.
+      For example,
+      the statement in the <c>greet()</c> method,
+</p>
+<program language="java"><input>
+    System.out.println(greeting);   //  Output statement
+</input></program>
+<p>
+      prints a greeting on the console.
+</p>
+</subsection>

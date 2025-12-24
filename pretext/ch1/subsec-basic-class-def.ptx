@@ -1,0 +1,65 @@
+
+<subsection>
+<title>Class Definition</title>
+<p>
+      A Java program consists of one or more class definitions.
+      In the <c>HelloWorld</c> example,
+      we are defining the <c>HelloWorld</c> class,
+      but there are also three predefined classes involved in the program.
+      These are the <c>Object</c>,<c>String</c>, and <c>System</c> classes all of which are defined in the Java class library.
+      Predefined classes, such as these,
+      can be used in any program.
+</p>
+<p>
+      As the <c>HelloWorld</c> program's comments indicate,
+      a class definition 
+      has two parts:
+      a <em>class header</em> and a <em>class body</em>.
+      In general, a class header takes the following form,
+      where the parts marked <m>_{opt}</m> are  optional.
+</p>
+<definition>
+<title>Class header</title>
+<p>
+      The class header takes the form:<p>
+      ClassModifiers<m>_{opt}</m> <c>class</c> ClassName Pedigree<m>_{opt}</m>
+      </p>
+</p>
+
+</definition>
+<p>
+      The class header for the <c>HelloWorld</c> class is:
+</p>
+<program language="java"><input>
+	public class HelloWorld extends Object
+</input></program>
+<p>
+	  The purpose of the header is to give the class its name (<c>HelloWorld</c>), identify its 
+	  accessibility (<c>public</c> as opposed to <c>private</c>), and describe where it fits into the Java class hierarchy
+	  (as an extension of the <c>Object</c> class).
+</p>
+<p>
+	  In this case,
+	  the header begins with the optional access modifier, <c>public</c>, which 
+	  declares that this class can be accessed by any other classes.
+	  The next part of the declaration identifies the name of the class, <c>HelloWorld</c>. 
+	  And the last part declares that <c>HelloWorld</c> is a subclass of the <c>Object</c> class.
+	  We call this part of the definition the class's pedigree.
+</p>
+<p>
+	  The <c>Object</c> class is the top class of the entire Java hierarchy.
+	  By declaring that <c>HelloWorld extends Object</c>, we are saying that 
+<c>HelloWorld</c> is a direct <em>subclass</em>
+	  of <c>Object</c>. In fact,
+	  it is not necessary to declare explicitly that <c>HelloWorld</c> extends <c>Object</c> because that is Java's default assumption.
+	  That is, if you omit the extends clause in the class header, Java will automatically assume that the class is a subclass of <c>Object</c>.
+</p>
+<p>
+	  The class's body,
+	  which is enclosed within curly brackets, { and }, 
+	  contains the declaration and definition of the elements that make up the objects of the class.
+	  This is where the object's attributes and actions are defined.
+</p>
+</subsection>
+
+

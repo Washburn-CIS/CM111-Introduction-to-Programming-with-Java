@@ -1,0 +1,66 @@
+
+<subsection xml:id="subsec_expressions">
+<title>Expressions and Operators</title>
+<p>
+      The manipulation of data in a program is done by using some kind of <em>expression</em>
+      that specifies the action.
+      An <em>expression</em> is Java code that specifies or produces a value in the program.
+      For example, if you want to add two numbers,
+      you would use an arithmetic expression,
+      such as <m>num1 + num2</m>.
+      If you want to compare two numbers,
+      you would use a relation expression such as <m>num1 \lt num2</m>.
+      As you can see,
+      these and many other expressions in Java involve the use of special symbols called <term>operators</term>.
+      Here we see the addition operator (<m>+</m>) and the less-than operator
+      (<m>\lt</m>).
+      We have already talked about the assignment operator
+      (<m>=</m>).
+</p>
+<p>
+      Java expressions and operators have a type that depends on the type of data that is being manipulated.
+      For example,
+      when adding two <c>int</c> values,
+      such as <m>5 + 10</m>,
+      the expression itself produces an <c>int</c> result.
+      When comparing two numbers with the less than operator,
+<m>num1 \lt num2</m>,
+      the expression itself produces a <c>boolean</c> type,
+      either true or false.
+</p>
+<p>
+      It is important to note that expressions cannot occur on their own.
+      Rather they occur as part of the program's statements.
+      Here are some additional examples of expressions:
+</p>
+<program language="java"><input>
+    num = 7         // An assignment expression of type int
+    num = square(7) // An method call expression of type int
+    num == 7        // An equality expression of type boolean
+</input></program>
+<p>
+      The first of these is an assignment expression.
+      It has a value of <c>7</c>, because it is assigning <c>7</c> to <c>num</c>. The second example is also an assignment expression,
+      but this one has a method call, <c>square(7)</c>, on its right hand side.
+      (We can assume that a method named <c>square()</c> has been appropriately defined in the program.)
+      A method call is just another kind of expression.
+      In this case, it has the value 49.
+      Note that an assignment expression can be turned into a stand-alone assignment statement by placing a semicolon after it.
+</p>
+<p>
+      The third expression is an equality expression,
+      which has the value <c>true</c>, assuming that the variable on its left is storing the value 7.
+      It is important to note the difference between the assignment operator (<m>=</m>) and the equality operator
+      (<m>==</m>).
+</p>
+<principle>
+<title>Equality and Assignment</title>
+<p>
+        Be careful not to confuse <c>=</c> and <c>==</c>. The symbol <c>=</c> is the assignment operator.
+        It assigns the value on its right-hand side to the variable on its left-hand side.
+        The symbol <c>==</c> is the equality operator.
+        It evaluates whether the expressions on its left- and right-hand sides have the same value and returns either 
+<c>true</c> or <c>false</c>.
+</p>
+</principle>
+</subsection>

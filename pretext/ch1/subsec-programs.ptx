@@ -1,0 +1,48 @@
+
+<subsection>
+<title>Java Application Programs</title>
+<p>
+      The HelloWorld program is an example of a Java
+<term>application program</term>,
+      or a Java application, for short.
+      An application program is a stand-alone program,
+<q>stand-alone</q>
+      in the sense that it does not depend on any other program,
+      like a Web browser, for its execution.
+</p>
+<p>
+      Every Java application program must contain a <c>main()</c> method,
+      which is where the program begins execution when it is run.
+      For a program that contains several classes,
+      it is up to the programmer to decide which class should contain the <c>main()</c> method.
+      We don't have to worry about that decision for HelloWorld,
+      because it contains just a single class.
+</p>
+<p>
+      Because of its unique role as the starting point for every Java application program,
+      it is very important that the header for the main method be declared exactly as shown in the <c>HelloWorld</c> class:
+</p>
+<program language="java"><input>
+    public static void main(String args[])
+</input></program>
+<p>
+      It must be declared <c>public</c> so it can be accessed from outside the class that contains it.
+      And it must be declared <c>static</c>. Static methods are associated with their class, not with
+      the class's objects or instances. Because of this, a static or <term>class method</term> can be 
+      called before the program has created any instances (or objects) of that class. 
+</p>
+<p>
+      This is important for <c>main()</c>'s special role as the program's starting point, because
+<c>main()</c> is called by the Java runtime system before the program has created any objects.
+</p>
+<p>
+      The <c>main()</c> method has a <c>void</c> return type,
+      which means it does not return any kind of value.
+</p>
+<p>
+      Finally, notice that <c>main()</c>'s parameter list contains a declaration of some 
+      kind of <c>String</c> parameter named <em>args</em>.
+      This is actually an array that can be used to pass string arguments to the program when it is started up.
+      We won't worry about this feature until our chapter on arrays.
+</p>
+</subsection>

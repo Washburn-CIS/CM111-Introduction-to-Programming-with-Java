@@ -1,0 +1,36 @@
+
+<subsection xml:id="subsec_primitives">
+<title>Data Types</title>
+<p>
+      A computer program wouldn't be very useful if it couldn't manipulate different kinds of data,
+      such as numbers and strings.
+      The operations that one can perform on data depend on the data's type.
+      For example, you can divide and multiply numbers,
+      but you cannot do this with strings.
+      Thus, all data in a Java program is classified according to its <term>data type</term>.
+</p>
+<p>
+      Broadly speaking, there are two categories of data in Java: objects and <term>primitive data types</term>.
+      Java has many different types of built-in objects, in addition to those objects defined by programmers, 
+      Two built-in objects we encounter in this chapter are the <c>String</c> and <c>PrintStream</c> objects.
+</p>
+<p>
+      Java's primitive types include three integer types,
+      three real number types,
+      a character type, and a boolean type with values true and false.
+      The names of the primitive types are keywords like<c>int</c> for one integer type, <c>double</c> for one real number type,
+      and <c>boolean</c>.
+</p>
+<p>
+      A <term>literal value</term> is an actual value of some type that occurs in a program.
+      For example, a string enclosed in double quotes,
+      such as "Hello, World!", is known as a <c>String</c> literal.
+      A number such as 45.2 would be an example of a literal of type <c>double</c>, and -72 would be an 
+      example of a literal of type <c>int</c>. 
+</p>
+<p>
+      Our HelloWorld program contains just a single literal value,
+      the "HelloWorld!" <c>String</c>.
+</p>
+</subsection>
+

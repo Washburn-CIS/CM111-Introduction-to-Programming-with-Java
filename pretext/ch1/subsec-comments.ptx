@@ -1,0 +1,72 @@
+
+<subsection>
+  <title>Comments</title>
+  <p>
+	A <term>comment</term> is a non-executable portion of a program that is used to document the program.
+	Because comments are not executable instructions they are just ignored by the compiler.
+	Their sole purpose is to make the program easier for the programmer to read and understand.
+  </p>
+  <p>
+	The <c>HelloWorld</c> program contains examples of two types of Java comments.
+	Any text contained within /* and */ is considered a comment.
+	As you can see in <c>HelloWorld</c>, this kind of comment can extend over several lines and is sometimes called a
+    <em>multiline</em> comment.
+	A second type of comment is any text that follows double slashes (//) on a line.
+	This is known as a <em>single-line comment</em>
+	because it cannot extend beyond a single line.
+  </p>
+  <p>
+	When the compiler encounters the beginning marker (/*) of a multiline comment,
+	it skips over everything until it finds a matching end marker (*/).
+	One implication of this is that it is not possible to put one multiline comment inside of another.
+	That is, one comment cannot be <em>nested</em>,
+	or contained, within another comment.
+	The following code segment illustrates the rules that govern the use of /* and */:
+  </p>
+  <program language="java">
+  <input>
+     /* This first comment begins and ends on the same line. */
+     /* A second comment starts on this line ...
+	and goes on ...
+	and this is the last line of the second comment.
+     */
+     /* A third comment starts on this line ...
+	 /* This is NOT a fourth comment. It is just
+	    part of the third comment.
+	And this is the last line of the third comment.
+     */
+     */  This is an error because it is an unmatched end marker.
+  </input></program>
+  <p>
+	As you can see from this example,
+	it is impossible to begin a new comment inside an already-started comment because all text inside the first comment,
+	including /*, is ignored by the compiler.
+  </p>
+  <definition>
+    <title>Comment</title>
+    <p>
+	  Any text contained within /* and */, which may span several lines,
+	  is considered a comment and is ignored by the compiler.
+	  Inserting double slashes (//) into a line turns the rest of the line into a comment.
+    </p>
+  </definition>
+  <p>
+	Multiline comments are often used to create a <em>comment block</em>
+	that provides useful documentation for the program.
+	In <c>HelloWorld</c>, the program begins with a comment block that identifies the name of file that contains the program and its author and provides a brief description of what the program does.
+  </p>
+  <p>
+	For single-line comments,
+	double slashes (//) can be inserted anywhere
+	on a line of code.
+	The result is that the rest of the line is ignored by the compiler.
+	We use single-line comments throughout the <c>HelloWorld</c> program to provide a running commentary of its language elements.
+  </p>
+  <principle>
+    <title>PROGRAMMING TIP: Use of Comments</title>
+    <p>
+	A well-written program should begin with a comment block that provides the name of the program,
+	its author, and a description of what the program does.
+    </p>
+  </principle>
+</subsection>

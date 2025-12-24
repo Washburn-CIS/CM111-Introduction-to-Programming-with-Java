@@ -1,0 +1,59 @@
+
+
+<subsection xml:id="subsec_statements">
+<title>Statements</title>
+<p>
+      A Java program is a collection of statements.
+      A <term>statement</term> is a 
+      segment of code that takes some action in the program.
+      As a program runs, we say it <em>executes</em> statements,
+      meaning it carries out the actions specified by those statements.
+</p>
+<p>
+      In our <c>HelloWorld</c> program (<xref ref="lstng_helloworld"></xref>),
+      statements of various types occur on lines 8, 11, 15, 16, and 17.
+      Notice that all of these lines end with a semicolon.
+</p>
+<principle>
+<title>JAVA LANGUAGE RULE: Semicolons</title>
+<p>
+       In Java statements must end with a semicolon.
+       Forgetting to do so would cause a syntax error.
+
+</p>
+</principle>
+
+<p>
+      A <term>declaration statement</term>
+      is a statement that declares a variable of a particular type.
+      In a Java program, a variable must be declared before it can be used.
+</p>
+
+
+
+<p>
+One kind of Java statement is a <term>method-call statement</term>, as in the example from the 
+<c>HelloWorld</c> program (<xref ref="lstng_helloworld"></xref>):
+</p>
+<program language="java"><input>
+    System.out.println("Hello World!"); // Output greeting
+</input></program>
+<p>
+      We can use curly braces to group one or more statements into a sequence. These groups are 
+      called a <term>block</term>. 
+      
+      For example, 
+      we could output the greeting one part at a time with several different statements. Notice
+      in the example below that the first two statements call the 'print' method instead of
+      'println'. The difference between these methods is that 'println' will advance the 
+      cursor on the terminal to the next line, so we'll make that call last. 
+</p>
+<program language="java"><input>
+public static void main(String args[]) { // Method header 			  
+      System.out.print("Hello"); // Output "hello"	  	  
+      System.out.print(" "); // Output a space	  
+      System.out.println("Hello World!"); // Output "world!"
+}  //  main()
+</input></program>
+</subsection>
+
