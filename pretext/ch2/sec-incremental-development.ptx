@@ -1,5 +1,4 @@
-<!-- TODO: edit /-->
-<section xml:id="sec-incremental-development">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-incremental-development">
   <title>Developing Programs Incrementally</title>
   <introduction>
   </introduction>
@@ -8,3 +7,4 @@
   <xi:include  href="subsec-rounding-ex.ptx"/>
   <xi:include  href="subsec-conversion-ex.ptx"/>
 </section>
+<!-- TODO: edit /-->

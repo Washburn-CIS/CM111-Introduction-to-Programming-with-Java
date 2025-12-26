@@ -1,7 +1,7 @@
-<subsection xml:id="subsec_formated_printing">
+<subsection xml:id="subsec-formatted-printing">
   <title>From the Java Library
 <c>java.text.NumberFormat</c></title>
-<introduction>
+
 <p>
     Although the <c>Math.round()</c> method is useful for rounding 
     numbers,
@@ -61,7 +61,15 @@
       find the appropriate methods in the Java class library.
     </p>
   </principle>
-</introduction>
+
+
+
+
+
+
+
+
+
 <exercises xml-id="ss-5-8-1">
     <title>Self-Study Exercise</title>
     
@@ -215,4 +223,11 @@
   </p></solution>
 </exercise>
 </exercises>
-</section>
+
+
+
+
+
+
+
+</subsection>

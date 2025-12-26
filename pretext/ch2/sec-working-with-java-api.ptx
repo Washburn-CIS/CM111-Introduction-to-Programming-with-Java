@@ -1,7 +1,4 @@
-<!-- TODO: edit /-->
-
-
-<section xml:id="sec-working-with-java-api">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-working-with-java-api">
   <title>Working with The Java API</title>
   
   <introduction>
@@ -11,6 +8,7 @@
   <xi:include  href="subsec-system-print.ptx"/>
   <xi:include  href="subsec-math-class.ptx"/>
   <xi:include  href="subsec-object-creation.ptx"/>
-  
-  
+  <xi:include  href="subsec-gui-ex.ptx"/>
+
 </section>
+<!-- TODO: edit /-->

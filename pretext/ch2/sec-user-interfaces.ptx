@@ -1,5 +1,4 @@
-<!-- TODO: edit /-->
-<section xml:id="sec-user-interfaces">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-user-interfaces">
   <introduction>
    <p>
     The user interface is that part of the program that handles the  input and output interactions between the user and the program.
@@ -57,4 +56,4 @@
   
 </section>
 
-
+<!-- TODO: edit /-->

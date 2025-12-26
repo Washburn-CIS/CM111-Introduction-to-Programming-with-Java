@@ -1,8 +1,7 @@
-<!-- TODO: edit /-->
-<section xml:id="sec-local-variables">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-local-variables">
   <title>Variables</title>
   
   <!-- TODO: make section introducing variables and variable definitions from below, and edit below to be only "local" variables /-->
   
-  <xi:include  href="subsec-object-creation.ptx"/>
-</section>
+  <xi:include  href="subsec-local-variables.ptx"/>
+</section><!-- TODO: edit /-->

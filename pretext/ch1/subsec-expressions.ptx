@@ -1,5 +1,5 @@
 
-<subsection xml:id="subsec_expressions">
+<subsection xml:id="subsec-expressions">
 <title>Expressions and Operators</title>
 <p>
       The manipulation of data in a program is done by using some kind of <em>expression</em>

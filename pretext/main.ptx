@@ -98,8 +98,8 @@ update this book if it is used in future semesters with any warranted changes.
 </preface> 
 </frontmatter>
     <xi:include href="./ch1/chapter-1-intro.ptx"/>
-<!--
     <xi:include href="./ch2/chapter-2-intro.ptx"/>
+<!--
     <xi:include href="./ch3/chapter-3-intro.ptx"/>
     <xi:include href="./ch4/chapter-4-intro.ptx"/>
     <xi:include href="./ch5/chapter-5-intro.ptx"/>
