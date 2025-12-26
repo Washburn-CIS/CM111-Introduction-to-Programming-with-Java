@@ -51,15 +51,10 @@
   </introduction>
   
   
-  
+  <!-- cover basic I/O /-->
   <xi:include  href="subsec-command-line-interfaces.ptx"/>
   <xi:include  href="subsec-formatted-printing.ptx"/>
   
-  
-  
-  
 </section>
-
-
 
 

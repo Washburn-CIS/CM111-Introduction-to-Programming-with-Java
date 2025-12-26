@@ -15,9 +15,9 @@
     </objectives>
   </introduction>
   <xi:include  href="welcome.ptx"/>
-  <xi:include  href="ch1-language-elements.ptx"/>
-  <xi:include  href="ch1-compiling.ptx"/>
-  <xi:include  href="ch1-system-print.ptx"/>  
+  <xi:include  href="sec-language-elements.ptx"/>
+  <xi:include  href="sec-compiling.ptx"/>
+  <xi:include  href="sec-expressions.ptx"/>
 </chapter>
 <!-- topics: programs, basic types, literals, expressions, calling static methods, operators /-->
 <!-- TODO: edit /-->

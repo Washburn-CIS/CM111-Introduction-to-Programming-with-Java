@@ -1,0 +1,16 @@
+<!-- TODO: edit /-->
+
+
+<section xml:id="sec-working-with-java-api">
+  <title>Working with The Java API</title>
+  
+  <introduction>
+  </introduction>
+  
+  <xi:include  href="subsec-calling-static-methods.ptx"/>
+  <xi:include  href="subsec-system-print.ptx"/>
+  <xi:include  href="subsec-math-class.ptx"/>
+  <xi:include  href="subsec-object-creation.ptx"/>
+  
+  
+</section>

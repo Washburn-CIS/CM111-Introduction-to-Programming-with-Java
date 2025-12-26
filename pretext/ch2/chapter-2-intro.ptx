@@ -80,7 +80,7 @@
     </objectives>
   </introduction>
   <xi:include  href="sec-variables.ptx"/>
-  <xi:include  href="sec-working-with-objects.ptx"/>
+  <xi:include  href="sec-working-with-java-api.ptx"/>
   <xi:include  href="sec-user-interfaces.ptx"/>
   <xi:include  href="sec-incremental-development.ptx"/>
 </chapter>

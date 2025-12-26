@@ -1,4 +1,4 @@
-<section xml:id="ch1-system-print">
+<subsection xml:id="sec-system-print">
   <title>From the Java Library: System and
   PrintStream</title>
   
@@ -266,5 +266,5 @@
 
 </exercises>
 
-</section>
+</subsection>
 <!-- TODO: edit /-->

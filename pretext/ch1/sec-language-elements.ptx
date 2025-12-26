@@ -1,4 +1,4 @@
-<section xml:id="ch1-language-elements" xmlns:xi="http://www.w3.org/2001/XInclude" >
+<section xml:id="sec-language-elements" xmlns:xi="http://www.w3.org/2001/XInclude" >
   <title>Java Language Elements</title>
    <subsection> <title>Introduction</title>
   <p>
@@ -88,15 +88,11 @@
   </principle>
 </subsection>
 
+<xi:include href="./subsec-basic-class-def.ptx"/>
 <xi:include href="./subsec-comments.ptx"/>
 <xi:include href="./subsec-identifiers.ptx"/>
-<xi:include href="./subsec-primitives.ptx"/>
+<xi:include href="./subsec-primitives.ptx"/>		
 <xi:include href="./subsec-statements.ptx"/>
-<xi:include href="./subsec-expressions.ptx"/>
-<xi:include href="./subsec-numeric-types.ptx"/>
-<xi:include href="./subsec-arithmetic-ops.ptx"/>
-<xi:include href="./subsec-op-precedence.ptx"/>
-<xi:include href="./subsec-basic-class-def.ptx"/>
 <xi:include href="./subsec-programs.ptx"/>
 
 
