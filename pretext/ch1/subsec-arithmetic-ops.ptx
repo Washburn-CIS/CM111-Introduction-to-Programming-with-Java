@@ -1,0 +1,244 @@
+ <subsection xml:id="subsec-arithmetic-ops">
+    <title>Arithmetic Operators</title>
+      <p>
+        The operations that can be done on numeric data include the standard algebraic operations:
+        <em>addition</em> (+), <em>subtraction</em> (<m>-</m>),
+        <em>multiplication</em> (*), <em>division</em>
+        (/), as well as the <em>modulus</em> (%) operator.
+        Note that in Java,
+        the multiplication symbol is <c>*</c> and not the <times/>.
+        The arithmetic operators are binary operators,  meaning that they each take two operands. 
+        <xref ref="tab-numops">Table</xref> compares expressions involving the 
+        Java operators with their standard algebraic counterparts.
+      </p>
+      <table xml:id="tab-numops">
+        <title>The standard arithmetic operators arithmetic operators in Java.</title>  
+        <tabular>
+          <row bottom="minor" left="minor">
+            <cell><term>Operation</term></cell>
+            <cell><term>Operator</term></cell>
+            <cell><term>Java</term></cell>
+            <cell><term>Algebra</term></cell>
+          </row>
+           <row>
+            <cell><em>Addition</em></cell>
+            <cell><m>+</m></cell>
+            <cell><m>x  +  2</m></cell>
+            <cell><m>x  +  2</m></cell>
+          </row>
+          <row>
+            <cell><em>Subtraction</em></cell>
+            <cell><m>-</m></cell>
+            <cell><m>m  -  2</m></cell>
+            <cell><m>m  -  2</m></cell>
+          </row>
+          <row>
+            <cell><em>Multiplication</em></cell>
+            <cell>*</cell>
+            <cell><m>m</m>   *   <m>2</m></cell>
+            <cell><m>2m  \hbox{ or }  m \times 2</m></cell>
+          </row>
+          <row>
+            <cell><em>Division</em></cell>
+            <cell>/</cell>
+            <cell><m>x  /  y</m></cell>
+            <cell><m>x  \div  y  \hbox{ or }  \frac{x}{y}</m></cell>
+          </row>
+          <row bottom="minor">
+            <cell><em>Modulus</em></cell>
+            <cell>%</cell>
+            <cell><m>x  \%  y</m></cell>
+            <cell><m>x  \hbox{ modulo }  y</m> (for  integers <m>x</m> and <m>y</m>)</cell>
+          </row>
+        </tabular>
+      </table>
+      <p>
+        Although these operations should seem familiar,
+        there are some important differences between their use in algebra and their use in a Java program.
+        Consider the following list of expressions:
+      </p>
+ <program language="java"><input>
+3 / 2     ==>  value 1     An integer result
+3.0 / 2.0 ==>  value 1.5   A floating-point result
+3 / 2.0   ==>  value 1.5   A floating-point result
+3.0 / 2   ==>  value 1.5   A floating-point result
+ </input></program>
+      <p>
+        In each of these cases we are dividing the quantity 3 by the quantity<nbsp/>2.
+        However, different results are obtained depending on the <em>type</em>
+        of the operands involved.
+        When both operands are integers, as in (3/2),
+        the result must also be an integer.
+            <idx><h>integer division</h></idx>
+        Hence, (3/2) has the value 1, an integer.
+        Because integers cannot have a fractional part,
+        the 0.5 is simply discarded.
+        Integer division (/) always gives an integer  result.
+        Thus, the value of (6/2) is 3 and the value of (7/2) is also 3.
+        Because 3.5 is not an integer,
+        the result of dividing 7 by 2 cannot be 3.5.
+      </p>
+      <principle>
+        <title>DEBUGGING TIP: Integer Division</title>
+        <p>
+          A common source of error among beginning programmers 
+          is forgetting that integer division always gives an integer result.
+        </p>
+      </principle>
+      <p>
+        On the other hand, when either operand is a real number,
+        as in the last three cases, the result is a real number.
+        Thus, while the same symbol (/) is used for dividing integers and real numbers,
+        there are really two different operations involved here:
+        <em>integer division</em> and <em>floating-point division
+            <idx><h>floating-point division</h></idx>
+        </em>.
+        Using the same symbol (/) for different operations
+        (integer division and real division)
+        is known as <term>operator overloading</term>.
+        It is similar to method overloading,
+        which was discussed in Chapter<nbsp/>3.
+      </p>
+      <p>
+        What if you want to keep the remainder of an integer division?
+        Java  provides the modulus operator (%), which takes two operands.
+        The expression (7 % 5) gives the remainder after dividing 7 by 5 <mdash/> that is, 
+        2 in this case.
+        In general, the expression <m>(m \; \% \; n)</m>
+        (read <em>m</em> mod <em>n</em>)
+        gives the remainder after <em>m</em>
+        is divided by <em>n</em>.
+        Here are several examples:
+      </p>
+ <program language="java"><input>
+ 7 % 5   ==> 7 mod 5 equals 2
+ 5 % 7   ==> 5 mod 7 equals 5
+-7 % 5   ==> -7 mod 5 equals -2
+ 7 % -5  ==> 7 mod -5 equals 2
+ </input></program>
+      <p>
+        The best way to interpret these examples is to perform long division on the operands keeping both the quotient and the remainder.
+        For example, when you do long division on <m>-7 \div 5</m>,
+        you get a quotient of -1 and a remainder of -2.
+        The quotient is the value of <m>-7/5</m> and the remainder is the value of <m>-7 \% 5</m>.
+        When you do long division on <m>7 \div -5</m>,
+        you get a quotient of -1 and a remainder of 2.
+        The quotient is the value of <m>7/-5</m> and the remainder is the value of <m>7\%-5</m>.
+      </p>
+      <p>
+        We will encounter many practical uses for the modulus operator in our programs.
+        For a simple example,
+        we use it when we want to determine whether an integer is even or odd.
+        Numbers that leave a 0 remainder when divided by 2 are even:
+      </p>
+ <program language="java"><input>
+if (N % 2 == 0)
+    System.out.println(N + " is even");
+ </input></program>
+      <p>
+        More generally,
+        we could use the mod operator to define divisibility by 3, 4, 10, or by any number.
+      </p>
+
+      <activity label="modDemo">
+       <statement><p>Try the expressions containing the % operator below to see how they can be used to check for even or odd numbers. 
+        All even numbers are divisible (with no remainder) by 2. Add another if statement
+      that checks whether age2 is even using the % operator. Then, test if it's divisible by 3.</p></statement>
+      <program language="java" interactive="activecode"><input>
+        public class BoolMod
+        {
+           public static void main(String[] args)
+           {
+             int age1 = 20;
+             int age2 = 21;
+             int divisor = 2;
+             System.out.println("Remainder of " + age1 + "/" + divisor + " is " + (age1 % divisor) );
+             System.out.println("Remainder of " + age2 + "/" + divisor + " is " + (age2 % divisor) );
+             if (age1 % 2 == 0)
+                System.out.println(age1 + " is even");
+             else
+                System.out.println(age1 + " is odd");   
+           }
+        }
+      </input></program>
+      </activity>
+
+<exercises>
+  <title>Self-Study Exercises</title>
+  
+
+<exercise label="eval-div-mod">
+  <title>Evaluate div and mod</title>
+  <statement>
+      <p>Match the integer expressions with their values.</p>
+  </statement>
+  <feedback>
+      <p></p>
+  </feedback>
+  <matches>
+      <match>
+          <premise>10 / 2</premise>
+          <response>5</response>
+      </match>
+      <match>
+          <premise>9 / 2</premise>
+          <response>4</response>
+      </match>
+      <match>
+          <premise>6 / 8</premise>
+          <response>0</response>
+      </match>
+      <match>
+          <premise>9 % 2</premise>
+          <response>1</response>
+      </match>
+      <match>
+        <premise>8 % 6</premise>
+        <response>2</response>
+      </match>
+      <match>
+        <premise>6 % 8</premise>
+        <response>6</response>
+      </match>
+     
+  </matches>
+ <solution><p>5, 4, 0, 1, 2, 6</p></solution>
+</exercise>
+
+ 
+<exercise label="eval-dec-div">
+  <title>Evaluate Decimal Expressions</title>
+  <statement>
+      <p>Match the expressions with their values, paying special attention to the data type of the results.</p>
+  </statement>
+  <feedback>
+      <p></p>
+  </feedback>
+  <matches>
+      <match>
+          <premise>8 / 2.0</premise>
+          <response>4.0</response>
+      </match>
+      <match>
+          <premise>9 / 2.0</premise>
+          <response>4.5</response>
+      </match>
+      <match>
+          <premise>6 / 8</premise>
+          <response>0</response>
+      </match>
+      <match>
+          <premise>0.0 / 2</premise>
+          <response>0.0</response>
+      </match>
+      <match>
+        <premise>8.0 / 6.0</premise>
+        <response>1.33</response>
+      </match>
+  </matches>
+  <solution><p>4.0, 4.5, 0, 0.0, 1.33</p></solution>
+</exercise>
+</exercises>
+
+</subsection>
+

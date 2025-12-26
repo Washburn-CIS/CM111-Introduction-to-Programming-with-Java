@@ -1,0 +1,83 @@
+<subsection xml:id="subsec-rounding-ex">
+    <title>Example: Rounding to Two Decimal Places</title>
+    <p>
+      As an example of how to use <c>Math</c> class methods,
+      let's consider the problem of rounding numbers.
+      When dealing with applications that involve monetary 
+      values<mdash/>dollars and cents<mdash/>it is often necessary to 
+      round a calculated result to two decimal places.
+    </p>
+    <p>
+      For example,
+      suppose a program computes the value of a certificate of deposit (CD) to be 75.19999.
+      Before we output this result,
+      we would want to round it to two decimal places<mdash/>to 75.20. 
+      The following algorithm can be used to accomplish this:
+    </p>
+ <algorithm>
+  <title>Rounding to 2 decimal places</title>
+  <program language="java"><input>
+1. Multiply the number by 100, giving 7519.9999.
+2. Add 0.5 to the number giving 7520.4999.
+3. Drop the fractional part giving 7520
+4. Divide the result by 100, giving 75.20
+ </input></program>
+ </algorithm>
+    <p>
+      Step 3 of this algorithm can be done using the <c>Math.floor(R)</c> method,
+      which rounds its real argument,
+      <em>R</em>, to the largest integer not less than <em>R</em>
+      (from <xref ref="tab-math">Table</xref>).
+      If the number to be rounded is stored in the <c>double</c> variable <em>R</em>,
+      then the following expression will round <c>R</c> to two decimal places:
+    </p>
+ <program language="java"><input>
+R = Math.floor(R * 100.0 + 0.5) / 100.0;
+ </input></program>
+    <p>
+      Alternatively,
+      we could use the <c>Math.round()</c> method ( <xref ref="tab-math">Table</xref>).
+      This method rounds a floating-point value to the nearest integer.
+      For example, <c>Math.round(65.3333)</c> rounds to 65 and <c>Math.round(65.6666)</c> 
+      rounds to 66.
+      The following expression uses it to round to two decimal places:
+    </p>
+ <program language="java"><input>
+R = Math.round(100.0 * R) / 100.0;
+ </input></program>
+    <p>
+      Note that it is important here to divide by <m>100.0</m> and not by <m>100</m>.
+      Otherwise, the division will give an integer result and we'll lose the decimal places.
+    </p>
+    <principle>
+      <title>DEBUGGING TIP: Division</title>
+      <p>
+        Using the correct type of literal in division operations 
+        is necessary to ensure that you get the correct type of result.
+      </p>
+    </principle>
+
+    <activity label="roundDemo">
+    <statement><p>Try the following demo of these math operations to round a decimal value. 
+      Try changing the value of r and try again.  </p></statement>
+      <program language="java" interactive="activecode">
+     <input>
+     public class RoundingDemo 
+     {
+      public static void main(String[] args) 
+      {
+            double r = 75.19999;
+            System.out.println("r: " + r);
+            
+            double rFloored = Math.floor(r * 100.0 + 0.5) / 100.0;
+            System.out.println("Math.floor " + rFloored);
+            
+            double rRounded = Math.round(100.0 * r) / 100.0;
+            System.out.println("Math.round: " + rRounded);
+      }
+  }
+    </input>
+    </program>
+    </activity>
+  </subsection>
+  

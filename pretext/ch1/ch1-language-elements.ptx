@@ -93,6 +93,9 @@
 <xi:include href="./subsec-primitives.ptx"/>
 <xi:include href="./subsec-statements.ptx"/>
 <xi:include href="./subsec-expressions.ptx"/>
+<xi:include href="./subsec-numeric-types.ptx"/>
+<xi:include href="./subsec-arithmetic-ops.ptx"/>
+<xi:include href="./subsec-op-precedence.ptx"/>
 <xi:include href="./subsec-basic-class-def.ptx"/>
 <xi:include href="./subsec-programs.ptx"/>
 

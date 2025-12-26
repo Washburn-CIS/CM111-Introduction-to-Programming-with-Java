@@ -1,0 +1,8 @@
+<!-- TODO: edit /-->
+<section xml:id="sec-local-variables">
+  <title>Variables</title>
+  
+  <!-- TODO: make section introducing variables and variable definitions from below, and edit below to be only "local" variables /-->
+  
+  <xi:include  href="subsec-object-creation.ptx"/>
+</section>

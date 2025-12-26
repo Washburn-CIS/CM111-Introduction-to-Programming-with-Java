@@ -1,6 +1,7 @@
-<section xml:id="the-user-interface">
-  <title>The User Interface</title>
-  <p>
+<!-- TODO: edit /-->
+<section xml:id="sec-user-interfaces">
+  <introduction>
+   <p>
     The user interface is that part of the program that handles the  input and output interactions between the user and the program.
     As an interface,
     it limits or constrains the manner in which the user can interact with the program.
@@ -47,4 +48,18 @@
       Separating the user interface from the computational object is a good way to divide up the labor in programs that perform I/O.
     </p>
   </principle>
+  </introduction>
+  
+  
+  
+  <xi:include  href="subsec-command-line-interfaces.ptx"/>
+  <xi:include  href="subsec-formatted-printing.ptx"/>
+  
+  
+  
+  
 </section>
+
+
+
+

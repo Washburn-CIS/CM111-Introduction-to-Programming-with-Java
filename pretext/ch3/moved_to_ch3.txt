@@ -103,3 +103,307 @@
       prints a greeting on the console.
 </p>
 </subsection>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <subsection xml:id="class-constants">
+    <title>Example: Using Class Constants</title>
+    <introduction><p>
+      In addition to instance variables,
+      which are associated with instances (objects) of a class, Java also allows 
+      <term>class variables</term>,
+      which are associated with the class itself.
+      One of the most common uses of such variables is to define 
+      named constants to replace literal values.
+      A <term>named constant</term> is a variable that cannot be 
+      changed once it has been given an initial value.
+      In this section,
+      we use our running example, <c>OneRowNim</c>, to illustrate using class constants.
+    </p>
+    </introduction>
+    <p>
+      Methods and variables that are associated with a class 
+      are declared with the <c>static</c> modifier.
+      If a variable is declared <c>static</c>, there is exactly one copy of 
+      that variable created no matter how many times its class is instantiated.
+      To turn a variable into a constant,
+      it must be declared with the <c>final</c> modifier.
+      Thus, the following would be examples of a
+      <term>class constants</term>,
+      constant values that are associated with the class rather than with its instances:
+    </p>
+    <program language="java"><input>
+      public static final int PLAYER_ONE = 1;
+      public static final int PLAYER_TWO = 2;
+      public static final int MAX_PICKUP = 3;
+      public static final int MAX_STICKS = 7;
+    </input></program>
+    <p>
+      The <c>final</c> modifier indicates that the value of a variable cannot be changed.
+      When <c>final</c> is used in a variable declaration,
+      the variable must be assigned an initial value.
+      After a <c>final</c> variable is properly declared,
+      it is a syntax error to attempt to try to change its value.
+      For example, given the preceding declarations,
+      the following assignment statement would cause a compiler error:
+    </p>
+    <program language="java"><input>
+      PLAYER_ONE = 5;  // Syntax error; PLAYER_ONE is a constant
+    </input></program>
+    <p>
+      Note how we use uppercase letters and underscore characters (_) in the names of constants.
+      This is a convention that professional Java programmers follow,
+      and its purpose is to make it easy to distinguish the constants from the variables in a program.
+      This makes the program easier to read and understand.
+    </p>
+    <principle>
+      <title>PROGRAMMING TIP: Readability</title>
+      <p>
+        To make your programs more readable,
+        use uppercase font for constant identifiers.
+      </p>
+    </principle>
+    <p>
+      Another way that named constants improve the readability 
+      of a program is by replacing the reliance on literal values.
+      For example, for the <c>OneRowNim</c> class,
+      compare the following two <c>if</c> conditions:
+    </p>
+    <program language="java"><input>
+      if (num &lt; 1 || num > 3 || num > nSticks) ...
+      if (num &lt; 1 || num > MAX_PICKUP || num > nSticks) ...
+    </input></program>
+    <p>
+      Clearly, the second condition is easier to read and understand.
+      In the first condition,
+      we have no good idea what the literal value 3 represents.
+      In the second,
+      we know that MAX_PICKUP represents the most sticks a player can pick up.
+    </p>
+    <p>
+      Thus, to make <c>OneRowNim</c> more readable,
+      we should replace all occurrences of the literal value 3 with 
+      the constant MAX_PICKUP. This same principle would apply to some of 
+      the other literal values in the program.
+      Thus,  instead of using 1 and 2 to represent the two players,
+      we could use PLAYER_ONE and PLAYER_TWO to make methods 
+      such as the following easier to read and understand:
+    </p>
+    <program language="java"><input>
+      public int getPlayer()
+      {   if (onePlaysNext)
+              return PLAYER_ONE;
+          else return PLAYER_TWO;
+      } // getPlayer()
+    </input></program>
+    <principle>
+      <title>PROGRAMMING TIP: Readability</title>
+      <p>
+        To make your programs more readable,
+        use named constants instead of literal values.
+      </p>
+    </principle>
+    <p>
+      Another advantage of named constants (over literals)
+      is that their use makes the program easier to modify and maintain.
+      For example, suppose that we decide to change <c>OneRowNim</c> 
+      so that the  maximum number of sticks that can be picked up is 4 instead of 3.
+      If we used literal values, we would have to change all 
+      occurrences of 4 that were used to represent the maximum pick up.
+      If we used a named constant, we need only change its declaration to:
+    </p>
+    <program language="java"><input>
+      public static final int MAX_PICKUP = 4;
+    </input></program>
+    <principle>
+      <title>EFFECTIVE DESIGN: Maintainability</title>
+      <p>
+        Constants should be used instead of literal values in a program.
+        This will make the program easier to modify and maintain.
+      </p>
+    </principle>
+    <p>
+      So far, all of the examples we have presented show why named constants
+      (but not necessarily class constants)
+      are useful.
+      Not all constants are class constants.
+      That is, not all constants are declared <c>static</c>. However,
+      the idea of associating constants with a class makes good sense.
+      In addition to saving memory resources,
+      by creating just a single copy of the constant,
+      constants such as MAX_STICKS and PLAYER_ONE make more conceptual sense to 
+      associate with the class itself rather than with any particular <c>OneRowNim</c> instance.
+    </p>
+    <p>
+      Class constants are used extensively in the Java class library.
+      For example, Java's various 
+      built-in colors are represented as constants of the 
+      <c>java.awt.Color</c> class <mdash/><c>Color.blue</c> and <c>Color.red</c>. 
+      Similarly, <c>java.awt.Label</c> uses <c>int</c> constants 
+      to specify how a label's text should be aligned: <c>Label.CENTER</c>.
+    </p>
+    <p>
+      Another advantage of class constants is that they can be used <em>before</em>
+      instances of the class exist.  For example, a class constant
+      (as opposed to an instance constant) may be used during object instantiation:
+    </p>
+    <program language="java"><input>
+      OneRowNim game = new OneRowNim(OneRowNim.MAX_STICKS);
+    </input></program>
+    <p>
+      Note how we use the name of the class to refer to the class constant.
+      Of course, MAX_STICKS has to be a public variable in order 
+      to be accessible outside the class.
+      To use MAX_STICKS as a constructor argument it has to be 
+      a class constant because at this point in the 
+      program there are no  <c>OneRowNim</c> instances. 
+      A new version of <c>OneRowNim</c> that uses class constants 
+      is shown in <xref ref="list-constnim">Listing</xref>.
+    </p>
+    <p>
+      It is important to note that Java also allows class 
+      constants to be referenced through an instance of the class.
+      Thus, once we have instantiated <c>game</c>, we can 
+      refer to MAX_STICKS with either <c>OneRowNim.MAX_STICKS</c> 
+      or <c>game.MAX_STICKS</c>.
+    </p>
+    <listing xml:id="list-constnim">
+      <caption>This version of <c>OneRowNim</c> uses named constants.</caption>
+      <program language="java"><input>
+        public class OneRowNim
+        {   public static final int PLAYER_ONE = 1;
+            public static final int PLAYER_TWO = 2;
+            public static final int MAX_PICKUP = 3;
+            public static final int MAX_STICKS = 11;
+            public static final boolean GAME_OVER = false;
+            private int nSticks = MAX_STICKS;
+            private boolean onePlaysNext = true;
+            public OneRowNim()
+            {
+            } //OneRowNim() constructor1
+            public OneRowNim(int sticks)
+            {   nSticks = sticks;
+            }  // OneRowNim() constructor2
+            public OneRowNim(int sticks, int starter)
+            {   nSticks = sticks;
+                onePlaysNext = (starter == PLAYER_ONE);
+            }  // OneRowNim() constructor3
+            public boolean takeSticks(int num)
+            {   if (num &lt; 1 || num > MAX_PICKUP || num > nSticks)
+                    return false;                // Error
+                else                             // Valid move
+                {   nSticks = nSticks - num;
+                    onePlaysNext = !onePlaysNext;
+                    return true;
+                } //else
+            }//takeSticks()
+            public int getSticks()
+            {   return nSticks;
+            } //getSticks()
+            public int getPlayer()
+            {   if (onePlaysNext)
+                    return PLAYER_ONE;
+                else return PLAYER_TWO;
+            } //getPlayer()
+            public boolean gameOver()
+            {   return (nSticks &lt;= 0);
+            } // gameOver()
+            public int getWinner()
+            {   if (nSticks &lt; 1)
+                    return getPlayer();
+                else return 0;         // Game is not over
+            } // getWinner()
+            public String report()
+            {   return ("Number of sticks left: " + getSticks()
+                  + "\nNext turn by player " + getPlayer() + "\n");
+            }   // report()
+          } // OneRowNim class
+      </input></program>
+    </listing>
+</subsection>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <subsection xml:id="OOD-information-hiding">
+    <title>OBJECT-ORIENTED DESIGN:
+    Information Hiding</title>
+    <introduction>
+    <p>
+      The fact that our new versions of <c>OneRowNim</c> <mdash/> we've developed two new versions 
+      in this chapter<mdash/> are  <em>backward compatible</em>
+      with the previous version is due in large part to  the way we have 
+      divided up its public and private elements.
+      Because the new versions still present the same public interface,
+      programs that use the <c>OneRowNim</c> class,
+      such as the <c>OneRowNimApp</c> from Chapter<nbsp/> 4 (<xref ref="fig-ornapp">Figure</xref>),
+      can continue to use the class without changing a single line of their own code.
+      To confirm this,
+      see the Self-Study Exercise at the end of this section.
+    </p>
+    <p>
+      Although we have made significant changes to the underlying  representation 
+      of <c>OneRowNim</c>, the implementation details <mdash/> its data and 
+      algorithms <mdash/> are hidden from other objects.
+      As long as <c>OneRowNim</c>'s public interface remains compatible with the old version,
+      changes to its private elements won't cause any inconvenience to 
+      those objects that were dependent on the old version.
+      This ability to change the underlying implementation without 
+      affecting the outward functionality of a class is one of the 
+      great benefits of the information hiding principle.
+    </p>
+    <principle>
+      <title>EFFECTIVE DESIGN: Information Hiding</title>
+      <p>
+        In designing a class, other objects should be given access 
+        just to the information they need and nothing more.
+      </p>
+    </principle>
+    <p>
+      The lesson to be learned here is that the public parts of a 
+      class should be restricted to just those parts that must be accessible to other objects.
+      Everything else should be private.
+      Things work better, in Java programming and in the real world,
+      when objects are designed with the principle of information hiding in mind.
+    </p>
+    </introduction>
+
+</subsection>

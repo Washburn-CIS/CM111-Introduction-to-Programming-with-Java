@@ -1,0 +1,478 @@
+<subsection xml:id="assignment-operators">
+    <title>Assignment Operators</title>
+    <p>
+      In addition to the simple assignment
+      operator (=), Java supplies a number of 
+      shortcut assignment operators that allow you to 
+      combine an arithmetic operation and an assignment in one operation.
+      These operations can be used with either integer or floating-point operands.
+      For example,
+      the <c>+=</c> operator allows you to combine addition and assignment into one expression.
+      The statement
+    </p>
+ <program language="java"><input>
+k += 3;
+ </input></program>
+    <p>
+      is equivalent to the statement
+    </p>
+ <program language="java"><input>
+k = k + 3;
+ </input></program>
+    <p>
+      Similarly, the statement
+    </p>
+ <program language="java"><input>
+r += 3.5 + 2.0 * 9.3 ;
+ </input></program>
+    <p>
+      is equivalent to
+    </p>
+ <program language="java"><input>
+r = r + (3.5 + 2.0 * 9.3);  // i.e., r = r + 22.1;
+ </input></program>
+    <p>
+      As these examples illustrate,
+      when using the <c>+=</c> operator,
+      the expression on its right-hand side is first evaluated and then <em>added</em>
+      to the current value of the variable on its left-hand side.
+    </p>
+    <p>
+      <xref ref="tab-assign">Table</xref> lists the other assignment operators that can 
+      be used in combination with the arithmetic operators.
+      For each of these operations,
+      the interpretation is the same: Evaluate the expression on the 
+      right-hand side of the operator and then perform the arithmetic operation
+      (such as addition or multiplication)
+      to the current value of the variable on the left of the operator.
+    </p>
+    <table xml:id="tab-assign">
+      <title>Java's assignment operators assignment operators</title>
+      <tabular>
+        <row bottom="minor" left="minor">
+          <cell>Operator</cell>
+          <cell>Operation</cell>
+          <cell>Example</cell>
+          <cell>Interpretation</cell>
+        </row>
+        <row>
+          <cell><m>=</m></cell>
+          <cell><em>Simple assignment</em></cell>
+          <cell><m>m = n;</m></cell>
+          <cell><m>m = n;</m></cell>
+        </row>
+        <row>
+          <cell><m>+\!=</m></cell>
+          <cell><em>Addition then assignment</em></cell>
+          <cell><m>m\ +\!=\ 3;</m></cell>
+          <cell><m>m = m + 3;</m></cell>
+        </row>
+        <row>
+          <cell><m>-\!=</m></cell>
+          <cell><em>Subtraction then assignment</em></cell>
+          <cell><m>m\ -\!=\ 3;</m></cell>
+          <cell><m>m = m - 3;</m></cell>
+        </row>
+        <row>
+          <cell><m>\ast \!=</m></cell>
+          <cell><em>Multiplication then assignment</em></cell>
+          <cell><m>m\ \ast \!=\ 3;</m></cell>
+          <cell><m>m = m\,\ast \,3;</m></cell>
+        </row>
+        <row>
+          <cell><m>/\!=</m></cell>
+          <cell><em>Division then assignment</em></cell>
+          <cell><m>m\ /\!=\ 3;</m></cell>
+          <cell><m>m = m / 3;</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell><m>\%\!=</m></cell>
+          <cell><em>Remainder then assignment</em></cell>
+          <cell><m>m\ \%\!=\ 3;</m></cell>
+          <cell><m>m = m \% 3;</m></cell>
+        </row>
+      </tabular>
+    </table>
+
+    <activity label="asgnOpsDemo">
+      <statement><p>Run the code below to see what the ++ and shorcut operators do. Click on the 
+        Show Code Lens button to trace through the code and the variable values change in the visualizer. </p></statement>
+       <program language="java" interactive="activecode">
+        <input>
+        public class Test2
+        {
+           public static void main(String[] args)
+           {
+             int score = 0;
+             System.out.println(score);
+             score++;
+             System.out.println(score);
+             score *= 2;
+             System.out.println(score);
+             int penalty = 5;
+             score -= penalty/2;
+             System.out.println(score);
+           }
+        }          
+      </input>
+       </program>
+      </activity>
+
+<exercises>
+<title>Self-Study Exercises </title> 
+
+
+<exercise label="eval-shortcut-expr">
+  <title>Evaluate Shortcut Expressions</title>
+  <statement>
+    <p>
+      What value will <c>j</c> and <c>k</c> have after each of the
+        calculations that follow? Assume that <c>k</c> has the value 10 and <c>j</c>
+         has the value 5 before each operation is performed.
+      </p>
+  </statement>
+  <feedback>
+      <p></p>
+  </feedback>
+  <matches>
+      <match>
+          <premise>k += j; </premise>
+          <response>  k==15, j==5    </response>
+      </match>
+      <match>
+          <premise> k -= j++;  </premise>
+          <response>k==5, j==6  </response>
+      </match>
+      <match>
+          <premise> k *= ++j * 2;  </premise>
+          <response> k==120, j==6 </response>
+      </match>
+      <match>
+          <premise>   k /= 25 * j--;  </premise>
+          <response>k==0, j==4  </response>
+      </match>
+      <match>
+        <premise>  k %= j - 3; </premise>
+        <response> k==0, j==5</response>
+      </match>
+  </matches>
+  <solution><p><ul>
+    <li>k==15, j==5</li>
+    <li>k==5, j==6</li>
+    <li>k==120, j==6</li>
+    <li>k==0, j==4</li>
+    <li>k==0, j==5</li>
+  </ul></p></solution>
+</exercise>
+<exercise label="inc4">
+ <statement><p> Write four different statements that add 1 to the
+   variable <c>k</c> (which has been declared as an int).</p></statement>
+</exercise>
+</exercises>
+
+  </subsection>
+  <subsection xml:id="relationals">
+    <title>Relational Operators</title>
+    <p>
+      There are several <em>relational</em>
+      operations that can be performed on numbers:
+      <m>\lt</m>, <m>></m>, <m>\lt =</m>,
+      <m>> =</m>, <m>= =</m>, and <m>!\!=</m>.
+      These correspond to the algebraic operators <m>\lt</m>,
+      <m>></m>,
+      <m>\leq</m>, <m>\geq</m>, <m>=</m>, and <m>\neq</m>.
+      Each of these operators takes two operands
+      (integer or real)
+      and returns a boolean result.
+      They are defined in <xref ref="tab-relations">Table</xref>.
+    </p>
+    <table xml:id="tab-relations">
+      <title>Relational operators.</title>
+      <tabular>
+        <row bottom="minor" left="minor">
+          <cell>Operator</cell>
+          <cell>Operation</cell>
+          <cell>Java Expression</cell>
+        </row>
+        <row>
+          <cell><m>\lt</m></cell>
+          <cell><em>Less than</em></cell>
+          <cell><m>5 \lt   10</m></cell>
+        </row>
+        <row>
+        <cell><m>></m></cell>
+          <cell><em>Greater than</em></cell>
+          <cell><m>10  >  5</m></cell>
+        </row>
+        <row>
+          <cell><m>\lt  =</m></cell>
+          <cell><em>Less than or equal to</em></cell>
+          <cell><m>5 \lt  = 10</m></cell>
+        </row>
+        <row>
+          <cell><m>> =</m></cell>
+          <cell><em>Greater than or equal to</em></cell>
+          <cell><m>10 > =  5</m></cell>
+        </row>
+        <row>
+          <cell><m>= =</m></cell>
+          <cell><em>Equal  to</em></cell>
+          <cell><m>5 = = 5</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell><m>!\!=</m></cell>
+          <cell><em>Not equal to</em></cell>
+          <cell><m>5\ !\!=\ 4</m></cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      Note that several of these relational operators require two symbols in Java.
+      Thus, the familiar equals sign (=) is replaced in Java by ==.  This is so the equality operator can be distinguished from the assignment operator.
+      Also, less than or equal to (<m>\lt</m>=), greater than or equal to (<m>></m>=), and not equal to (!=) require two symbols,
+      instead of the familiar <m>\leq</m>,
+      <m>\geq</m>, and <m>\neq</m> from algebra.
+      In each case, the two symbols should be consecutive.
+      It is an error in Java for a space to appear between the <m>\lt</m> and = in <m>\lt =</m>.
+    </p>
+    <principle>
+      <title>DEBUGGING TIP: Equality and Assignment</title>
+      <p>
+        A common semantic error among beginning programmers is to use the assignment operator (=) when the equality operator (==) is intended.
+      </p>
+    </principle>
+
+    <activity label="relOpDemo">
+      <statement><p>Run the code below and try changing the value of x to get each of the three possible lines in the conditional to print.</p></statement>
+     <program language="java" interactive="activecode">
+      <input>
+      public class TestElseIf
+      {
+        public static void main(String[] args)
+        {
+          int x = 2;
+          if (x &lt; 0)
+          {
+            System.out.println("x is negative");
+          }
+          else if (x == 0)
+          {
+              System.out.println("x is 0");
+          }
+          else
+          {
+            System.out.println("x is positive");
+          }
+        }
+      }
+     </input>
+     </program>
+    </activity>
+    <p>
+      Among the relational operators,
+      the inequalities (<m>\lt</m>, <m>></m>, <m>\lt =</m>,
+      and <m>> =</m>) have higher precedence than the equality operators
+      (<m>= =</m> and <m>!\!=</m>).
+      In an expression that involves both kinds of operators,
+      the inequalities would be evaluated first.
+      Otherwise, the expression is evaluated from left to right.
+    </p>
+    <p>
+      Taken as a group the relational operators have lower precedence
+          <idx><h>precedence</h></idx>
+      than the arithmetic operators.
+      Therefore, in evaluating an expression that involves both arithmetic and relational operators,
+      the arithmetic operations are done first.
+      <xref ref="tab-rel-precedence">Table</xref> includes all of the numeric operators introduced so<nbsp/>far.
+    </p>
+    <table xml:id="tab-rel-precedence">
+      <title>Numeric operator precedence including relations</title>
+      <tabular>
+        <row bottom="minor" left="minor">
+          <cell>Precedence Order</cell>
+          <cell>Operator</cell>
+          <cell>Operation</cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell><m>(\,)</m></cell>
+          <cell><em>Parentheses</em></cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell><m>+\!+\ \ --</m></cell>
+          <cell><em>Increment,  decrement</em></cell>
+        </row>
+        <row>
+          <cell>3</cell>
+          <cell><m>\ast \ \ /\ \ \%</m></cell>
+          <cell><em>Multiplication,  division,  modulus</em></cell>
+        </row>
+        <row>
+          <cell>4</cell>
+          <cell><m>+\ \ -</m></cell>
+          <cell><em>Addition,  subtraction</em></cell>
+        </row>
+        <row>
+          <cell>5</cell>
+          <cell><m>\lt \,\,\,\,>\ \ \lt  =\ \ > =</m></cell>
+          <cell><em>Relational  operators</em></cell>
+        </row>
+        <row bottom="minor">
+          <cell>6</cell>
+          <cell><m>= =\ \ !\!=</m></cell>
+          <cell><em>Equality  operators</em></cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      To take an example,
+      let us evaluate the following complex expression:
+    </p>
+ <program language="java"><input>
+9 + 6 &lt;= 25 * 4 + 2
+ </input></program>
+    <p>
+      To clarify the implicit operator precedence,
+      we first parenthesize the expression
+    </p>
+ <program language="java"><input>
+( 9 + 6 ) &lt;= ( (25 * 4 ) + 2 )
+ </input></program>
+    <p>
+      and then evaluate it step by step:
+    </p>
+ <program language="java"><input>
+Step 1. ( 9 + 6 ) &lt;= ( (25 * 4 ) + 2 )
+Step 2. ( 9 + 6 ) &lt;= ( 100 + 2 )
+Step 3. 15 &lt;= 102
+Step 4. true
+ </input></program>
+    <p>
+      The following expression is an example of an ill-formed expression:
+    </p>
+ <program language="java"><input>
+9 + 6 &lt;= 25 * 4 == 2
+ </input></program>
+    <p>
+      That the expression is ill formed becomes obvious if we parenthesize it and then attempt to evaluate it:
+    </p>
+ <program language="java"><input>
+Step 1. ( ( 9 + 6 )  &lt;= ( 25 * 4 ) ) == 2
+Step 2. ( 15  &lt;= 100 ) == 2
+Step 3. true == 2      // Syntax error results here
+ </input></program>
+    <p>
+      The problem here is that the expression
+<c>true == 2</c> is an attempt to compare an <c>int</c> and a
+<c>boolean</c> value,
+      which can't be done.
+      As with any other binary operator,
+      the == operator requires that both  of its operands be of the same type.
+      This is another example of Java's strong type checking.
+    </p>
+    
+    <exercises>
+      <title>Self-Study Exercises </title> 
+      
+      
+      <exercise label="eval-inc-expr2">
+        <title>Evaluate Precedence with Increment Expressions</title>
+        <statement>
+          <p>
+            For each of these questions, what is 
+ the value of <c>m</c>? Assume that j equals 3, k equals 2, 
+ and m equals 10, before each question.  Don't forget about
+ precedence.  </p>
+        </statement>
+        <feedback>
+            <p></p>
+        </feedback>
+        <matches>
+            <match>
+                <premise>m = j++ + k; </premise>
+                <response>  m = 5   </response>
+            </match>
+            <match>
+                <premise> m = ++j + k;  </premise>
+                <response>m = 6  </response>
+            </match>
+            <match>
+                <premise> m += j + k;    </premise>
+                <response> m = 15 </response>
+            </match>
+            <match>
+                <premise>   m *= j++ + k++;   </premise>
+                <response>m = 50 </response>
+            </match>
+            <match>
+              <premise>   m *= ++j + ++k;  </premise>
+              <response>  m = 70</response>
+            </match>
+        </matches>              
+        <solution><p><ul>
+          <li>m = 5</li>
+          <li>m = 6</li>
+          <li>m = 15</li>
+          <li>m = 50</li>
+          <li>m = 70</li>
+        </ul></p></solution> 
+      </exercise>
+
+      <exercise label="eval-tf1">
+        <title>Evaluate True/False/Illegal</title>
+        <statement>
+          <p>
+            Evaluate each of the following expressions, taking care to observe operator precedence rules. 
+             If an expression is illegal, mark it illegal. </p>
+        </statement>
+        <feedback>
+            <p></p>
+        </feedback>
+        <matches>
+            <match>
+                <premise>4 + 5 ==  6 * 2 </premise>
+                <response>  false   </response>
+            </match>
+            <match>
+                <premise>4 + 5 / 6 >= 10 % 2  </premise>
+                <response> true  </response>
+            </match>
+            <match>
+                <premise>(4 = 5) / 6   </premise>
+                <response> illegal </response>
+            </match>
+            </matches>
+            </exercise>
+            <exercise label="eval-tf2">
+              <title>Evaluate True/False/Illegal</title>
+              <statement>
+                <p>
+                  Evaluate each of the following expressions, taking care to observe operator precedence rules.  
+                  If an expression is illegal, mark it illegal. </p>
+              </statement>
+              <feedback>
+                  <p></p>
+              </feedback>
+              <matches>
+                  <match>
+                      <premise>(4 + 5) &lt;= 6 / 3          </premise>
+                      <response>  false   </response>
+                  </match>
+                  <match>
+                      <premise>4 + 5 % 3 != 7 - 2  </premise>
+                      <response> true  </response>
+                  </match>
+                  <match>
+                      <premise>(4 + 5) % 3 = 10 -4   </premise>
+                      <response> illegal </response>
+                  </match>
+                  </matches>
+                  </exercise>
+
+                  <!-- Extra false exercise 9 % 2 * 7 / 3 > 17 -->
+      </exercises>
+      
+    
+  </subsection>    
+

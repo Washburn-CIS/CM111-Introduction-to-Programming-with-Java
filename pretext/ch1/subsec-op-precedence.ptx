@@ -1,0 +1,167 @@
+
+  <subsection xml:id="subsec-op-precedence">
+    <title>Operator Precedence</title>
+    <table xml:id="tab-op-precedence">
+      <title>Precedence order of the arithmetic operators.</title>
+      <tabular>
+        <row bottom="minor" left="minor">
+          <cell>Precedence Order</cell>
+          <cell>Operator</cell>
+          <cell>Operation</cell>
+        </row>
+        <row>
+          <cell>1</cell>
+          <cell><m>( \; )</m></cell>
+          <cell><em>Parentheses</em></cell>
+        </row>
+        <row>
+          <cell>2</cell>
+          <cell><m>\ast \;\; / \;\; \%</m></cell>
+          <cell><em>Multiplication, Division, Modulus</em></cell>
+        </row>
+        <row bottom="minor">
+          <cell>3</cell>
+          <cell><m>+ \;\; -</m></cell>
+          <cell><em>Addition, Subtraction</em></cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      The built-in precedence order for arithmetic operators is shown in 
+      <xref ref="tab-op-precedence">Table</xref>.
+      Parenthesized 
+      expressions have highest precedence
+      and are evaluated first.
+      Next come the multiplication, division,
+      and modulus operators, followed by addition and subtraction.
+      When we have an unparenthesized expression that involves both multiplication and addition,
+      the multiplication would be done first,
+      even if it occurs to the right of the plus sign.
+      Operators at the same level in the precedence hierarchy are evaluated from left to right.
+      For example, consider the following expression:
+    </p>
+ <program language="java"><input>
+9 + 6 - 3 * 6 / 2
+ </input></program>
+    <p>
+      In this case,
+      the first operation to be applied will be the multiplication (*), followed by division (/), followed by addition (+), and then finally the subtraction
+      (<m>-</m>).
+      We can use parentheses to clarify the order of evaluation.
+      A parenthesized expression is evaluated outward from the innermost set of parentheses:
+    </p>
+ <program language="java"><input>
+Step 1.  ( (9 + 6) - ((3 * 6) / 2 ) )
+Step 2.  ( (9 + 6) - (18 / 2 ) )
+Step 3.  ( (9 + 6) - 9 )
+Step 4.  ( 15 - 9 )
+Step 5.  6
+ </input></program>
+    <p>
+      Parentheses can
+      (and should)
+      always be used to clarify the order of operations in an expression.
+      For example,
+      addition will be performed before multiplication in the following expression:
+    </p>
+ <program language="java"><input>
+(a + b) * c
+ </input></program>
+    <p>
+      Another reason to use parentheses is that Java's precedence and promotion rules will sometimes lead to expressions that look fine but contain subtle errors.
+      For example, consider the following expressions:
+    </p>
+ <program language="java"><input>
+System.out.println(5/3/2.0);   // 0.5
+System.out.println(5/(3/2.0)); // 3.33
+ </input></program>
+    <p>
+      The first gives a result of 0.5, but the use of parentheses in the second gives a result of 3.33.
+      If the second is the expected interpretation,
+      then the parentheses here helped avoid a subtle semantic error.
+    </p>
+    <principle>
+      <title>PROGRAMMING TIP: Parenthesize!</title>
+      <p>
+        To avoid subtle bugs caused by Java's precedence and promotion rules,
+        use parentheses to specify the order of evaluation in an expression.
+      </p>
+    </principle>
+
+  <exercises>
+    <title>Self-Study Exercises</title>  
+ 
+  <exercise label="eval-expr1">
+    <title>Evaluate Expressions</title>
+    <statement>
+      <p>Parenthesize and then evaluate each of the  expressions
+        that follow, taking care to observe operator precedence rules.  </p>
+    </statement>
+    <feedback>
+        <p></p>
+    </feedback>
+    <matches>
+        <match>
+            <premise>4 + 5.0 * 6 </premise>
+            <response>34.0</response>
+        </match>
+        <match>
+            <premise> (4 + 5) * 6 </premise>
+            <response>54</response>
+        </match>
+        <match>
+            <premise> 4 + 5 / 6 </premise>
+            <response>4</response>
+        </match>
+        <match>
+            <premise>  (4 + 5) / 6 </premise>
+            <response>1</response>
+        </match>
+    </matches>
+    <solution><p>34.0, 54, 4, 1</p></solution>
+  </exercise>
+  
+  <exercise label="eval-expr2">
+    <title>Evaluate Expressions</title>
+    <statement>
+      <p>Parenthesize and then evaluate each of the  expressions
+        that follow, taking care to observe operator precedence rules.   </p>
+    </statement>
+    <feedback>
+        <p></p>
+    </feedback>
+    <matches>
+        <match>
+          <premise>  4 + 5 % 3</premise>
+          <response>6</response>
+        </match>
+        <match>
+          <premise>(4 + 5) % 3</premise>
+          <response>0</response>
+        </match>
+        <match>
+          <premise> 9 % 2 * 7 / 3  </premise>
+          <response>2</response>
+        </match>
+        <match>
+          <premise>  5.0 / 2 * 3 </premise>
+          <response>7.5</response>
+        </match>
+    </matches>
+    <statement><p>6, 0, 2, 7.5</p></statement>
+  </exercise>
+  </exercises>
+     
+
+  </subsection>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1,6 +1,6 @@
 
-<subsection xml:id="subsec_variables">
-<title>Variables</title>
+<subsection xml:id="subsec-local-variables">
+<title>Local Variables</title>
 <p>
       A <term>variable</term> is a named storage location that can store a value of a particular type.
       You can think of a variable as a special container into which you can place values 
@@ -25,25 +25,6 @@
       the variable <c>helloworld</c> is assigned a <c>HelloWorld</c> object
       (line 16).
 </p>
-</subsection>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -168,23 +149,6 @@ public class AsgnEx
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <exercises>
 <title>Self-Study Exercises</title>
 
@@ -248,187 +212,14 @@ public class AsgnEx
       </exercise>
 
 </exercises>
-</subsection>  
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<subsection>
-<title>Creating and Using Objects</title>
-<p>
-      The body of the <c>main()</c> method is where the <c>HelloWorld</c> program creates its one and only object.
-      When it is run the <c>HelloWorld</c> program simply prints
-<q>Hello World!</q> on the console.
-      In order for this action happen,
-      the program needs to call the <c>greet()</c> method.
-</p>
-<p>
-      However, because the <c>greet()</c> method is an instance method that belongs to a <c>HelloWorld</c> object,
-      we first need to create a <c>HelloWorld</c> instance.
-      This is what happens in the body of the <c>main()</c> method:  
-<!--  (
-      <xref ref="fig_helloworld"></xref>).
-    </p>
-    <p>
-      The <c>main()</c> method contains three statements:
--->
-</p>
-<program language="java"><input>
-    HelloWorld helloworld;          // Variable declaration
-    helloworld = new HelloWorld();  // Object instantiation
-    helloworld.greet();             // Method invocation
-</input></program>
-<p>
-      The first statement declares a variable of type <c>HelloWorld</c>, which is then assigned a <c>HelloWorld</c> object.
-</p>
-<p>
-      The second statement creates a <c>HelloWorld</c> object by
-      invoking <c>HelloWorld</c>'s default constructor: <c>HelloWorld()</c>.
-      A default constructor has the same name as the class and merely creates
-      an object of that class. It is defined automatically by Java 
-      and looks like this:
-</p>
-<program language="java"><input>
-     public HelloWorld() {  }  // Default constructor
-</input></program>
-<p>  
-      Creating an object is called <term>object instantiation</term>
-      because you are creating an instance of the object.
-      Once a <c>HelloWorld</c> instance is created,
-      we can use one of its instance methods to perform some task or operation.
-</p>
-<p>
-      Thus, in the third statement,
-      we call the <c>greet()</c> method,
-      which will print
-<q>Hello World!</q>
-      on the console.
-</p>
-
-<p>
-      The <c>HelloWorld</c> program (<xref ref="lstng_helloworld"></xref>)illustrates the idea that an 
-      object-oriented program is a collection of interacting objects.
-      Although we create just a single <c>HelloWorld</c> object in the <c>main()</c> method,
-      there are two other objects used in the program.
-      One is the <c>greeting</c> object, the <q>Hello, World!</q>
-<c>String</c>. 
-      The other is the <c>System.out</c> object,
-      which is a special Java system object used for printing.
-</p>
 </subsection>
-<subsection>
-<title>Java JFrames</title>
-<p>
-      Java can run a program in a <term>JFrame</term>
-      so that the output and interaction occurs in a Window
-      (or Frame).
-<xref ref="fig_hellojframe">Listing</xref>
-      shows a Java program named <c>HelloWorldCanvas</c>. This program does more or less the same thing as
-      the <c>HelloWorld</c> application<mdash/>   it displays the <q>Hello, World!</q>
-      greeting.    The difference is that it displays the greeting within a Window rather than directly on the console.
-</p>
-<listing xml:id="fig_hellojframe">
-<caption>
-<c>HelloWorldCanvas</c> program.</caption>
-
- <program language="java"><input>
-/** File: HelloWorldCanvas program */
-import javax.swing.JFrame; // Import class names
-import java.awt.Graphics;
-import java.awt.Canvas;
-public class HelloWorldCanvas extends Canvas // Class header
-{
-    // Start of body
-    public void paint(Graphics g)  // The paint method
-    {
-        g.drawString("Hello, World!", 10, 10);
-    }  // End of paint
-
-    public static void main(String[] args)   // The main() method
-    {   HelloWorldCanvas c = new HelloWorldCanvas();
-        JFrame f = new JFrame();
-        f.add(c);
-        f.setSize(150,50);
-        f.setVisible(true);
-    }  // End of main
-}  // End of HelloWorldCanvas
- </input></program>
-</listing>
-<p>
-      As in the case of the <c>HelloWorld</c> console application program, <c>HelloWorldCanvas</c> consists of a class definition.
-      It contains a single method definition,
-      the <c>paint()</c> method,
-      which contains a single executable statement:
-</p>
- <program language="java"><input>
-g.drawString("Hello, World!",10,10);
- </input></program>
-<p>
-      This statement displays the
-<q>Hello, World!</q>
-      message directly in a Window.
-      The <c>drawString()</c> method is one of the many drawing and painting methods defined in the <c>Graphics</c> class.
-      Every Java Canvas comes with its own <c>Graphics</c> object,
-      which is referred to here simply as <c>g</c>. Thus,
-      we are using that object's
-<c>drawString()</c> method to draw on the window.
-      Don't worry if this seems a bit mysterious now.
-      We'll explain it more fully when we take up graphics examples again.
-</p>
 
 
-<activity label="hello_world_canvas_practics">
-<statement><p>Try the HelloWorldCanvas program below.</p>
-</statement>
-<program label="jle_hello_world_canvas_practice_prg" interactive="activecode" language="java"  datafile="HtmlImageUtil.java">
-    <input>
-import java.awt.*;
 
-public class HelloWorldCanvas extends Canvas
-{
-    public void paint(Graphics g) {
-        g.drawString("Hello, World!", 10, 10);
-    }//paint()
 
-    public static void main(String[] args){
-        HelloWorldCanvas c = new HelloWorldCanvas();
-	// instead of using Swing, show to the web page:
-        HtmlImageUtil.show(c,150, 50);
-    } //main
-} //HelloWorldCanvas
-    </input>
-    </program>
 
-</activity>
-
-<p>
-      The <c>HelloWorldCanvas</c> class also contains some elements,
-      such as the <c>import</c> statements,
-      that we did not find in the <c>HelloWorld</c> application.
-      We will now discuss those features.
-</p>
-</subsection>

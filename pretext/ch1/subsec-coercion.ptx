@@ -1,0 +1,159 @@
+
+    <subsection xml:id="subsec-coercion">
+      <title>Numeric Promotion Rules</title>
+      <p>
+        Java is considered a <em>strongly typed</em>
+        language because all expressions in Java,
+        such as  (3/2),
+        have a type associated with them.
+        In cases where one arithmetic operand is an integer and one is a floating-point number, Java <em>promotes</em>
+        the integer into a floating-point value and performs a floating-point operation.
+      </p>
+      <p>
+        <term>Promotion</term> is a matter of converting one type to another type.
+        For example, in the expression (5 + 4.0),
+        the value 5 must be promoted to 5.0 before floating-point addition can be performed on (5.0 + 4.0).
+        Generally speaking,
+        automatic promotions such as these are allowed in Java whenever it is possible to perform the promotion
+        <em>without loss of information</em>.
+        Because an integer (5) does not have a fractional component,
+        no information will be lost in promoting it to a real number (5.0).
+        On the other hand,
+        you cannot automatically convert a real number (5.4) to an integer (5) because that might lead to loss of information.
+        This leads to the following rule:
+      </p>
+      <principle>
+        <title>Integer Promotion</title>
+        <p>
+          In an operation that contains an integer and a floating-point operand,
+          the integer is <term>promoted</term>
+          to a floating-point value <term>before</term>
+          the operation is performed.
+        </p>
+      </principle>
+      <p>
+        This rule is actually an instance of a more general rule: 
+        whenever an expression involves operands of different types,
+        some operands must be converted before the expression can be evaluated.
+        Consider the following example:
+      </p>
+ <program language="java"><input>
+byte n = 125;
+short m = 32000;
+n * m;
+ </input></program>
+      <p>
+        In this case,
+        <em>(n * m)</em> involves two different integer 
+        types, <c>byte</c> and <c>short</c>. Before evaluating this 
+        expression Java must first promote the <c>byte</c> to a
+        <c>short</c> and carry out the operation as the multiplication of two
+        <c>short</c> s.
+        Conversion of <c>short</c> to <c>byte</c> would not be possible 
+        because there's no way to represent the value 32000 as a <c>byte</c>.
+      </p>
+      <p>
+        It is important to note that this conversion rule applies 
+        regardless of the actual values of the operands.
+        In applying the rule, Java looks at the operand's type,
+        not its value.
+        So even if <em>m</em> were assigned a value that could be represented as a byte
+        (for example, 100),
+        the  promotion would still go from smaller to larger type.
+        This leads to following the general rule:
+      </p>
+      <principle>
+        <title>Type Promotion Rule</title>
+        <p>
+          In general, when two different types are involved in an operation,
+          the smaller type <mdash/> i.e.,the one with fewer bits <mdash/> 
+          is converted to the larger type before the operation is performed.
+          To do otherwise would risk losing information.
+        </p>
+      </principle>
+      <p>
+        <xref ref="tab-promotion">Table</xref> summarizes the actual promotion rules used 
+        by Java in evaluating expressions involving mixed operands.
+        Note that the last rule implies that integer expressions involving <c>byte</c> or
+        <c>short</c> or <c>int</c> are performed as <c>int</c>. 
+        This explains why integer literals <mdash/> such as <m>56</m> or <m>-108</m> <mdash/> 
+        are represented as <c>int</c> types in Java.
+      </p>
+      <table xml:id="tab-promotion">
+        <title>Java promotion rules for mixed arithmetic operators.
+        If two rules apply, choose the one that occurs first in this table.</title>
+        <tabular>
+          <row bottom="minor"  left="minor">
+            <cell>If either operand is</cell>
+            <cell></cell>
+            <cell>The other is promoted to</cell>
+          </row>
+          <row>
+            <cell><c>double</c></cell>
+            <cell></cell>
+            <cell><c>double</c></cell>
+          </row>
+          <row>
+            <cell><c>float</c></cell>
+            <cell></cell>
+            <cell><c>float</c></cell>
+          </row>
+          <row>
+            <cell><c>long</c></cell>
+            <cell></cell>
+            <cell><c>long</c></cell>
+          </row>
+          <row  bottom="minor">
+            <cell><c>byte</c><em>or</em><c>short</c></cell>
+            <cell></cell>
+            <cell><c>int</c></cell>
+          </row>
+        </tabular>
+      </table>
+
+
+<exercises>
+  <title>Self-Study Exercises</title>
+<exercise label="eval-type-promotion">
+  <title>Evaluate Type Promotion</title>
+  <statement>
+      <p>
+        Suppose that the following variable declarations are made:
+<program language="java"><input>
+    byte m = 3;  short n = 4;  int p = 5;  long q = 6;  double r = 7.0;
+      </input></program>
+        
+      Use type promotion rules to determine
+       the type of  expression and then evaluate each of the following
+       expressions:        
+      </p>
+    </statement>
+  <feedback>
+      <p></p>
+  </feedback>
+  <matches>
+      <match>
+          <premise> m + n     </premise>
+          <response>7 (int)</response>
+      </match>
+      <match>
+          <premise>p * q</premise>
+          <response>30 (long)</response>
+      </match>
+      <match>
+          <premise>m + n + r</premise>
+          <response>14.0 (double)</response>
+      </match>
+      <match>
+          <premise> p * q * m</premise>
+          <response>90 (long)</response>
+      </match>
+      <match>
+        <premise>r - m</premise>
+        <response>4.0 (double)</response>
+      </match>
+  </matches>
+  <solution><p>7 (int), 30 (long), 14.0 (double), 90 (long), 4.0 (double)</p></solution>
+</exercise>
+</exercises>
+  </subsection>

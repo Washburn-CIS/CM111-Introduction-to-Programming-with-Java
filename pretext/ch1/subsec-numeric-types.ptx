@@ -1,0 +1,210 @@
+
+<subsection xml:id="numeric-types">
+  <title>Primitive Numeric Types</title>
+    <table xml:id="tab-numerics">
+      <title>Java's numeric types</title>
+      <tabular>
+      <row bottom="minor" left="minor">
+          <cell><term> Type</term></cell>
+          <cell><term>Bits</term></cell>
+          <cell><term>Range of Values</term></cell>
+        </row>
+        <row>
+          <cell><c>byte</c></cell>
+          <cell><nbsp/>8</cell>
+          <cell><m>-128  to  +127</m></cell>
+        </row>
+        <row>
+          <cell><c>short</c></cell>
+          <cell>16</cell>
+          <cell><m>-32768 \hbox{ to } 32767</m></cell>
+        </row>
+        <row>
+          <cell><c>int</c></cell>
+          <cell>32</cell>
+          <cell><m>-2147483648 \hbox{ to } 2147483647</m></cell>
+        </row>
+        <row>
+          <cell><c>long</c></cell>
+          <cell>64</cell>
+          <cell><m>-2^{63}  \hbox{ to }  2^{63}-1</m></cell>
+        </row>
+        <row>
+          <cell><c>float</c></cell>
+          <cell>32</cell>
+          <cell><m>-3.40292347E+38 \hbox{ to }  +3.40292347E+38</m></cell>
+        </row>
+        <row bottom="minor">
+          <cell><c>double</c></cell>
+          <cell>64</cell>
+          <cell><m>-1.79769313486231570E+308   \hbox{ to }  +1.79769313486231570E+308</m></cell>
+        </row>
+      </tabular>
+    </table>
+    <p>
+      The more bits a data type has,
+      the more values it can represent.
+      One bit can represent two possible values, 1 and 0, which can be used to stand for true and false,
+      respectively.
+      Two bits can represent four possible values: 00, 01, 10, and 11;
+      three bits can represent eight possible values: 000, 001, 010, 100, 101, 110, 011, 111.
+    </p>
+    <p>
+    <definition>
+      An <em>n</em>-bit quantity can represent <m>2^n</m> different values.
+    </definition>
+    </p>
+    <p>
+      As illustrated in <xref ref="tab-numerics">Table</xref>, the various integer types 
+      represent positive or negative whole numbers.
+      Perhaps the most commonly used integer type in Java is the <c>int</c> type,
+      which is represented in 32 bits.
+      This means that Java can represent <m>2^{32}</m> different <c>int</c> values,
+      which range from <m>-2{,}147{,}483{,}648</m> to <m>2{,}147{,}483{,}647</m>,
+      that is, from <m>-2^{31}</m> to <m>(2^{31} -1)</m>.
+      Similarly, an 8-bit integer,
+      a <c>byte</c>, can represent <m>2^8</m> or 256  different values,
+      ranging from <m>-128</m> to <m>+127</m>.
+      A 16-bit integer,
+      a <c>short</c>, can represent <m>2^{16}</m> different values,
+      which range from <m>-32768</m> to <m>32767</m>.
+      And a 64-bit integer,
+      a <c>long</c>, can represent whole number values ranging from <m>-2^{63}</m> to <m>2^{63}-1</m>.
+    </p>
+    <p>
+      For floating-point numbers,
+      a 32-bit <c>float</c> type can represent <m>2^{32}</m> different real numbers and a 64-bit <c>double</c> value can represent <m>2^{64}</m> different real numbers.
+    </p>
+    <principle>
+      <title>EFFECTIVE DESIGN: Platform Independence</title>
+      <p>
+        In Java, a data type's size
+        (number of bits)
+        is part of its definition and,
+        therefore, remains consistent across all platforms.
+        In C and C++, the size of a data type is dependent on the compiler.
+      </p>
+    </principle>
+    <p>
+      It is worth noting that just as model airplanes are representations of real airplanes, 
+      Java's numeric types are representations or  models of the numbers we deal with in mathematics.
+      In designing Java's data types,
+      various trade-offs have been made in order to come up with practical implementations.
+    </p>
+    <p>
+      One trade-off is that the set of integers is infinite,
+      but Java's
+<c>int</c> type can only represent a finite number of values.
+      Similarly,  Java cannot represent the infinite number of values that occur between,
+      say, 1.111 and 1.112.
+      So, certain real numbers cannot be represented at all.
+      For example,
+      because Java uses binary numbers to represent its numeric types,
+      one number that cannot be represented exactly is <m>\frac{1}{10}</m>.
+      This inability to exactly represent a value is known as
+      <term>round-off error</term>.
+      Being unable to represent certain values can cause problems in a program.
+      For example,
+      it might be  difficult to represent dollars and cents accurately in a program.
+    </p>
+    <p>
+      Another source of problems in dealing with numeric data is due to limits in their precision.
+      For example,
+      a decimal number represented as a double value can have a maximum of 17
+      <em>significant digits</em>,
+      and a <c>float</c> can have a maximum of  8.
+      A significant digit is one that contributes to the number's value.
+      If you tried to store values such as 12345.6789 or 0.123456789 in a <c>float</c> variable,
+      they would be rounded off to 12345.679 and 0.12345679,
+      respectively, causing a possible error.
+    </p>
+    <principle>
+      <title>DEBUGGING TIP: Significant Digits</title>
+      <p>
+        In using numeric data,
+        be sure the data type you choose has enough precision to represent 
+        the values your program needs.
+      </p>
+    </principle>
+
+  <exercises><title>Self-Study Exercises</title>
+    <exercise label="fillin-binary">
+      <title>Fill-In Binary</title>
+      <statement>
+        <p>List all of the binary values 
+          that can be represented in 4 bits---that is, all values in the range
+          0000 to 1111 in order separated by commas: <var/> </p>
+      </statement>
+      <setup>
+          <var>
+              <condition string="0000,0001,0010,0011,0100,0101,0110,0111,1000,1001,1010,1011,1100,1101,1110,1111">
+                  <feedback>
+                    <p>Correct.</p>
+                  </feedback>
+              </condition>
+              <condition string=".*">
+                    <feedback>
+                        <p>Incorrect. Start from 0000,0001, ...</p>
+                    </feedback>
+                </condition>
+              </var>
+              </setup>
+              <hint><p>Start from 0000, 0001, ...</p></hint>
+              <solution><p>0000,0001,0010,0011,0100,0101,0110,0111,1000,1001,1010,1011,1100,1101,1110,1111</p></solution>
+              </exercise>
+    
+              <exercise label="fillin-6bit">
+                <title>6-bit Values</title>
+                <statement>
+                  <p>If a 6-bit representation were used for an integer type, how
+                     many different integers could be represented? <var/> </p>
+                </statement>
+                <setup>
+                    <var>
+                        <condition string="64">
+                            <feedback>
+                              <p>In 6 bits, you can represent 2^6 = 64 different values.</p>
+                            </feedback>
+                        </condition>
+                        <condition string=".*">
+                              <feedback>
+                                  <p>Incorrect. Remember each bit can be 0 or 1 and you have 6 bits.</p>
+                              </feedback>
+                          </condition>
+                        </var>
+                        </setup>
+                        <hint><p>With 3 bits, you can represent 3^2 = 32 values.</p></hint>
+                      <solution><p>64</p></solution>  
+                      </exercise>
+                        <exercise label="fillin-data-type">
+                          <title>Data Type</title>
+                          <statement>
+                            <p>If you were writing a program to process scientific data that
+                             had to be accurate to at least 12 significant (decimal) digits,
+                             what type of data would you use?<var/> </p>
+                          </statement>
+                          <setup>
+                              <var>
+                                  <condition string="double">
+                                      <feedback>
+                                        <p>If you have to represent up to 12 significant digits, you should use the data type
+                                          <c>double</c>, which goes up to 17 digits.</p>
+                                      </feedback>
+                                  </condition>
+                                  <condition string=".*">
+                                        <feedback>
+                                            <p>Incorrect. Some data types you could use are 
+                                              <c>byte</c>, <c>short</c>, <c>int</c>, <c>double</c>, and 
+                                              <c>long</c>.</p>
+                                        </feedback>
+                                    </condition>
+                                  </var>
+                                  </setup>
+                                  <hint><p>Some data types you could use are 
+                                    <c>byte</c>, <c>short</c>, <c>int</c>, <c>double</c>, and 
+                                    <c>long</c></p></hint>
+                                    <solution><p>double</p></solution>
+                                  </exercise>    
+  
+  </exercises>
+  </subsection>

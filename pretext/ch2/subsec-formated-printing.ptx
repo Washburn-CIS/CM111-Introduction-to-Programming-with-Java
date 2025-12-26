@@ -1,4 +1,4 @@
-<section xml:id="ch5-numformat">
+<subsection xml:id="subsec_formated_printing">
   <title>From the Java Library
 <c>java.text.NumberFormat</c></title>
 <introduction>
