@@ -1,5 +1,7 @@
-<section xml:id="introduction20">
-  <title>Introduction</title>
+<section xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="sec-string-operations">
+  <title>Strings and String  Processing</title>
+  <introduction>
+
   <p>
     In Chapter<nbsp/>2, we introduced the <c>String</c> data type and showed how to 
     create <c>String</c> objects and use <c>String</c> methods,
@@ -47,4 +49,8 @@
     Finally, we will learn how to apply these string-processing skills in a 
     program that plays the game of Hang Man.
   </p>
-</section>
+  </introduction>
+  
+  
+  
+</chapter>
