@@ -14,5 +14,8 @@
       </ul>
     </objectives>
   </introduction>
+  <xi:include href="sec-unit1-review.ptx"/>
+  <xi:include href="sec-algorithms.ptx"/>
+  <xi:include href="sec-basic-loops.ptx"/>
 </chapter>
-<!-- W5: switch statements*, review, exam 1, (unit 2) while loops, do-while/-->
+<!-- review, exam 1, (unit 2) while loops, do-while /-->
