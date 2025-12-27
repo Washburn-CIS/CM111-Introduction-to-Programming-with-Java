@@ -1,18 +1,14 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapter-4-intro">
   <title>Week 4</title>
   <introduction>
-    <p>
-      At the end of this week you should be able to...
-    </p>
-    <objectives>
-      <ul>
-        <li>
-          <p>
-            ***
-          </p>
-        </li>
-      </ul>
-    </objectives>
+  
+  
   </introduction>
+  
+  
+  <xi:include href="sec-boolean-values.ptx"/>
+  <xi:include href="sec-conditional-statements.ptx"/>
 </chapter>
+
+<!-- TODO: edit /-->
 <!--W4: booleans, comparison operators, logical operators, if / else statements/-->
