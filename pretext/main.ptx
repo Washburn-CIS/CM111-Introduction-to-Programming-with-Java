@@ -106,7 +106,6 @@ update this book if it is used in future semesters with any warranted changes.
     <xi:include href="./ch7/chapter-7-intro.ptx"/>
     <xi:include href="./ch8/chapter-8-intro.ptx"/>
     <xi:include href="./ch9/chapter-9-intro.ptx"/>
-<!--
     <xi:include href="./ch10/chapter-10-intro.ptx"/>
     <xi:include href="./ch11/chapter-11-intro.ptx"/>
     <xi:include href="./ch12/chapter-12-intro.ptx"/>
@@ -114,7 +113,6 @@ update this book if it is used in future semesters with any warranted changes.
     <xi:include href="./ch14/chapter-14-intro.ptx"/>
     <xi:include href="./ch15/chapter-15-intro.ptx"/>
     <xi:include href="./ch16/chapter-16-intro.ptx"/>
-    /-->
     <backmatter>
       <xi:include href="./appndx-codestyle/appendix-codestyle.ptx"/>
       <xi:include href="./appndx-jdk/appendix-jdk.ptx"/>

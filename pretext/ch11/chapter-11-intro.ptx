@@ -14,5 +14,7 @@
       </ul>
     </objectives>
   </introduction>
+  <xi:include href="sec-for-loops.ptx"/>
+  <xi:include href="sec-nested-loops.ptx"/>
 </chapter>
 <!-- W11: for loops, nested loops (more parsing) /-->

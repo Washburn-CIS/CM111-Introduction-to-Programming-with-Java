@@ -14,5 +14,7 @@
       </ul>
     </objectives>
   </introduction>
+  <xi:include href="sec-references.ptx"/>
+  <xi:include href="sec-side-effects.ptx"/>
 </chapter>
 <!-- W13: references, side-effects, mutability, 2D-arrays -->

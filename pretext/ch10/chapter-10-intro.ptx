@@ -14,5 +14,7 @@
       </ul>
     </objectives>
   </introduction>
+  <xi:include href="sec-arrays.ptx"/>
+  <xi:include href="sec-iterating-over-collections.ptx"/>
 </chapter>
 <!-- W10: arrays, split, (more parsing) /-->

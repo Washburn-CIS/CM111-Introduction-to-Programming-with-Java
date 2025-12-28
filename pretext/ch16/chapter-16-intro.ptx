@@ -14,5 +14,9 @@
       </ul>
     </objectives>
   </introduction>
+  <xi:include href="sec-varargs.ptx"/>
+  <xi:include href="sec-command-line-args.ptx"/>
+  <xi:include href="sec-conditional-expressions.ptx"/>
+  <xi:include href="sec-recursion.ptx"/>
 </chapter>
 <!-- W16 Topics: varargs, command-line arguments, recursion, conditional expressions /-->

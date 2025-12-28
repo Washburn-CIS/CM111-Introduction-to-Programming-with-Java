@@ -14,5 +14,9 @@
       </ul>
     </objectives>
   </introduction>
+  <xi:include href="sec-overloading.ptx"/>
+  <xi:include href="sec-exception-handling.ptx"/>
+  <xi:include href="sec-validation.ptx"/>
+  <xi:include href="sec-file-io.ptx"/>
 </chapter>
 <!-- W14: overloading, exception handling, file output /-->
