@@ -14,5 +14,11 @@
       </ul>
     </objectives>
   </introduction>
+  
+  
+  
+  <xi:include href="sec-text-data.ptx"/>
+  <xi:include href="sec-static-method-definitions.ptx"/>
+  <xi:include href="sec-parsing-basics.ptx"/>
 </chapter>
 <!-- W6: characters, string methods, static method definitions, parsing (the word, indexOf, etc) /-->
