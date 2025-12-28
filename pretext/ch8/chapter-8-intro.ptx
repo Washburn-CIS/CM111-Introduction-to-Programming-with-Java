@@ -14,4 +14,5 @@
       </ul>
     </objectives>
   </introduction>
+  <xi:include href="sec-unit2-review.ptx"/>
 </chapter>

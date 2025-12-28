@@ -103,10 +103,10 @@ update this book if it is used in future semesters with any warranted changes.
     <xi:include href="./ch4/chapter-4-intro.ptx"/>
     <xi:include href="./ch5/chapter-5-intro.ptx"/>
     <xi:include href="./ch6/chapter-6-intro.ptx"/>
-<!--
     <xi:include href="./ch7/chapter-7-intro.ptx"/>
     <xi:include href="./ch8/chapter-8-intro.ptx"/>
     <xi:include href="./ch9/chapter-9-intro.ptx"/>
+<!--
     <xi:include href="./ch10/chapter-10-intro.ptx"/>
     <xi:include href="./ch11/chapter-11-intro.ptx"/>
     <xi:include href="./ch12/chapter-12-intro.ptx"/>

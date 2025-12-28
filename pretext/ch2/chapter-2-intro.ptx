@@ -84,5 +84,5 @@
   <xi:include  href="sec-user-interfaces.ptx"/>
   <xi:include  href="sec-incremental-development.ptx"/>
 </chapter>
-<!-- topics: variables, constants, imports, calling instance methods, basic I/O, formatted output basics*, CLI’s, errors, tracing/-->
+<!-- topics: variables, constants, imports, calling instance methods, random numbers, basic I/O, formatted output basics*, CLI’s, errors, tracing/-->
 <!-- TODO: edit /-->

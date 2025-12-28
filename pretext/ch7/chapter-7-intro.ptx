@@ -14,5 +14,7 @@
       </ul>
     </objectives>
   </introduction>
+  <xi:include href="sec-unit-testing.ptx"/>
+  <xi:include href="sec-method-development-patterns.ptx"/>
 </chapter>
-<!-- W7: random numbers, method development patterns /-->
+<!-- W7: method development patterns /-->
