@@ -8,40 +8,27 @@
       many of which will be explained in greater detail in later sections.
   </p>
   <p>
-      The program we will study is a Java version of the traditional HelloWorld program<mdash/>
-''traditional'' because practically every introductory programming text begins with it.
+      The program we will study is the classic HelloWorld program<mdash/>
+ practically every introductory programming text begins with it.
       When it is run, the HelloWorld program (<xref ref="lstng_helloworld"></xref>) just displays the greeting
-  <q>Hello, World!</q>
-      on the console.
+  <q>Hello, World!</q>.
 </p>
+
 <listing xml:id="lstng_helloworld"> 
   <caption>The <c>HelloWorld</c> application program.</caption>
-<program language="java">
-  <input>
-	/*
-	 * File: HelloWorld.java
-	 * Author: Joseph Kendall-Morwick
-	 * Description: Prints Hello World! greeting.
-	 */
-    public class HelloWorld { // Class header
-		 public static void main(String args[]) { // Method header
-			  System.out.println("Hello World!"); // Output greeting
-		 }  // End main()
-    } // End class body
-  </input>
-  </program>
+  <program language="java"><code><xi:include href="code/HelloWorld.java" parse="text"/> </code></program>
 </listing>
 
 <p>Try the Hello World program below.</p>
 
 <activity label="HelloWorldEx">
       <statement><p>Run the following code. 
-        Try changing the greeting to "Hola!" and run again.</p></statement>
+        Try changing the greeting to "Hola!" or the greeting of your choice and run again.</p></statement>
       <program language="java" interactive="activecode"><input>
 	/*
 	 * File: HelloWorld.java
 	 * Author: Joseph Kendall-Morwick
-	 * Description: Prints Hello World! greeting.
+	 * Description: Prints Hello World!
 	 */
     public class HelloWorld { // Class header
 		 public static void main(String args[]) { // Method header
@@ -49,45 +36,9 @@
 		 }  //  End main()
     } // End class body
     </input></program></activity>
-
 </subsection>
 
-
-<subsection>
-  <title>Program Layout</title>
-  <p>
-	Notice how the program is  neatly arranged on the page.
-	This is done deliberately so that the program is easy to read and understand.
-  </p>
-  <p>
-	In Java, program expressions and statements may be arranged any way the programmer likes.
-	They may occur one per line, several per line, or one per several lines.
-	But the fact that the rules governing the layout of the program are so lax 
-        makes it all the more important that we adopt a good programming style,
-	one that will help make programs easy to read.
-  </p>
-  <p>
-	So look at how things are presented in <c>HelloWorld</c> (    <xref ref="lstng_helloworld"></xref>). 
-        Notice how beginning and ending braces, { and }, are aligned.
-	Braces are used to mark the beginning and end of different blocks of code (blocks are explained below)
-        in a Java program and it can sometimes be difficult to know which beginning and end braces are matched up.
-	Proper indentation and the use of single-line comments (also explained below) make it easier to determine how the braces are matched up.
-  </p>
-  <p>
-	Similarly, notice how indentation is used to show when one element of the program is contained within another element.
-	Thus, the elements of the <c>HelloWorld</c> class are indented inside of the braces that mark the beginning and end of the class.
-	And the statements in the <c>main()</c> method are indented to indicate that they belong to that method.
-	Use of indentation in this way,	to identify the program's structure,	makes the program easier to read and understand.
-  </p>
-  <principle>
-    <title>PROGRAMMING TIP: Use of Indentation</title>
-    <p>
-	  Indent the code within a block and align the block's opening and closing braces.
-	  Use a comment to mark the end of a block of code.
-    </p>
-  </principle>
-</subsection>
-
+<xi:include href="./subsec-program-layout.ptx"/>
 <xi:include href="./subsec-basic-class-def.ptx"/>
 <xi:include href="./subsec-comments.ptx"/>
 <xi:include href="./subsec-identifiers.ptx"/>
