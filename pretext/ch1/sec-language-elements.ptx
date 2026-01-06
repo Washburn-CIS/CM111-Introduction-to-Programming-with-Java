@@ -16,7 +16,7 @@
 
 <listing xml:id="lstng_helloworld"> 
   <caption>The <c>HelloWorld</c> application program.</caption>
-  <program language="java"><code><xi:include href="code/HelloWorld.java" parse="text"/> </code></program>
+  <program language="java"><code><xi:include href="code/HelloWorld.java" parse="text"/></code></program>
 </listing>
 
 <p>Try the Hello World program below.</p>
@@ -24,18 +24,7 @@
 <activity label="HelloWorldEx">
       <statement><p>Run the following code. 
         Try changing the greeting to "Hola!" or the greeting of your choice and run again.</p></statement>
-      <program language="java" interactive="activecode"><input>
-	/*
-	 * File: HelloWorld.java
-	 * Author: Joseph Kendall-Morwick
-	 * Description: Prints Hello World!
-	 */
-    public class HelloWorld { // Class header
-		 public static void main(String args[]) { // Method header
-			  System.out.println("Hello World!"); // Output greeting
-		 }  //  End main()
-    } // End class body
-    </input></program></activity>
+      <program language="java" interactive="activecode"><xi:include href="code/HelloWorld.java" parse="text"/></program></activity>
 </subsection>
 
 <xi:include href="./subsec-program-layout.ptx"/>
