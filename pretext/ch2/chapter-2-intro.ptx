@@ -71,11 +71,7 @@
     </p>
     <objectives>
       <ul>
-        <li>
-          <p>
-            ***
-          </p>
-        </li>
+        <li>use simple format strings to print output to the console</li>
       </ul>
     </objectives>
   </introduction>

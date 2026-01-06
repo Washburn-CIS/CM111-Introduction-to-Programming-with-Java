@@ -6,15 +6,17 @@
     </p>
     <objectives>
       <ul>
-        <li>
-          <p>
-            ***
-          </p>
-        </li>
+        <li>log in to a remote linux server with ssh</li>
+        <li>change their password on a linux system</li>
+        <li>view files on a linux system</li>
+        <li>use jshell from the command-line</li>
+        <li>use a REPL to evaluate simple expressions</li>
+        <li>describe values of primitive types such as integers and floating point numbers</li>
+        <li>understand what an expression is and how simple expressions are evaluated</li>
+        <li>predict how arithmetic operators in java work over given values</li>
       </ul>
     </objectives>
   </introduction>
-  <xi:include  href="welcome.ptx"/>
   <xi:include  href="sec-language-elements.ptx"/>
   <xi:include  href="sec-compiling.ptx"/>
   <xi:include  href="sec-expressions.ptx"/>
