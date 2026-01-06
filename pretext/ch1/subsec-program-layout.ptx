@@ -1,0 +1,30 @@
+<subsection xml:id="subsec-program-layout">
+  <title>Program Layout</title>
+  <p>
+	Notice how the program is  neatly arranged on the page.
+	This is done deliberately so that the program is easy to read and understand.
+  </p>
+  <p>
+	In Java, program elements may be arranged in any way the programmer likes. However, the fact that the rules governing the layout of the program 
+	are so lax makes it all the more important that we adopt a good programming style; one that will help make programs easy to read.
+  </p>
+  <p>
+	So look at how things are presented in <c>HelloWorld</c> (    <xref ref="lstng_helloworld"></xref>). 
+        Notice how beginning and ending braces, { and }, are aligned.
+	Braces are used to mark the beginning and end of different blocks of code (blocks are explained below)
+        in a Java program and it can sometimes be difficult to know which beginning and end braces are matched up.
+	Proper indentation and the use of single-line comments (also explained below) make it easier to determine how the braces are matched up.
+  </p>
+  <p>
+	Notice how indentation is used to show when one element of the program is contained within another element. Indeed, the inner braces
+	in HelloWorld define a component of the program that is contained within a larger component defined by the outer braces.
+	Use of indentation in this way,	to identify the program's structure,	makes the program easier to read and understand.
+  </p>
+  <principle>
+    <title>PROGRAMMING TIP: Use of Indentation</title>
+    <p>
+	  Indent the code within a block and align the block's opening and closing braces.
+	  Optionally use a comment to mark the end of a block of code.
+    </p>
+  </principle>
+</subsection>
