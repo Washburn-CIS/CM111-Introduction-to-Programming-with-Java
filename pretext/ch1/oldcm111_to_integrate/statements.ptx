@@ -7,20 +7,6 @@
 
 
 <subsection>
-        <title>Statements</title>
-    <p>
-            A <term>statement</term> is essentially a single instruction.
-        This is a fairly abstract definition, but statements serve many purposes in imperative programming languages like Java and can embody simple or complex instructions. The main difference between a statement and what we've seen with expressions is that statements don't evaluate to some value. Instead, they <em>do something</em> to the state of the computing environment. For instance, they may alter the contents of the computer's memory or print something to the screen. These actions are referred to as <term>side effects</term> and are the heart of imperative programming.
-    </p>
-    <p>
-        Syntactically, statements will vary, but for the most part end with a semicolon (similar to the period at the end of a sentence in English).  A very simple statement consists of an expression followed by semicolon. For example, the hello world example we started with mostly fits this pattern:
-        <program language="java"><input>System.out.println("Hello World!");</input></program>
-        This is essentially a method call expression (though it involves a few other concepts we'll explore soon) with a semicolon at the end. Note that the argument is not a character literal -- the double quotes indicate that it is a String, which is a sequence of several characters (strings are covered in much more depth in another section). </p>
-      <p>When we call this method, we're not concerned with what value it returns, but rather what it <em>does</em>. In this case, the statement prints the welcome message to the screen (an example of a side effect).</p>
-</subsection>
-
-
-<subsection>
 
         <title>Method Call Statements</title>
 

@@ -1,6 +1,5 @@
 <section xml:id="sec-compiling">
-  <title>Editing, Compiling, and
-  Running a Java Program</title>
+  <title>Editing, Compiling, and Running a Java Program</title>
   <introduction>
     <p>
       In this section we give a brief overview of how to compile and run a Java program.
@@ -9,15 +8,18 @@
       We begin with a brief overview of the types of programming environments one might encounter.
     </p>
   </introduction>
+  
   <subsection>
     <title>Java Development Environments</title>
     <p>
       Java is owned and maintained by Oracle. It is available free for various platforms, including Linux, Windows, and macOS. 
-      Since 1998 Java has gone through many versions. The current version as of this writing is Java 18.  
+      Since 1998 Java has gone through many versions. The current version as of this writing is Java 25.  
     </p>
     <p>
       Everything needed to write Java programs <mdash/> except for a text editor <mdash/>  is available for free in the 
-      <url href="https://www.oracle.com/java/technologies/downloads/#jdk18-mac" visual="">Java Development Kit (JDK)</url>. 
+      <url href="https://www.oracle.com/java/technologies/downloads/#jdk25-mac" visual="">Java Development Kit (JDK)</url>. 
+      The JDK also includes a software package called the Java Runtime Environment (or JRE). This is the software you will
+      use to execute Java programs. 
     </p>
     <p>
       There are also several <em>integrated development environments (IDEs)</em> available for developing Java programs.
@@ -25,40 +27,52 @@
       These include the open source <url href="https://www.eclipse.org/ide/" visual="">Eclipse IDE</url> and Oracle's own 
       <url href="https://www.oracle.com/tools/technologies/netbeans-ide.html" visual="">NetBeans IDE</url>. 
     </p>
-    <figure xml:id="fig_compile">
-      <caption>Editing, compiling, and running<c>HelloWorld.java</c>.</caption>
-      <image width="70%" source="chptr01/compile.png"/>
-    </figure>
+  </subsection>  
+    
+    
+  <subsection>
+    <title>The Command-Line Interface</title>
     <p>
-      <xref ref="fig_compile">Figure</xref>
-      illustrates the steps involved in creating and running a Java program. 
-      It assumes you are using the plain Java JDK as your development environment, not an IDE. 
-      The three basic steps are:
-      <ol>
-       <li>
-        <p>Edit the Java source code using a text editor.</p>
-       </li>
-       <li>
-        <p>Compile the Java source code into bytecode using <c>javac</c>.</p>
-       </li>
-       <li>
-        <p>Run the Java bytecode using <c>java</c>.</p>
-       </li>
-      </ol>
+    Many of us are used to working with personal computers through a Graphical User Interface (GUI). This is the typical operating environment you 
+    will see from an operating system like Microsoft Windows where you open application programs that present as <em>windows</em>
+    and you interact with these applications mainly with a mouse-controlled cursor by clicking on graphical elements of the interface.
+    Microsoft windows, as well as other popular operating systems like MacOS and Linux, also offer a Command-Line Interface (CLI) for 
+    manipulating the system. This interface is more popular among programmers and other technical folks as it can be easier to use 
+    this interface for technical tasks. It's also much easier to use a CLI on a remote computer than a GUI, so being able to use 
+    a CLI allows you to easily work with computers you have access to across the internet. 
     </p>
+    
+    <p>
+    You can access the CLI on a Windows 10 or 11 machine by opening one of the Command Prompt, PowerShell, or Windows Terminal applications. 
+    For example, press start and type <em>cmd</em>. On a Mac, use spotlight and search for <em>Terminal</em>. On a Linux system it will 
+    vary by distribution but will be similar. 
+    </p>
+    
+    <p>Once you have a CLI open and running, you will see a prompt waiting for your command. Prompts will vary by system but often 
+    display the path (the current directory of files you're working in) and a $ or > symbol at the end near the cursor. You can type
+    commands in and execute them on the CLI. For example, on windows type <em>dir</em> or on MacOS/Linux type <em>ls</em>. After you
+    type this command, the system will print to the terminal a list of files in your current (working) directory. Afterward you 
+    will be returned to the command-prompt, awaiting another command. In the following sections, you will be introduced to commands
+    that can edit, compile, and run Java programs. Below is an example of what issuing a command like this could look like.
+    </p>
+    <console>
+<input>ls</input>
+<output>HelloWorld.class  HelloWorld.java</output>
+    </console>
   </subsection>
+  
+  
   <subsection>
     <title>Editing a Program</title>
     <p>
-      Any text editor can be used to edit a Java program. Online development environments like <url href="replit.com" visual="">replit.com</url> are very popular.
-      <url href="https://code.visualstudio.com/download" visual="">VSCode</url> is a popular code editor that is available for Windows, Macs, and Linux systems.
-      Popular Linux editors include <c>vim</c> and <c>emacs</c>, which are also available on macOS and Windows.
-      Free macOS editors include <url href="https://www.barebones.com/products/bbedit/index.html" visual="">BBEdit</url> 
+      Any text editor can be used to edit a Java program. 
+      Popular CLI editors include <c>nano</c> and <c>vi</c>, which are also available on MacOS and Windows.
+      Free GUI MacOS editors include <url href="https://www.barebones.com/products/bbedit/index.html" visual="">BBEdit</url> 
       and <url href="https://support.apple.com/guide/textedit/welcome/mac" visual="">TextEdit</url>, 
       which is also available for <url href="https://textedit.en.lo4d.com/windows" visual="">Windows computers</url>.  
-      <url href="https://notepad-plus-plus.org/" visual="">Notepad++</url> is also a popular Windows text editor.
+      <url href="https://notepad-plus-plus.org/" visual="">Notepad++</url> is also a popular GUI Windows text editor.
     There are also <term>Integrated Development Environments (IDEs)</term> that include an editor, compiler, and other tools, 
-    such as Eclipse, Netbeans, IntelliJ, jGrasp, etc.</p>
+    such as Eclipse, Netbeans, IntelliJ, etc.</p>
     <p> 
       Let's take another look at the HelloWorld program (<xref ref="lstng_helloworld"></xref>).
       After editing the <c>HelloWorld</c> program, it must be stored in a 
@@ -85,21 +99,27 @@
       </p>
     </principle>
   </subsection>
+  
+  
+  
+  
+  
+  
   <subsection>
     <title>Compiling a Program</title>
     <p>
-      Before you can run a Java source program you have to compile it into the Java bytecode,
+      Before you can run a Java source program you have to compile it into Java bytecode -- 
       the intermediate code understood by the Java Virtual Machine (JVM). The compilation step converts
-      Java <term>source code</term> into Java <term>bytecode</term> (<xref ref="fig_compile">Figure</xref>). 
+      Java <term>source code</term> into Java <term>bytecode</term>. 
     </p>
     <p>
       The Java compiler is named <c>javac</c>.  It is included in the JDK.
       To compile <c>HelloWorld.java</c>, you would simply type the following command on the MacOS or Linux or
       Windows command line, where '$' represents the command prompt:
     </p>
-    <c>
-    $ javac HelloWorld.java
-    </c>
+    <console>
+<input>javac HelloWorld.java</input>
+    </console>
     <p>
       Assuming there are no  errors, <c>javac</c> will create a Java bytecode file 
       named <c>HelloWorld.class</c><mdash/>a file that has the same name as the source file 
@@ -107,36 +127,40 @@
       the bytecode file will be placed in the same directory as the source file.
       After compiling, the directory would look something like this:
     </p>
-    <c>
-    HelloWorld.class
-    HelloWorld.java
-    </c>
+    <console>
+<input>ls</input>
+<output>HelloWorld.class  HelloWorld.java</output>
+    </console>
     <p>
       If <c>javac</c> detects errors in the Java code, 
       a list of error messages will be printed on the console <mdash/>e.g.:
     </p> 
-    <c>
-    HelloWorld.java:11: error: ';' expected
-	   System.out.println(greeting)           //  Output statement
-				       ^
-    1 error
-    </c>
+    <console>
+<output>HelloWorld.java:8: error: ';' expected</output>
+<output>System.out.println("Hello World!")           //  Output statement</output>
+<output>       ^</output>
+<output>1 error</output>
+    </console>
     <p>
-    In this case the error is a missing semicolon on line 11.
+    In this case the error is a missing semicolon on line 8.
     </p>
 
 
   </subsection>
+  
+  
+  
+  
   <subsection>
     <title>Running a Java Program</title>
     <p>
       Once the program successfully compiles and generates the <c>HelloWorld.class</c>
       bytecode file, it can be executed using the <c>java</c> command, also included in the JDK:
     </p>
-    <c>
-    $ java HelloWorld
-    Hello World!
-    </c>
+    <console>
+<input>java HelloWorld</input>
+<output>Hello World!</output>
+    </console>
     <p>
       As you see (<xref ref="fig_stdout">Figure</xref>), the program prints <q>Hello World!</q> on the console. 
       Note that we do not use the <c>.class</c> extension with the <c>java</c> command,
@@ -187,10 +211,7 @@ public class HelloWorldCanvas extends Canvas // Class header
 
    <p>
     The steps involved in running the <c>HelloWorldCanvas</c> program (<xref ref="hellocanvas">Figure</xref>) are identical:
- <program language="java"><input>
-$ javac HelloWorldCanvas.java 
-$ java HelloWorldCanvas
- </input></program>
+ <console><input>javac HelloWorldCanvas.java</input><input>java HelloWorldCanvas</input></console>
 </p>
 
 <p>
@@ -229,5 +250,28 @@ public class HelloWorldCanvas extends Canvas
 
   </activity>
   </subsection>
+
+
+
+<subsection xml:id="subsec-repls">
+	<title>Working With Java's JShell REPL</title>
+
+    
+    <p>
+        There are many ways to categorize programming languages. For instance, some programming languages are called <em>object-oriented</em>, <em>functional</em>, or <em>statically typed</em>, to name a few, and many of these categories overlap. An important category, as it relates to teaching Java to a beginning programmer, is that of <term>scripting languages</term>. This is important because Java has never in the past been considered one <footnote><p>Do not confuse Java with Javascript, which is an entirely different language and is indeed a scripting language.</p></footnote>.
+    </p>
+    <p> A scripting language is one that is intended for quickly writing short, ad-hoc programs that perform a simple task, possibly only once. An important tool for working with a scripting language is a <acronym>REPL</acronym> (Read Evaluate Print Loop). A REPL is much like a CLI as it was described (and indeed runs within a CLI). It allows you to run small snippets of a program, one at a time, and observe what the computer does in real time. This way the programmer can quickly react, correct errors, and experiment. This functionality is of obvious importance to a new programmer learning how to use the language. </p>
+    <p> Java has long been infamous for its <em>wordiness</em>. That is, it took a lot of typing to say anything meaningful. In JShell, <em>Hello World!</em> is just one line:
+    <figure>
+        <title>jshell</title>
+        <caption>Using the JShell REPL</caption>
+      <image source="chptr01/jshell.png"/>
+    </figure>
+         You can see in the figure that the first thing JShell did after I started it up in a terminal was to welcome me and indicate what version is running. After that you see the command prompt. <console><input>jshell</input></console>  At that prompt I typed <console><input prompt="jshell> ">System.out.println("Hello World!");</input></console> which is a snippet of Java that instructs the computer to print the same message back to me. JShell read this snippet in from me (the R for read in REPL), then did as it was instructed (the E for evaluate and P for Print steps). You can see the JShell REPL complying with that command below and then returning me to the command prompt for another command (L for loop -- after each command, it waits for another, looping indefinitely).
+    </p>
+    
+    <p>
+        There are many commands you can enter at the command prompt that are not Java code snippets but are unique to using JShell. A very important one is the <c>/help</c> command. Typing in this command causes JShell to report on all the other special commands available to you. Another important command is <c>/exit</c>, which terminates JShell. We will see other commands as they become relevant in later sections. 
+    </p>
+</subsection>
 </section>
-<!-- TODO: edit /-->
