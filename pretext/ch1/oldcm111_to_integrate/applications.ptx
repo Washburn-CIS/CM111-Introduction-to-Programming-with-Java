@@ -1,9 +1,8 @@
+***INTEGRATE***
 
 <section xml:id="applications">
     
         <title>Java Applications</title>
-    
-
     <p>
         Previous sections explained how Java classes can be used to hold collections of static methods. They are also used as the entry points in to stand-alone Java applications.
     </p>
@@ -21,7 +20,7 @@
 <xi:include href="../../examples/code/Hello.java" parse="text"/>
             </input></program>
         <p>
-        This is the classic <em>hello world</em> program that is often given on the first day of a programming class. In many languages, <em>Hello World</em> is simply a one-line program, making this a convienent place to start in an introductory programming class. However, Java was designed with more complex software development in mind, and a more complex <em>Hello World</em> example is one of the unintended side effects of that choice. By starting with a tool like JShell, you were able to learn each of the concepts present in this code before using them in an application (with the exception of the <c>public</c> keyword, to some extent).
+        This is the classic <em>hello world</em> program that is often given on the first day of a programming class. In many languages, <em>Hello World</em> is simply a one-line program, making this a convenient place to start in an introductory programming class. However, Java was designed with more complex software development in mind, and a more complex <em>Hello World</em> example is one of the unintended side effects of that choice. By starting with a tool like JShell, you were able to learn each of the concepts present in this code before using them in an application (with the exception of the <c>public</c> keyword, to some extent).
 
         Note that this program would have to be defined in a file called <c>Hello.java</c>.
         </p>

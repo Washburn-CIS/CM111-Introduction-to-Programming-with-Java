@@ -9,7 +9,7 @@
 	are so lax makes it all the more important that we adopt a good programming style; one that will help make programs easy to read.
   </p>
   <p>
-	So look at how things are presented in <c>HelloWorld</c> (    <xref ref="lstng_helloworld"></xref>). 
+	So look at how things are presented in <c>HelloWorld</c> (<xref ref="lstng_helloworld"></xref>). 
         Notice how beginning and ending braces, { and }, are aligned.
 	Braces are used to mark the beginning and end of different blocks of code (blocks are explained below)
         in a Java program and it can sometimes be difficult to know which beginning and end braces are matched up.

@@ -1,3 +1,4 @@
+***INTEGRATE***
 <section xml:id="variables">
 
         <title>Statements and Variables</title>
@@ -269,4 +270,41 @@ str += "!";
 
 
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <li>
+    <p>
+      Variable and method names begin with a lowercase letter but also use capital letters to distinguish the words in the 
+      name<mdash/>
+for example, <c>main()</c>,    <c>greeting</c>,    <c>greet()</c>,    <c>getQuestion()</c>, and <c>getAnswer()</c>. 
+  </p>
+</li>
+</ol>
+
+
+
+-----------------------
+
+taken from other parts of jjj:
+
+
+<p>
+      A <term>declaration statement</term>
+      is a statement that declares a variable of a particular type.
+      In a Java program, a variable must be declared before it can be used.
+</p>
 

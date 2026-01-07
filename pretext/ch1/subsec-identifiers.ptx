@@ -1,4 +1,3 @@
-
 <subsection xml:id="subsec_identifiers">
   <title>Keywords and Identifiers</title>
   <p>
@@ -183,25 +182,19 @@
 </table>
   <p>
      The keywords used in the HelloWorld program (<xref ref="lstng_helloworld"></xref>) are: 
-    <c>class</c>,    <c>extends</c>,    <c>private</c>,    <c>public</c>,    <c>static</c>, and
+    <c>class</c>,   <c>public</c>,    <c>static</c>, and
     <c>void</c>.
   </p>
   <p>
-      Keywords cannot be used as the names of methods, variables,
-      or classes.
-      However, the programmer can make up their own names for the classes, methods,
-      and variables that occur in the program,
-      provided that certain rules and conventions are followed.
-  </p>
-  <p>
-      The names for classes, methods,
-      and variables are called identifiers, 
-     which follow certain syntax rules:
+      Keywords cannot be used as the names of things (such as classes) in a program. Such a  
+      <em>name</em> is called an <em>identifier</em>.
+      The programmer can make up their own identifiers for the classes and 
+      other program elements provided that this and other rules are followed.
   </p>
   <principle>
     <title>Identifier</title>
     <p>
-        An <term>identifier</term> must begin with a capital or lowercase letter and may be followed by any number of letters, digits,
+        An <term>identifier</term> in Java must begin with a capital or lowercase letter and may be followed by any number of letters, digits,
         underscores (_), or dollar signs ($).
         An identifier may not be identical to a Java keyword.
     </p>
@@ -213,38 +206,18 @@
   </p>
   <p>
       In addition to the syntax rule that governs identifiers, Java 
-      programmers follow two <term>style conventions</term> when naming classes,
-      variables,
-      and methods.
-  </p>
-  <ol>
-    <li>
-      <p>
-       Class names in Java begin with a capital letter and use capital letters to distinguish the individual
-        in the name<mdash/>
-for example, <c>HelloWorld</c> and <c>TextField</c>.
+      programmers follow two <term>style conventions</term> when naming classes and
+      other program elements that use identifiers. 
+      Conventions make it is easier to distinguish the different elements in a program
+      just by how they are written. (For more on Java style conventions, see Appendix A.).
+      Since classes are our only example so far, the convention
+      for class names is to begin with a capital letter and use capital letters to distinguish the individual
+      words in the name. This is called <term>Camel-Case</term> For example, <c>HelloWorld</c>.
     </p>
-  </li>
-  <li>
-    <p>
-      Variable and method names begin with a lowercase letter but also use capital letters to distinguish the words in the 
-      name<mdash/>
-for example, <c>main()</c>,    <c>greeting</c>,    <c>greet()</c>,    <c>getQuestion()</c>, and <c>getAnswer()</c>. 
-  </p>
-</li>
-</ol>
 <p>
-      These conventions make it is easier to distinguish the different elements in a program<mdash/>
-classes, methods,
-      variables<mdash/>
-just by how they are written. (For more on Java style conventions,
-      see Appendix A.).
-</p>
-<p>
-      Another important style convention followed by Java programmers is to choose descriptive identifiers when naming classes,
-      variables,
-      and methods.
-      This helps to make the program more readable.
+      Another important style convention followed by Java programmers is to choose descriptive identifiers when naming classes
+      and other program elements. This helps to make the program more readable. We'll talk more about this convention when we 
+      get to <em>variable definitions</em>.
 </p>
 <principle>
 <title>PROGRAMMING TIP: Choice of Identifiers</title>
@@ -255,5 +228,3 @@ just by how they are written. (For more on Java style conventions,
 </p>
 </principle>
 </subsection>
-
-<!-- TODO: edit /-->
