@@ -1,0 +1,99 @@
+<subsection xml:id="subsec-running">
+    <title>Running a Java Program</title>
+    <p>
+      Once the program successfully compiles and generates the <c>HelloWorld.class</c>
+      bytecode file, it can be executed using the <c>java</c> command, also included in the JDK:
+    </p>
+    <console>
+<input>java HelloWorld</input>
+<output>Hello World!</output>
+    </console>
+    <p>
+      As you see (<xref ref="fig_stdout">Figure</xref>), the program prints <q>Hello World!</q> on the console. 
+      Note that we do not use the <c>.class</c> extension with the <c>java</c> command,
+      just the file's name.
+    </p>
+    <figure xml:id="fig_stdout">
+      <caption>Compiling and running the HelloWorld program.</caption>
+      <image width="50%" source="chptr01/stdout.png"/>
+    </figure>
+
+    <p> 
+      The <c>java</c> command works as follows.  It first loads the Java Virtual Machine (JVM) into the computer's main
+      memory.  The JVM then loads the Java bytecode into memory and runs it. 
+   </p>
+   <p>
+      Once a Java program is compiled it can be run on Windows, MacOS, Linux or 
+      any other computer system that supports the JVM. This <term>platform 
+      independence</term> is one of Java's main strengths. Once compiled, Java bytecode is
+      portable. This is not the case for other compiled languages, such as C and C++, which 
+      must be compiled separately for each different type of computer.
+   </p>
+
+<listing xml:id="hellocanvas">
+<caption>The HelloWorldCanvas program.</caption>
+ <program language="java"><input>
+/** File: HelloWorldCanvas program */
+import javax.swing.JFrame; // Import class names
+import java.awt.Graphics;
+import java.awt.Canvas;
+public class HelloWorldCanvas extends Canvas // Class header
+{
+    // Start of body
+    public void paint(Graphics g)  // The paint method
+    {
+        g.drawString("Hello, World!", 10, 10);
+    }  // End of paint
+
+    public static void main(String[] args)   // The main() method
+    {   HelloWorldCanvas c = new HelloWorldCanvas();
+        JFrame f = new JFrame();
+        f.add(c);
+        f.setSize(150,150);
+        f.setVisible(true);
+    }  // End of main
+}  // End of HelloWorldCanvas
+ </input></program>
+</listing>
+
+   <p>
+    The steps involved in running the <c>HelloWorldCanvas</c> program (<xref ref="hellocanvas">Figure</xref>) are identical:
+ <console><input>javac HelloWorldCanvas.java</input><input>java HelloWorldCanvas</input></console>
+</p>
+
+<p>
+In this case however, the program's output would not appear on the command line. Instead,
+as shown in <xref ref="fig_popup">Figure</xref>, it would
+be displayed in a pop-up window, a Java <c>JFrame</c>.
+</p>
+
+<p>    
+    <figure xml:id="fig_popup">
+      <caption>Output from the HelloWorldCanvas program.</caption>
+      <image width="50%" source="chptr01/helloCanvasOutput.png"/>
+    </figure>
+</p>
+<activity label="compiling_hello_world_canvas">
+  <statement><p>Try the HelloWorldCanvas program below.</p>
+      </statement>
+      <program label="compiling_hello_world_canvas_practice_prg" interactive="activecode" language="java"  datafile="HtmlImageUtil.java">
+    <input>
+import java.awt.*;
+
+public class HelloWorldCanvas extends Canvas
+{
+    public void paint(Graphics g) {
+        g.drawString("Hello, World!", 10, 10);
+    }//paint()
+
+    public static void main(String[] args){
+        HelloWorldCanvas c = new HelloWorldCanvas();
+	// instead of using Swing, show to the web page:
+        HtmlImageUtil.show(c,150, 50);
+    } //main
+} //HelloWorldCanvas
+    </input>
+    </program>
+
+  </activity>
+</subsection>

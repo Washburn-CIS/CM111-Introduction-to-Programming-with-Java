@@ -1,0 +1,40 @@
+<subsection xml:id="subsec-compiling">
+    <title>Compiling a Program</title>
+    <p>
+      Before you can run a Java source program you have to compile it into Java bytecode -- 
+      the intermediate code understood by the Java Virtual Machine (JVM). The compilation step converts
+      Java <term>source code</term> into Java <term>bytecode</term>. 
+    </p>
+    <p>
+      The Java compiler is named <c>javac</c>.  It is included in the JDK.
+      To compile <c>HelloWorld.java</c>, you would simply type the following command on the MacOS or Linux or
+      Windows command line, where '$' represents the command prompt:
+    </p>
+    <console>
+<input>javac HelloWorld.java</input>
+    </console>
+    <p>
+      Assuming there are no  errors, <c>javac</c> will create a Java bytecode file 
+      named <c>HelloWorld.class</c><mdash/>a file that has the same name as the source file 
+      but with the extension <c>class</c> instead of <c>java</c>. By default,
+      the bytecode file will be placed in the same directory as the source file.
+      After compiling, the directory would look something like this:
+    </p>
+    <console>
+<input>ls</input>
+<output>HelloWorld.class  HelloWorld.java</output>
+    </console>
+    <p>
+      If <c>javac</c> detects errors in the Java code, 
+      a list of error messages will be printed on the console <mdash/>e.g.:
+    </p> 
+    <console>
+<output>HelloWorld.java:8: error: ';' expected</output>
+<output>System.out.println("Hello World!")           //  Output statement</output>
+<output>       ^</output>
+<output>1 error</output>
+    </console>
+    <p>
+    In this case the error is a missing semicolon on line 8.
+    </p>
+</subsection>

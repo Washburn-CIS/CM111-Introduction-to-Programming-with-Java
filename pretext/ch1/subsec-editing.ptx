@@ -1,0 +1,37 @@
+<subsection xml:id="subsec-editing">
+    <title>Editing a Program</title>
+    <p>
+      Any text editor can be used to edit a Java program. 
+      Popular CLI editors include <c>nano</c> and <c>vi</c>, which are also available on MacOS and Windows.
+      Free GUI MacOS editors include <url href="https://www.barebones.com/products/bbedit/index.html" visual="">BBEdit</url> 
+      and <url href="https://support.apple.com/guide/textedit/welcome/mac" visual="">TextEdit</url>, 
+      which is also available for <url href="https://textedit.en.lo4d.com/windows" visual="">Windows computers</url>.  
+      <url href="https://notepad-plus-plus.org/" visual="">Notepad++</url> is also a popular GUI Windows text editor.
+    There are also <term>Integrated Development Environments (IDEs)</term> that include an editor, compiler, and other tools, 
+    such as Eclipse, Netbeans, IntelliJ, etc.</p>
+    <p> 
+      Let's take another look at the HelloWorld program (<xref ref="lstng_helloworld"></xref>).
+      After editing the <c>HelloWorld</c> program, it must be stored in a 
+      file named <c>HelloWorld.java</c>. 
+    </p>
+    <principle>
+      <title>File Names</title>
+      <p>
+        A text file that defines a <c>public</c>Java class named <c>ClassName</c> 
+        must be saved in a text file named exactly <c>ClassName.java</c>. There can be only one 
+        <c>public</c> class per file.
+      </p>
+    </principle>
+    <p>
+      The file name must exactly match the public class name. For example, if the file 
+      containing the <c>HelloWorld</c> class were named <c>helloworld.java</c> or <c>Helloworld.java</c>,
+      that would cause an error. Java would be looking for a file named <c>HelloWorld.java</c>.
+    </p>
+    <principle>
+      <title>Case Sensitivity</title>
+      <p>
+        Java is case sensitive,
+        which means that it treats <c>helloWorld</c> and <c>Helloworld</c> as different names.
+      </p>
+    </principle>
+  </subsection>

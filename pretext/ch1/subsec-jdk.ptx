@@ -1,0 +1,19 @@
+<subsection xml:id="subsec-jdk">
+    <title>Java Development Environments</title>
+    <p>
+      Java is owned and maintained by Oracle. It is available free for various platforms, including Linux, Windows, and macOS. 
+      Since 1998 Java has gone through many versions. The current version as of this writing is Java 25.  
+    </p>
+    <p>
+      Everything needed to write Java programs <mdash/> except for a text editor <mdash/>  is available for free in the 
+      <url href="https://www.oracle.com/java/technologies/downloads/#jdk25-mac" visual="">Java Development Kit (JDK)</url>. 
+      The JDK also includes a software package called the Java Runtime Environment (or JRE). This is the software you will
+      use to execute Java programs. 
+    </p>
+    <p>
+      There are also several <em>integrated development environments (IDEs)</em> available for developing Java programs.
+      IDEs integrate the JDK with a text editor, giving you everything you need in one software package.
+      These include the open source <url href="https://www.eclipse.org/ide/" visual="">Eclipse IDE</url> and Oracle's own 
+      <url href="https://www.oracle.com/tools/technologies/netbeans-ide.html" visual="">NetBeans IDE</url>. 
+    </p>
+  </subsection>

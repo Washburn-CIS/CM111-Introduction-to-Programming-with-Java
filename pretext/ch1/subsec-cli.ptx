@@ -1,0 +1,30 @@
+<subsection xml:id="subsec-cli">
+    <title>The Command-Line Interface</title>
+    <p>
+    Many of us are used to working with personal computers through a Graphical User Interface (GUI). This is the typical operating environment you 
+    will see from an operating system like Microsoft Windows where you open application programs that present as <em>windows</em>
+    and you interact with these applications mainly with a mouse-controlled cursor by clicking on graphical elements of the interface.
+    Microsoft windows, as well as other popular operating systems like MacOS and Linux, also offer a Command-Line Interface (CLI) for 
+    manipulating the system. This interface is more popular among programmers and other technical folks as it can be easier to use 
+    this interface for technical tasks. It's also much easier to use a CLI on a remote computer than a GUI, so being able to use 
+    a CLI allows you to easily work with computers you have access to across the internet. 
+    </p>
+    
+    <p>
+    You can access the CLI on a Windows 10 or 11 machine by opening one of the Command Prompt, PowerShell, or Windows Terminal applications. 
+    For example, press start and type <em>cmd</em>. On a Mac, use spotlight and search for <em>Terminal</em>. On a Linux system it will 
+    vary by distribution but will be similar. 
+    </p>
+    
+    <p>Once you have a CLI open and running, you will see a prompt waiting for your command. Prompts will vary by system but often 
+    display the path (the current directory of files you're working in) and a $ or > symbol at the end near the cursor. You can type
+    commands in and execute them on the CLI. For example, on windows type <em>dir</em> or on MacOS/Linux type <em>ls</em>. After you
+    type this command, the system will print to the terminal a list of files in your current (working) directory. Afterward you 
+    will be returned to the command-prompt, awaiting another command. In the following sections, you will be introduced to commands
+    that can edit, compile, and run Java programs. Below is an example of what issuing a command like this could look like.
+    </p>
+    <console>
+<input>ls</input>
+<output>HelloWorld.class  HelloWorld.java</output>
+    </console>
+  </subsection>
