@@ -1,4 +1,3 @@
-
 <subsection xml:id="numeric-types">
   <title>Primitive Numeric Types</title>
     <table xml:id="tab-numerics">
@@ -50,11 +49,6 @@
       three bits can represent eight possible values: 000, 001, 010, 100, 101, 110, 011, 111.
     </p>
     <p>
-    <definition>
-      An <em>n</em>-bit quantity can represent <m>2^n</m> different values.
-    </definition>
-    </p>
-    <p>
       As illustrated in <xref ref="tab-numerics">Table</xref>, the various integer types 
       represent positive or negative whole numbers.
       Perhaps the most commonly used integer type in Java is the <c>int</c> type,
@@ -70,10 +64,14 @@
       which range from <m>-32768</m> to <m>32767</m>.
       And a 64-bit integer,
       a <c>long</c>, can represent whole number values ranging from <m>-2^{63}</m> to <m>2^{63}-1</m>.
+      A numeric literal like <m>5</m> will always be type <c>int</c>. If you want a <c>long</c> literal, 
+      you can include a capital L at the end, such as <m>5L</m>.
     </p>
     <p>
       For floating-point numbers,
       a 32-bit <c>float</c> type can represent <m>2^{32}</m> different real numbers and a 64-bit <c>double</c> value can represent <m>2^{64}</m> different real numbers.
+      A numeric literal like <m>5.2</m> will always be type <c>double</c>. If you want a <c>float</c> literal, 
+      you can include a capital F at the end, such as <m>5.2F</m>.
     </p>
     <principle>
       <title>EFFECTIVE DESIGN: Platform Independence</title>
@@ -118,93 +116,6 @@
       they would be rounded off to 12345.679 and 0.12345679,
       respectively, causing a possible error.
     </p>
-    <principle>
-      <title>DEBUGGING TIP: Significant Digits</title>
-      <p>
-        In using numeric data,
-        be sure the data type you choose has enough precision to represent 
-        the values your program needs.
-      </p>
-    </principle>
-
-  <exercises><title>Self-Study Exercises</title>
-    <exercise label="fillin-binary">
-      <title>Fill-In Binary</title>
-      <statement>
-        <p>List all of the binary values 
-          that can be represented in 4 bits---that is, all values in the range
-          0000 to 1111 in order separated by commas: <var/> </p>
-      </statement>
-      <setup>
-          <var>
-              <condition string="0000,0001,0010,0011,0100,0101,0110,0111,1000,1001,1010,1011,1100,1101,1110,1111">
-                  <feedback>
-                    <p>Correct.</p>
-                  </feedback>
-              </condition>
-              <condition string=".*">
-                    <feedback>
-                        <p>Incorrect. Start from 0000,0001, ...</p>
-                    </feedback>
-                </condition>
-              </var>
-              </setup>
-              <hint><p>Start from 0000, 0001, ...</p></hint>
-              <solution><p>0000,0001,0010,0011,0100,0101,0110,0111,1000,1001,1010,1011,1100,1101,1110,1111</p></solution>
-              </exercise>
-    
-              <exercise label="fillin-6bit">
-                <title>6-bit Values</title>
-                <statement>
-                  <p>If a 6-bit representation were used for an integer type, how
-                     many different integers could be represented? <var/> </p>
-                </statement>
-                <setup>
-                    <var>
-                        <condition string="64">
-                            <feedback>
-                              <p>In 6 bits, you can represent 2^6 = 64 different values.</p>
-                            </feedback>
-                        </condition>
-                        <condition string=".*">
-                              <feedback>
-                                  <p>Incorrect. Remember each bit can be 0 or 1 and you have 6 bits.</p>
-                              </feedback>
-                          </condition>
-                        </var>
-                        </setup>
-                        <hint><p>With 3 bits, you can represent 3^2 = 32 values.</p></hint>
-                      <solution><p>64</p></solution>  
-                      </exercise>
-                        <exercise label="fillin-data-type">
-                          <title>Data Type</title>
-                          <statement>
-                            <p>If you were writing a program to process scientific data that
-                             had to be accurate to at least 12 significant (decimal) digits,
-                             what type of data would you use?<var/> </p>
-                          </statement>
-                          <setup>
-                              <var>
-                                  <condition string="double">
-                                      <feedback>
-                                        <p>If you have to represent up to 12 significant digits, you should use the data type
-                                          <c>double</c>, which goes up to 17 digits.</p>
-                                      </feedback>
-                                  </condition>
-                                  <condition string=".*">
-                                        <feedback>
-                                            <p>Incorrect. Some data types you could use are 
-                                              <c>byte</c>, <c>short</c>, <c>int</c>, <c>double</c>, and 
-                                              <c>long</c>.</p>
-                                        </feedback>
-                                    </condition>
-                                  </var>
-                                  </setup>
-                                  <hint><p>Some data types you could use are 
-                                    <c>byte</c>, <c>short</c>, <c>int</c>, <c>double</c>, and 
-                                    <c>long</c></p></hint>
-                                    <solution><p>double</p></solution>
-                                  </exercise>    
-  
-  </exercises>
-  </subsection>
+<p>Internally, floating point values are stored in the same way you would use scientific notation. Each floating point value consists of two components: an exponent and a mantissa. The value is determined by multiplying the mantissa by 10 to the power of the exponent. In addition to writing out floating point literals with a decimal point, you can also format them by identifying these two components explicitly. Literal values that use the scientific notation format place a letter E between the mantissa and the exponent. For example, <c>5E3</c> is the same as <c>5000.0</c>.
+</p>
+</subsection>

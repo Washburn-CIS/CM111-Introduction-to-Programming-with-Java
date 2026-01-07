@@ -1,13 +1,24 @@
 <section xml:id="sec-expressions" xmlns:xi="http://www.w3.org/2001/XInclude" >
   <title>Java Expressions</title>
 <introduction>
+<p>
+Now that we've been introduced to minimal but complete Java programs as well as the 
+tools used to develop them, we'll zoom in to the smallest elements of 
+structural programming -- expressions. We've already seen an example of literal 
+expressions earlier in this chapter (expressions like "hello" and 8.6). Now 
+we'll build more complex expressions that explore Java's innate capabilities 
+for arithmetic and manipulation of data. Having a tool like jshell allows us 
+to play with simple expressions without needing to write an entire program, 
+so feel free to copy/paste examples in to jshell as you continue through
+this chapter!
+</p>
 </introduction>
-
 
 <xi:include href="./subsec-expressions.ptx"/>
 <xi:include href="./subsec-numeric-types.ptx"/>
 <xi:include href="./subsec-arithmetic-ops.ptx"/>
 <xi:include href="./subsec-op-precedence.ptx"/>
-<!-- TODO: introduce repls /-->
+<xi:include href="./subsec-casting.ptx"/>
+<xi:include href="./subsec-method-call.ptx"/>
 
 </section>

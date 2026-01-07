@@ -1,21 +1,32 @@
-
 <subsection xml:id="subsec-expressions">
 <title>Expressions and Operators</title>
+<p><em>Expressions</em> are the most basic syntactic building blocks of a computer program. Think of an expression as a simple question that you're asking of the computer. The answer you get back from the computer is called a <term>value</term>, and the process of determining the value for an expression is called <term>evaluation</term>. 
+</p>
+    
 <p>
       The manipulation of data in a program is done by using some kind of <em>expression</em>
       that specifies the action.
-      An <em>expression</em> is Java code that specifies or produces a value in the program.
-      For example, if you want to add two numbers,
-      you would use an arithmetic expression,
+      An <term>expression</term> is Java code that specifies or produces a value in the program.
+      For example, if you want to add two numbers, you would use an arithmetic expression,
       such as <m>num1 + num2</m>.
       If you want to compare two numbers,
-      you would use a relation expression such as <m>num1 \lt num2</m>.
+      you would use a relational expression such as <m>num1 \lt num2</m>.
       As you can see,
       these and many other expressions in Java involve the use of special symbols called <term>operators</term>.
       Here we see the addition operator (<m>+</m>) and the less-than operator
       (<m>\lt</m>).
-      We have already talked about the assignment operator
-      (<m>=</m>).
+</p>
+    
+<p>You've worked with more complex expressions before if you've ever used a graphing calculator. For example, an 
+expression you might feed in to such a calculator is <c>2 + 3</c>. The answer the calculator would give you back 
+is <c>5</c>. In this case, the calculator read the expression <c>2 + 3</c>, evaluated the expression by performing 
+addition, and returned the resulting value <c>5</c> back to you. This is similar to how expressions are used in 
+programming languages, with the difference being that there are many more types of expressions in Java than are likely 
+supported by your calculator!
+</p>
+    
+    
+<p>Literal expressions are the most simple expressions in Java. A <term>literal expression</term> is one that directly represents the value it evaluates to. For example, the expression <c>5</c> evaluates to, wait for it...,  <c>5</c>.  Other examples of literal expressions are <c>21</c>, <c>90000</c> (note, no commas), or <c>0</c>.
 </p>
 <p>
       Java expressions and operators have a type that depends on the type of data that is being manipulated.
@@ -26,42 +37,15 @@
       When comparing two numbers with the less than operator,
 <m>num1 \lt num2</m>,
       the expression itself produces a <c>boolean</c> type,
-      either true or false.
+      either true or false. We'll take a closer look at booleans in a later 
+      chapter and for now we'll focus on numeric types. 
 </p>
-<p>
-      It is important to note that expressions cannot occur on their own.
-      Rather they occur as part of the program's statements.
-      Here are some additional examples of expressions:
+<p>One catch is that there are more than one type of numeric value in Java! The type of a value is called a <term>data type</term> (frequently abbreviated to <term>type</term>). Types are simply a collection of possible values that a given value is restricted to. For example, <c>5</c> is an example of what is called an <c>integer</c> (shortened to <c>int</c> in Java). There are some constraints on the size of an integer (the minimum value is <c>−2147483648</c> or <m>-2^{31}</m> and the maximum value is <m>2^{31}-1</m> or <c>2147483647</c>). Considering this rule, the expression 2147483648 would be a syntax error, since it is too large to be an <c>int</c>. Note that integer values also have no fractional component. For example, 0.5 is not a legal integer value either.
 </p>
-<program language="java"><input>
-    num = 7         // An assignment expression of type int
-    num = square(7) // An method call expression of type int
-    num == 7        // An equality expression of type boolean
-</input></program>
-<p>
-      The first of these is an assignment expression.
-      It has a value of <c>7</c>, because it is assigning <c>7</c> to <c>num</c>. The second example is also an assignment expression,
-      but this one has a method call, <c>square(7)</c>, on its right hand side.
-      (We can assume that a method named <c>square()</c> has been appropriately defined in the program.)
-      A method call is just another kind of expression.
-      In this case, it has the value 49.
-      Note that an assignment expression can be turned into a stand-alone assignment statement by placing a semicolon after it.
+<p>There are also other integer types with different ranges of values. For example, the type <c>long</c> has a range of <m>-2^{63}</m> to <m>-2^{63}</m>. This type of value is often used when a number is too large to be represented as an <c>int</c>. Note that you can specify you want to create a long value using a special syntax for the literal expression. For example, <c>46L</c> is a legal expression that evaluates to the <c>long</c> integer value 46 and <c>2147483648L</c> is also legal (where 2147483648 was not). 
 </p>
-<p>
-      The third expression is an equality expression,
-      which has the value <c>true</c>, assuming that the variable on its left is storing the value 7.
-      It is important to note the difference between the assignment operator (<m>=</m>) and the equality operator
-      (<m>==</m>).
+<p><c>9.2</c> is an example of a floating point value. These are values with a decimal component. Like integer values, there is more than one floating point type in Java (single and double precision). The difference between these types is the precision (essentially the number of significant digits) to to which a value will approximate some real number. By default, the literal expressions you type in that contain a decimal point will be double precision (shortened to <c>double</c>).
 </p>
-<principle>
-<title>Equality and Assignment</title>
-<p>
-        Be careful not to confuse <c>=</c> and <c>==</c>. The symbol <c>=</c> is the assignment operator.
-        It assigns the value on its right-hand side to the variable on its left-hand side.
-        The symbol <c>==</c> is the equality operator.
-        It evaluates whether the expressions on its left- and right-hand sides have the same value and returns either 
-<c>true</c> or <c>false</c>.
-</p>
-</principle>
+
+
 </subsection>
-<!-- TODO: edit /-->

@@ -1,0 +1,26 @@
+<subsection  xml:id="subsec-method-call">
+        <title>Calling Methods</title>
+
+        <p>The arithmetic operators we've used thus far are simple. We can combine them together to create more complex operations, but that also makes our code more difficult to read. More complicated operations are often handled by <term>methods</term> which put a simple name to a potentially complex operation. This is an example of <term>abstraction</term> -- a very important concept in computer programming in which the complexities of operations are hidden to make programs easier to read, modify, and combine with other programs. Methods also allow Java to be <term>extensible</term>, in that you can create your own methods to perform custom tasks (we will see how to do this in future chapters). </p><p>We formed arithmetic expressions with arithmetic operators. Similarly, we can form <term>method call</term> expressions by providing arguments to a method (arguments, in this case, are values derived from other expressions -- similar to the operands we supplied to operators with arithmetic expressions). When the method call expression is evaluated, the method will calculate a value based on the arguments it was given. In this context, the term <term>function</term> is also applicable.</p>
+
+    <p>You can use a method call expression to cause a method to execute. Method call expressions will evaluate to the method's <term>return value</term>, which can be seen as the result of the operation the method is performing. </p>
+
+    <p>To call a method, first provide the name of the method you wish to call. Following the name should be a pair of parenthesis, within which is a comma-separated list of expressions for each argument. In the last example, there was only one argument, but a method could take more than one argument, or could even take zero arguments.</p>
+
+    <figure>
+    	<title>method-call</title>
+        <caption>Anatomy of a Method Call</caption>
+         <image source="chptr01/method-call.svg"/>
+    </figure>
+
+    <p>In the diagram above, a method named <c>pow</c> is being called. This method takes two arguments: the base and the power (both <c>double</c> values). The return value of this method is the result of raising the specified base to the specified power (that is to say, this expression evaluates to the value 100). You can access this method in jshell by first typing in:
+
+<console><input prompt="jshell> ">import static java.lang.Math.pow;</input></console>
+
+This method will calculate the value resulting from raising the first number to the power of the second number (as a double). With this method, you can now calculate many more things in jshell, such as the area of a circle with radius 5:
+<console><input prompt="jshell> ">3.14 * pow(5, 2)</input></console>
+
+You'll see how to access more methods and build even more complex expressions in the next chapter. 
+</p>
+    
+</subsection>

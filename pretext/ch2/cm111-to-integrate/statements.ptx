@@ -2,7 +2,7 @@
 <section xml:id="variables">
 
         <title>Statements and Variables</title>
-<introduction>Statements are another common syntatic element of computer programs that have a more robust role than expressions. Just as basic types and expressions went hand-in-hand, so do the introduction of statements and variables. This section will distinguish statements from expressions and identify several types of statements. In particular, this section will introduce the new concept of variables (a way to add memory to your program) and the statements that deal with them. 
+<introduction>Statements are another common syntactic element of computer programs that have a more robust role than expressions. Just as basic types and expressions went hand-in-hand, so do the introduction of statements and variables. This section will distinguish statements from expressions and identify several types of statements. In particular, this section will introduce the new concept of variables (a way to add memory to your program) and the statements that deal with them. 
 </introduction>
 
 
