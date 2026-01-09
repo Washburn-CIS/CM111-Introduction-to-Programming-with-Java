@@ -1,7 +1,139 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-local-variables">
   <title>Variables</title>
-  
-  <!-- TODO: make section introducing variables and variable definitions from below, and edit below to be only "local" variables /-->
-  
-  <xi:include  href="subsec-local-variables.ptx"/>
-</section><!-- TODO: edit /-->
+<p>
+      A <term>variable</term> is a named storage location that can store a value of a particular type.
+      You can think of a variable as a special container into which you can place values 
+      (<xref ref="fig_vars"></xref>),
+      but only values that fit into that type of variable.
+      For example, an <c>int</c> variable can store values like 5 or -100.
+      A <c>String</c> variable can store values like
+<q>Hello</q>. 
+
+<figure xml:id="fig_vars">
+<caption>Variables are like <em>typed</em> containers. An <c>int</c> variable can only store whole numbers
+       and a <c>String</c> can only store strings.</caption>
+<image width="25%" source="chptr01/vars.png"/>
+</figure>
+</p>
+
+
+
+<principle>
+<title>JAVA LANGUAGE RULE: Variable Declaration</title>
+<p>
+       In Java, all variables must be declaraed before they can be used.
+      Failure to do so would cause a syntax error.
+</p>
+</principle>
+<p>
+      In its simplest form,
+      a declaration statement begins with the 
+      variable's type,
+      which is followed by the variable's name,
+      and ends with a semicolon:
+</p>
+<p>
+<em>Type VariableName</em> ; 
+</p>
+<p>
+      A variable's type is either one of the primitive types we mentioned,
+      such as <c>int</c>,<c>double</c>, or <c>boolean</c>, or for objects,
+      it is the name of the object's class,
+      such as <c>String</c>. A variable's name is a Java identifier and must 
+      follow the same rules that were introduced in the last chapter. 
+      Here are some examples: 
+</p>
+<program language="java"><input>
+    String message;
+    int num1;
+    int num2;
+</input></program>
+<p>
+      The first declaration declares a variable named <c>message</c> of type <c>String</c>.
+      The next two declarations declare <c>int</c> variables named <c>num1</c> and <c>num2</c>. 
+</p>
+<p>
+      What's the purpose of declaration statements?  Without going into too much detail at this point,
+      declaring a variable causes the program to set aside enough memory for the type of data that will be stored in that variable.
+      So in this example, Java would reserve enough space to store an <c>int</c> value, such as 25 or 1000.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+<p>
+      An <term>assignment statement</term>
+      is a statement that assigns a value to a variable <mdash/>
+ i.e., stores a value in the variable's memory location.
+      An assignment statement uses the equal sign (<m>=</m>) as an assignment operator.
+      An assignment statement has a variable name on the left hand side of the equals sign and some type of expression on the right hand side.
+      The type of the expression must match the type of the variable. 
+      Like other statements, an assignment statement ends with a semicolon:
+</p>
+<p>
+<em>VariableName</em>  =<em>Expression</em> ;
+</p>
+<principle>
+<title>JAVA LANGUAGE RULE: Assignment Operator</title>
+<p>
+       In Java, the equal sign (<c>=</c>) is used as the assignment operator.
+</p>
+</principle>
+<p>
+      When it executes an assignment statement, Java will first determine what value results from evaluating the expression
+      on the right hand side and then assign that value to the variable on the left hand side. 
+     For example, consider these three assignment statements: 
+</p>
+<program language="java"><input>
+    num1 = 50;        // (a) Assign 50 to num1
+    num2 = 10 + 15;   // (b) Assign 25 to num2
+    num1 = num2;      // (c) Copy num2's value (25) into num1
+</input></program>
+<p>
+      In (a) the value on the right hand side is 50.
+      So 50 gets stored in <c>num1</c>, resulting 
+      in the situation shown in the top row of <xref ref="fig_assign">Figure</xref>.
+</p>
+<p>
+<figure xml:id="fig_assign">
+<caption>Illustrates changes in variables <c>num1</c> and <c>num2</c> as a result off 
+       the three assignments, (a), (b) and (c).</caption>
+<image width="50%" source="chptr01/assign.png"/>
+</figure>
+</p>
+<p>
+      In (b) the value on the right hand side is 25,
+      the result of adding  10 and 15. So 25 gets assigned to <c>num2</c>, leading to the situation shown in
+      in row two of the figure.
+      In (c) the value on the right hand side is 25, the value of <c>num2</c>, 
+      which is stored in <c>num1</c>, as depicted in row three of the  drawing.
+</p>
+<p>
+      The last of these assignments, (c), has variable names on both sides of the equal sign, which 
+      can be confusing to beginning programmers. It might look like we're saying that <c>num1</c>
+<em>equals</em>
+<c>num2</c>. But, remember, the equal sign is the assignment operator. So, this statement is saying: take the
+      value stored in <c>num2</c> and store it in <c>num1</c>. 
+</p>
+<observation>
+      Variable names can also be expressions. In these cases, the expression evaluates to the value stored in the variable. 
+</observation>
+<p> Note that assignment statements must assign a value of a compatible type with the given variable. 
+For example, for the variable <c>message</c>, a String type value must be assigned. It would be an error 
+to assign any other type of value to <c>message</c>.
+</p>
+<program language="java"><input>
+    message = "Hello World!";        // Assign "Hello World!" to message (legal)
+    message = 5;                     // Type mismatch syntax error (illegal)
+</input></program>
+<p>
+<!-- TODO: add combo assignment / declaration statements /-->
+</section>
