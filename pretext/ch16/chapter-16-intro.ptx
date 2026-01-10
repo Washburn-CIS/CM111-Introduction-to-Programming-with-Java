@@ -6,11 +6,10 @@
     </p>
     <objectives>
       <ul>
-        <li>
-          <p>
-            ***
-          </p>
-        </li>
+        <li>Compile and execute java programs from the command-line that use command-line arguments</li>
+        <li>Read a program using varargs and explain what it does</li>
+        <li>Read a program using recursion and explain what it does</li>
+        <li>Read a program using conditional expressions and explain what it does</li>
       </ul>
     </objectives>
   </introduction>

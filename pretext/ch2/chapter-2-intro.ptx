@@ -7,7 +7,18 @@
     </p>
     <objectives>
       <ul>
+        <li>understand what a statement is and how simple statements are executed</li>
+        <li>use a REPL to evaluate more complex expressions and simple statements</li>
+        <li>trace the flow of control during the execution of a program using simple assignment statements</li>
+        <li>identify type errors with variable declarations and assignment statements</li>
+        <li>understand what a block is and how statements are organized in to blocks</li>
+        <li>develop programs that use assignment and basic I/O</li>
+        <li>write end-of-line comments specifying what statements or short blocks of code do</li>
+        <li>develop programs that use external packages in the Java API</li>
+        <li>apply pair-programming to simple problem solving</li>
         <li>use simple format strings to print output to the console</li>
+        <li>explain/understand when code developed by others can be used and proper ways of disclosing their use</li>
+        <li>use the Java API to develop pseudo-random numbers</li>
       </ul>
     </objectives>
   </introduction>

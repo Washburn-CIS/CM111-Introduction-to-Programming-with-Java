@@ -6,11 +6,14 @@
     </p>
     <objectives>
       <ul>
-        <li>
-          <p>
-            ***
-          </p>
-        </li>
+        <li></li>
+        <li>understand the purpose of writing methods without a return type</li>
+        <li>Trace the flow of control during the execution of a program using multiple classes</li>
+        <li>Identify type errors resulting from use of multiple classes and instance method calls</li>
+        <li>Illustrate the full scope of variables and visibility within classes in Java</li>
+        <li>Use a debugger to examine the heap</li>
+        <li>Trace the flow of control during the execution of a program using side effects</li>
+        <li>Read a program using side effects and/or nested loops and explain what it does</li>
       </ul>
     </objectives>
   </introduction>

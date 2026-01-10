@@ -6,11 +6,12 @@
     </p>
     <objectives>
       <ul>
-        <li>
-          <p>
-            ***
-          </p>
-        </li>
+        <li>Read a program using overloading or varargs and explain what it does</li>
+        <li>Read a program using exception handling and explain what it does</li>
+        <li>Trace the flow of control during the execution of a program using exception handling</li>
+        <li>Trace the flow of control during the execution of a program using file access</li>
+        <li>Develop programs that use file I/O to provide data persistence across multiple executions</li>
+        <li>Develop programs that can validate user input and handle runtime errors.</li>
       </ul>
     </objectives>
   </introduction>

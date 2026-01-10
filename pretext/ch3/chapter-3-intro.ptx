@@ -1,8 +1,19 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapter-3-intro">
   <title>Week 3</title>
   <introduction>
-  
-  
+
+    <p>
+      At the end of this week you should be able to...
+    </p>
+    <objectives>
+      <ul>
+        <li>Use appropriate terminology to identify and describe components of classes</li>
+        <li>Describe values (instances) of custom class types</li>
+        <li>Illustrate the scope of variables and visibility within classes in Java</li>
+        <li>Compose a simple class through design, implementation, and testing to meet behavioral requirements</li>
+        <li>Develop programs that create simple classes and instantiate objects of those classes</li>
+      </ul>
+    </objectives>
   </introduction>
   
   

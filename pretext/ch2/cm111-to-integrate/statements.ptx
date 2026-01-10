@@ -18,7 +18,7 @@
 
     <example>
       <title>Printing a Message to the Screen</title>
-      <p>Thus far, we've received messages back from the REPL each time we evaluate an expression, but perhaps we would like a message to be delivered somewhere during the execution of our program. Many <em>text-based applications</em> interact with their users solely through messages printed to a console (such as the REPL itself). In the case of jshell, standard output is simply the jshell screen, so any messages you print while using jshell will show up there.</p>
+      <p>Perhaps we would like a message to be delivered somewhere during the execution of our program. Many <em>text-based applications</em> interact with their users solely through messages printed to a console (such as the REPL itself).</p>
 
       <p>The method we will use to print to standard output is unfortunately (and infamously) somewhat complicated looking, but JShell does allow to access it in a more simple way. If you start up JShell with the <c>-startup PRINTING</c> argument, the print method will be available to you to call to print a message to the screen. Below is an example of how you could start JShell from a system command prompt with this option and use the print method to send a greeting:</p>
 <console>
@@ -256,17 +256,6 @@ str += "!";
 
 
 </section>
-
-
-
-
-
-
-
-
-
-
-
 
 
 

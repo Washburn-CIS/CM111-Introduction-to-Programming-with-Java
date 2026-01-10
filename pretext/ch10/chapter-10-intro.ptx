@@ -6,11 +6,12 @@
     </p>
     <objectives>
       <ul>
-        <li>
-          <p>
-            ***
-          </p>
-        </li>
+        <li>describe properties of arrays</li>
+        <li>use a REPL to evaluate simple array expressions</li>
+        <li>trace the flow of control during the execution of a program using for-each loops</li>
+        <li>identify type errors resulting from use of arrays</li>
+        <li>develop programs that include arrays</li>
+        <li>use a debugger to visualize the contents of an array during program execution</li>
       </ul>
     </objectives>
   </introduction>

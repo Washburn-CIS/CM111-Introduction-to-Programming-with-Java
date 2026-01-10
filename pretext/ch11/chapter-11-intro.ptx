@@ -6,15 +6,14 @@
     </p>
     <objectives>
       <ul>
-        <li>
-          <p>
-            ***
-          </p>
-        </li>
+        <li>trace the flow of control during the execution of a program using for loops</li>
+        <li>use a debugger to trace through call stacks and nested loops</li>
+        <li>apply pair-programming to method development</li>
+        <li>recognize common patterns in the development of methods working over collections of data such as strings and arrays</li>
       </ul>
     </objectives>
   </introduction>
-  <xi:include href="sec-for-loops.ptx"/>
+  <xi:include href="sec-method-development-patterns.ptx"/>
   <xi:include href="sec-nested-loops.ptx"/>
 </chapter>
-<!-- W11: for loops, nested loops (more parsing) /-->
+<!-- W11: more with for loops, more complex patterns (string-2 and array-2), nested loops (more parsing) string-3 and array-3 /-->

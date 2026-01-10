@@ -5,9 +5,7 @@
     learned about Java classes. Here is an outline of how it is defined:
   </p>
   <program language="java"><input>
-      public final class Math    // Final, can't subclass
-      {   private Math() {}      // Private, can't invoke
-          ...
+      public class Math {
           public static native double sqrt(double a)
                 throws ArithmeticException;
       }
@@ -113,8 +111,4 @@
       to be used whether or not there is an instance of its class.
     </p>
   </principle>
-  <p>
-    We will see other occasions to use the <c>static</c> and <c>final</c> qualifiers
-    in subsequent chapters.
-  </p>  
   </subsection>

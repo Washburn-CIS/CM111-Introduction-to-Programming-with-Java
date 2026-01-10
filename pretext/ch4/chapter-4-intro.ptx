@@ -1,8 +1,19 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapter-4-intro">
   <title>Week 4</title>
   <introduction>
-  
-  
+
+    <p>
+      At the end of this week you should be able to...
+    </p>
+    <objectives>
+      <ul>
+        <li>use a REPL to evaluate boolean expressions and conditional statements</li>
+        <li>identify type errors with expressions involving boolean operators and comparison operators</li>
+        <li>trace the flow of control during the execution of a program using conditional statements (if/switch)</li>
+        <li>develop programs that use conditional statements (if/switch)</li>
+        <li>apply pair-programming to simple problem solving</li>
+      </ul>
+    </objectives>
   </introduction>
   
   

@@ -6,11 +6,14 @@
     </p>
     <objectives>
       <ul>
-        <li>
-          <p>
-            ***
-          </p>
-        </li>
+        <li>describe properties of characters and Strings</li>
+        <li>recognize basic character encodings and escapes</li>
+        <li>use a REPL to evaluate character and String expressions</li>
+        <li>trace the flow of control during the execution of a program using for and do-while loops</li>
+        <li>develop programs that use loops to iterate through strings</li>
+        <li>describe properties of static methods</li>
+        <li>develop programs that include static method definitions</li>
+        <li>identify type errors resulting from return types and parameter types in static method definitions</li>
       </ul>
     </objectives>
   </introduction>
@@ -21,4 +24,4 @@
   <xi:include href="sec-static-method-definitions.ptx"/>
   <xi:include href="sec-parsing-basics.ptx"/>
 </chapter>
-<!-- W6: characters, string methods, static method definitions, parsing (the word, indexOf, etc) /-->
+<!-- W6: characters, string methods, static method definitions, parsing (the word, indexOf, etc)  ****movve printf here?   String-1 codingbat /-->

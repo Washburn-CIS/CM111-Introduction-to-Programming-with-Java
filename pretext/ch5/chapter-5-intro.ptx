@@ -6,11 +6,10 @@
     </p>
     <objectives>
       <ul>
-        <li>
-          <p>
-            ***
-          </p>
-        </li>
+        <li>develop programs that use while loops</li>
+        <li>use a debugger to evaluate while statements</li>
+        <li>use a debugger to trace through loops</li>
+        <li>trace the flow of control during the execution of a program using while and do/while loops</li>
       </ul>
     </objectives>
   </introduction>

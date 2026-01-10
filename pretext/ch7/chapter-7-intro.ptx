@@ -6,15 +6,14 @@
     </p>
     <objectives>
       <ul>
-        <li>
-          <p>
-            ***
-          </p>
-        </li>
+        <li></li>
+        <li>trace the flow of control during the execution of a program using calls to static methods</li>
+        <li>use unit tests to assist in development of static methods</li>
+        <li>write javadoc comments explaining what a method does</li>
       </ul>
     </objectives>
   </introduction>
+  <xi:include href="sec-for-loops.ptx"/>
   <xi:include href="sec-unit-testing.ptx"/>
-  <xi:include href="sec-method-development-patterns.ptx"/>
 </chapter>
-<!-- W7: method development patterns /-->
+<!-- W7: for loops, accumulator pattern   String-2 codingbat/-->

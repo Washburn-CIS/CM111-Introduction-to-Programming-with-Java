@@ -14,6 +14,7 @@
         <li>describe values of primitive types such as integers and floating point numbers</li>
         <li>understand what an expression is and how simple expressions are evaluated</li>
         <li>predict how arithmetic operators in java work over given values</li>
+        <li>use the javac and java commands to compile and execute java programs on a linux system</li>
       </ul>
     </objectives>
   </introduction>
