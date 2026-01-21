@@ -41,7 +41,7 @@ Further extensions of it for Washburn (prior to the development of this runeston
 </p>
 <p>Most of this textbook is a fork (forked December 18th, 2025) of an open textbook called "JavaJavaJava". Elements from "CM111-Intro-to-Java" 
 have been sprinkled in throughout, other edits have been made, and the order of topics has been redeveloped, but otherwise this text 
-is derived from the work of the authors below. I have also left their preface intact (starting with the next paragraph).</p>
+is derived from the work of the authors below. I have also left their original preface intact (starting with the next paragraph).</p>
 <p>
 
 Java, Java, Java first edition (2000) and second edition (2003) were published by
@@ -79,10 +79,10 @@ update this book if it is used in future semesters with any warranted changes.
 <row bottom="minor"><cell>Week/Chapter</cell><cell>Topics</cell><cell>Chapters</cell>
 </row>
 <row><cell>1</cell><cell>Compiling and Running Programs, Basic Types, Literals, Expressions, Operators, Calling Static Methods</cell></row>
-<row><cell>2</cell><cell>Variables, Constants, Tracing, Basic I/O, Imports, Errors, Tracing, CLI’s, Formatted output basics*</cell></row>2-3  
+<row><cell>2</cell><cell>Variables, Constants, Tracing, Basic I/O, Imports, Errors, Tracing, CLI’s</cell></row>
 <row><cell>3</cell><cell>Algorithms, Basic Class Design (POJO's), Calling Instance Methods, String Basics</cell></row>
 <row><cell>4</cell><cell>Booleans, Comparison Operators, Logical Operators, Conditional Statements</cell></row> 
-<row><cell>5</cell><cell>Switch Statements*, While Loops, Do-While Loops</cell></row>
+<row><cell>5</cell><cell>Switch Statements, While Loops, Do-While Loops</cell></row>
 <row><cell>6</cell><cell>Characters, String Methods, Static Method Definitions, Parsing Basics</cell></row>
 <row><cell>7</cell><cell>Algorithms (revisited), Random numbers, Method Development Patterns</cell></row>  
 <row><cell>8</cell><cell>Review Exercises</cell></row>  
@@ -99,7 +99,7 @@ update this book if it is used in future semesters with any warranted changes.
 </frontmatter>
     <xi:include href="./ch1/chapter-1-intro.ptx"/>
     <xi:include href="./ch2/chapter-2-intro.ptx"/>
-    <xi:include href="./ch3/chapter-3-intro.ptx"/>
+<!--<xi:include href="./ch3/chapter-3-intro.ptx"/>
     <xi:include href="./ch4/chapter-4-intro.ptx"/>
     <xi:include href="./ch5/chapter-5-intro.ptx"/>
     <xi:include href="./ch6/chapter-6-intro.ptx"/>
@@ -113,6 +113,7 @@ update this book if it is used in future semesters with any warranted changes.
     <xi:include href="./ch14/chapter-14-intro.ptx"/>
     <xi:include href="./ch15/chapter-15-intro.ptx"/>
     <xi:include href="./ch16/chapter-16-intro.ptx"/>
+    /-->
     <backmatter>
       <xi:include href="./appndx-codestyle/appendix-codestyle.ptx"/>
       <xi:include href="./appndx-jdk/appendix-jdk.ptx"/>

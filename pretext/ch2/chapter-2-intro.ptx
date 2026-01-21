@@ -24,8 +24,8 @@
   </introduction>
   <xi:include  href="sec-variables.ptx"/>
   <xi:include  href="sec-working-with-java-api.ptx"/>
-  <xi:include  href="sec-user-interfaces.ptx"/>
-  <xi:include  href="sec-incremental-development.ptx"/>
+  <xi:include  href="sec-standard-io.ptx"/>
+  <xi:include  href="sec-basic-algorithm-example.ptx"/>
 </chapter>
 <!-- topics: variables, constants, imports, calling instance methods, random numbers, basic I/O, formatted output basics*, CLI’s, errors, tracing/-->
 <!-- TODO: edit /-->

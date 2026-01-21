@@ -59,16 +59,6 @@
 </p>
 
 
-
-
-
-
-
-
-
-
-
-
 <p>
       An <term>assignment statement</term>
       is a statement that assigns a value to a variable <mdash/>
@@ -134,6 +124,7 @@ to assign any other type of value to <c>message</c>.
     message = "Hello World!";        // Assign "Hello World!" to message (legal)
     message = 5;                     // Type mismatch syntax error (illegal)
 </input></program>
-<p>
+
 <!-- TODO: add combo assignment / declaration statements /-->
+<!-- TODO: add var/-->
 </section>

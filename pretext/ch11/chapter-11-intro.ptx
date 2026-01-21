@@ -13,7 +13,7 @@
       </ul>
     </objectives>
   </introduction>
-  <xi:include href="sec-method-development-patterns.ptx"/>
+  <!--<xi:include href="sec-method-development-patterns.ptx"/>/-->
   <xi:include href="sec-nested-loops.ptx"/>
 </chapter>
 <!-- W11: more with for loops, more complex patterns (string-2 and array-2), nested loops (more parsing) string-3 and array-3 /-->

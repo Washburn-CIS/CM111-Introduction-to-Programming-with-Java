@@ -10,7 +10,7 @@
     <figure>
     	<title>method-call</title>
         <caption>Anatomy of a Method Call</caption>
-         <image source="chptr01/method-call.svg"/>
+         <image source="chptr01/method-call" width="50%"/>
     </figure>
 
     <p>In the diagram above, a method named <c>pow</c> is being called. This method takes two arguments: the base and the power (both <c>double</c> values). The return value of this method is the result of raising the specified base to the specified power (that is to say, this expression evaluates to the value 100). You can access this method in jshell by first typing in:

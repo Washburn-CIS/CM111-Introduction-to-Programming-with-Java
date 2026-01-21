@@ -16,6 +16,19 @@
 	    publication="../pretext/publication-rs-academy.ptx"
 	    output-dir="published/javajavajava">	    
     </target>
+    <target name="ebook"
+	    format="epub"
+	    source="../pretext/main.ptx"
+	    publication="../pretext/publication-rs-for-all.ptx"
+	    output-dir="build/ebook">	    
+    </target>
+    <target name="print"
+	    format="pdf"
+	    source="../pretext/main.ptx"
+	    publication="../pretext/publication-rs-for-all.ptx"
+	    latex-engine="xelatex"
+	    output-dir="build/print">	    
+    </target>
 
   </targets>
 </project>

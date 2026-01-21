@@ -1,52 +1,21 @@
 <subsection xml:id="subsec-calling-static-methods">
   <title>Calling Static Methods</title>
   <p>
-    The <c>Math</c> is somewhat exceptional in terms of what we've already
-    learned about Java classes. Here is an outline of how it is defined:
+    Last week we saw a basic method call but had to use an import trick to make it 
+    available to us in jshell. The method (pow) was a member of the Math class.
+    This class holds many static methods that can be called. 
   </p>
-  <program language="java"><input>
-      public class Math {
-          public static native double sqrt(double a)
-                throws ArithmeticException;
-      }
-  </input></program>
+    
   <p>
-    Notice that the class is declared <c>public final</c>. This means that it can 
-    be accessed (<c>public</c>) but it cannot be extended or subclassed (<c>final</c>).
-    Notice that its default constructor is declared <c>private</c>. This prevents this 
-    class from being instantiated <mdash/> i.e., there can be no <c>Math</c> objects.
-  </p>
-  <p>
-    The idea of a class that cannot be subclassed and cannot be instantiated 
-    may seem a little strange at first.
-    The justification for it here is that it provides a convenient 
-    and efficient way to introduce helpful math functions into the Java language.
-  </p>
-  <p>
-    Notice also that the <c>sqrt()</c> method is declared  <c>static</c>, as are all <c>Math</c>
-    class methods:
-  </p> 
-  <program language="java"><input>
-          public static native double sqrt(double a)
-                throws ArithmeticException;
-  </input></program>  
-
-  <p>
-    This means that when we want to use a <c>Math</c> method, we have 
-    to call it using the class name.
+    As mentioned above, the static import isn't necessary. We can call a static 
+    method directly from the class that contains it. We start
+    with the class name, then a dot, then the method call.
     For example,
     we would calculate <m>2^4</m> as <c>Math.pow(2,4)</c>, which evaluates to 16.
     Similarly, we compute the square root of 225.0 as <c>Math.sqrt(225.0)</c>, 
     which evaluates to 15.0.
   </p>
 
-  <p>
-    Defining the <c>Math</c> class in this way makes it easy to use its methods,
-    because you don't have to create <c>Math</c> objects.
-    It is also a very efficient design because <c>java.lang.Math</c> methods
-    are loaded into memory at the beginning of your program's execution,
-    and they persist in memory throughout your program's lifetime.
-  </p>
 
   <p>Random numbers are very useful in coding, for example in games. <c>Math.random()</c> returns a 
     random number between 0.0-0.99. We often need to move the random number to be in a certain range,
@@ -72,43 +41,10 @@
       {
         public static void main(String[] args)
         {
-          System.out.println("Math.pow(3,2): " + Math.pow(3,2));
-          System.out.println("Math.sqrt(9): " + Math.sqrt(9));
-          System.out.println("Math.round(26.51): " + Math.round(26.51));
           System.out.println((int) (Math.random() * 10) + 1);
         }
       }
     </input>
     </program>
     </activity>
-  <p>
-    In general, <c>static</c> class elements <mdash/> methods and variables <mdash/> are
-    useful when we need elements that don't depend on the existence of objects of a class.
-    For example, consider the following class definition:   
-  </p>
-  <program language="java"><input>
-      public Widget
-      {   
-          public static nWidgets = 0;
-          public Widget() 
-          {
-            nWidgets++;
-          } 
-      }
-  </input></program>
-  <p>
-    Here we have a <c>public static</c> variable, <c>nWidgets</c> that is meant to
-    keep a count of the number of widgets created. The count is incremented 
-    every time the constructor is called <mdash/> i.e., every time a widget
-    is created. Obviously, before the first widget
-    is created we want to be able to say that the count is 0. We can do so by accessing
-    <c>Widget.nWidgets</c>. 
-  </p>  
-  <principle>
-    <title>EFFECTIVE DESIGN: Static Elements</title>
-    <p>
-      A method or variable should be declared <c>static</c> if it is intended 
-      to be used whether or not there is an instance of its class.
-    </p>
-  </principle>
   </subsection>

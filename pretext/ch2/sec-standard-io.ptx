@@ -1,4 +1,4 @@
-<section xml:id="standard-io">
+<section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-standard-io">
         <title>Standard Input / Output</title>
 
 <p>The programs you write will need to be able to interact with a user and thus require some sort of <term>user interface</term>. A text-based user interface (or command-line interface) is a very simple and straight forward way to start interacting with the users of your programs by printing information to the screen for the user in text format and taking in data when the user types something at the keyboard. JShell is an excellent example of a program that uses a text-based user interface. This was a very popular style of application on older computer systems in the 90's and earlier but has remained relevant and has perhaps even gained popularity more recently.
@@ -10,10 +10,10 @@
 
     <subsection>
         <title>Printing to Standard Output</title>
-        <p>We've received messages back from the REPL each time we evaluate an expression, but perhaps we would like a message to be delivered somewhere during the execution of our program. Many ``text-based'' applications interact with their users solely through messages printed to a console (such as the REPL itself). Java has a special function for printing such messages to what is called \textit{standard output} or \textit{the console}. In the case of jshell, standard output is simply the jshell screen, so any messages you print while using jshell will show up there.
+        <p>We've received messages back from the REPL each time we evaluate an expression, but perhaps we would like a message to be delivered somewhere during the execution of our program. Many ``text-based'' applications interact with their users solely through messages printed to a console (such as the REPL itself). Java has a special function for printing such messages to what is called standard output or the console. In the case of jshell, standard output is simply the jshell screen, so any messages you print while using jshell will show up there.
         </p>
         
-        <p>The method we will use to print to standard output is unfortunately (and infamously) somewhat complicated looking. Technically, it is an instance method that we call from a PrintWriter object. The PrintWriter object in question is a static variable in the \textbf{System} class called \textbf{out}, and the instance method we'll call from this object is called textbf{println}. So all together, we'll be calling this method by calling \textbf{System.out.println}. If the last sentence is all you remember from this paragraph, that's all you'll need for the rest of the semester. 
+        <p>The method we will use to print to standard output is unfortunately (and infamously) somewhat complicated looking. Technically, it is an instance method that we call from a PrintWriter object. The PrintWriter object in question is a static variable in the <c>System</c> class called <c>out</c>, and the instance method we'll call from this object is called <c>println</c>. So all together, we'll be calling this method by calling <c>System.out.println</c>. If the last sentence is all you remember from this paragraph, that's all you'll need for the rest of the semester. 
             
         </p>
         
@@ -36,7 +36,7 @@ System.out.println("Joseph Kendall-Morwick");
         <program language="java"><input>System.out.println(1 + 1 == 2);</input></program>
         
         <p>
-            prints the value \textit{true} to standard output.  Note that if you don't want a newline printed, you can use System.out.print instead. This allows you to make multiple calls without continuing to the next line. For instance:
+            prints the value <c>true</c> to standard output.  Note that if you don't want a newline printed, you can use System.out.print instead. This allows you to make multiple calls without continuing to the next line. For instance:
         </p>
         
         

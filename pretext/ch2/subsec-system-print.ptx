@@ -1,18 +1,20 @@
+
+
 <subsection xml:id="sec-system-print">
   <title>From the Java Library: System and
   PrintStream</title>
   
   <p>
-    Java comes with a library of classes, organized into packages,  that are used to perform common tasks. In this
-    and similar sections in subsequent chapters, we will feature some of the most useful built-in classes.
-    In this section we introduce the <c>System</c> and <c>PrintStream</c> classes,
-    which are used for printing a program's output.
+    Most of the classes we've 
+    used are in the <c>java.lang</c> package, which holds all of the classes that are available to us by default. 
+    Now, we'll look at 
+    the <c>System</c> and <c>PrintStream</c> classes, which are used for printing a program's output. The first is in the 
+    <c>java.lang</c> package and the second is in the <c>java.util</c> package. 
   </p>
   <p>
     Java programs need to be able to accept input and to display output.
     Deciding how a program will handle input and output (I/O) is part of designing its
-    <em>user interface</em>,
-    a topic we take up in detail in Chapter 4.
+    <em>user interface</em>.
   </p>
   <p>
     The simplest type of user interface is a
@@ -61,35 +63,20 @@
     so to speak.
     It contains a variety of <c>print()</c> and <c>println()</c> methods that 
     can be used to print all of the various types of data we find in a Java program.
-    A partial definition of <c>PrintStream</c> is shown in <xref ref="fig_printstreamUML">Figure</xref>.
     Note that in this case the <c>PrintStream</c> class has no attributes, just methods.
   </p>
   <p>
-  <figure xml:id="fig_printstreamUML">
-   <caption>A UML class diagram of the <c>PrintStream</c> class.</caption>
-   <image width="40%" source="chptr01/printstr.png"/>
-  </figure>
-  </p>
-  <p>
-    Because the various <c>print()</c> and <c>println()</c> methods are instance methods of a <c>PrintStream</c> object,
-    we can only use them by finding a <c>PrintStream</c> object and
-    <q>telling</q>
-    it to print data for us.
-    As shown in <xref ref="fig_systemUML">Figure</xref>, Java's <c>java.lang.System</c> class contains two public (+)
-     <c>PrintStream</c> objects, <c>System.out</c> and <c>System.err</c>.  
-  </p>
-  <p>
-  <figure xml:id="fig_systemUML">
-   <caption>A UML class diagram of the <c>PrintStream</c> class.</caption>
-   <image width="40%" source="chptr01/systemum.png"/>
-  </figure>
+    However, notice that we are not calling these methods the same way we did static methods. That is, 
+    we did not call <c>print()</c> by prepending the class name <c>PrintStream</c>. Instead, it was <c>System.out</c>!
+    This is because the various <c>print()</c> and <c>println()</c> methods are <term>instance methods</term> of <c>PrintStream</c>
+    and <c>System.out</c> is an instance (object) of the <c>PrintStream</c> class. These <c>PrintStream</c> objects are 
+    stored in two static variables in the <c>System</c> class, <c>System.out</c> and <c>System.err</c>. 
   </p>
   <p>
     As its name suggests, the <c>System.err</c> stream is used primarily for error messages,
     whereas the <c>System.out</c> stream is used for other printed output.
     Similarly, as its name suggests,
-    the <c>System.in</c> object can be used to handle input,
-    which will be covered in Chapter<nbsp/>2.
+    the <c>System.in</c> object can be used to handle input.
   </p>
   <p>
     The only difference between the <c>print()</c> and <c>println()</c> methods 
@@ -121,21 +108,19 @@
   <listing xml:id="fig_oldmac">
     <caption>The <c>OldMacDonald.java</c> class.</caption>
     <program language="java"><input>
-    public class OldMacDonald
-    {
-       public static void main(String args[])   // Main method
-       {
-			System.out.println("Old MacDonald had a farm");
-			System.out.println("E I E I O.");
-			System.out.println("And on his farm he had a duck.");
-			System.out.println("E I E I O.");
-			System.out.println("With a quack quack here.");
-			System.out.println("And a quack quack there.");
-			System.out.println("Here a quack, there a quack,");
-			System.out.println("Everywhere a quack quack.");
-			System.out.println("Old MacDonald had a farm");
-			System.out.println("E I E I O.");
-       }  // End of main
+    public class OldMacDonald {
+        public static void main(String args[]) {  // Main method
+            System.out.println("Old MacDonald had a farm");
+            System.out.println("E I E I O.");
+            System.out.println("And on his farm he had a duck.");
+            System.out.println("E I E I O.");
+            System.out.println("With a quack quack here.");
+            System.out.println("And a quack quack there.");
+            System.out.println("Here a quack, there a quack,");
+            System.out.println("Everywhere a quack quack.");
+            System.out.println("Old MacDonald had a farm");
+            System.out.println("E I E I O.");
+        }  // End of main
     }  // End of OldMacDonald
     </input></program>
   </listing>
@@ -159,112 +144,6 @@
     </p>
   </principle>
 
-<exercises xml:id="sub_selfstudy">
-
-<title>Self-Study Exercises</title>
-
-<exercise label="oldmacdonald">
-  <title>Old MacDonald Song</title>
-  <statement><p>Run the Program below. Modify the <c>OldMacDonald</c> class to
-    <q>sing</q>
-    one more verse of the song for an animal of your choice.</p></statement>
-
-<program language="java" interactive="activecode"><input>
-  public class OldMacDonald
-  {
-     public static void main(String args[])   // Main method
-     {
-      System.out.println("Old MacDonald had a farm");
-      System.out.println("E I E I O.");
-      System.out.println("And on his farm he had a duck.");
-      System.out.println("E I E I O.");
-      System.out.println("With a quack quack here.");
-      System.out.println("And a quack quack there.");
-      System.out.println("Here a quack, there a quack,");
-      System.out.println("Everywhere a quack quack.");
-      System.out.println("Old MacDonald had a farm");
-      System.out.println("E I E I O.");
-     }  // End of main
-  }  // End of OldMacDonald
-  </input></program>
-  <solution>
-    <program language="java"><input>
-      public class OldMacDonald
-      {
-         public static void main(String args[])   // Main method
-         {
-            System.out.println("Old MacDonald had a farm");
-            System.out.println("E I E I O.");
-            System.out.println("And on his farm he had a duck.");
-            System.out.println("E I E I O.");
-            System.out.println("With a quack quack here.");
-            System.out.println("And a quack quack there.");
-            System.out.println("Here a quack, there a quack,");
-            System.out.println("Everywhere a quack quack.");
-            System.out.println("Old MacDonald had a farm");
-            System.out.println("E I E I O.");
-            System.out.println("Old MacDonald had a farm");
-            System.out.println("E I E I O.");
-            System.out.println("And on his farm he had a pig.");
-            System.out.println("E I E I O.");
-            System.out.println("With an oink oink here.");
-            System.out.println("And an oink oink  there.");
-            System.out.println("Here an oink, there an oink,");
-            System.out.println("Everywhere an oink oink.");
-            System.out.println("Old MacDonald had a farm");
-            System.out.println("E I E I O.");
-         }  // End of main
-      }  // End of OldMacDonald
-    </input></program>
-  </solution>
-</exercise>
-  
-       
-
-  <exercise label="happyface">
-    <title>Happy Face Pattern</title>
-    <statement><p>Complete and run the program below to print out the pattern: 
-    <pre>
-            **********
-            * **  ** * 
-            *   **   *
-            * *    * * 
-            *  ****  * 
-            *********  
-    </pre>
-    </p></statement>
- 
-  <program language="java" interactive="activecode"><input>
-    public class Pattern
-    {
-       public static void main(String args[])   // Main method
-       {
-          // Use System.out.println(""); to print out the pattern above
-
-
-
-       }  // End of main
-    }  // End of Class
-    </input></program>
-    <solution>
-      <program language="java"><input>
-        public class Pattern
-        {
-          public static void main(String args[])// Main method
-          {
-              System.out.println("**********");
-              System.out.println("* **  ** *");
-              System.out.println("*   **   *");
-              System.out.println("* *    * *");
-              System.out.println("*  ****  *");
-              System.out.println("**********");
-          }  // End of main
-        }  // End of Pattern
-      </input></program>
-    </solution>
-</exercise>
-
-</exercises>
 
 </subsection>
 <!-- TODO: edit /-->

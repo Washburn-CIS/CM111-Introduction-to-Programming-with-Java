@@ -13,7 +13,7 @@
       </ul>
     </objectives>
   </introduction>
-  <xi:include href="sec-for-loops.ptx"/>
+  <xi:include href="sec-method-development-patterns.ptx"/>
   <xi:include href="sec-unit-testing.ptx"/>
 </chapter>
 <!-- W7: for loops, accumulator pattern   String-2 codingbat/-->

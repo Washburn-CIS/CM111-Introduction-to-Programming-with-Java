@@ -82,11 +82,4 @@ public class HelloWorldCanvas extends Canvas
     </program>
 
 </activity>
-
-<p>
-      The <c>HelloWorldCanvas</c> class also contains some elements,
-      such as the <c>import</c> statements,
-      that we did not find in the <c>HelloWorld</c> application.
-      We will now discuss those features.
-</p>
 </subsection>
