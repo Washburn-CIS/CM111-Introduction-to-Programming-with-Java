@@ -1,13 +1,13 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-incremental-development">
   <title>Implementing Basic Algorithms</title>
   <introduction>
-  In Computer Science, an <term>algorithm</term> is a set of precise instructions to follow to perform a computation.
+  <p>In Computer Science, an <term>algorithm</term> is a set of precise instructions to follow to perform a computation.
   You might rightly think this sounds a lot like a program, and it should. The difference is that an 
   algorithm is not written in a programming language. Instead, it's written in a human language, 
   like English, but meant to be unambiguous in its meaning. It can be helpful to write 
   an algorithm before writing a short program so that you have an understanding of the logic
   of your program before you start writing Java. This is especially important if you're 
-  learning programming for the first time. Below is an example of applying this approach.
+  learning programming for the first time. Below is an example of applying this approach.</p>
   </introduction>
 
 
