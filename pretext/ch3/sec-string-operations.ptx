@@ -16,24 +16,24 @@ There are two main types used to represent textual data in Java programs (and in
         a single value, such as <c>'h'</c>, a string can hold 0 or more character
         values. Thus, strings can represent more complex data like names, sentences, or even this
         entire book! You can create a variable of type <c>String</c> as follows: </p>
-    <program language="java"><input>String name;</input></program>
+    <c>String name;</c>
 <p>
     Note that the type in that variable declaration is capitalized. That's because, unlike <c>char</c>'s and <c>int</c>'s, the string type is an object type (not a primitive type). Thus, when we use the string type in Java code (such as the example above), it must be capitalized. However, unlike <c>Point</c>s and other objects we've played with, strings are a special object type in Java in that they see very heavy usage and also have some special syntax associated with them (described in the following sections).
 </p>
     <p>String literals have a special syntax somewhat similar to character literals. Character literals are a single character surrounded by single quotes, such <c>'a'</c>. String literals are similar, but as noted, there may be more than one character in the string, and we use double quotes to surround them. For example, the following code initializes the name variable from the previous example with my name as a value: </p>
-    <program language="java"><input>name = "Joesph Kendall-Morwick";</input></program>
+    <c>name = "Joesph Kendall-Morwick";</c>
 
     <p>Note that string literals can contain all sorts of characters, including spaces and dashes. Strings also distinguish between upper and lower case characters. Character literals work just the same way, but character literals hold exactly one character.
     </p>
 
     <p>String literals may also hold zero characters. For instance:</p>
 
-    <program language="java"><input>name = "";</input></program>
+    <c>name = "";</c>
 
     <p>is also legal. Note that the empty string (above) is still a string value! It doesn't mean there isn't a string held by the variable <c>name</c>. If <c>name</c> held no value, we would say it holds the <c>null</c> value, just as any other object-type variable that doesn't hold a value. Recall that <c>null</c> is a keyword representing this value:
     </p>
 
-    <program language="java"><input>name = null;</input></program>
+    <c>name = null;</c>
 
     <p>Note that there are no quotes around <c>null</c>, since it is a keyword. </p>
 
@@ -53,9 +53,9 @@ There are two main types used to represent textual data in Java programs (and in
 
 <example><title>Basic Concatenation</title>
     <p>The following code:</p>
-<program language="java"><input>
+<c>
 String fullName = "Joseph" + " " + "Kendall-Morwick";
-</input></program>
+</c>
     <p>
         will store a single string value representing my full name in the variable <c>fullName</c>.</p>
 </example>
@@ -66,9 +66,9 @@ String fullName = "Joseph" + " " + "Kendall-Morwick";
 
 <example><title>Concatenating non-Strings</title>
     <p>The following code:</p>
-<program language="java"><input>
+<c>
 String message = "my favorite number is " + 5;
-</input></program>
+</c>
     <p>will store a single string value holding the message "my favorite number is 5" in the variable <c>message</c>.</p>
 </example>
     </subsection>
@@ -82,41 +82,34 @@ String message = "my favorite number is " + 5;
         <p>The <c>length</c> instance method has no parameters but returns the length of the string (as an integer).
         </p>
 
-    <example>
-        <title>Finding the Length of a String</title>
-
-        <program language="java"><input>"hello".length() </input></program>
-
-        <p>evaluates to the value 5 whereas</p>
-
-        <program language="java"><input>"".length()</input></program>
-
-        <p>evaluates to the value 0</p>
-    </example>
+<console>
+<prompt>jshell> </prompt><input>"hello".length() </input>            
+<output>5</output>   
+<prompt>jshell> </prompt><input>"".length()</input>            
+<output>0</output>         
+</console>
     </subsubsection>
 
     <subsubsection><title>equals</title>
 
         <p>The <c>equals</c> instance method takes another String as input and returns a boolean value (<c>true</c> or <c>false</c>) indicating whether the two strings (the argument and the string from which the method is being called) have the exact same contents or not. Boolean values are described in more detail in another  </p>
-        <example>
-            <title>Comparing two Strings</title>
-            <program language="java"><input>"hello".equals("hello") </input></program>
-            <p>evaluates to the value <c>true</c> whereas</p>
-            <program language="java"><input>"hello".charAt("Hello") </input></program>
-            <p>evaluates to the value <c>false</c></p>
-        </example>
+        <console>
+<prompt>jshell> </prompt><input>"hello".equals("hello") </input>            
+<output>true</output>        
+<prompt>jshell> </prompt><input>"hello".charAt("Hello") </input>            
+<output>false</output>             
+        </console>
     </subsubsection>
 
     <subsubsection><title>charAt</title>
 
         <p>The <c>charAt</c> instance method takes the location (called the index or offset) of a character in the string and returns just that character (as a character-type value). The tricky part of working with string indexes is that the first index is zero (not one). </p>
-        <example>
-            <title>Pulling a character out of a String</title>
-            <program language="java"><input>"hello".charAt(0) </input></program>
-            <p>evaluates to the value <c>'h'</c> whereas</p>
-            <program language="java"><input>"hello".charAt(4) </input></program>
-            <p>evaluates to the value <c>'o'</c></p>
-        </example>
+                <console>
+<prompt>jshell> </prompt><input>"hello".charAt(0)  </input>            
+<output>'h'</output>        
+<prompt>jshell> </prompt><input>"hello".charAt(4)</input>            
+<output>'o'</output>             
+        </console>
     </subsubsection>
 
     <subsubsection><title>char</title>
@@ -129,16 +122,14 @@ String message = "my favorite number is " + 5;
 
         <p>        The <c>substring</c> instance method takes two integer values (indexes) as input and returns a substring of the original string starting at the first index and ending just before the last index. Be mindful of the fact that the first index given indicates where the substring starts (and the character at this index is included in the resulting substring), but the second index is expected to be one greater than the index of the last character included (so the character at the second index is not included). The second index is also optional -- if it is omitted, all characters following the first index are included in the resulting substring. This can be a little confusing, so make sure that the examples below make sense and try some others out in JShell.
   </p>
-        <example>
-            <title>Pulling a substring out of a String</title>
-            <program language="java"><input>"hello".substring(1, 3) </input></program>
-            <p>evaluates to the value <c>"el"</c></p>
-        </example>
-        <example>
-            <title>Pulling a prefix out of a String</title>
-            <program language="java"><input>"hello".substring(1) </input></program>
-            <p>evaluates to the value <c>"ello"</c></p>
-        </example>
+        
+<console>
+<prompt>jshell> </prompt><input>"hello".substring(1, 3) </input>            
+<output>"el"</output>   
+<prompt>jshell> </prompt><input>"hello".substring(1) </input>            
+<output>"ello"</output>         
+</console>
+        
     </subsubsection>
 
     <p>The examples above show instance methods being called from String literals. Bear in mind that these methods can be called on any expression that results in an object value, not just literals! In fact, you will more often be calling instance methods from variable expressions. Instance method calls are also often composed with other instance method calls to form more complex expressions, just as we've done with static method calls and operators in previous examples. </p>
@@ -157,10 +148,10 @@ String nameStartingWithJ = namesStartingAtJ.substring(0, endOfName);
 
     <subsection><title>String Escapes</title>
         <p>There are also some special values that strings (and characters) can hold, such as new lines (a character representing that the cursor drops to the next line), tabs (a character represeting that the tab key was pressed), and so on. These are insterted in to string (and character) literals by including a backslash (called an escape) before a special code. These special characters are interpreted when we print out strings. For example, consider the following print statement:
-        </p>
-        <program language="java"><input>print("A tab is \n\ta quite simple way \n\t\tto advance");</input></program>
-
-        <p>...prints the following haiku to the console:</p>
+<program language="java"><input>
+print("A tab is \n\ta quite simple way \n\t\tto advance");
+</input></program>
+...prints the following haiku to the console:</p>
 
 <pre>
 A tab is
@@ -168,10 +159,10 @@ a quite simple way
 to advance
 </pre>
         <p>It is important to note that because back slashes are interpreted as escapes, they can not be used as any other character would be in a string. However, you can include them by escaping them! For instance, the following code:
-        </p>
-
-        <program language="java"><input>print("here's a backslash: \\");</input></program>
-        <p>prints the following to the standard output:</p>
+<program language="java"><input>
+print("here's a backslash: \\");
+</input></program>
+        prints the following to the standard output:</p>
         <console><output>here's a backslash: \</output></console>
     </subsection>
 </section>
