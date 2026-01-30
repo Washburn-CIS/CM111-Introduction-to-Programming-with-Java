@@ -1,9 +1,30 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="sec-unit-testing">
-  <title>Unit Testing</title>
-  <introduction>
+        <title>Unit Testing</title>
 
-  </introduction>
-  
-  
-  
+          
+          
+          
+<activity label="safasf">
+  <statement><p>Try running the code below to see the boolean operator <c>or (||)</c> in action. 
+    Change the values of the two boolean variables to figure when the or-expression is true.
+  </p></statement>
+  <program language="java" interactive="activecode">
+    <input>
+    public class Test1 {
+       public static void main(String[] args) {
+          boolean canWalk = true;   // Change these values to see what happens
+          boolean haveRide = false;
+
+          if (canWalk || haveRide) {
+             System.out.println("We can go to the party! :-)");
+          } else {
+             System.out.println("We cannot go to the party! :-(");
+          }
+       }
+    }
+  </input>
+  </program>
+</activity>
+          
+          
 </section>

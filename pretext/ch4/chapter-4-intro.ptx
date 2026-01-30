@@ -18,7 +18,9 @@
   
   
   <xi:include href="sec-boolean-values.ptx"/>
+  <xi:include href="sec-logic.ptx"/>
   <xi:include href="sec-conditional-statements.ptx"/>
+  <xi:include href="sec-advanced-conditionals.ptx"/>
   <xi:include href="sec-unit-testing.ptx"/>
 </chapter>
 

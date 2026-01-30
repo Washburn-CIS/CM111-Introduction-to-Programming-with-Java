@@ -167,45 +167,6 @@ switch (m)
   
   <exercises><title>Self-Study Exercises</title>
    
-        <exercise label="switchbug1">
-  <title>Switch Bug 1</title>
-          <statement><p>Identify and fix the errors in the following switch structure.</p></statement> 
- <program language="java" interactive="activecode"><input>
-public class Bugs 
-{
-  public static void main(String args[]) 
-  {
-    int k = 0;
-    switch (k)
-    case 0:
-        System.out.println("zero");
-        break;
-    case 1:
-        System.out.println("one");
-        break;
-    default:
-        System.out.println("default");
-        break;
-  }
-}
- </input></program>
-<solution>
-  <program language="java"><input>
-       int k = 0;
-       switch (k)  // Syntax error: missing braces
-        case 0:
-            System.out.println("zero");
-            break;
-        case 1:
-            System.out.println("one");
-            break;
-        default:
-            System.out.println("default");
-            break;
-       }
-     </input></program>
-</solution>
-</exercise>
 
  <exercise label="switchbug2">
   <title>Switch Bug 2</title>

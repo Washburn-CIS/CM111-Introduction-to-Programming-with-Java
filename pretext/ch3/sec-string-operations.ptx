@@ -6,8 +6,6 @@ There are two main types used to represent textual data in Java programs (and in
   </introduction>
   
   
-  <xi:include  href="subsec-characters.ptx"/>
-  
 <subsection>
     <title>String Literals</title>
     
@@ -146,10 +144,10 @@ String message = "my favorite number is " + 5;
     <p>The examples above show instance methods being called from String literals. Bear in mind that these methods can be called on any expression that results in an object value, not just literals! In fact, you will more often be calling instance methods from variable expressions. Instance method calls are also often composed with other instance method calls to form more complex expressions, just as we've done with static method calls and operators in previous examples. </p>
     <example>
         <title>Find the name that starts with a capital J</title>
-<program language="java"><input>var names = "Mary. Sam. Joey. Abigail.";
-var namesStartingAtJ = names.substring(names.indexOf('J'));
-var endOfName = namesStartingAtJ.indexOf('.');
-var nameStartingWithJ = namesStartingAtJ.substring(0, endOfName);
+<program language="java"><input>String names = "Mary. Sam. Joey. Abigail.";
+String namesStartingAtJ = names.substring(names.indexOf('J'));
+String endOfName = namesStartingAtJ.indexOf('.');
+String nameStartingWithJ = namesStartingAtJ.substring(0, endOfName);
 </input></program>
         <p>In a String listing several capitalized names ending in periods, this code locates and isolates the first name that begins with a J. After each of the four statements are executed, the variable <c>nameStartingWithJ</c> will contain the value <c>"Joey"</c>.</p>
     </example>

@@ -12,14 +12,12 @@
         <li>use a REPL to evaluate character and String expressions</li>
         <li>describe properties of static methods</li>
         <li>develop programs that include static method definitions</li>
-        <li>identify type errors resulting from return types and parameter types in static method definitions</li>
       </ul>
     </objectives>
   </introduction>
   
   <xi:include href="sec-text-data.ptx"/>
   <xi:include href="sec-string-operations.ptx"/>
-  <xi:include href="sec-parsing-basics.ptx"/>
   <xi:include href="sec-static-method-definitions.ptx"/>
 </chapter>
 

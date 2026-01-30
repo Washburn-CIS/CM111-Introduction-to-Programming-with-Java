@@ -1,9 +1,78 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="sec-text-data">
   <title>Text Data</title>
-  <introduction>
+  
+  <subsection >
+        <title>The Character Primitive Data Type</title>
+    
+    <p>A character is essentially another type of numeric primitive, but with a special purpose. In order to work with textual data on a computer (such as the letters you're reading right now, which were printed off by a computer), each letter (and also other symbols such as punctuation, numbers, etc) are each given a special code number.</p>
+    <p>Characters are a primitive type in Java, and the name of the type is <c>char</c>. Thus, just like <c>int</c> and <c>double</c>, you can create a variable of type <c>char</c>:
+    </p>
 
-  </introduction>
-  
-  
-  
+<program language="java"><input>
+char letterGrade;
+</input></program>
+
+  <p>There is also a special format for character literals. You can surround a character with single-quotes and Java will interpret that as a literal character value. For instance:</p>
+
+<program language="java"><input>
+letterGrade = 'A';
+</input></program>
+
+<p>Since Java was designed to work on any available computing platform, naturally it should also support any language as well. Thus, the standard used for the characters in Java include codes not only for the letters used in English, but also all other natural languages (including those with many characters, such as Japanese)! This system is called Unicode:
+    <uri>https://unicode.org/</uri></p>
+
+
+<p>The actual codes used for each character in Java can be looked up on the UTF-8 chart here: <uri>https://www.unicode.org/charts/</uri>  Note that you can convert between the character codes and character literals by casting them back and forth to other integer types. For example, the following expression: <program language="java"><input>(int)'a'</input></program> will evaluate to the integer value <c>97</c>, which was designated for this character in unicode. The rest of the lower-case characters in the basic latin alphabet are assigned to each of the following integers, so similarly evaluating the expression: <program language="java"><input>(int)'b'</input></program> will evaluate to <c>98</c></p>
+
+
+        <p>Just as with mathematical functions, there are also some <em>built in</em> methods for working with characters. You can make them available in the REPL by typing in the following statement:
+
+<program language="java"><input>
+import static java.lang.Character.*;
+</input></program>
+
+            A couple important ones are summarized below:
+
+        <dl>
+            <!-- these will need to be covered after booleans are
+            <li>
+                <p><c>boolean isDigit(char)</c> - Takes a character as input and returns a boolean indicating whether or not it is a digit (0-9). </p>
+            </li>
+            <li>
+                <p><c>boolean isLetter(char)</c> - Takes a character as input and returns a boolean indicating whether or not it is a letter (a-z or A-Z). </p>
+            </li>
+            <li>
+                <p><c>boolean isUpperCase(char)</c> - Takes a character as input and returns a boolean indicating whether or not it is a upper-case letter (A-Z). </p>
+            </li>
+            <li>
+                <p><c>boolean isLowerCase(char)</c> - Takes a character as input and returns a boolean indicating whether or not it is a lower-case letter (a-z)</p>
+            </li>
+            -->
+            <li>
+                <p><c>char toUpperCase(char)</c> - Takes a character as input and returns that character in upper-case (or leaves it alone if it was already upper-case)</p>
+            </li>
+            <li>
+                <p><c>char toLowerCase(char)</c> - Takes a character as input and returns that character in lower-case (or leaves it alone if it was already lower-case)</p>
+            </li>
+        </dl>
+    </p>
+              <p>Executing the following code:</p>
+
+<program language="java"><input>
+char c = 'A';
+if(Character.isUpperCase(c)) {
+  c = 'a';
+}
+</input></program>
+<p>would result in <c>c</c> holding the value 'a' at the end.  The following code would also produce the same result:
+</p>
+
+<program language="java"><input>
+char c = 'A';
+c = Character.toLowerCase(c);
+</input></program>
+
+
+</subsection>
+    
 </section>

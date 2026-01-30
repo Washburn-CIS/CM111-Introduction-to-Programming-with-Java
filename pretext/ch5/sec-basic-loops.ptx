@@ -4,6 +4,42 @@
 
   </introduction>
   
+<subsection>
+        <title>While Loops</title>
+  <p>
+While loops are a lot like if statements. In fact, they have a nearly identical syntax. </p>
+
+    <figure>
+        <title>while-loop</title>
+        <caption>Anatomy of a While Loop</caption>
+        <image width="40%" source="figures/while-loop.png"/>
+    </figure>
+    
+    
+    <p>While loops start with the <c>while</c> keyword, and then a boolean expression in parentheses, and then a block of code (a series of statements surrounded by curly braces) or a single statement. The only difference is that when this block of code or single statement completes, program control returns to the beginning of the while loop. Think of it as an if statement that repeats itself indefinitely.
+</p><p>
+    Now you may be concerned by the word <em>indefinitely</em>, and you should be -- it's a distinct possibility that a while loop can run <em>forever</em>. However, after each <term>iteration</term> of the loop (an iteration is complete after execution reaches the end of the code block), the boolean expression at the front of the while loop is evaluated again. If you wrote the loop correctly, that boolean expression should evaluate to <c>false</c> when you don't want the loop executing anymore. 
+</p>
+    
+    <example><title>Counting with a While Loop</title>
+    <p>
+The following code will add up the numbers 1 through 10:
+</p>
+<program language="java"><input>
+int count = 0;
+int total = 0;
+while(count &lt;= 10) {
+  count = count + 1;
+  total = total + count;
+}
+</input></program>
+<p>
+After the first iteration of the loop, count will increase by 1 and total will increase by 1. Thus, when the boolean expression is evaluated the second time, count will be 1 (and not 0). However, 1 is still less than 10, so the loop will run a second time. After the second iteration, count will increase to 2 and total will increase to 3. Now you might see where this is going. The loop will run 8 more times until count is equal to 11. At that point, count will be greater than 10, so the boolean expression will be false, and the statements inside the block will be skipped. 
+</p>    
+    </example>
+    
+</subsection>
+
   
   
 </section>

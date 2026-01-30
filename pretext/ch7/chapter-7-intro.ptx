@@ -6,7 +6,7 @@
     </p>
     <objectives>
       <ul>
-        <li></li>
+        <li>identify type errors resulting from return types and parameter types in static method definitions</li>
         <li>trace the flow of control during the execution of a program using calls to static methods</li>
         <li>write javadoc comments explaining what a method does</li>
         <li>trace the flow of control during the execution of a program using for and do-while loops</li>

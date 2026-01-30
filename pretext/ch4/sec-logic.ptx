@@ -1,8 +1,8 @@
-<section xml:id="logic">
+<section xml:id="sec-logic">
         <title>Boolean Operators</title>
 
         <p>
-            There are also operators that work strictly over boolean values, just as the arithmetic operators we used last week worked strictly over numeric values. These are called <term>boolean operators</term>. They operate over one or two boolean values and evaluate to another boolean value.  These operations are quite simple but form the basis for what is known as <term>boolean algebra</term>.
+            There are also operators that work strictly over boolean values, just as the arithmetic operators we used in a prior week worked strictly over numeric values. These are called <term>boolean operators</term>. They operate over one or two boolean values and evaluate to another boolean value.  These operations are quite simple but form the basis for what is known as <term>boolean algebra</term>.
         </p><p> The first operator we'll consider is the and operator: <c>&amp;&amp;</c>. This is a
             boolean operator that evaluates to <c>true</c> only when both the left and
             right operands also evaluate to <c>true</c>. For example:
