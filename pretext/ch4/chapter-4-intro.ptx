@@ -21,8 +21,5 @@
   <xi:include href="sec-logic.ptx"/>
   <xi:include href="sec-conditional-statements.ptx"/>
   <xi:include href="sec-advanced-conditionals.ptx"/>
-  <xi:include href="sec-unit-testing.ptx"/>
 </chapter>
 
-<!-- TODO: edit /-->
-<!--W4: booleans, comparison operators, logical operators, if / else statements, switch statements/-->
