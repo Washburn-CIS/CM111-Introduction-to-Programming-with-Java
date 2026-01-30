@@ -1,7 +1,6 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapter-4-intro">
   <title>Week 4</title>
   <introduction>
-
     <p>
       At the end of this week you should be able to...
     </p>
@@ -11,6 +10,7 @@
         <li>identify type errors with expressions involving boolean operators and comparison operators</li>
         <li>trace the flow of control during the execution of a program using conditional statements (if/switch)</li>
         <li>develop programs that use conditional statements (if/switch)</li>
+        <li>use unit tests to assist in development of static methods</li>
         <li>apply pair-programming to simple problem solving</li>
       </ul>
     </objectives>
@@ -19,6 +19,7 @@
   
   <xi:include href="sec-boolean-values.ptx"/>
   <xi:include href="sec-conditional-statements.ptx"/>
+  <xi:include href="sec-unit-testing.ptx"/>
 </chapter>
 
 <!-- TODO: edit /-->

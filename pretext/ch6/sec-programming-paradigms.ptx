@@ -1,0 +1,154 @@
+<section xml:id="sec-programming-paradigms">
+  <title>Programming Paradigms</title>
+  <introduction>
+    <p>Programming paradigms are essentially philosophies of how to program and ways of 
+          designing languages around that philosophy. Most popular modern programming languages involve both the structured programming 
+          paradigm and the object-oriented programming paradigm. This course focuses on the prior, but the latter deserves some attention
+          as well. </p> 
+</introduction>
+
+<subsection>
+          <title>Structured Programming</title>
+      <p>    <term>Structured programming</term> is the practice of writing programs that are built up from a small set of predefined control structures.
+      As an overall approach to programming,
+      structured programming has largely been superseded by the object-oriented approach.
+      Nevertheless,
+      its design principles are still relevant to the design of the algorithms and methods that make up a program's objects.
+    </p>
+    <p>
+      The principles of structured programming seem so obvious today that it may be difficult to appreciate their importance.
+      In the 1960s and 1970s, one of the main controls used in programs was the infamous <em>go to
+          <idx><h>goto statement</h></idx>
+      </em> statement,
+      which could be used to transfer control of a program to any arbitrary location within it,
+      and from there to any other arbitrary location, and so on.
+      This led to incredibly complex and ill-formed programs<mdash/>so called
+      <q>spaghetti  code</q>
+      <mdash/>that were almost impossible to understand and modify.
+    </p>
+    <p>
+      Structured programming evolved in reaction to the unstructured software development practices of the 1960s,
+      which were fraught with budget overruns,
+      costly delays, and failed products.
+      One of the classic research results of that era was a 1966 paper by Boehm
+          <idx><h>Boehm</h></idx>
+      and Jacopini
+          <idx><h>Jacopini</h></idx>
+      that showed that any program using go to's could be represented by an equivalent program that used a sequence of two types of controls:
+      if/else and while structures.
+      Another influential paper by Edgar Dikjstra
+          <idx><h>Dikjstra</h></idx>
+      (
+      <q>GoTo Statement Considered Harmful</q>
+      ) pointed out the various ways in which the go to statement could lead to impossibly complex programs.
+    </p>
+    <p>
+      The Pascal language, introduced by Nicklaus Wirth
+          <idx><h>Wirth</h></idx>
+      in 1971, was designed to promote structured programming techniques and became the language of choice within academic institutions because of its suitability as a teaching language.
+      In Pascal, the go to was replaced with the four structures that control the flow of execution in a program (
+      <xref ref="fig-controlstructs"></xref>):
+    </p>
+    <figure xml:id="fig-controlstructs">
+      <caption>Flowcharts of the four types of
+      control structures. Each small rectangle represents a single executable
+      statement.<idx><h>control structures</h></idx>
+      </caption>
+      <image width="73%" source="chptr06/6f10.png"/>
+    </figure>
+    <ul>
+      Sequence<mdash/>The statements in a program are executed in
+      sequential order unless their flow is interrupted by one of the
+      following control structures.
+      Selection<mdash/>The <c>if</c>, <c>if/else</c>, and <c>switch</c>
+      statements are <em>branching</em> statements that allow choice through
+      the forking of the control path into two or more alternatives.
+      Repetition<mdash/>The <c>for</c>, <c>while</c>, and <c>do-while</c>
+      statements are <em>looping</em> statements that allow the program to
+      repeat a sequence of statements.
+      Method Call<mdash/>Invoking a method transfers control temporarily
+      to a named method. Control returns to the point of invocation when the
+      method is completed.
+    </ul>
+    <p>
+      No matter how large or small a program you write,
+      its flow of control can be constructed as a combination of these four basic types of structures.
+    </p>
+</subsection>
+  
+  
+  
+  
+  <subsection>
+    <title>Motivation for Object-Oriented Programming</title>
+    <p>
+      The first step in the program-development process is making sure you understand the problem 
+      (<xref ref="fig_progdev"></xref>).
+      Thus, we begin by developing a detailed specification,
+      which should address three basic questions:
+      <ul>
+        <li>
+          <p>
+            What exactly is the problem to be solved?
+          </p>
+        </li>
+        <li>
+          <p>
+            How will the program be used?
+          </p>
+        </li>
+        <li>
+          <p>
+            How should the program behave?
+          </p>
+        </li>
+      </ul>
+    </p>
+    <p>
+      The problem specification is often arrived at through an extensive discussion between the customer and the developer.
+      In an introductory programming course,
+      the specification is usually assigned by the instructor. So, here is our spec:
+    </p>
+    
+      <problem>
+     <p> <b>Specification:</b> Design an object that will contain a riddle's question and answer. It
+      should provide a way for users to set and retrieve the riddle's  question and  answer.</p>
+      </problem>
+    
+
+    <p>
+      Most problems are too big and too complex to be tackled all at once.
+      So the next step in the design process is to divide the  problem into parts that make the solution more manageable.
+    </p>
+    <p>
+      In the object-oriented approach,
+      a problem is divided into objects,
+      where each object will play a specific role in the problem's solution.
+      In effect, each object will become an expert or specialist in some aspect of the program's overall behavior.
+    </p>
+    <p>
+      One useful design guideline for trying to decide what objects are needed is the following:
+    </p>
+    <principle>
+      <title>EFFECTIVE DESIGN: Looking for Nouns</title>
+      <p>
+        Choosing a program's objects is often a matter of looking for nouns in the problem specification.
+      </p>
+    </principle>
+    <p>
+      There are three nouns in our problem spec: riddle, question and answer. The <em>riddle</em> is a 
+      complex object contains the <em>question</em> and <em>answer</em> as parts. Those parts are just 
+      strings, and, fortunately, Java has a built-in <c>String</c> class that can be used to represent 
+      the question and answer, 
+    </p>
+    <p>
+      Thus, for this simple problem,
+      we need only design one new type of object<mdash/>a riddle<mdash/>whose primary role will 
+      be to contain and display a riddle's question and answer.
+    </p>
+    <p>
+      Don't worry too much if our design decisions seem somewhat mysterious at this stage. This type 
+      of analysis will come more easily with experience.
+    </p>
+  </subsection>
+</section>

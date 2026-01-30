@@ -7,20 +7,19 @@
     </p>
     <objectives>
       <ul>
-        <li>Use appropriate terminology to identify and describe components of classes</li>
-        <li>Describe values (instances) of custom class types</li>
-        <li>Illustrate the scope of variables and visibility within classes in Java</li>
-        <li>Compose a simple class through design, implementation, and testing to meet behavioral requirements</li>
-        <li>Develop programs that create simple classes and instantiate objects of those classes</li>
+        <li>describe properties of characters and Strings</li>
+        <li>recognize basic character encodings and escapes</li>
+        <li>use a REPL to evaluate character and String expressions</li>
+        <li>describe properties of static methods</li>
+        <li>develop programs that include static method definitions</li>
+        <li>identify type errors resulting from return types and parameter types in static method definitions</li>
       </ul>
     </objectives>
   </introduction>
   
-  
-  <xi:include href="sec-programming-paradigms.ptx"/>
-  <xi:include href="sec-class-design-basics.ptx"/>
+  <xi:include href="sec-text-data.ptx"/>
   <xi:include href="sec-string-operations.ptx"/>
+  <xi:include href="sec-parsing-basics.ptx"/>
+  <xi:include href="sec-static-method-definitions.ptx"/>
 </chapter>
 
-<!-- TODO: edit /-->
-<!--W3: basic classes (getters/setters), calling instance methods, String basics/-->

@@ -8,12 +8,12 @@
       <ul>
         <li></li>
         <li>trace the flow of control during the execution of a program using calls to static methods</li>
-        <li>use unit tests to assist in development of static methods</li>
         <li>write javadoc comments explaining what a method does</li>
+        <li>trace the flow of control during the execution of a program using for and do-while loops</li>
+        <li>develop programs that use loops to iterate through strings</li>
       </ul>
     </objectives>
   </introduction>
   <xi:include href="sec-method-development-patterns.ptx"/>
-  <xi:include href="sec-unit-testing.ptx"/>
 </chapter>
 <!-- W7: for loops, accumulator pattern   String-2 codingbat/-->
