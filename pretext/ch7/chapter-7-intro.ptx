@@ -6,18 +6,192 @@
     </p>
     <objectives>
       <ul>
-        <li>identify type errors resulting from return types and parameter types in static method definitions</li>
-        <li>write javadoc comments explaining what a method does</li>
         <li>trace the flow of control during the execution of a program using for and do-while loops</li>
         <li>develop programs that use loops to iterate through strings</li>
+        <li>identify type errors resulting from return types and parameter types in static method definitions</li>
+        <li>write javadoc comments explaining what a method does</li>
       </ul>
     </objectives>
   </introduction>
   
   
+<section>
+  <title>Refined Loop Control Statements</title>
+  <introduction><p>
+    A while loop is truly all you need to incorporate loops in to your programs. However, there are alternatives 
+    to using a "vanilla" while loop that make your code more concise and easier to read and manage. 
+    <c>break</c> and continue statements, both common elements of structured programming languages,
+    are the first examples we'll examine.</p> 
+  </introduction>
   
   
   
+<subsection xml:id="break-statements">
+    
+        <title>Break Statements</title>
+    
+
+    <p>Loops don't need to be terminated only when the loop condition becomes false. A loop can be terminated early by using a <term>break statement</term> inside of the loop. When a <c>break</c> statement is encountered, the enclosing loop will immediately terminate and execution will resume just after the closing brace of the
+      loop.
+    </p>
+
+    <p><c>break</c> statements are very simple. They consist of just a single keyword (<c>break</c>) followed by a semicolon:
+  </p>
+  <program language="java"><input>
+    break;
+  </input></program>
+    <p>You will use <c>break</c> statements within an <c>if</c> statement since you will only want to terminate the loop early because of some other condition that arises. You may want to use a break statement if an error occurs that must be processed. You can also intentionally begin an infinite loop (set the loop condition to <c>true</c>) and use break statements to end the loop. </p>
+
+
+  <example><title>Searching for Values in a String</title>
+    <p>
+      The following code will search through a String <c>message</c> for the substring <c>name</c>:
+    </p>
+    <program language="java"><input>
+String message = "hello Jacob, good to meet you.";
+String name = "Jacob";
+int i=0;
+
+for(int i=0; i&lt;message.length()-name.length(); i++) {
+  if(message.substring(i, i+name.length()).equals(name) {
+    break;
+  }
+}
+    </input></program>
+      <p>When this snippet of code completes executing, <c>i</c> will be the index where the name appears (if it is in the string). </p>
+  </example>
+
+</subsection>
+
+<subsection xml:id="continue-statements">
+    
+        <title>Continue Statements</title>
+    
+
+        <p>
+          <term>continue statements</term> can be used within a loop when the remainder of the loop should not be executed, but the loop should not be terminated as it would be with a <c>break</c> statement. When a <c>continue</c> statement is executed, the enclosing loop will cease executing its current iteration and then resume execution with the next iteration of the loop. Note that, if a <c>continue</c> statement is encountered in a <c>for</c> loop, the update statement will still execute before the next iteration of the loop begins.
+        </p>
+
+        <p><c>continue</c> statements are very simple in their syntax. They consist of just a single keyword (<c>continue</c>) followed by a semicolon:
+      </p>
+      <program language="java"><input>
+        continue;
+      </input></program>
+        <p>You will use <c>continue</c> statements within an <c>if</c> statement since you will only want to skip the remainder of an iteration of a loop because some other condition that arises. Perhaps the task of the current iteration of the loop is completed early or perhaps an error was encountered that should end the current iteration of the loop but not the entire task the loop is handling. </p>
+
+
+      <example><title>Validating User Input</title>
+        <p>
+          Assume there is a method called <c>getUserResponse</c> that allows the user to enter in a numeric value. The following code will request a positive even integer from the user and validate the user's response. If the user provides such a value, it will be added to a running total of these numbers.
+        </p>
+        <program language="java"><input>
+    int total = 0;
+    while(true) {
+      // get a number from the user
+      System.out.print("provide a positive, even number: ");
+      x = getUserResponse();
+
+      if(x &lt;= 0) { // ensure user provided a positive number
+        System.out.println("Error: enter a positive number.");
+        continue;
+      }
+
+      if(x % 2 != 0) { // ensure user provided an even number
+        System.out.println("Error: enter an even number.");
+        continue;
+      }
+
+      // add the number to the total
+      total = total + x;
+      System.out.println("Total is currently " + total);
+    }
+        </input></program>
+          <p>
+            There are two <c>continue</c> statements used in this snippet of code. The first is used when it is detected that the user provided a number that is not positive. The <c>continue</c> statement forces the loop to restart and the user is once again prompted for a valid response. The second <c>continue</c> statement is executed if an odd number is provided by the user. In both cases, the statement that adds the number to the total is skipped if the user breaks either of the rules for proper input. Sample interaction with this snippet of code may look like the example below:
+          </p>
+
+<console>
+<prompt>provide a positive, even number: </prompt><input>4</input>
+<output>Total is currently 4</output>
+<prompt>provide a positive, even number: </prompt><input>93</input>
+<output>Error: enter an even number.</output>
+<prompt>provide a positive, even number: </prompt><input>8</input>
+<output>Total is currently 12</output>
+<prompt>provide a positive, even number: </prompt><input>-2</input>
+<output>Error: enter a positive number.</output>
+<output>provide a positive, even number: </output>
+</console>
+      </example>
+</subsection>
+</section>
+
+<section xml:id="for-loops">
+    
+        <title>For Loops</title>
+    
+
+<p>When writing loops, three components are very commonly included:
+    <ul>
+        <li>
+            <p>Some local variable is declared and initialized, for instance a variable named <c>counter</c> could be initialized to <c>1</c>. </p>
+        </li>
+        <li>
+            <p>That variable is tested as part of the while condition, for instance looping while <c>counter</c> is less than <c>10</c>.
+            </p>
+        </li>
+        <li>
+            <p>At the end of each iteration of the loop, the variable is altered in some way, for instance <c>counter</c> could be incremented at the end of each iteration of the loop. </p>
+        </li>
+    </ul>
+
+Since nearly every while loop that we write contains these three components, and also because they play an important role in determining how the loop executes, Java provides a special syntax called a <c>for</c> loop that simply re-organizes these components to all reside at the front of the loop.
+</p>
+
+    <figure>
+        <title>for-loop</title>
+        <caption>Anatomy of a For Loop</caption>
+        <image width="60%" source="chptr07/for-loop"/>
+    </figure>
+
+<p><term>for loops</term> start with the <c>for</c> keyword and a pair of parentheses, just like a while loop, but inside the parentheses is first an expression (ending in a semicolon) that is executed before the loop starts, secondly a boolean expression (the same as the looping condition for the while loop), also ending in a semicolon, and finally a statement that is executed at the end of each loop (typically incrementing a variable). The last statement doesn't have a semicolon following it, but all three should be within the parentheses. The rest is identical to a while loop. </p>
+
+<example><title>Totaling Numbers with a For Loop</title>
+<p>Consider the following while loop which adds the numbers between 1 and 10:
+</p>
+
+<program language="java"><input>
+int total = 0;
+int count = 1;
+while(count &lt;= 10) {
+  total = total + count;
+  count = count + 1;
+}
+</input></program>
+
+    <p>Here is identical code written as a for loop:</p>
+
+<program language="java"><input>
+int total = 0;
+for(int count = 1; count &lt;= 10; count = count + 1) {
+  total = total + count;
+}
+</input></program></example>
+
+    <p>Because code written with while loops and for loops perform the exact same task, we call for loops <term>syntactic sugar</term>, in that it is meant only to help with the look of your code, not the function of your code. Essentially, it is used to improve your coding style.</p>
+
+<example><title>Iterate Through a String</title>
+    <p>The following code will print each character of the string <c>message</c>, one character per line:
+    </p>
+<program language="java"><input>
+String message = "hello";
+for(int i=0; i &lt; message.length(); i = i + 1) {
+  System.out.println(message.charAt(i));
+}
+</input></program>
+</example>
+
+</section>
+
+
   
 </chapter>
-<!-- W7: for loops, accumulator pattern   String-2 codingbat/-->
