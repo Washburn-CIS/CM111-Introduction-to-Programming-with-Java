@@ -53,7 +53,7 @@
       control structures. Each small rectangle represents a single executable
       statement.<idx><h>control structures</h></idx>
       </caption>
-      <image width="73%" source="chptr06/6f10.png"/>
+      <image width="70%" source="chptr06/6f10"/>
     </figure>
     <ul>
       <li>Sequence<mdash/>The statements in a program are executed in
@@ -84,7 +84,7 @@
     
     <figure xml:id="fig_progdev">
       <caption>A flowchart of the program development process.</caption>
-      <image width="73%" source="chptr01/progdev.png"/>
+      <image width="70%" source="chptr06/progdev"/>
     </figure>
       The first step in the program-development process is making sure you understand the problem.
       Thus, we begin by developing a detailed specification,
