@@ -46,8 +46,7 @@
       The Pascal language, introduced by Nicklaus Wirth
           <idx><h>Wirth</h></idx>
       in 1971, was designed to promote structured programming techniques and became the language of choice within academic institutions because of its suitability as a teaching language.
-      In Pascal, the go to was replaced with the four structures that control the flow of execution in a program (
-      <xref ref="fig-controlstructs"></xref>):
+      In Pascal, the go to was replaced with the four structures that control the flow of execution in a program:
     </p>
     <figure xml:id="fig-controlstructs">
       <caption>Flowcharts of the four types of
@@ -57,18 +56,18 @@
       <image width="73%" source="chptr06/6f10.png"/>
     </figure>
     <ul>
-      Sequence<mdash/>The statements in a program are executed in
+      <li>Sequence<mdash/>The statements in a program are executed in
       sequential order unless their flow is interrupted by one of the
-      following control structures.
-      Selection<mdash/>The <c>if</c>, <c>if/else</c>, and <c>switch</c>
+      following control structures.</li>
+      <li>Selection<mdash/>The <c>if</c>, <c>if/else</c>, and <c>switch</c>
       statements are <em>branching</em> statements that allow choice through
-      the forking of the control path into two or more alternatives.
-      Repetition<mdash/>The <c>for</c>, <c>while</c>, and <c>do-while</c>
+      the forking of the control path into two or more alternatives.</li>
+      <li>Repetition<mdash/>The <c>for</c>, <c>while</c>, and <c>do-while</c>
       statements are <em>looping</em> statements that allow the program to
-      repeat a sequence of statements.
-      Method Call<mdash/>Invoking a method transfers control temporarily
+      repeat a sequence of statements.</li>
+      <li>Method Call<mdash/>Invoking a method transfers control temporarily
       to a named method. Control returns to the point of invocation when the
-      method is completed.
+      method is completed.</li>
     </ul>
     <p>
       No matter how large or small a program you write,

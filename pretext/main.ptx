@@ -80,18 +80,18 @@ update this book if it is used in future semesters with any warranted changes.
 </row>
 <row><cell>1</cell><cell>Compiling and Running Programs, Basic Types, Literals, Expressions, Operators, Calling Static Methods</cell></row>
 <row><cell>2</cell><cell>Variables, Constants, Tracing, Basic I/O, Imports, Errors, Tracing, CLI’s</cell></row>
-<row><cell>3</cell><cell>Algorithms, Basic Class Design (POJO's), Calling Instance Methods, String Basics</cell></row>
+<row><cell>3</cell><cell>Characters, String Methods, Static Method Definitions, Calling Instance Methods, String Basics</cell></row>
 <row><cell>4</cell><cell>Booleans, Comparison Operators, Logical Operators, Conditional Statements</cell></row> 
-<row><cell>5</cell><cell>Switch Statements, While Loops, Do-While Loops</cell></row>
-<row><cell>6</cell><cell>Characters, String Methods, Static Method Definitions, Parsing Basics</cell></row>
-<row><cell>7</cell><cell>Algorithms (revisited), Random numbers, Method Development Patterns</cell></row>  
-<row><cell>8</cell><cell>Review Exercises</cell></row>  
+<row><cell>5</cell><cell>Review</cell></row>
+<row><cell>6</cell><cell>While Loops, Do-While LoopsClass Design (POJO's)</cell></row>
+<row><cell>7</cell><cell>For Loops, Method Development Patterns</cell></row>  
+<row><cell>8</cell><cell>Review</cell></row>  
 <row><cell>9</cell><cell>Spring Break (Optional Reading -- Not Covered On Exams)</cell></row>  
-<row><cell>10</cell><cell>For Loops, Nested Loops, Advanced Parsing</cell></row>  
-<row><cell>11</cell><cell>For Loops, Nested Loops, Advanced Parsing</cell></row>  
+<row><cell>10</cell><cell>Arrays</cell></row>  
+<row><cell>11</cell><cell>Nested Loops, Advanced Parsing</cell></row>  
 <row><cell>12</cell><cell>Review Exercises</cell></row>  
 <row><cell>13</cell><cell>References, Mutability, Side-Effects, 2D-Arrays</cell></row>
-<row><cell>14</cell><cell>Overloading, Exception Handling, File Output</cell></row>
+<row><cell>14</cell><cell>Overloading, Exception Handling, File Input / Output</cell></row>
 <row><cell>15</cell><cell>Review Exercises</cell></row>
 <row><cell>16</cell><cell>Optional Topics: Varargs, Command-Line Arguments, Recursion, Conditional Expressions</cell> </row>
 </tabular>
@@ -117,11 +117,11 @@ update this book if it is used in future semesters with any warranted changes.
     <backmatter>
       <xi:include href="./appndx-codestyle/appendix-codestyle.ptx"/>
       <xi:include href="./appndx-jdk/appendix-jdk.ptx"/>
+    <!--
       <index>
         <title>Index</title>
         <index-list/>
       </index>
-    <!--
       <xi:include href="./appendix-charsets.ptx"/>
       <xi:include href="./appendix-keywords.ptx"/>
       <xi:include href="./appendix-operators.ptx"/>
