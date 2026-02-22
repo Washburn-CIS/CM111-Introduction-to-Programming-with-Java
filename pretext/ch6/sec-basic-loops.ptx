@@ -70,8 +70,20 @@ After the first iteration of the loop, count will increase by 1 and total will i
 
       </p>
     <p>
-      The <c>do-while</c> structure takes the following form:
+      Here is the prior example rewritten to use a do-while loop:
     </p>
+    <program language="java" interactive="activecode"><input> 
+public class CountingLoopExample2 {
+  public static void main(String args[]) {
+    int count = 0;
+    int total = 0;
+    do {
+      count = count + 1;
+      total = total + count;
+    } while(count &lt;= 10); 
+  }
+}
+</input></program>
 <p>
       A flowchart of the <c>do-while</c> structure is shown in <xref ref="fig-dowhileflow">Figure</xref>.
     </p>
