@@ -112,7 +112,7 @@ String message = "my favorite number is " + 5;
         </console>
     </subsubsection>
 
-    <subsubsection><title>char</title>
+    <subsubsection><title>indexOf</title>
 
         <p>The <c>indexOf</c> instance method takes a character you're searching for as input and returns the first index of where it's found in the string. If the character is not present in the string, <c>-1</c> is returned instead. </p>
 
