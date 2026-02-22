@@ -30,12 +30,16 @@ While loops are a lot like if statements. In fact, they have a nearly identical 
     <p>
 The following code will add up the numbers 1 through 10:
 </p>
-<program language="java"><input> 
-int count = 0;
-int total = 0;
-while(count &lt;= 10) {
-  count = count + 1;
-  total = total + count;
+<program language="java" interactive="activecode"><input> 
+public class CountingLoopExample {
+  public static void main(String args[]) {
+    int count = 0;
+    int total = 0;
+    while(count &lt;= 10) {
+      count = count + 1;
+      total = total + count;
+    }
+  }
 }
 </input></program>
 <p>

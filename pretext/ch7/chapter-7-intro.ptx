@@ -159,21 +159,28 @@ Since nearly every while loop that we write contains these three components, and
 <p>Consider the following while loop which adds the numbers between 1 and 10:
 </p>
 
-<program language="java"><input>
-int total = 0;
-int count = 1;
-while(count &lt;= 10) {
-  total = total + count;
-  count = count + 1;
+<program language="java" interactive="activecode"><input>
+public class WhileExample {
+  public static void main(String args[]) {
+    int total = 0;
+    int count = 1;
+    while(count &lt;= 10) {
+      total = total + count;
+      count = count + 1;
+    }
 }
 </input></program>
 
     <p>Here is identical code written as a for loop:</p>
 
-<program language="java"><input>
-int total = 0;
-for(int count = 1; count &lt;= 10; count = count + 1) {
-  total = total + count;
+<program language="java" interactive="activecode"><input>
+public class ForExample {
+  public static void main(String args[]) {
+    int total = 0;
+    for(int count = 1; count &lt;= 10; count = count + 1) {
+      total = total + count;
+    }
+  }
 }
 </input></program></example>
 
@@ -182,10 +189,14 @@ for(int count = 1; count &lt;= 10; count = count + 1) {
 <example><title>Iterate Through a String</title>
     <p>The following code will print each character of the string <c>message</c>, one character per line:
     </p>
-<program language="java"><input>
-String message = "hello";
-for(int i=0; i &lt; message.length(); i = i + 1) {
-  System.out.println(message.charAt(i));
+<program language="java" interactive="activecode"><input>
+public class StringIterationExample {
+  public static void main(String args[]) {
+    String message = "hello";
+    for(int i=0; i &lt; message.length(); i = i + 1) {
+      System.out.println(message.charAt(i));
+    }
+  }
 }
 </input></program>
 </example>
