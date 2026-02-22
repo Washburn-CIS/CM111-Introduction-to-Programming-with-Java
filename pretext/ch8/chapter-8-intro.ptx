@@ -1,14 +1,16 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapter-8-intro">
   <title>Week 8</title>
-  <introduction>
-    <p>
-      At the end of this week you should be able to...
-    </p>
-    <objectives>
-      <ul>
-        <li></li>
-      </ul>
-    </objectives>
+  <introduction><p>
+  This week will just be reviewing for the exam and initial interviews -- no new topics. Exam #2 will involve 
+  developing simple methods (no loops) and tracing programs involving a loop.
+  Be prepared to code a problem similar to <url href="https://codingbat.com/java/Warmup-1" visual="codingbat Warmup-1">Warmup-1</url>, 
+  <url href="https://codingbat.com/java/String-1" visual="codingbat String-1">String-1</url>, and 
+  <url href="https://codingbat.com/java/Logic-1" visual="codingbat Logic-1">Logic-1</url>
+  on paper, from scratch (including method header definitions). Practice with 
+  <url href="https://codingbat.com/java/Warmup-2" visual="codingbat Warmup-1">Warmup-2</url>, 
+  <url href="https://codingbat.com/java/String-2" visual="codingbat String-1">String-2</url>, and 
+  <url href="https://codingbat.com/java/Logic-2" visual="codingbat Logic-1">Logic-2</url> to be 
+  well prepared for other questions on the exam. </p>
   </introduction>
-  <xi:include href="sec-unit2-review.ptx"/>
 </chapter>
+

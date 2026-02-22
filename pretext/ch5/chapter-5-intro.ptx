@@ -1,7 +1,13 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapter-5-intro">
   <title>Week 5</title>
-  <introduction>
-  This week will just be reviewing for the exam and initial interviews -- no new topics.
+  <introduction><p>
+  This week will just be reviewing for the exam and initial interviews -- no new topics. Exam #1 will involve 
+  developing expressions and statements, tracing expression evaluation and tracing programs involving a method call.
+  Although you won't be responsible for the full syntax of method definitions on exam 1, you may benefit 
+  from practicing with <url href="https://codingbat.com/java/Warmup-1" visual="codingbat Warmup-1">Warmup-1</url>, 
+  <url href="https://codingbat.com/java/String-1" visual="codingbat String-1">String-1</url>,
+  <url href="https://codingbat.com/java/Logic-1" visual="codingbat Logic-1">Logic-1</url>
+  problems on codingbat for the other content they entail. </p>
   </introduction>
 </chapter>
 <!-- review, exam 1, interviews /-->
