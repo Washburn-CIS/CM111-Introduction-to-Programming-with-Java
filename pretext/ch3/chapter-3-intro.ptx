@@ -12,6 +12,7 @@
         <li>use a REPL to evaluate character and String expressions</li>
         <li>describe properties of static methods</li>
         <li>develop programs that include static method definitions</li>
+        <li>trace the flow of control during the execution of a program using calls to static methods</li>
       </ul>
     </objectives>
   </introduction>

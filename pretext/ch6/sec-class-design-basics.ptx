@@ -2,7 +2,11 @@
   <title>Class Definition</title>
   <introduction>
     <p>
-      To program in Java the main thing you do is write class definitions  for the various objects that will make up the program.
+      Object-oriented programming can't be avoided in a language like Java. While this course
+      focuses on structured programming concepts, understanding the role of a class in a Java
+      program is essential to learning the language, so we will explore the very beginnings of
+      the object-oriented programming paradigm and learn how to design simple classes.</p>
+      <p>
       A class definition <em>encapsulates</em>
       its objects' data and behavior.
       Once a class has been defined,
@@ -25,16 +29,20 @@
       <li><p>  What information will it hide from other objects?</p></li>
       </ol>
     <p>
+    You've seen instance methods before when we looked at instantiating objects from the Java API. Now 
+    you'll see how the classes representing these objects abstractly were defined. 
     </p>
   </introduction>
   <subsection>
     <title>The <c>Riddle</c>Class</title>
     <p>
-      Recall our definition of the <c>Riddle</c> class from Chapter<nbsp/>1,
-      which is summarized in the UML diagram in <xref ref="fig_riddle">Figure</xref>.
       A <c>Riddle</c> has two attributes, <c>question</c> and <c>answer</c>. Each of these variables stores a <c>String</c>. 
       It contains three methods, the <c>Riddle()</c> constructor, the <c>getQuestion()</c> and 
-      <c>getAnswer()</c> methods.
+      <c>getAnswer()</c> methods. Recall that the constructor is the method that instantiates the object (creates
+      individual objects). Also note that its syntax is somewhat unique. There is no return value in the constructor 
+      definition and the name of the method is simply the name of the class. The other methods, in this case, 
+      are quite simple -- they merely provide access to 
+      a stored value in the object. We call such methods accessor or "getter" methods. 
     </p>
 
     <figure xml:id="fig_riddle">
@@ -50,7 +58,7 @@
     </p>
     <p>
       <xref ref="list-riddleclass2">Listing</xref>
-      shows the Java class definition that corresponds to the design given in the UML diagram.
+      shows the Java class definition that corresponds to the design given in the diagram.
       It contains the two <c>private</c> instance variables and defines the three <c>public</c> methods listed in the UML diagram.
     </p>
     <listing xml:id="list-riddleclass2">
@@ -98,7 +106,7 @@ public class Riddle {
       </p>
     </principle>
     <p>
-      Recall that a class definition is like a blueprint or a cookie cutter.
+      A class definition is like a blueprint or a cookie cutter.
       The <c>Riddle</c> class defines the type of information (attributes) that each <c>Riddle</c> object has,
       but it doesn't contain any actual values.
       It defines the methods (operations) that each <c>Riddle</c> object can perform,
@@ -146,11 +154,6 @@ public class Riddle {
       two distinct tasks, the user interface (<c>RiddleUser</c>) and the computation (<c>Riddle</c>). Each 
       type of object manages its own task and they work together to solve a problem.
     </p>
-    <p>
-      Because almost all of our programs will involve some form of a user interface,
-      we will follow this design approach throughout the book.  It will serve us well.
-      especially as our problems and our programs become more complex.
-    </p>
   </subsection>
   <subsection>
     <title>Object Instantiation: Creating <c>Riddle</c> Instances</title>
@@ -165,10 +168,9 @@ public class Riddle {
       <caption>The <c>RiddleUser</c> class.</caption>
       
  <program language="java"><input>
-public class RiddleUser
-{
-  public static void main(String argv[])
-  { Riddle riddle1 = new Riddle(
+public class RiddleUser {
+  public static void main(String argv[]) { 
+    Riddle riddle1 = new Riddle(
       "What is black and white and red all over?",
       "An embarrassed zebra.");
     Riddle riddle2 = new Riddle(
@@ -190,10 +192,8 @@ public class RiddleUser
 <statement><p>Run the code below. Add another Riddle to RiddleUser main and print it out. 
         </p></statement>
 <program language="java" interactive="activecode"><input>
-public class RiddleUser
-{
-  public static void main(String argv[])
-  { 
+public class RiddleUser {
+  public static void main(String argv[]) { 
     Riddle riddle1 = new Riddle(
       "What is black and white and red all over?",
       "An embarrassed zebra.");
@@ -214,17 +214,15 @@ class Riddle
 {                                  
     private String question;       // Instance variables
     private String answer;
-    public Riddle(String q, String a) // Constructor method
-    {
+    public Riddle(String q, String a) { // Constructor method
          question = q;
          answer = a;
     } // Riddle()
-    public String getQuestion()   // Instance method
-    {
+    public String getQuestion() {  // Instance method
         return question;
     } // getQuestion()
-    public String getAnswer()     // Instance method
-    {
+    
+    public String getAnswer() {    // Instance method
 	       return answer;
     } //getAnswer() 
   } // end of class Riddle

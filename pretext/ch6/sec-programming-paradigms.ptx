@@ -82,8 +82,12 @@
   <subsection>
     <title>Motivation for Object-Oriented Programming</title>
     <p>
-      The first step in the program-development process is making sure you understand the problem 
-      (<xref ref="fig_progdev"></xref>).
+    
+    <figure xml:id="fig_progdev">
+      <caption>A flowchart of the program development process.</caption>
+      <image width="73%" source="chptr01/progdev.png"/>
+    </figure>
+      The first step in the program-development process is making sure you understand the problem.
       Thus, we begin by developing a detailed specification,
       which should address three basic questions:
       <ul>

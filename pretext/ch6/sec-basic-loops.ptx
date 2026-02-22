@@ -1,7 +1,12 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="sec-basic-loops">
   <title>Basic Loops</title>
-  <introduction>
-
+  <introduction><p>
+This section will introduce the final vital component of procedural programming: loops. Until now, your programs could not
+repeat a task an arbitrary number of times. You would need to copy/paste your code several times to repeat an operation.
+At best, you could use a method definition to simplify this process, but you could still only call that method a fixed 
+number of times. Loops are a means of repeating elements of a program until a certain condition is reached 
+(for example, when your program is finished processing all the records in a file). The first loop we'll examine in 
+Java is the most simple loop: a <c>while</c> loop.</p>
   </introduction>
   
 <subsection>
@@ -12,7 +17,7 @@ While loops are a lot like if statements. In fact, they have a nearly identical 
     <figure>
         <title>while-loop</title>
         <caption>Anatomy of a While Loop</caption>
-        <image width="40%" source="figures/while-loop.png"/>
+        <image width="60%" source="chptr06/while-loop"/>
     </figure>
     
     
@@ -25,7 +30,7 @@ While loops are a lot like if statements. In fact, they have a nearly identical 
     <p>
 The following code will add up the numbers 1 through 10:
 </p>
-<program language="java"><input>
+<program language="java"><input> 
 int count = 0;
 int total = 0;
 while(count &lt;= 10) {
@@ -38,8 +43,43 @@ After the first iteration of the loop, count will increase by 1 and total will i
 </p>    
     </example>
     
+    
+    
+    
 </subsection>
 
+
+
+  <subsection xml:id="do-while">
+    
+        <title>do-while Loops</title>
+    
+      <p>
+        The <term>do-while statement</term> is a loop statement in which the looping condition occurs after the loop body. 
+        The <c>do-while</c> loop is designed for solving problems in which at least one iteration must occur -- the looping condition 
+        is not evaluated until after the body of the loop is executed once. 
+      </p>
+      <p>
+      
+      A do-while loop begins with the <code>do</code> keyword followed by a block of code surrounded by curly braces. At the end of the curly braces is
+      the <code>while</code> keyword followed by a boolean expression (the looping condition) in parentheses. Unlike many other loops, a semicolon is required to terminate the statement.
+
+      </p>
+    <p>
+      The <c>do-while</c> structure takes the following form:
+    </p>
+<p>
+      A flowchart of the <c>do-while</c> structure is shown in <xref ref="fig-dowhileflow">Figure</xref>.
+    </p>
+    <figure xml:id="fig-dowhileflow">
+      <caption>Flowchart of the <c>do-while</c> statement
+      and <c>do-while</c> structure.</caption>
+      <image width="73%" source="chptr06/6f4.png"/>
+    </figure>
+  
+   
+        </subsection>
+  
   
   
 </section>

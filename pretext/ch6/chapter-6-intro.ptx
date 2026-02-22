@@ -6,6 +6,8 @@
     </p>
     <objectives>
       <ul>
+        <li>develop programs that use while loops</li>
+        <li>trace the flow of control during the execution of a program using while and do/while loops</li>
         <li>Use appropriate terminology to identify and describe components of classes</li>
         <li>Describe values (instances) of custom class types</li>
         <li>Illustrate the scope of variables and visibility within classes in Java</li>
@@ -16,7 +18,7 @@
   </introduction>
   
   
-   <xi:include href="sec-programming-paradigms.ptx"/>
+  <xi:include href="sec-basic-loops.ptx"/>
+  <xi:include href="sec-programming-paradigms.ptx"/>
   <xi:include href="sec-class-design-basics.ptx"/>
 </chapter>
-<!-- W6: characters, string methods, static method definitions, parsing (the word, indexOf, etc)  ****movve printf here?   String-1 codingbat /-->

@@ -101,10 +101,10 @@ update this book if it is used in future semesters with any warranted changes.
     <xi:include href="./ch2/chapter-2-intro.ptx"/>
     <xi:include href="./ch3/chapter-3-intro.ptx"/>
     <xi:include href="./ch4/chapter-4-intro.ptx"/>
-<!--<xi:include href="./ch5/chapter-5-intro.ptx"/>
+    <xi:include href="./ch5/chapter-5-intro.ptx"/>
     <xi:include href="./ch6/chapter-6-intro.ptx"/>
     <xi:include href="./ch7/chapter-7-intro.ptx"/>
-    <xi:include href="./ch8/chapter-8-intro.ptx"/>
+<!--<xi:include href="./ch8/chapter-8-intro.ptx"/>
     <xi:include href="./ch9/chapter-9-intro.ptx"/>
     <xi:include href="./ch10/chapter-10-intro.ptx"/>
     <xi:include href="./ch11/chapter-11-intro.ptx"/>
@@ -117,6 +117,10 @@ update this book if it is used in future semesters with any warranted changes.
     <backmatter>
       <xi:include href="./appndx-codestyle/appendix-codestyle.ptx"/>
       <xi:include href="./appndx-jdk/appendix-jdk.ptx"/>
+      <index>
+        <title>Index</title>
+        <index-list/>
+      </index>
     <!--
       <xi:include href="./appendix-charsets.ptx"/>
       <xi:include href="./appendix-keywords.ptx"/>
@@ -127,10 +131,6 @@ update this book if it is used in future semesters with any warranted changes.
       <xi:include href="./appndx-resources/appendix-resources.ptx"/>
       <xi:include href="./bibliography.ptx"/>
 
-      <index>
-        <title>Index</title>
-        <index-list/>
-      </index>
       -->
     </backmatter>
   </book>

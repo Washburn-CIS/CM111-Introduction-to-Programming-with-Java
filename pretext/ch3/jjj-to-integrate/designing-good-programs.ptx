@@ -80,10 +80,6 @@
       into its variables and methods.
     </p>
     <p>
-    <figure xml:id="fig_progdev">
-      <caption>A flowchart of the program development process.</caption>
-      <image width="73%" source="chptr01/progdev.png"/>
-    </figure>
     </p>
     <p>
       When should we stop subdividing?

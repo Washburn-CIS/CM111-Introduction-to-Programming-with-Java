@@ -1,20 +1,7 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapter-5-intro">
   <title>Week 5</title>
   <introduction>
-    <p>
-      At the end of this week you should be able to...
-    </p>
-    <objectives>
-      <ul>
-        <li>develop programs that use while loops</li>
-        <li>use a debugger to evaluate while statements</li>
-        <li>use a debugger to trace through loops</li>
-        <li>trace the flow of control during the execution of a program using while and do/while loops</li>
-      </ul>
-    </objectives>
+  This week will just be reviewing for the exam and initial interviews -- no new topics.
   </introduction>
-  <xi:include href="sec-unit1-review.ptx"/>
-  <xi:include href="sec-algorithms.ptx"/>
-  <xi:include href="sec-basic-loops.ptx"/>
 </chapter>
-<!-- review, exam 1, (unit 2) while loops, do-while /-->
+<!-- review, exam 1, interviews /-->
