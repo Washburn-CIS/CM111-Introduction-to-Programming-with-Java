@@ -12,8 +12,8 @@
       <p>    <term>Structured programming</term> is the practice of writing programs that are built up from a small set of predefined control structures.
       As an overall approach to programming,
       structured programming has largely been superseded by the object-oriented approach.
-      Nevertheless,
-      its design principles are still relevant to the design of the algorithms and methods that make up a program's objects.
+      Nevertheless, its design principles are still relevant to the design of the algorithms 
+      and methods that make up a program's objects.
     </p>
     <p>
       The principles of structured programming seem so obvious today that it may be difficult to appreciate their importance.

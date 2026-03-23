@@ -1,9 +1,262 @@
 <section xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="sec-arrays">
   <title>Arrays</title>
-  <introduction>
 
-  </introduction>
-  
+    <introduction>
+Strings are a collection of characters, but we haven't yet seen a way to handle a collection of other types of values. Arrays allow Java programmers to create collections of values of an arbitrary type.
+    </introduction>
+
+    <subsection>
+        <title>The Array Type</title>
+        <p> Arrays themselves are a type of data, but are parameterized by the type of data they hold (that is to say, there are many 'array types' and each is distinguished by the type of data held by an array of that type). Values in an array can have any type, but they must all have the <em>same type</em> as each other.
+        </p>
+        <p> The syntax for an array type has two parts: the type of data held by the array, and a pair of square brackets indicating an array type. For example, the type <em>array of integers</em> would be written: <c>int[]</c>
+        </p>
+        <p> A variable named <c>arr</c> that could hold an array of integers is defined as follows:
+            <program language="java"><input>int[] arr;</input></program>
+        </p>
+    </subsection>
+    <subsection>
+        <title>Creating Array Values</title>
+        <p>Like strings, arrays are object types. Thus, variables with array types can be null:
+
+          <program language="java"><input>int[] arr = null;</input></program>
+
+            We also create array objects with the <c>new</c> keyword, although the syntax is a little different than it is for other constructor calls. Square brackets are used instead of parentheses and the size of the array is provided within the square brackets. The size is constant and cannot be changed over the lifetime of the array object you create. For example, the following code initializes <c>arr</c> to contain an array of 5 integers:
+
+          <program language="java"><input>int[] arr = new int[5];</input></program>
+
+            Each of the integers in the array <c>arr</c> are initialized to zero in the previous example. However, we can initialize them to hold arbitrary values by enumerating those values within curly braces instead of providing the length of the array. For example, the following code initializes <c>arr</c> to hold the values 1 through 10:
+
+
+          <program language="java"><input>int[] arr = new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</input></program>
+
+            Java also allows a shortcut when declaring an array-type variable occurs on the same line as initializing that variable. In these 
+            cases, you can leave out the "new type[]" portion of the array constructor:
+
+
+          <program language="java"><input>int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};</input></program>
+        </p>
+    </subsection>
+    <subsection>
+        <title>Operations on Arrays</title>
+        <subsubsection>
+            <title>Length of an Array</title>
+            <p>
+                The first operation to consider on arrays is how to determine the length of an array. This is similar to determining the length of a string, but instead of calling a method, the <c>length</c> field is accessed instead. For example, assuming the most recent definition of <c>arr</c>, the following expression will evaluate to <c>10</c>:
+
+          <program language="java"><input>
+                arr.length
+          </input></program>
+
+                It is a very common mistake to include parentheses at the end of <c>length</c> for an array or to leave off parentheses at the end of <c>length</c> for a string because of this unfortunate inconsistency.
+            </p>
+        </subsubsection>
+        <subsubsection>
+            <title>Accessing an Array</title>
+            <p> The most important operation on arrays is retrieving a value from an array. This is very similar to the <c>charAt</c> instance method we used with strings, but instead of calling a method, square brackets following an array value indicate the index of the value to be retrieved. For example, assuming the most recent definition of <c>arr</c>, the following expression will evaluate to <c>1</c>:
+
+<program language="java"><input>arr[0]</input></program>
+
+                Note that the first index of an array is 0, just as with strings.</p>
+        </subsubsection>
+        <subsubsection>
+            <title>Modifying an Array</title>
+            <p>Though the size of an array can't change, the values it contains can. Think of an indexed array (an array value with an index following it in square brackets) as any other variable. In addition to evaluating it like a variable expression (above), we can also use it in an assignment statement. For example, the following statement will assign the value <c>100</c> to the first position in the array <c>arr</c>:
+<program language="java"><input>arr[0] = 100;</input></program>
+                Following this assignment statement, the following expression will evaluate to <c>100</c>:
+
+          <program language="java"><input>arr[0]</input></program>
+                      </p>
+        </subsubsection>
+       
+    
+    
+    
+    
+    
+    
+    <activity label="elmt0"><statement><p>Run the following code. 
+  Can you print out the 0th element of the array? Can you print out the (k-j)th element? Which element is that?</p></statement>
+ <program language="java" interactive="activecode"><input>
+  public class ArrayEx
+  {                   
+    public static void main(String[] args)
+    {
+        int arr[] = {-2, 8, -1, -3, 16, 20, 25, 16, 16, 8, 18, 19, 45, 21, -2 };
+        int j = 5;
+        int k = 7;  
+        System.out.println("4th element: " + arr[4]);     //Refers to 16
+        System.out.println("jth element: " + arr[j]);     //Is arr[5] which refers to 20
+        System.out.println("(j+k)th element: " + arr[j + k]); //Is arr[5+7] which is arr[12] which refers to 45
+        System.out.println("(k%j)th element: " + arr[k % j]); //Is arr[7%5] which is arr[2] which refers to -1
+        // Can you print out the 0th element?
+        // Can you print out the (k-j)th element?
+      }
+  }
+      </input></program>
+ </activity>
+    
+    
+<exercise label="arrayaccess-1"> 
+    <title>What's the value?</title>
+    <statement>
+        <p>For the following array declaration:</p>
+          <program language="java"><input>
+            double farr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+          </input></program>
+          <p>what is the value of <c>farr[1]</c>? <var/> </p>
+    </statement>
+    <setup>
+        <var>
+            <condition number="2.2">
+                <feedback>
+                    <p>Correct, <c>farr[1]</c> refers to the second element.</p>
+                </feedback>
+            </condition>
+            <condition string=".*">
+                <feedback>
+                    <p>Incorrect. Did you forget that arrays are <term>zero-indexed</term>?</p>
+                </feedback>
+            </condition>
+        </var>
+    </setup>
+    <solution>
+      <p>farr[1] == 2.2 </p>
+    </solution>    
+</exercise>
+
+<exercise label="arrayaccess-2"> 
+    <title>What's the value?</title>
+    <statement>
+        <p>For the following array declaration:</p>
+          <program language="java"><input>
+            double farr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+          </input></program>
+          <p>what is the value of <c>farr[farr.length - 2]</c>? <var/> </p>
+    </statement>
+    <setup>
+        <var>
+            <condition number="4.4">
+                <feedback>
+                    <p>Correct, <c>farr.length - 2</c> equals 3.</p>
+                </feedback>
+            </condition>
+            <condition string=".*">
+                <feedback>
+                    <p>Incorrect, <c>farr.length - 2</c> equals 3.</p>
+                </feedback>
+            </condition>
+        </var>
+    </setup>
+    <hint>
+      <p>Hint: <c>farr.length</c> equals 5.</p>                
+    </hint>
+    <solution>
+      <p> <c>farr[farr.length - 2]  == 4.4</c> </p>
+    </solution>     
+</exercise>
+<exercise label="arrayaccess-3">
+    <title>Access the last element</title>
+    <statement>
+        <p>For the following variable declarations:</p>
+          <program language="java"><input>
+            int k = 0;
+            double farr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+          </input></program>
+          <p>which of the following expressions would correctly access the last element in <c>farr</c>?</p>
+    </statement>
+    <choices>
+        <choice correct="yes">
+            <statement>
+                <p><c>farr[4]</c></p>
+            </statement>
+            <feedback>
+                <p>That's one way to access the last element.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+                <p><c>farr[farr.length-1]</c></p>
+            </statement>
+            <feedback>
+                <p>That's one way to access the last element.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p><c>farr[length]</c></p>
+            </statement>
+            <feedback>
+                <p>This expression contains a syntax error: no such variable <c>length</c>.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+                <p><c>farr[k+4]</c></p>
+            </statement>
+            <feedback>
+                <p>That's one way to access the last element.</p>
+            </feedback>
+        </choice>
+    </choices>
+    <solution>
+      <p> A, B and D</p>
+    </solution> 
+</exercise>
+
+<exercise label="arrayaccess-4">
+    <title>Assign to the first element</title>
+    <statement>
+        <p>For the following variable declarations:</p>
+          <program language="java"><input>
+            int k = 0;
+            double farr[] = {1.1, 2.2, 3.3, 4.4, 5.5};
+          </input></program>
+          <p>which of the following expressions would correctly assing 10.5 to the first element in <c>farr</c>?</p>
+    </statement>
+    <choices>
+        <choice>
+            <statement>
+                <p><c>farr(0) = 10.5;</c></p>
+            </statement>
+            <feedback>
+                <p>Nope, we don't use parentheses.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p><c>farr[1] = 10.5;</c></p>
+            </statement>
+            <feedback>
+                <p>No, don't forget that arrays are zero-indexed.</p>
+            </feedback>
+        </choice>
+        <choice>
+            <statement>
+                <p><c>farr[k+1] = 10.5;</c></p>
+            </statement>
+            <feedback>
+                <p>This would assign the value to the second element.</p>
+            </feedback>
+        </choice>
+        <choice correct="yes">
+            <statement>
+              <p><c>farr[k] = 10.5;</c></p>
+            </statement>
+            <feedback>
+                <p>Correct. This is equivalent to  <c>farr[0] = 10.5;</c></p>
+            </feedback>
+        </choice>
+    </choices>
+    <solution>
+      <p> D </p>
+    </solution>     
+</exercise>
+    
+    </subsection>
+    
+    
+
   
   
 </section>
