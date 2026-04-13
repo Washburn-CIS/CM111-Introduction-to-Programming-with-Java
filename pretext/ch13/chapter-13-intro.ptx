@@ -18,6 +18,7 @@
     </objectives>
   </introduction>
   <xi:include href="sec-references.ptx"/>
-  <xi:include href="sec-side-effects.ptx"/>
+  <xi:include href="sec-passby.ptx"/>
+  <xi:include href="sec-two-dimensional-arrays.ptx"/>
 </chapter>
 <!-- W13: references, side-effects, mutability, 2D-arrays -->
