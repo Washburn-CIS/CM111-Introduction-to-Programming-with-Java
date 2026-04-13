@@ -25,21 +25,20 @@
   <listing xml:id="fig-primcall">
     <caption>Passing a primitive value to a method.</caption>
  <program language="java"><input>
-public class PrimitiveCall
-{
-   public static void myMethod(int n)
-   {   System.out.println("myMethod: n= " + n);
+public class PrimitiveCall {
+   public static void myMethod(int n) {
+       System.out.println("myMethod: n= " + n);
        n = 100;
        System.out.println("myMethod: n= " + n);
-   } // myMethod()
+   } 
 
-   public static void main(String argv[])
-   {   int k = 5;
+   public static void main(String argv[]) {
+       int k = 5;
        System.out.println("main: k= " + k);
        myMethod(k);
        System.out.println("main: k= " + k);
-   } // main()
- } // PrimitiveCall
+   } 
+ } 
  </input></program>
 </listing>
 
@@ -47,21 +46,21 @@ public class PrimitiveCall
   <statement><p>Run the code below. Click on Show CodeLens to step through the code with the Next button.
   </p></statement>
   <program language="java" interactive="activecode"><input>
-    public class PrimitiveCall
-    {
-       public static void myMethod(int n)
-       {   System.out.println("myMethod: n= " + n);
+    public class PrimitiveCall {
+     
+       public static void myMethod(int n) {
+           System.out.println("myMethod: n= " + n);
            n = 100;
            System.out.println("myMethod: n= " + n);
-       } // myMethod()
+       } 
     
-       public static void main(String argv[])
-       {   int k = 5;
+       public static void main(String argv[]) {
+           int k = 5;
            System.out.println("main: k= " + k);
            myMethod(k);
            System.out.println("main: k= " + k);
-       } // main()
-     } // PrimitiveCall
+       } 
+     } 
   </input></program></activity>
     <p>
     One implication of passing a copy of a primitive value to a method is that the original value of <c>k</c> in <c>main()</c> cannot be altered from inside the method.
@@ -87,26 +86,18 @@ public class PrimitiveCall
       When a value of a primitive type,
       like <c>boolean</c> or <c>int</c> or <c>double</c>, is passed to a method,
       a copy of the value is passed.
-      That's why its original value remains unchanged outside the method,
-      even if the copy is changed inside the method.
+      That's one reason why its original value remains unchanged outside the method.
     </p>
   </principle>
-  <figure xml:id="fig-vparameps">
-    <caption>Tracing the state of variables k and n
-    in <c>PrimitiveCall</c>(a) Just
-    before calling <c>myMethod(k) in main</c>. (b) Just before executing the body
-    of <c>myMethod()</c>. (c) Just after executing the body of <c>myMethod()</c>. (d) After flow of control returns to <c>main()</c>.</caption>
-    <image width="73%" source="chptr03/vparam.png"/>
-  </figure>
   
 </subsection>
-  <subsection><title>Passing Reference Types</title>
+  <subsection><title>Passing Object Types</title>
   <p>
     In contrast to this,
-    when an argument of a reference type, like <c>String</c> or another class type like <c>OneRowNim</c>, is passed to a method,
+    when an argument of an Object type, like <c>String</c> or another class type, is passed to a method,
     a copy of the reference to the object itself is assigned to the parameter.
     For example,
-    in the case of a <c>String</c> parameter or a <c>OneRowNim</c> parameter,
+    in the case of a <c>String</c> parameter or an array parameter,
     the method would be given a reference to the object<ndash/>that is,
     the address of the object.
     The object itself is <em>not</em> passed,
@@ -117,113 +108,28 @@ public class PrimitiveCall
   <p>
     For example,
     consider the <c>ReferenceCall</c> class (<xref ref="fig-refcall"></xref>).
-    In this case, <c>myMethod()</c> takes a  parameter <c>g</c> of type <c>OneRowNim</c>. Because a OneRowNim instance is an object, <c>g</c> is a reference variable.
-    So when <c>myMethod(game)</c> is invoked in <c>main()</c>, a reference to
-<c>game</c> is passed to <c>myMethod()</c>. Note that in <c>myMethod()</c>, we use <c>takeSticks(3)</c> to change the number of sticks of <c>g</c> from 10 to 7 and that this change persists even after the method returns control to <c>main()</c>. The reason is that during the method's execution,
-    both <c>game</c> and <c>g</c> refer to the exact same object.
+    In this case, <c>myMethod()</c> takes a  parameter <c>g</c> of type <c>int[]</c>. Because arrays are objects, <c>g</c> is a reference variable.
+    So when <c>myMethod(nums)</c> is invoked in <c>main()</c>, a reference
+is passed to <c>myMethod()</c>. 
   </p>
   <listing xml:id="fig-refcall">
     <caption>Passing a reference value to a method.</caption>
  <program language="java"><input>
-public class ReferenceCall
-{
-    public static void myMethod(OneRowNim g)
-    {   System.out.print("myMethod: Number of sticks: ");
-        System.out.println(g.getSticks());
-        g.takeSticks(3);
-        System.out.print("myMethod: Number of sticks: ");
-        System.out.println(g.getSticks());
-    } // myMethod()
+public class ReferenceCall {
+    public static void myMethod(int[] nums) {
+       nums[1] = 10;
+    } 
 
-    public static void main(String argv[])
-    {   OneRowNim game = new OneRowNim(10);
-         System.out.print("main: Number of sticks: ");
-         System.out.println(game.getSticks());
-         myMethod(game);
-         System.out.print("main: Number of sticks: ");
-         System.out.println(game.getSticks());
-    }// main()
-} // ReferenceCall
+    public static void main(String argv[]) {
+       int[] nums = {3, 4, 5};
+       System.out.println(nums[1]); // prints 4
+       myMethod(nums);
+       System.out.println(nums[1]); // prints 10
+    }
+} 
  </input></program>
 </listing>
 
-<activity label="callrefEx">
-  <statement><p>Run the code below. Click on Show CodeLens to step through the code with the Next button.
-  </p></statement>
-  <program language="java" interactive="activecode"><input>
-public class ReferenceCall
-{
-    public static void myMethod(OneRowNim g)
-    {   System.out.print("myMethod: Number of sticks: ");
-        System.out.println(g.getSticks());
-        g.takeSticks(3);
-        System.out.print("myMethod: Number of sticks: ");
-        System.out.println(g.getSticks());
-    } // myMethod()
-
-    public static void main(String argv[])
-    {   OneRowNim game = new OneRowNim(10);
-         System.out.print("main: Number of sticks: ");
-         System.out.println(game.getSticks());
-         myMethod(game);
-         System.out.print("main: Number of sticks: ");
-         System.out.println(game.getSticks());
-    }// main()
-} // ReferenceCall
-
-class OneRowNim
-     {   private int nSticks = 7;         // Start with 7 sticks
-         private int player = 1;          // Player 1 plays first
-     
-         public OneRowNim()
-         {   nSticks = 7;
-             player = 1;
-         }
-     
-         public OneRowNim(int sticks)
-         {   nSticks = sticks;
-         }
-     
-         public void takeSticks(int num)
-         {   nSticks = nSticks - num;
-             player = 3 - player;
-         }  
-     
-         public int getSticks()
-         {   return nSticks;
-         }
-     
-         public int getPlayer()
-         {   return player;
-         }
-     
-         public boolean gameOver()
-         {   return (nSticks &lt;= 0);
-         }
-     
-         public void report()
-         {   System.out.println("Number of sticks left: " + nSticks);
-             System.out.println("Next turn by player " + player);
-         } // report()
-       }
-  </input> </program></activity>
-  <p>
-    The output generated by <c>ReferenceCall</c> would be
-  </p>
- <program language="java"><input>
-  main: Number of sticks: 10
-  myMethod: Number of sticks: 10
-  myMethod: Number of sticks: 7
-  main: Number of sticks: 7
- </input></program>
-
-  <figure xml:id="fig-rparameps">
-    <caption>Tracing the state of <c>OneRowNim</c> object
-    in <c>ReferenceCall</c>(a) Just
-    before calling <c>myMethod(game)</c>. (b) Just before executing the body
-    of <c>myMethod()</c>. (c) Just after executing the body of <c>myMethod()</c>. (d) After flow of control returns to <c>main()</c>.</caption>
-    <image width="73%" source="chptr03/rparam.png"/>
-  </figure>
   <p>
     This illustrates that when passing a reference variable to a method,
     it is possible for the method to change the state of the object associated with the reference variable.
@@ -239,15 +145,10 @@ class OneRowNim
   <principle>
     <title>DEBUGGING TIP: Side Effects</title>
     <p>
-      An unintended change to an object is called a <term>side effect</term>.
-      Care should be taken in designing methods that the method does not produce unwanted side effects in objects passed as reference parameters.
+      When a method makes a change to the global state of a program (not just local variables in a method) it is called a <term>side effect</term>.
+      Care should be taken in designing methods that the method does not produce unexpected or unwanted side effects in objects passed as references.
     </p>
   </principle>
 </subsection>
-
-
-
-
-
 
 </section>
