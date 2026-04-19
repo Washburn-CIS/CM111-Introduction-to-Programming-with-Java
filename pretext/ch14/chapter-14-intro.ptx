@@ -6,7 +6,7 @@
     </p>
     <objectives>
       <ul>
-        <li>Read a program using overloading or varargs and explain what it does</li>
+        <li>Read a program using overloading and explain what it does</li>
         <li>Read a program using exception handling and explain what it does</li>
         <li>Trace the flow of control during the execution of a program using exception handling</li>
         <li>Trace the flow of control during the execution of a program using file access</li>
@@ -17,7 +17,6 @@
   </introduction>
   <xi:include href="sec-overloading.ptx"/>
   <xi:include href="sec-exception-handling.ptx"/>
-  <xi:include href="sec-validation.ptx"/>
   <xi:include href="sec-file-io.ptx"/>
 </chapter>
 <!-- W14: overloading, exception handling, file output /-->

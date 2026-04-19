@@ -1,14 +1,11 @@
 <chapter xmlns:xi="http://www.w3.org/2001/XInclude"  xml:id="chapter-15-intro">
   <title>Week 15</title>
-  <introduction>
-    <p>
-      At the end of this week you should be able to...
-    </p>
-    <objectives>
-      <ul>
-        <li></li>
-      </ul>
-    </objectives>
+  <introduction><p>
+  This week will just be reviewing for the exam and initial interviews -- no new topics. Exam #4 will involve 
+  developing full programs involving input and output.
+  Be prepared to code a problem similar to  
+  <url href="https://codingbat.com/java/Array-2" visual="codingbat Array-2">Array-2</url>
+  on paper, from scratch (including method header definitions). Also be ready to write a 
+  full program that reads, parses, and validates some input data and prints some output to a file.</p>
   </introduction>
-  <xi:include href="sec-unit4-review.ptx"/>
 </chapter>

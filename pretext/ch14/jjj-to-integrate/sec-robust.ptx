@@ -330,6 +330,8 @@ public void actionPerformed(ActionEvent e) {
       </p>
     </principle>
   </subsection>
+  
+  
   <subsection>
     <title>To Fix or Not to Fix</title>
     <p>
